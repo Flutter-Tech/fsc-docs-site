@@ -1,0 +1,25 @@
+{% if menu %} {% assign isSubmenu = include.submenu %}
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon {% if include.submenu %}uk-nav-sub{% else %}menu-root{% endif %}"
+  uk-nav="multiple: true; animation: false"
+>
+  {% for item in menu %} {% if item.children %}
+  <li
+    class="uk-parent menu-item-{{ forloop.index }} {% if item.url == page.url %}uk-active{% endif %}"
+  >
+    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-link"
+      >{{ item.title }}</a
+    >
+    {% assign menu = item.children %} {% include menus.html submenu="yes" %}
+  </li>
+  {% else %}
+  <li
+    class="menu-item-{{ forloop.index }} {% if item.url == page.url %}uk-active{% endif %}"
+  >
+    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-link"
+      >{{ item.title }}</a
+    >
+  </li>
+  {% endif %} {% endfor %}
+</ul>
+{% endif %}

@@ -3,8 +3,11 @@
 - title: Home
   url: /
 
-- title: Blog
-  url: /blog/
+- title: Docs
+  url: /docs/
 
-- title: Contact
-  url: /contact/
+- title: Releases
+  url: /releases/
+
+- title: Releases
+  url: /support/

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Flutter Docs | Find, Learn, Love…</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="Flutter Docs" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Find, Learn, Love…" />
+<meta property="og:description" content="Find, Learn, Love…" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Flutter Docs" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/","headline":"Flutter Docs","name":"Flutter Docs","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/flutter-logo.png"}},"description":"Find, Learn, Love…","@type":"WebSite","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="http://localhost:4000/uploads/flutter-logo.png"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="shortcut icon" href="/uploads/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/uploads/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" title="Flutter Docs" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+</head>
+
+    <body>
+
+    
+        <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/"><img src="http://localhost:4000/uploads/flutter-logo.png" alt="Flutter Docs" class="site-logo"></a>
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li class="uk-active"><a href="/" >Home</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/docs/installation/" >Docs</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="#">Releases</a>
+                                        
+                                        </li>
+                                                                                                        
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-left uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/"><img src="http://localhost:4000/uploads/flutter-logo.png" alt="Flutter Docs"></a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: "/search.json"
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/support/" >support</a></div></li>
+                                
+                            
+                        
+                    </ul>
+
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <div class="uk-section">
+  <div class="uk-container">
+    <div class="uk-grid-large" data-uk-grid>
+      <div class="sidebar-fixed-width uk-visible@m">
+        <div class="sidebar-docs docs-nav uk-position-fixed uk-margin-top">
+            
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon menu-root"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/getting-started/" title="Go to Getting Started" class="menu-link"
+      >Getting Started</a
+    >
+  </li>
+    
+  <li
+    class="uk-parent menu-item-2 "
+  >
+    <a href="/tutorials/" title="Go to Tutorials" class="menu-link"
+      >Tutorials</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/tutorials/creating-your-first-repo/" title="Go to Creating your first repo" class="menu-link"
+      >Creating your first repo</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-2 "
+  >
+    <a href="/tutorials/making-your-first-commit/" title="Go to Making you first commit" class="menu-link"
+      >Making you first commit</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-3 "
+  >
+    <a href="/tutorials/running-your-first-tests-on-github/" title="Go to Running your first tests on GitHub" class="menu-link"
+      >Running your first tests on GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+    
+  <li
+    class="uk-parent menu-item-3 "
+  >
+    <a href="/docs/" title="Go to Docs" class="menu-link"
+      >Docs</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="uk-parent menu-item-1 "
+  >
+    <a href="/docs/codebase-governor/index/" title="Go to Codebase Governor" class="menu-link"
+      >Codebase Governor</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/docs/codebase-governor/codebase-governor-guide/" title="Go to Codebase Governor Guide" class="menu-link"
+      >Codebase Governor Guide</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+</ul>
+
+
+  </li>
+    
+  <li
+    class="menu-item-4 "
+  >
+    <a href="/community/" title="Go to Community" class="menu-link"
+      >Community</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-5 "
+  >
+    <a href="/faqs/" title="Go to FAQs" class="menu-link"
+      >FAQs</a
+    >
+  </li>
+   
+</ul>
+
+
+        </div>
+      </div>
+      <div class="uk-width-1-1 uk-width-expand@m">
+        <article class="uk-article">
+<div>
+    <div class="uk-container">
+
+        
+            <h2 class="uk-h1 uk-text-center">Browse Topics</h2>
+        
+
+        <p class="uk-text-lead uk-text-center">Chose an option that you need help with or search above</p>
+
+        <div class="uk-child-width-1-3@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="">
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: cog; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">Getting Started</h3>
+                    
+                    <p>Get started fast with installation and theme setup instructions</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: settings; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">Theme Features</h3>
+                    
+                    <p>Lean about all the theme options, features and how to use them</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: code; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">Customization</h3>
+                    
+                    <p>Get help or tailor the theme to your specific requirements</p>
+                    
+                </div>
+            </div>
+            
+        
+        </div>
+
+    </div>
+</div>
+
+<div class="uk-section section-featured">
+    <div class="uk-container uk-container-small">
+
+        
+        <h2 class="uk-h1 uk-text-center">Popular Articles</h2>
+        
+
+        
+            <p class="uk-text-center uk-text-lead">Selected featured articles to get you started fast in Jekyll</p>
+        
+        
+        <ul class="uk-list uk-list-large uk-margin-medium-top">
+        
+            
+        
+            
+        
+        </ul>
+
+    </div>
+</div>
+
+<div class="uk-section section-videos">
+    <div class="uk-container uk-container-small">
+
+        
+            <h2 class="uk-h1 uk-text-center">Video Tutorials</h2>
+        
+
+        <p class="uk-text-lead uk-text-center">Watch screencasts to get you started fast with Jekyll</p>
+
+        <div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="" data-uk-lightbox="">
+        
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href="https://youtu.be/T1itpPvFWHI" data-caption="Jekyll Introduction"></a>
+                    <span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
+                    <h3 class="uk-card-title uk-margin">Jekyll Introduction</h3>
+                    
+                    <p>Overview of the most popular static generator</p>
+                    
+                </div>
+            </div>
+        
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href="https://youtu.be/gsYqPL9EFwQ" data-caption="Creating a post"></a>
+                    <span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
+                    <h3 class="uk-card-title uk-margin">Creating a post</h3>
+                    
+                    <p>Lean how to publish your first post in Jekyll</p>
+                    
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+<div class="uk-section">
+    <div class="uk-container uk-container-small">
+
+        
+            <h2 class="uk-h1 uk-text-center">Frequently asked questions</h2>
+        
+
+        
+            <p class="uk-text-center uk-text-lead">Find quicke answers to frequent pre-sale questions asked by customers</p>
+        
+
+        
+
+        <ul class="uk-margin-medium-top" data-uk-accordion="multiple: true">
+            
+        </ul>
+
+    </div>
+</div>
+
+<div class="uk-section section-team">
+    <div class="uk-container uk-container-expand">
+
+        
+            <h2 class="uk-h1 uk-text-center">We are here to help</h2>
+        
+
+        <p class="uk-text-lead uk-text-center">Our team is just an email away ready to answer your questions</p>
+
+        <div class="uk-margin-medium-top uk-grid-small uk-flex-center uk-text-center uk-margin-medium-top" data-uk-grid="">
+
+        
+
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-top"></h5>
+                    <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top"></p>
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+<div class="uk-section uk-text-center">
+    <div class="uk-container uk-container-small">
+        <div data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+            <h2 class="uk-h1 uk-margin-bottom">Didn't find an answer?</h2>
+            <p class="uk-text-lead uk-text-center">Get in touch with us for details on setup and additional custom services pricing</p>
+            <a class="uk-button uk-button-primary uk-button-large uk-margin-medium-top" href="/contact/">Contact Us</a>
+        </div>
+    </div>
+</div>
+
+</article>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/flutter-logo.png" alt="Flutter Docs"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+             
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon menu-root"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/getting-started/" title="Go to Getting Started" class="menu-link"
+      >Getting Started</a
+    >
+  </li>
+    
+  <li
+    class="uk-parent menu-item-2 "
+  >
+    <a href="/tutorials/" title="Go to Tutorials" class="menu-link"
+      >Tutorials</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/tutorials/creating-your-first-repo/" title="Go to Creating your first repo" class="menu-link"
+      >Creating your first repo</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-2 "
+  >
+    <a href="/tutorials/making-your-first-commit/" title="Go to Making you first commit" class="menu-link"
+      >Making you first commit</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-3 "
+  >
+    <a href="/tutorials/running-your-first-tests-on-github/" title="Go to Running your first tests on GitHub" class="menu-link"
+      >Running your first tests on GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+    
+  <li
+    class="uk-parent menu-item-3 "
+  >
+    <a href="/docs/" title="Go to Docs" class="menu-link"
+      >Docs</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="uk-parent menu-item-1 "
+  >
+    <a href="/docs/codebase-governor/index/" title="Go to Codebase Governor" class="menu-link"
+      >Codebase Governor</a
+    >
+      
+<ul
+  class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-sub"
+  uk-nav="multiple: true; animation: false"
+>
+   
+  <li
+    class="menu-item-1 "
+  >
+    <a href="/docs/codebase-governor/codebase-governor-guide/" title="Go to Codebase Governor Guide" class="menu-link"
+      >Codebase Governor Guide</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+</ul>
+
+
+  </li>
+    
+  <li
+    class="menu-item-4 "
+  >
+    <a href="/community/" title="Go to Community" class="menu-link"
+      >Community</a
+    >
+  </li>
+    
+  <li
+    class="menu-item-5 "
+  >
+    <a href="/faqs/" title="Go to FAQs" class="menu-link"
+      >FAQs</a
+    >
+  </li>
+   
+</ul>
+
+
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    </body>
+
+</html>

@@ -1,6 +1,6 @@
 # Site title and description
 title: Flutter Docs
-description: Flutter Documentation Jekyll theme.
+description: Find, Learn, Love...
 lang: en
 
 # Site subpath, e.g. /blog
@@ -13,59 +13,26 @@ permalink: /:title/
 url: ""
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:
+logo: flutter-logo.png
 
 navbar:
   sticky: true
   search: true
 
-# Default author settings
-author:
-  name: Shared Development
-  title: Team
-  avatar: avatar-tom.png
-
-# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
-authors:
-  john:
-    name: John Brown
-    title: Support
-    avatar: avatar-john.png
-  evan:
-    name: Evan Wells
-    title: Support
-    avatar: avatar-evan.png
-  sara:
-    name: Sara Galen
-    title: Lead Developer
-    avatar: avatar-sara.png
-  alex:
-    name: Alex Koch
-    title: Design Engineer
-    avatar: avatar-alex.png
-  daniel:
-    name: Daniel Shultz
-    title: Developer
-    avatar: avatar-daniel.png
-  tom:
-    name: Tom Farrell
-    title: Developer
-    avatar: avatar-tom.png
-
 # Social icons displayed in footer
 social:
   email:
   website:
-  facebook: https://www.facebook.com/
+  facebook:
   flickr:
   dribbble:
   github:
   googleplus:
-  instagram: https://www.instagram.com/
+  instagram:
   linkedin:
   pinterest:
-  twitter: https://twitter.com/
-  vimeo: https://vimeo.com/
+  twitter:
+  vimeo:
   youtube:
 
 # Share button
@@ -86,12 +53,6 @@ disqus:
 # Google analytics code, get your code here https://www.google.com/analytics/
 google_analytics:
 
-# Number of posts displayed on blog page
-paginate: 10
-
-# Blog path
-paginate_path: "/blog/:num/"
-
 # Path to post content assets directory i.e post images, pdfs etc
 uploads: /uploads/
 
@@ -104,6 +65,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-avatar
+  - jekyll-menus
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -114,6 +76,8 @@ sass:
 
 collections:
   docs:
+    output: true
+  tutorials:
     output: true
   faqs:
     output: false

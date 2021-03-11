@@ -1,0 +1,16 @@
+home:
+  - url: /getting-started/
+    title: Getting Started
+    identifier: getting-started
+  - url: /tutorials/
+    title: Tutorials
+    identifier: tutorials
+  - url: /docs/
+    title: Docs
+    identifier: docs    
+  - url: /community/
+    title: Community
+    identifier: community
+  - url: /faqs/
+    title: FAQs
+    identifier: faqs
