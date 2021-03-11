@@ -1,4 +1,5 @@
 {% if menu %} {% assign isSubmenu = include.submenu %}
+{{ data.menus.home }}
 <ul
   class="uk-nav uk-nav-default uk-nav-parent-icon {% if include.submenu %}uk-nav-sub{% else %}menu-root{% endif %}"
   uk-nav="multiple: true; animation: false"

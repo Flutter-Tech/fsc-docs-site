@@ -1,10 +1,6 @@
 ---
 layout: default
 title: Codebase Governor Guide
-menus:
-  codebase-governor:
-    name: Codebase Governor Guide
-    identifier: codebase-governor-guide
 ---
 
 # Codebase Governor Guide

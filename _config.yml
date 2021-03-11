@@ -65,7 +65,6 @@ gems:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-avatar
-  - jekyll-menus
 exclude:
   - Gemfile
   - Gemfile.lock

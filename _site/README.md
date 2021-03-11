@@ -1,2 +1,2 @@
 # fsc-docs-site
-Capability repository
+Repository for the Flutter documentation site.

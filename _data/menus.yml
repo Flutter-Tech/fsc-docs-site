@@ -1,13 +1,31 @@
-home:
+main:
   - url: /getting-started/
     title: Getting Started
     identifier: getting-started
   - url: /tutorials/
     title: Tutorials
     identifier: tutorials
+    children:
+      - url: /tutorials/creating-your-first-repo/
+        title: Creating your first repo
+        identifier: creating-your-first-repo
+      - url: /tutorials/making-your-first-commit/
+        title: Making your first commit
+        identifier: making-your-first-commit
+      - url: /tutorials/running-your-first-tests-on-github/
+        title: Running your first tests on GitHub
+        identifier: running-your-first-tests-on-github/
   - url: /docs/
     title: Docs
-    identifier: docs    
+    identifier: docs
+    children:
+      - url: /docs/codebase-governor/
+        title: Codebase Governor
+        identifier: codebase-governor
+        children:
+          - url: /docs/codebase-governor/codebase-governor-guide/
+            title: Codebase Governor Guide
+            identifier: codebase-governor-guide
   - url: /community/
     title: Community
     identifier: community
