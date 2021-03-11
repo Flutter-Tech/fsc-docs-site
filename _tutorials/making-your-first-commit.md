@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Making you first commit
-menus: tutorials
 ---
 
 #### Sections in this article

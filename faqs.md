@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Running your first tests on GitHub
+title: FAQs
 ---
 
-# Running your first tests on GitHub
+<h1>Frequently Ask Questions</h1>
 
 Aliquam arcu dui, dignissim vel bibendum eleifend, finibus ac tellus. Aliquam ex risus, mattis vel condimentum eu, ultricies a erat. Sed mattis sem risus, id porttitor orci suscipit et. Sed sed libero eros. Integer vel accumsan massa. Vivamus id dapibus ligula. Praesent id odio et justo porttitor convallis. Phasellus mollis gravida ipsum, eleifend tincidunt risus tincidunt sit amet. Fusce iaculis tristique bibendum. Donec semper est quam, in blandit diam tempus gravida. Etiam at eleifend enim, eu cursus leo. Praesent laoreet est sit amet risus venenatis, vitae scelerisque erat lobortis. Donec in varius risus.
 

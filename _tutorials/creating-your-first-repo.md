@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Creating your first repo
-menus: tutorials
 ---
 
 <h1>Creating your first repo</h1>
