@@ -12,13 +12,11 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Find, Learn, Love…" />
 <meta property="og:description" content="Find, Learn, Love…" />
-<link rel="canonical" href="http://localhost:4000/docs/codebase-governor/index/" />
-<meta property="og:url" content="http://localhost:4000/docs/codebase-governor/index/" />
+<link rel="canonical" href="http://localhost:4000/docs/codebase-governor/" />
+<meta property="og:url" content="http://localhost:4000/docs/codebase-governor/" />
 <meta property="og:site_name" content="Flutter Docs" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-11T16:04:54+00:00" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/flutter-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/codebase-governor/index/"},"url":"http://localhost:4000/docs/codebase-governor/index/","headline":"Codebase Governor","dateModified":"2021-03-11T16:04:54+00:00","description":"Find, Learn, Love…","datePublished":"2021-03-11T16:04:54+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Codebase Governor","url":"http://localhost:4000/docs/codebase-governor/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/flutter-logo.png"}},"description":"Find, Learn, Love…","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="http://localhost:4000/uploads/flutter-logo.png"/>
@@ -27,6 +25,9 @@
   <link rel="shortcut icon" href="/uploads/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/uploads/favicon.ico" type="image/x-icon">
   <link rel="alternate" type="application/rss+xml" title="Flutter Docs" href="/feed.xml">
+  
+  <script type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
+  
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/custom.js"></script>
   
@@ -133,7 +134,7 @@ function searchResults(form) {
 </head>
 
     <body>
-
+     
     
         <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
     <nav class="uk-navbar-container">
@@ -183,27 +184,16 @@ function searchResults(form) {
                 </div>
                 <div class="uk-navbar-right">
                     
-                        
-                            <div>
-                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
-                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
-                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
-                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
-                                    </form>
-                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
-                                </div>
+                    <div class="search-container">
+                        <div class="search">
+                            <div class="search-input-wrap">
+                            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Flutter Docs" aria-label="Search Flutter Docs" autocomplete="off">
+                            <label for="search-input" class="search-label"><svg height="16" class="octicon octicon-search" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg></label>
                             </div>
-                            <script>
-                            SimpleJekyllSearch({
-                                searchInput: document.getElementById('search-navbar'),
-                                resultsContainer: document.getElementById('search-navbar-results'),
-                                noResultsText: '<li class="no-results">No results found</li>',
-                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-                                json: "/search.json"
-                            });
-                            searchResults("search-navbar");
-                            </script>
-                        
+                            <div id="search-results" class="search-results"></div>
+                        </div>
+                        </div>
+                    </div>
                     
 
                     <ul class="uk-navbar-nav uk-visible@m">
@@ -305,7 +295,7 @@ function searchResults(form) {
 >
    
   <li
-    class="uk-parent menu-item-1 "
+    class="uk-parent menu-item-1 uk-active"
   >
     <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="menu-link"
       >Codebase Governor</a
@@ -402,7 +392,11 @@ function searchResults(form) {
 
 
     
+    
+        
 
+        <div class="search-overlay"></div>
+    
     </body>
 
 </html>

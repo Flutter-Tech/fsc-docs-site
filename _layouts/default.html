@@ -4,7 +4,7 @@
     {% include head.html %}
 
     <body>
-
+     
     {% if page.hero %}
         {% include hero.html %}
     {% else %}
@@ -16,7 +16,15 @@
     {% include offcanvas.html %}
 
     {% include hook-pre-closing-body.html %}
+    {% if site.search_enabled != false %}
+        {% if site.search.button %}
+        <button href="#" id="search-button" class="search-button">
+            {% octicon search height:24 %}
+        </button>
+        {% endif %}
 
+        <div class="search-overlay"></div>
+    {% endif %}
     </body>
 
 </html>
