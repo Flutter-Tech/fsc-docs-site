@@ -51,14 +51,7 @@ function initNav() {
   if (menuElements.length == 0) return;
   fdt.openMenus(menuElements);
 
-  const searchInput = document.getElementById('search-input');
-  const searchButton = document.getElementById('search-button');
-  console.log("Entered button");
-  fdt.addEvent(searchButton, 'click', function(e){
-    
-    console.log("click");
-    searchInput.focus();
-  });
+  
 }
 
 
