@@ -129,7 +129,7 @@ The site folder structure is (shortened):
 
 So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format.
 
-Every page file needs to have and header that defines the basic properties and the content to show to the user:
+Every page file needs to have an header that defines the basic properties and the content to show to the user:
 
 ```yaml
 ---
@@ -140,7 +140,7 @@ title: <title-of-the-page>
 <CONTENT>
 ```
 
-For our example the file could contain:
+The content can be Markdown or/and HTML as it supports both at the same time. For our example the file could contain:
 
 ```
 ---
