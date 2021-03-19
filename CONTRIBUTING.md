@@ -127,7 +127,7 @@ The site folder structure is (shortened):
     |   |-- how-can-i-contribute.md
 ```
 
-So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format.
+So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format. You can use Markdown or/and HTML as it supports both at the same time. 
 
 Every page file needs to have an header that defines the basic properties and the content to show to the user:
 
@@ -140,7 +140,7 @@ title: <title-of-the-page>
 <CONTENT>
 ```
 
-The content can be Markdown or/and HTML as it supports both at the same time. For our example the file could contain:
+For our example the file could contain:
 
 ```
 ---
