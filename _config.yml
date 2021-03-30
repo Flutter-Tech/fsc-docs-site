@@ -15,10 +15,6 @@ url: ""
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo: flutter-logo.png
 
-navbar:
-  sticky: true
-  search: true
-
 # Enable or disable the site search
 # Supports true (default) or false
 search_enabled: true
@@ -87,7 +83,7 @@ uploads: /uploads/
 markdown: kramdown
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
