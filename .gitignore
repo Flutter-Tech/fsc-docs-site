@@ -1,2 +1,8 @@
 .DS_Store
+
+# allow local variations
 Gemfile.lock
+
+# ignore generated content
+_site/**
+.sass-cache/**
