@@ -3,8 +3,17 @@ layout: default
 title: Community
 ---
 
-<h1>Community</h1>
+# Community
 
-Aliquam arcu dui, dignissim vel bibendum eleifend, finibus ac tellus. Aliquam ex risus, mattis vel condimentum eu, ultricies a erat. Sed mattis sem risus, id porttitor orci suscipit et. Sed sed libero eros. Integer vel accumsan massa. Vivamus id dapibus ligula. Praesent id odio et justo porttitor convallis. Phasellus mollis gravida ipsum, eleifend tincidunt risus tincidunt sit amet. Fusce iaculis tristique bibendum. Donec semper est quam, in blandit diam tempus gravida. Etiam at eleifend enim, eu cursus leo. Praesent laoreet est sit amet risus venenatis, vitae scelerisque erat lobortis. Donec in varius risus.
+One of the many pleasures of inner source is access to expert help, knowledge and support from the entire Flutter community. To help find the right person to work with you a few communities and teams exist to help:
 
-Sed pulvinar nibh suscipit justo malesuada, vitae dapibus nibh ullamcorper. Vestibulum nunc turpis, auctor a ex ut, aliquet dapibus libero. Proin commodo fringilla orci a placerat. Cras ac tincidunt risus, vel iaculis leo. Nullam tincidunt augue vel nulla tristique elementum. Vivamus sit amet arcu ante. Aliquam nec tortor id nulla pretium semper quis sit amet nisl. Vivamus dignissim, urna volutpat dignissim dignissim, ex sapien volutpat erat, vitae dapibus magna nulla et massa.
+## Inner Source Team
+
+Rob Tuley, Nuno Crisostomo and Tiago Almeida full-time job is to help you use inner source, be custodians of the GitHub `Flutter-Global` org, and manage the inner source automation that runs within it. Please reach them on slack individually, or tag `@innersource-team` to reach us all. 
+
+
+
+
+
+
+

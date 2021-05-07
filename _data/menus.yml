@@ -26,6 +26,9 @@ main:
           - url: /docs/codebase-governor/codebase-governor-guide/
             title: Codebase Governor Guide
             identifier: codebase-governor-guide
+      - url: /docs/pr-boards/
+        title: Capability PR Boards
+        identifier: pr-boards
   - url: /community/
     title: Community
     identifier: community
