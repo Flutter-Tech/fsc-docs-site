@@ -7,7 +7,12 @@
         </div>
       </div>
       <div class="uk-width-1-1 uk-width-expand@m">
-        <article class="uk-article">{{ content }}</article>
+        <article class="uk-article">
+          {% if page.toc %}
+            {% include toc.html html=content %}
+          {% endif %}
+          {{ content }}
+        </article>
       </div>
     </div>
   </div>

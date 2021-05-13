@@ -23,9 +23,12 @@ main:
         title: Codebase Governor
         identifier: codebase-governor
         children:
-          - url: /docs/codebase-governor/codebase-governor-guide/
-            title: Codebase Governor Guide
-            identifier: codebase-governor-guide
+          - url: /docs/codebase-governor/reference/
+            title: Reference
+            identifier: codebase-governor-reference
+          - url: /docs/codebase-governor/guides/
+            title: Guides
+            identifier: codebase-governor-guides
       - url: /docs/pr-boards/
         title: Capability PR Boards
         identifier: pr-boards
