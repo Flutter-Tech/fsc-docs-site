@@ -1,3 +1,5 @@
+remote_theme: Flutter-Tech/fsc-docs-theme
+
 # Site title and description
 title: Flutter Docs
 description: Find, Learn, Love...
@@ -13,7 +15,7 @@ permalink: /:title/
 url: ""
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo: flutter-logo.png
+logo: 
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -82,6 +84,8 @@ uploads: /uploads/
 # Build settings
 markdown: kramdown
 highlighter: rouge
+input: GFM
+
 
 plugins:
   - jekyll-feed
@@ -89,10 +93,13 @@ plugins:
   - jekyll-gist
   - jekyll-avatar
   - jekyll-octicons
+  - jekyll-remote-theme
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - README.md
+  - CONTRIBUTING.md
 
 sass:
   style: compressed
