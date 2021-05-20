@@ -15,10 +15,23 @@ main:
       - url: /tutorials/running-your-first-tests-on-github/
         title: Running your first tests on GitHub
         identifier: running-your-first-tests-on-github/
+  - url: /how/
+    title: How it Works
+    identifier: how
+    children:
+      - url: /how/readable-source/
+        title: Readable Source
+        identifier: readable-source
+      - url: /how/guest-contributions/
+        title: Guest Contributions
+        identifier: guest-contributions
   - url: /docs/
     title: Docs
     identifier: docs
     children:
+      - url: /docs/repo-structure/
+        title: GitHub Repository Structure
+        identifier: repo-structure
       - url: /docs/codebase-governor/
         title: Codebase Governor
         identifier: codebase-governor
@@ -32,6 +45,9 @@ main:
       - url: /docs/pr-boards/
         title: Capability PR Boards
         identifier: pr-boards
+      - url: /docs/branch-protection/
+        title: Branch Protection and Access Control
+        identifier: branch-protection
   - url: /community/
     title: Community
     identifier: community
