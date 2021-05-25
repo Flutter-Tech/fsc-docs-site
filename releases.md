@@ -8,8 +8,6 @@ toc: true
 
 ## Codebase Governor 🎩
 
----
-
 ### **Version** 1.2.1 
 
 <sup>**Released** 22 Apr 2021</sup>&nbsp;&nbsp;&nbsp;&nbsp;<sup>**Pull request** [view](https://github.com/Flutter-Global/flutter-actions/pull/75)</sup>

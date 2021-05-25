@@ -1,6 +1,9 @@
 ---
 layout: default
 title: The Inner Source Pyramid
+article_navigation: true
+next_title: Stage 1 - Readable Source
+next_url: /how/readable-source/
 ---
 
 # What is Inner Source?
@@ -22,6 +25,3 @@ Inner Source is a broad term and to clarify this within Flutter we define 4 stag
 - **Stage 4 · Pioneers** : At this stage no well established ways of working patterns exist and various groups are experimenting with different approaches.
 
 This is visually represented as the Inner source pyramid because each stage builds upon the previous one and is not possible without it. Higher stages in the pyramid are more complex, and that complexity is only justified if the circumstances require it (e.g. a high volume of contribution). So each inner source application will have an optimum position in the pyramid, the rest of the docs in this section are here to help you reach that optimum.
-
-- [Stage 1 · Readable Source](/how/1-readable-source/)
-- [Stage 2 · Accept Guest Contributions](/how/guest-contributions/)

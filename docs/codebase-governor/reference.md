@@ -2,23 +2,24 @@
 layout: default
 title: Codebase Governor
 toc: true
+article_navigation: true
+previous_title: Codebase Governor
+previous_url: /docs/codebase-governor/
+next_title: Codebase Governor Guides
+next_url: /docs/codebase-governor/guides/
 ---
 
 # Codebase Governor reference
 
----
-
 Codebase Governor is a tool, developed by GitHub and the Inner source team, that gives you the ability to manage repository owner, maintainers and, collaborators as well as repository branch protections.
 
----
-
-## codebases.json configuration file
+## Configuration file
 
 `codebases.json` is a file, placed at the root of every **capability** or **product** repository to describe all of the repositories that make up that capability or product.
 
 This is used as the basis for the **Codebase Governor** automation and to automatically generate artifacts describing the code structure by the rule-checks automation. This ensures that the codebase ownership is setup and compliant with the Inner source rules.
 
-### JSON syntax for codebases.json
+### JSON syntax
 
 At the root level you have the following keys available:
 
@@ -27,7 +28,9 @@ At the root level you have the following keys available:
 The version of the file so that the Codebase Governor adopts the correct behaviour.
 
 ```yaml
-{ +  "version": "1.2" }
+{ 
+  "version": "1.2" 
+}
 ```
 
 **`comment`**
@@ -35,10 +38,10 @@ The version of the file so that the Codebase Governor adopts the correct behavio
 Add any comments to detail any need.
 
 ```yaml
-{ "version": "1.2", +  "comment": [
-      +    "version 1.2 codebases.json example"
-      +,
-    ] }
+{ 
+  "version": "1.2",
+  "comment": ["version 1.2 codebases.json example"] 
+}
 ```
 
 **`description`**
@@ -49,7 +52,7 @@ The description of what the capability/product is.
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
-  +  "description": "Services for pricing and transacting cashout offers",
+  "description": "Services for pricing and transacting cashout offers",
 }
 ```
 
@@ -68,7 +71,7 @@ The type of your capability/product.
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
-  +  "capability-type": "capability",
+  "capability-type": "capability"
 }
 ```
 
@@ -82,7 +85,7 @@ Sets the name of your capability/product for presentation.
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
-  +  "name": "Cashout",
+  "name": "Cashout"
 }
 ```
 
@@ -97,7 +100,7 @@ The short name of your capability/product.
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  +  "nickname": "cashout",
+  "nickname": "cashout"
 }
 ```
 
@@ -113,7 +116,7 @@ The Github username of the capability/product owner.
   "capability-type": "capability",
   "name": "Cashout",
   "nickname": "cashout",
-  +  "owner": "oreilco",
+  "owner": "oreilco"
 }
 ```
 
@@ -130,13 +133,12 @@ The Github usernames of the capability/product maintainers.
   "name": "Cashout",
   "nickname": "cashout",
   "owner": "oreilco",
-  +  "maintainers": [
-      +    "oreilco",
-      +    "shanesweeney",
-      +    "tiago-guerra",
-      +    "tiagobizzy"
-      +,
-    ],
+  "maintainers": [
+    "oreilco",
+    "shanesweeney",
+    "tiago-guerra",
+    "tiagobizzy"
+  ]
 }
 ```
 
@@ -165,20 +167,20 @@ The Github usernames and teams that are repository contributors These will be ad
     "tiago-guerra",
     "tiagobizzy"
   ],
-+  "contributors": [
-+  {
-+     "users": ["shanesweeney"]
-+  },
-+  {
-+    "users": ["oreilco", "crisostomon"],
-+    "teams": ["inner-source"],
-+    "include": ["repo1", "repo2"]
-+  },
-+  {
-+    "users": ["oreilco"],
-+    "exclude": ["repo1"]
-+  }
- ]
+  "contributors": [
+   {
+      "users": ["shanesweeney"]
+   },
+   {
+     "users": ["oreilco", "crisostomon"],
+     "teams": ["inner-source"],
+     "include": ["repo1", "repo2"]
+   },
+   {
+     "users": ["oreilco"],
+     "exclude": ["repo1"]
+   }
+  ]
 }
 ```
 
@@ -230,19 +232,20 @@ Defines the policy for the capability/product.
      "exclude": ["repo1"]
    }
   ],
-+  "policy": {
-+    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-+    "branch-protections": {
-+      "bp1": {
-+        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
-+         "parameters": {
-+           "branch-name-pattern": "dev*",
-+           "include-administrators": true,
-+            "require-review-from-codeowners": true,
-+            "required-reviews-count": 5
-+          }
-+      }
-+  }
+  "policy": {
+    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+    "branch-protections": {
+      "bp1": {
+        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
+        "parameters": {
+          "branch-name-pattern": "dev*",
+          "include-administrators": true,
+          "require-review-from-codeowners": true,
+          "required-reviews-count": 5
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -254,7 +257,7 @@ Add information about the policy.
 {
   "policy":
     {
-      +    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+      "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     },
 }
 ```
@@ -268,11 +271,10 @@ You can create several policies in **`policy.branch-protections`**, defining the
   "policy":
     {
       "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-      +    "branch-protections": {
-          +
-          +,
-        },
-    },
+      "branch-protections": {
+
+      }
+    }
 }
 ```
 
@@ -285,12 +287,12 @@ To identify a determined set of definitions for a branch-protection you have to 
   "policy": {
     "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
     "branch-protections": {
-+      "bp_cap_standard": {
-+
-+      },
-+     "bp_cap_special": {
-+
-+      }
+      "bp_cap_standard": {
+
+      },
+     "bp_cap_special": {
+
+      }
     }
   }
 }
@@ -306,7 +308,7 @@ The text that adds information about the branch protection.
     "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
     "branch-protections": {
       "bp_cap_standard": {
-+        "comment": "Branch protection comment"
+        "comment": "Branch protection comment"
       }
     }
   }
@@ -392,21 +394,21 @@ Protected branch rules that mention a special character, such as `*`, `?`, or `[
     "branch-protections": {
       "bp_cap_standard": {
         "comment": "Branch protection comment",
-+        "parameters": {
-+          "branch-name-pattern": "dev*",
-+          "required-reviews-count": 5
-+          "dismisses-stale-reviews": true,
-+          "require-review-from-codeowners": true,
-+          "restricts-review-dismissals": false,
-+          "requires-status-checks": true,
-+          "requires-strict-status-checks": false,
-+          "requires-commit-signatures": false,
-+          "requires-linear-history": false,
-+          "include-administrators": true,
-+          "restrict-pushes": false,
-+          "allows-force-pushes": false,
-+          "allows-deletions": false
-+        }
+        "parameters": {
+          "branch-name-pattern": "dev*",
+          "required-reviews-count": 5
+          "dismisses-stale-reviews": true,
+          "require-review-from-codeowners": true,
+          "restricts-review-dismissals": false,
+          "requires-status-checks": true,
+          "requires-strict-status-checks": false,
+          "requires-commit-signatures": false,
+          "requires-linear-history": false,
+          "include-administrators": true,
+          "restrict-pushes": false,
+          "allows-force-pushes": false,
+          "allows-deletions": false
+        }
       }
     }
   }
@@ -461,9 +463,9 @@ Defines the repositories that belong to the capability/product.
           }
       }
   },
-+  "repos": {
-+
-+  }
+  "repos": {
+
+  }
 }
 ```
 
@@ -472,7 +474,13 @@ Defines the repositories that belong to the capability/product.
 URL of the repository. This key works as an ID to the repoitory and includes all the related data. Can be repeated for the repositories that belong to the capability/product.
 
 ```yaml
-{ "repos": { +    "https://github.com/Flutter-Global/sco-service": { + } } }
+{ 
+  "repos": {
+    "https://github.com/Flutter-Global/sco-service": {
+
+    } 
+  } 
+}
 ```
 
 **`repos.<repository-complete-url>.nickname`**
@@ -484,8 +492,10 @@ The nickname of the repository.
   "repos":
     {
       "https://github.com/Flutter-Global/sco-service":
-        { +     "nickname": "SCO" },
-    },
+        {
+          "nickname": "SCO" 
+        }
+    }
 }
 ```
 
@@ -507,8 +517,11 @@ The repository type.
   "repos":
     {
       "https://github.com/Flutter-Global/sco-service":
-        { "nickname": "SCO", +     "repotype": "service" },
-    },
+       {
+         "nickname": "SCO",
+         "repotype": "service"
+       }
+    }
 }
 ```
 
@@ -521,11 +534,14 @@ Allow the setting of a policy for the repository.
   "repos":
     {
       "https://github.com/Flutter-Global/sco-service":
-        { "nickname": "SCO", "repotype": "service", +     "policy": {
-              +
-              +,
-            } },
-    },
+      {
+        "nickname": "SCO",
+        "repotype": "service",
+        "policy": {
+
+        } 
+      }
+    }
 }
 ```
 
@@ -536,14 +552,16 @@ Set the policy for the repository. In this key you should use the identifier of 
 ```yaml
 {
   "repos":
+  {
+    "https://github.com/Flutter-Global/sco-service":
     {
-      "https://github.com/Flutter-Global/sco-service":
-        {
-          "nickname": "SCO",
-          "repotype": "service",
-          "policy": { +       "branch-protection": "bp1" },
-        },
-    },
+      "nickname": "SCO",
+      "repotype": "service",
+      "policy": {
+        "branch-protection": "bp1" 
+      }
+    }
+  }
 }
 ```
 
@@ -561,11 +579,11 @@ Allows the definition of configuration repositories needed for the parent reposi
         "branch-protection": "bp1"
       }
       "config":{
-+        "https://github.com/Flutter-Global/sco-configrepo-ppb": {
-+          "repotype":"infra-config",
-+          "policy": {
-+            "comment":"This policy is using a different type than the previous",
-+            "branch-protection": "bp2"
+        "https://github.com/Flutter-Global/sco-configrepo-ppb": {
+          "repotype":"infra-config",
+          "policy": {
+            "comment":"This policy is using a different type than the previous",
+            "branch-protection": "bp2"
           }
         }
       }
@@ -573,8 +591,6 @@ Allows the definition of configuration repositories needed for the parent reposi
   }
 }
 ```
-
----
 
 ### Current file structure (**v1.2.0**)
 

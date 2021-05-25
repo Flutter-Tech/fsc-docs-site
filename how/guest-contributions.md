@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Guest Contributions
+article_navigation: true
+previous_title: Stage 1 - Readable Source
+previous_url: /how/readable-source/
 ---
 
 # Stage 2: Guest Contributions

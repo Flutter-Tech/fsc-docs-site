@@ -1,6 +1,11 @@
 ---
 layout: default
 title: Readable Source
+article_navigation: true
+previous_title: The Inner Source Pyramid
+previous_url: /how/
+next_title: Stage 2 - Guest Contributions
+next_url: /how/guest-contributions/
 ---
 
 # Stage 1: Readable Source
