@@ -9,7 +9,7 @@ One of the many pleasures of inner source is access to expert help, knowledge an
 
 ## Inner Source Team
 
-Rob Tuley, Nuno Crisostomo and Tiago Almeida full-time job is to help you use inner source, be custodians of the GitHub `Flutter-Global` org, and manage the inner source automation that runs within it. Please reach them on slack individually, or tag `@innersource-team` to reach us all. 
+Rob Tuley, Nuno Crisóstomo and Tiago Almeida full-time job is to help you use inner source, be custodians of the GitHub `Flutter-Global` org, and manage the inner source automation that runs within it. Please reach them on slack individually, or tag `@innersource-team` to reach us all. 
 
 
 

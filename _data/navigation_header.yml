@@ -5,15 +5,16 @@ left:
     url: /
 
   - title: Docs
-    url: /docs/installation/
+    url: /docs/
 
   - title: Releases
+    url: /releases/
 
 # Navbar right menu navigation links
 
 right:
   - title: support
-    url: /support/
+    url: /community/
     button: success
 
   # - title: Changelog

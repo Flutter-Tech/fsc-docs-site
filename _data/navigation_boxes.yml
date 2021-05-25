@@ -2,15 +2,15 @@
 
 - title: Getting Started
   desc: Get started with a curated list of subjects
-  icon: cog
+  icon: lifesaver
   doc: getting-started
 
-- title: Tutorials<br><br>
+- title: Tutorials<br>
   desc: Learn about features and how to use them
-  icon: settings
-  doc: hero
+  icon: list
+  doc: tutorials
 
 - title: Docs
   desc: Find technical guidance for your specific requirements
   icon: code
-  doc: customize
+  doc: docs

@@ -17,6 +17,9 @@ url: ""
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo: 
 
+navbar:
+    sticky: true
+
 # Enable or disable the site search
 # Supports true (default) or false
 search_enabled: true
