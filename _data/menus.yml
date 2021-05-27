@@ -48,6 +48,9 @@ main:
       - url: /docs/branch-protection/
         title: Branch Protection and Access Control
         identifier: branch-protection
+      - url: /docs/automated-access/
+        title: Automated GitHub Access
+        identifier: automated-access
   - url: /community/
     title: Community
     identifier: community
