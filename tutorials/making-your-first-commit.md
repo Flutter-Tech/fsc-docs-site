@@ -1,12 +1,8 @@
 ---
 layout: default
 title: Making you first commit
+toc: false
 ---
-
-#### Sections in this article
-{:.no_toc}
-* TOC
-{:toc}
 
 # Making your first commit
 

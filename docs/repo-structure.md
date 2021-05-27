@@ -1,6 +1,7 @@
 ---
 layout: default
 title: GitHub Repository Structure
+toc: false
 ---
 
 # GitHub Repository Structure

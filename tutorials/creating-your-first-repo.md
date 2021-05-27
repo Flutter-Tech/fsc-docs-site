@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Creating your First Repo
+toc: false
 ---
 
 <h1>Creating your First Repo</h1>

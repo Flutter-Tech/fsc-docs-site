@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Releases
-toc: true
 ---
 
 # Releases

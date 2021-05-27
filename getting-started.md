@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Getting started
+toc: false
 ---
 
 <h1>Getting started</h1>

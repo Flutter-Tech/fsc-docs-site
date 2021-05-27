@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Guides
-toc: true
 article_navigation: true
 previous_title: Codebase Governor Reference
 previous_url: /docs/codebase-governor/reference/

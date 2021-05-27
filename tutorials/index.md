@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tutorials
+toc: false
 ---
 
 # Tutorials

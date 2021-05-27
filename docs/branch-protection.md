@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Branch Protection
+toc: false
 ---
 
 # Branch Protection for Accepting Contributions

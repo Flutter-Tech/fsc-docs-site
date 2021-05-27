@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Running your first tests on GitHub
+toc: false
 ---
 
 # Running your first tests on GitHub

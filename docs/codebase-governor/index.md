@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Codebase Governor
+toc: false
 article_navigation: true
 next_title: Codebase Governor Reference
 next_url: /docs/codebase-governor/reference/

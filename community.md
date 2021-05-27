@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Community
+toc: false
 ---
 
 # Community

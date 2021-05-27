@@ -1,6 +1,7 @@
 ---
 layout: default
 title: The Inner Source Pyramid
+toc: false
 article_navigation: true
 next_title: Stage 1 - Readable Source
 next_url: /how/readable-source/

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Homepage
+toc: false
 ---
 
 {% include boxes.html columns="3" title="Welcome to Flutter Inner source" subtitle="Documentation and guides from the Flutter Inner source community" %}
