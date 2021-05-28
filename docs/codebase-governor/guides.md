@@ -5,7 +5,9 @@ article_navigation: true
 previous_title: Codebase Governor Reference
 previous_url: /docs/codebase-governor/reference/
 ---
+
 # Guides
+
 ## How to install Codebase Governor
 
 The Codebase Governor tool depends on 3 factors to work correctly:
@@ -46,14 +48,14 @@ If you're creating a new Capability repository from scratch, you can use the [**
       - inner-source-maintainer4
     ```
 
-4. Select **Submit new issue**. After the submission the automation process will start and will inform you of the progress by adding comments in the created issue.
+4.  Select **Submit new issue**. After the submission the automation process will start and will inform you of the progress by adding comments in the created issue.
 
-5. When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar.
-You can see that the repo has a Pull Request.
+5.  When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar.
+    You can see that the repo has a Pull Request.
 
-6. Select the **Pull requests** tab and open it. Check if all the changes are correct and then select **Merge pull request**.
+6.  Select the **Pull requests** tab and open it. Check if all the changes are correct and then select **Merge pull request**.
 
-7. After merging the Capability repository is updated with your definitions and the **Codebase Governor** workflow will run every time you update the `codebases.json` file.
+7.  After merging the Capability repository is updated with your definitions and the **Codebase Governor** workflow will run every time you update the `codebases.json` file.
 
 This is just the beginning. You can change the behaviour of the **Codebase Governor** by adding options to the `codebases.json` file. If you want to learn more read the [📖 Codebase Governor reference](/docs/codebase-governor/reference.md) guide.
 

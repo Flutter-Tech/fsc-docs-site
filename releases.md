@@ -7,7 +7,7 @@ title: Releases
 
 ## Codebase Governor 🎩
 
-### **Version** 1.2.1 
+### **Version** 1.2.1
 
 <sup>**Released** 22 Apr 2021</sup>&nbsp;&nbsp;&nbsp;&nbsp;<sup>**Pull request** [view](https://github.com/Flutter-Global/flutter-actions/pull/75)</sup>
 
@@ -16,7 +16,7 @@ This version 1.2.1 gives you the ability to manage Collaborators (contributors) 
 #### NEW
 
 - Ability to add Collaborators (users with `write` permissions) in `codebases.json` <sup><sub>**[learn more](https://github.com/Flutter-Global/RulesOfTheRoad/blob/codebasegovernor-v1-2-docs-update/CodeBasesJson.md#contributors)**</sub></sup>
-- Ability to specify additional parameters for each branch protection type:  <sup><sub>**[learn more](https://github.com/Flutter-Global/RulesOfTheRoad/blob/codebasegovernor-v1-2-docs-update/CodeBasesJson.md#policybranch-protectionsbranch_protection_idparameters-keys)**</sub></sup>
+- Ability to specify additional parameters for each branch protection type: <sup><sub>**[learn more](https://github.com/Flutter-Global/RulesOfTheRoad/blob/codebasegovernor-v1-2-docs-update/CodeBasesJson.md#policybranch-protectionsbranch_protection_idparameters-keys)**</sub></sup>
   - `dismisses-stale-reviews`
   - `restricts-review-dismissals`
   - `requires-strict-status-checks`
@@ -25,7 +25,7 @@ This version 1.2.1 gives you the ability to manage Collaborators (contributors) 
   - `restrict-pushes`
   - `allows-force-pushes`
   - `allows-deletions`
-<br/><br/><br/>
+    <br/><br/><br/>
 
 ---
 
@@ -39,7 +39,7 @@ Version 1.1.2 is a minor patch release to fix a problem where branch protection 
 
 - The `standard-protected-master-branch` key is now correctly recognized and the branch protection policy will be cascaded to the child repositories when using the unversioned `codebases.json` file structure.
 - The new default branch `main` is used by all scripts when creating new Capabilities.
-<br/><br/><br/>
+  <br/><br/><br/>
 
 ---
 
@@ -57,7 +57,7 @@ The version 1.1.1 patch applies the new [`codebases.json`](https://github.com/Fl
 #### FIXED
 
 - When creating a new Capability using the **[Capability Creator template](https://github.com/Flutter-Global/flutter-global-automation/issues/new/choose)**, the v1.1 [`codebases.json`](https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md) structure will be used.
-<br/><br/><br/>
+  <br/><br/><br/>
 
 ---
 

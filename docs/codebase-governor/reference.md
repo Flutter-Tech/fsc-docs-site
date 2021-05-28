@@ -27,9 +27,7 @@ At the root level you have the following keys available:
 The version of the file so that the Codebase Governor adopts the correct behaviour.
 
 ```yaml
-{ 
-  "version": "1.2" 
-}
+{ "version": "1.2" }
 ```
 
 **`comment`**
@@ -37,10 +35,7 @@ The version of the file so that the Codebase Governor adopts the correct behavio
 Add any comments to detail any need.
 
 ```yaml
-{ 
-  "version": "1.2",
-  "comment": ["version 1.2 codebases.json example"] 
-}
+{ "version": "1.2", "comment": ["version 1.2 codebases.json example"] }
 ```
 
 **`description`**
@@ -70,7 +65,7 @@ The type of your capability/product.
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
-  "capability-type": "capability"
+  "capability-type": "capability",
 }
 ```
 
@@ -84,7 +79,7 @@ Sets the name of your capability/product for presentation.
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
-  "name": "Cashout"
+  "name": "Cashout",
 }
 ```
 
@@ -99,7 +94,7 @@ The short name of your capability/product.
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout"
+  "nickname": "cashout",
 }
 ```
 
@@ -115,7 +110,7 @@ The Github username of the capability/product owner.
   "capability-type": "capability",
   "name": "Cashout",
   "nickname": "cashout",
-  "owner": "oreilco"
+  "owner": "oreilco",
 }
 ```
 
@@ -132,12 +127,7 @@ The Github usernames of the capability/product maintainers.
   "name": "Cashout",
   "nickname": "cashout",
   "owner": "oreilco",
-  "maintainers": [
-    "oreilco",
-    "shanesweeney",
-    "tiago-guerra",
-    "tiagobizzy"
-  ]
+  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
 }
 ```
 
@@ -152,34 +142,23 @@ The Github usernames and teams that are repository contributors These will be ad
 ```yaml
 {
   "version": "1.2",
-  "comment": [
-    "version 1.2 codebases.json example"
-  ],
+  "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
   "nickname": "cashout",
   "owner": "oreilco",
-  "maintainers": [
-    "oreilco",
-    "shanesweeney",
-    "tiago-guerra",
-    "tiagobizzy"
-  ],
-  "contributors": [
-   {
-      "users": ["shanesweeney"]
-   },
-   {
-     "users": ["oreilco", "crisostomon"],
-     "teams": ["inner-source"],
-     "include": ["repo1", "repo2"]
-   },
-   {
-     "users": ["oreilco"],
-     "exclude": ["repo1"]
-   }
-  ]
+  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
+  "contributors":
+    [
+      { "users": ["shanesweeney"] },
+      {
+        "users": ["oreilco", "crisostomon"],
+        "teams": ["inner-source"],
+        "include": ["repo1", "repo2"],
+      },
+      { "users": ["oreilco"], "exclude": ["repo1"] },
+    ],
 }
 ```
 
@@ -203,48 +182,41 @@ Defines the policy for the capability/product.
 ```yaml
 {
   "version": "1.2",
-  "comment": [
-    "version 1.2 codebases.json example"
-  ],
+  "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
   "nickname": "cashout",
   "owner": "oreilco",
-    "maintainers": [
-    "oreilco",
-    "shanesweeney",
-    "tiago-guerra",
-    "tiagobizzy"
-  ],
-  "contributors": [
-   {
-     "users": ["shanesweeney"]
-   },
-   {
-     "users": ["oreilco", "crisostomon"],
-     "teams": ["inner-source"],
-     "include": ["repo1", "repo2"]
-   },
-   {
-     "users": ["oreilco"],
-     "exclude": ["repo1"]
-   }
-  ],
-  "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-    "branch-protections": {
-      "bp1": {
-        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
-        "parameters": {
-          "branch-name-pattern": "dev*",
-          "include-administrators": true,
-          "require-review-from-codeowners": true,
-          "required-reviews-count": 5
-        }
-      }
-    }
-  }
+  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
+  "contributors":
+    [
+      { "users": ["shanesweeney"] },
+      {
+        "users": ["oreilco", "crisostomon"],
+        "teams": ["inner-source"],
+        "include": ["repo1", "repo2"],
+      },
+      { "users": ["oreilco"], "exclude": ["repo1"] },
+    ],
+  "policy":
+    {
+      "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+      "branch-protections":
+        {
+          "bp1":
+            {
+              "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
+              "parameters":
+                {
+                  "branch-name-pattern": "dev*",
+                  "include-administrators": true,
+                  "require-review-from-codeowners": true,
+                  "required-reviews-count": 5,
+                },
+            },
+        },
+    },
 }
 ```
 
@@ -256,7 +228,7 @@ Add information about the policy.
 {
   "policy":
     {
-      "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+      "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     },
 }
 ```
@@ -270,10 +242,8 @@ You can create several policies in **`policy.branch-protections`**, defining the
   "policy":
     {
       "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-      "branch-protections": {
-
-      }
-    }
+      "branch-protections": {},
+    },
 }
 ```
 
@@ -473,13 +443,7 @@ Defines the repositories that belong to the capability/product.
 URL of the repository. This key works as an ID to the repoitory and includes all the related data. Can be repeated for the repositories that belong to the capability/product.
 
 ```yaml
-{ 
-  "repos": {
-    "https://github.com/Flutter-Global/sco-service": {
-
-    } 
-  } 
-}
+{ "repos": { "https://github.com/Flutter-Global/sco-service": {} } }
 ```
 
 **`repos.<repository-complete-url>.nickname`**
@@ -489,12 +453,7 @@ The nickname of the repository.
 ```yaml
 {
   "repos":
-    {
-      "https://github.com/Flutter-Global/sco-service":
-        {
-          "nickname": "SCO" 
-        }
-    }
+    { "https://github.com/Flutter-Global/sco-service": { "nickname": "SCO" } },
 }
 ```
 
@@ -516,11 +475,8 @@ The repository type.
   "repos":
     {
       "https://github.com/Flutter-Global/sco-service":
-       {
-         "nickname": "SCO",
-         "repotype": "service"
-       }
-    }
+        { "nickname": "SCO", "repotype": "service" },
+    },
 }
 ```
 
@@ -533,14 +489,8 @@ Allow the setting of a policy for the repository.
   "repos":
     {
       "https://github.com/Flutter-Global/sco-service":
-      {
-        "nickname": "SCO",
-        "repotype": "service",
-        "policy": {
-
-        } 
-      }
-    }
+        { "nickname": "SCO", "repotype": "service", "policy": {} },
+    },
 }
 ```
 
@@ -551,16 +501,14 @@ Set the policy for the repository. In this key you should use the identifier of 
 ```yaml
 {
   "repos":
-  {
-    "https://github.com/Flutter-Global/sco-service":
     {
-      "nickname": "SCO",
-      "repotype": "service",
-      "policy": {
-        "branch-protection": "bp1" 
-      }
-    }
-  }
+      "https://github.com/Flutter-Global/sco-service":
+        {
+          "nickname": "SCO",
+          "repotype": "service",
+          "policy": { "branch-protection": "bp1" },
+        },
+    },
 }
 ```
 

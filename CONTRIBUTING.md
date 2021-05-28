@@ -3,6 +3,7 @@
 We welcome contributions! The Flutter Documentation site will be a better resource if everyone joins in the effort to help each other.
 
 To contribute please follow this simple steps:
+
 - If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#shared-codebase](https://betfair.slack.com/archives/C0115SW13V5) channel
 - Follow the [style guidelines](#) for content tone and display
 - Raise a PR for review with a detailed list of changes made
@@ -66,10 +67,10 @@ main:
 
 Each menu as 3 attributes:
 
-- ***url***: Defines the link to where the menu option is pointing (this is a relative link and will be appended with the site URL)
-- ***title***: The title that will be used in the menu option
-- ***identifier***: Unique name of this menu
-- ***children***: Set of menu options that belong to this menu
+- **_url_**: Defines the link to where the menu option is pointing (this is a relative link and will be appended with the site URL)
+- **_title_**: The title that will be used in the menu option
+- **_identifier_**: Unique name of this menu
+- **_children_**: Set of menu options that belong to this menu
 
 So if we want to add a new option called **How can I contribute** to the menu **Tutorials**, we'll use this menu structure:
 
@@ -127,7 +128,7 @@ The site folder structure is (shortened):
     |   |-- how-can-i-contribute.md
 ```
 
-So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format. You can use Markdown or/and HTML as it supports both at the same time. 
+So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format. You can use Markdown or/and HTML as it supports both at the same time.
 
 Every page file needs to have an header that defines the basic properties and the content to show to the user:
 
@@ -136,7 +137,6 @@ Every page file needs to have an header that defines the basic properties and th
 layout: default
 title: <title-of-the-page>
 ---
-
 <CONTENT>
 ```
 
@@ -164,14 +164,6 @@ The Flutter Documentation Site provides a centralized source for onboarding tuto
 
 With the file saved, you can now create the PR for review and when approved and merged it will appear in the site.
 
-------------
+---
 
 If you have questions send us a message in Slack, in the [#shared-codebase](https://betfair.slack.com/archives/C0115SW13V5) channel.
-
-
-
-
-
-
-
-
