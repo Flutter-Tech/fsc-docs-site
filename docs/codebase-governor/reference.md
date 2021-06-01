@@ -171,6 +171,8 @@ The contributors node has 4 available keys, all of which are arrays:
 | **`include`** | Limited list of repositories the team(s)/user(s) should be granted permission.                        |
 | **`exclude`** | Limited list of repositories where the team(s)/user(s) should NOT be granted access, i.e. exceptions. |
 
+<br/>
+
 | ℹ️ &nbsp;Information                                                                                                                                                                                             |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | If you remove the `contributors` node from the `codebases.json`, all previously defined users and teams in the affected repositories will not be **removed**. As of `v1.2` you will have to remove them by hand. |
@@ -365,7 +367,7 @@ Protected branch rules that mention a special character, such as `*`, `?`, or `[
         "comment": "Branch protection comment",
         "parameters": {
           "branch-name-pattern": "dev*",
-          "required-reviews-count": 5
+          "required-reviews-count": 5,
           "dismisses-stale-reviews": true,
           "require-review-from-codeowners": true,
           "restricts-review-dismissals": false,
