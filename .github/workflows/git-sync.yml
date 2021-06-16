@@ -10,7 +10,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          source_repo: "https://almeidat2:${{ secrets.TIAGO_TOKEN }}@github.com/Flutter-Global/fsc-docs-site.git"
+          source_repo: "https://x-access-token:${{ secrets.TIAGO_TOKEN }}@github.com/Flutter-Global/fsc-docs-site.git"
           source_branch: "main"
-          destination_repo: "https://almeidat2:${{ secrets.TIAGO_TOKEN }}@github.com/Flutter-Tech/sync-site-demo.git"
+          destination_repo: "https://x-access-token:${{ secrets.TIAGO_TOKEN }}@github.com/Flutter-Tech/sync-site-demo.git"
           destination_branch: "main"
