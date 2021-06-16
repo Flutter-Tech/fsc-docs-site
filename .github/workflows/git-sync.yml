@@ -6,6 +6,8 @@ on:
 jobs:
   git-sync:
     runs-on: ubuntu-latest
+    name: Sync External Doc Site
+    environment: prod
     steps:
       - name: git-sync
         uses: wei/git-sync@v3
