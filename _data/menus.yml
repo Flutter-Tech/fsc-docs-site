@@ -6,15 +6,21 @@ main:
     title: Tutorials
     identifier: tutorials
     children:
-      - url: /tutorials/creating-your-first-repo/
-        title: Creating your first repo
-        identifier: creating-your-first-repo
-      - url: /tutorials/making-your-first-commit/
-        title: Making your first commit
-        identifier: making-your-first-commit
-      - url: /tutorials/running-your-first-tests-on-github/
-        title: Running your first tests on GitHub
-        identifier: running-your-first-tests-on-github/
+      - url: /tutorials/using-a-repo/
+        title: Using a Repo
+        identifier: using-a-repo
+      - url: /tutorials/making-a-contribution/
+        title: Making a Contribution
+        identifier: making-a-contribution
+      - url: /tutorials/setup-ci/
+        title: Setup CI on GitHub
+        identifier: setup-ci
+      - url: /tutorials/create-repo/
+        title: Creating a Repository
+        identifier: create-repo
+      - url: /tutorials/as-a-maintainer/
+        title: Maintaining a Repo
+        identifier: as-a-maintainer
   - url: /how/
     title: How it Works
     identifier: how
@@ -51,9 +57,9 @@ main:
       - url: /docs/automated-access/
         title: Automated GitHub Access
         identifier: automated-access
+      - url: /docs/using-jenkins/
+        title: Using Jenkins with GitHub
+        identifier: using-jenkins
   - url: /community/
     title: Community
     identifier: community
-  - url: /faqs/
-    title: FAQs
-    identifier: faqs

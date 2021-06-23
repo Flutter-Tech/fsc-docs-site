@@ -1,6 +1,6 @@
-# Inner Source Docs Site
+# Inner Source Docs Site (External)
 
-This is the inner source documentation site.
+This is the External Inner source documentation site data that is published in the URL: [https://innersource.flutter.com](https://innersource.flutter.com).
 
 ## To Run Locally
 

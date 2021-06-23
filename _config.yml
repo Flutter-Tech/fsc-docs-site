@@ -5,6 +5,9 @@ title: Flutter Docs
 description: Find, Learn, Love...
 lang: en
 
+# Applies internal css class to change theme
+internal: false
+
 # Site subpath, e.g. /blog
 baseurl: ""
 

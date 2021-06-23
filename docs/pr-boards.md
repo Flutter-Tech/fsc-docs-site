@@ -7,7 +7,17 @@ title: Capability Pull Request Boards
 
 A capability is a collection of repositories that together do something meaningful. Each capability is governed by a group of maintainers. Maintainers therefore require a view of all the changes ("pull requests" in GitHub) across all repositories in a capability. This view is supported by **capability pull request boards** which can be created for your capability in a few minutes.
 
-## Creating a Capability PR Board
+<div class="uk-child-width-1-1@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid data-uk-lightbox>
+  <div>
+    <div class="uk-margin-xlarge-left uk-margin-xlarge-right uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
+        <a class="uk-position-cover" href="https://youtu.be/yhizefNFLUs" data-caption="Pull Requests GitHub Project Board Automation"></a>
+        <span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
+        <h5 class="uk-card-title uk-margin">Pull Requests GitHub Project Board Automation</h5>
+    </div>
+  </div>
+</div>
+
+### Creating a Capability PR Board
 
 To create a board:
 
