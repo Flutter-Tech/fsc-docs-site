@@ -40,7 +40,7 @@ jobs:
         with:
           github-token: ${{ steps.flutter_global_app.outputs.app_token }}
           script: |
-            github.repos.get({"Flutter-Global","fsc-docs-site"})
+            github.repos.get({owner: "Flutter-Global", repo: "fsc-docs-site"})
 
       - name: git-sync
         uses: wei/git-sync@v3
