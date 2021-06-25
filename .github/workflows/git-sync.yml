@@ -25,6 +25,13 @@ jobs:
           APP_ID: 115232
           APP_INSTALLATION_ID: 16910369
 
+      - name: Check Flutter Global Token is valid
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ steps.flutter_global_app.outputs.app_token }}
+          script: |
+            github.users.getAuthenticated()
+
       - name: git-sync
         uses: wei/git-sync@v3
         with:
