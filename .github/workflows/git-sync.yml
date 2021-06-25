@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Retrieve the Flutter Global app token
         id: flutter_global_app
-        uses: Flutter-Tech/github-app-token@v1
+        uses: Flutter-Tech/github-app-token@e6ce64e6f32ff63d6e30a8ef73dcf1ef35a1332d
         with:
           APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
           APP_ID: 115213
@@ -19,7 +19,7 @@ jobs:
 
       - name: Retrieve the Flutter Tech app token
         id: flutter_tech_app
-        uses: Flutter-Tech/github-app-token@v1
+        uses: Flutter-Tech/github-app-token@e6ce64e6f32ff63d6e30a8ef73dcf1ef35a1332d
         with:
           APP_PEM: ${{ secrets.FLUTTER_TECH_PEM }}
           APP_ID: 115232
