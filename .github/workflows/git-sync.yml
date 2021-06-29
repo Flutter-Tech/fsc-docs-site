@@ -38,7 +38,7 @@ jobs:
       - name: Push to FT
         env:
           GITHUB_TOKEN: ${{ steps.flutter_tech_app.outputs.app_token }}
-          DESTINATION: "https://${GITHUB_TOKEN}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git"
+          DESTINATION: "https://${{ steps.flutter_tech_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git"
         run: |
           echo ${#GITHUB_TOKEN}
           echo ${#DESTINATION}
