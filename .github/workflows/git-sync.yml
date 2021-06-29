@@ -1,7 +1,6 @@
 # This workflow ensures the published (public) docs site
 # at Flutter-Tech/fsc-docs-site:main is always up to date
 # without exposing under-review branches from an internal repo
-
 on:
   workflow_dispatch:
   push:
@@ -10,6 +9,8 @@ on:
 
 jobs:
   git-sync:
+    # skip this job if running in the target Flutter-Tech repo...
+    if: ${{ github.repository_owner != 'Flutter-Tech' }}
     runs-on: ubuntu-latest
     name: Sync external doc site
     environment: prod
