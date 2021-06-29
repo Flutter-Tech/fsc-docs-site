@@ -1,7 +1,7 @@
 # .github/workflows/git-sync.yml
 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   git-sync:
@@ -25,16 +25,6 @@ jobs:
           APP_ID: 115232
           APP_INSTALLATION_ID: 16910369
 
-      - name: Check flutter global length of token
-        env:
-          THE_TOKEN: ${{ steps.flutter_global_app.outputs.app_token }}
-        run: echo ${#THE_TOKEN}
-
-      - name: Check flutter tech length of token
-        env:
-          THE_TOKEN: ${{ steps.flutter_tech_app.outputs.app_token }}
-        run: echo ${#THE_TOKEN}
-
       - name: Check Flutter Global Token is valid
         uses: actions/github-script@v4
         with:
@@ -42,10 +32,8 @@ jobs:
           script: |
             github.repos.get({owner: "Flutter-Global", repo: "fsc-docs-site"})
 
-      - name: git-sync
-        uses: wei/git-sync@v3
-        with:
-          source_repo: "https://${{ steps.flutter_global_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Global/fsc-docs-site.git"
-          source_branch: "main"
-          destination_repo: "https://${{ steps.flutter_tech_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git"
-          destination_branch: "main"
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: git clone
+        run: git clone https://${{ steps.flutter_tech_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git
