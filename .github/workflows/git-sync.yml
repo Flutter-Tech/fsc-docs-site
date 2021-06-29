@@ -36,6 +36,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Push to FT
+        env:
+          GITHUB_TOKEN: ${{ steps.flutter_tech_app.outputs.app_token }}
+          DESTINATION: "https://${GITHUB_TOKEN}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git"
         run: |
-          git remote add destination "https://${{ steps.flutter_tech_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git"
+          echo ${#GITHUB_TOKEN}
+          echo ${#DESTINATION}
+          git remote add destination $DESTINATION
           git push destination "main:main" -f
