@@ -32,8 +32,14 @@ jobs:
           script: |
             github.repos.get({owner: "Flutter-Global", repo: "fsc-docs-site"})
 
-      - name: Check out code
+      - name: Clone FG docs site
         uses: actions/checkout@v2
+        with:
+          path: "./fg"
 
-      - name: git clone
-        run: git clone https://${{ steps.flutter_tech_app.outputs.app_token }}:x-oauth-basic@github.com/Flutter-Tech/fsc-docs-site.git
+      - name: Clone FT docs site
+        uses: actions/checkout@v2
+        with:
+          path: "./ft"
+          repository: "Flutter-Tech/fsc-docs-site"
+          token: ${{ steps.flutter_tech_app.outputs.app_token }}
