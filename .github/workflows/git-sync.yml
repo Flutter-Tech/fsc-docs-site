@@ -24,5 +24,6 @@ jobs:
         env:
           DESTINATION: "https://x-access-token:${{ steps.flutter_tech_app.outputs.app_token }}@github.com/Flutter-Tech/fsc-docs-site.git"
         run: |
+          git config -l | grep 'extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
           git remote add destination $DESTINATION
           git push destination "main:main" -f
