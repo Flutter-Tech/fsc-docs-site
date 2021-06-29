@@ -1,5 +1,12 @@
+# This workflow ensures the published (public) docs site
+# at Flutter-Tech/fsc-docs-site:main is always up to date
+# without exposing under-review branches from an internal repo
+
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   git-sync:
@@ -7,6 +14,9 @@ jobs:
     name: Sync external doc site
     environment: prod
     steps:
+      # we use an GitHub app installed on the Flutter-Tech
+      # repo as the service account, this step simply negotiates
+      # the access token based on a PEM secret in the repo prod environment
       - name: Retrieve the Flutter Tech app token
         id: flutter_tech_app
         uses: Flutter-Tech/github-app-token@6975143c1cf1a5c6cb1823d532778402d3608505
@@ -15,12 +25,17 @@ jobs:
           APP_ID: 115232
           APP_INSTALLATION_ID: 16910369
 
+      # clone the internal (private) docs site. Note how this requires a
+      # full depth clone, plus do NOT persist credentials as we will be
+      # shortly pushing this checkout to a *different* repo
       - name: Clone FG docs site
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           persist-credentials: false
 
+      # use the GitHub app access token to force push main to the target
+      # (public) repo.
       - name: Push to FT
         env:
           DESTINATION: "https://x-access-token:${{ steps.flutter_tech_app.outputs.app_token }}@github.com/Flutter-Tech/fsc-docs-site.git"
