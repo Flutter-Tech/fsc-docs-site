@@ -38,10 +38,10 @@ Leading to:
 
 ### Exercise 1
 
-- Is this matrix of work types correct for your capability. Extend and adjust it as necessary.
+- Is this matrix of work types correct for your capability? Extend and adjust it as necessary.
 - Think of recent examples of each work type, this will help you understand the reality of how you manage each type.
 
-## Your Model for each Work Type
+## Your Model for Each Work Type
 
 Each capability defines it's own inner source engagement and SDLC model based on it's unique circumstances. This section contains a series of questions about each work type to validate and explore your model, with suggestions of common solutions.
 
