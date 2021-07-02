@@ -10,13 +10,13 @@ next_url: /how/guest-contributions/
 
 # Stage 1: Readable Source
 
-The first step towards the transparency required for inner source to work. The host team are responsible for developing the service and run their own deployment, with all changes to the service implemented by the host. However, other teams may also be deploying and using the service or including parts of it in their own services -- possible because the host team granted read access to user stories, source code, test suites, CI pipeline and build artifacts to all Flutter engineers.
+The first step towards the transparency required for inner source to work. The host team are responsible for developing the capability and run their own deployment, with all changes to the capability implemented by the host. However, other teams may also be deploying and using the capability or including parts of it in their own capabilities -- possible because the host team granted read access to user stories, source code, test suites, CI pipeline and build artifacts to all Flutter engineers.
 
 ## What should I share, and to whom?
 
 The crucial question throughout the readable source stage is:
 
-> Can others use this application?
+> Can others use this capability?
 
 Anyone within the organisation should be able to understand, build, deploy and use your work or create derivatives of it. Typically this is what you will share read access to:
 
@@ -34,7 +34,7 @@ Anyone within the organisation should be able to understand, build, deploy and u
 12. operational run-books and deployment guides
 13. operational post-mortem and learnings
 
-This list will not be complete or indeed many points may not be relevant for your circumstances. The important point to understand is that doing this stage well involves more than simply sharing access to an application's primary source code. That is a good start, but not enough.
+This list will not be complete or indeed many points may not be relevant for your circumstances. The important point to understand is that doing this stage well involves more than simply sharing access to an capability's primary application source code. That is a good start, but not enough.
 
 Within Flutter the scope of the inner source is sharing across the entire group: so access to your work should be possible across all the engineers in all divisions: International, US, UK&I and Australia.
 
@@ -42,7 +42,7 @@ Within Flutter the scope of the inner source is sharing across the entire group:
 
 It is sometimes not possible or desirable to share all our work with all of Flutter: some of it may be commercially confidential or employee/customer sensitive. If really necessary, there are two approaches to address this problem:
 
-- Separate the sensitive unshareable elements from the rest of the application: making that unshareable bit as small as possible and sharing a mock so the shared application is runnable.
+- Separate the sensitive unshareable elements from the rest of the capability: making that unshareable bit as small as possible and sharing a mock so the shared capability is runnable.
 - Reducing the sharing boundary to a more limited group: this may still be cross-divisional but might be limited to those who have a direct need for this access, or provide access reactively when requested.
 
 For example various pricing models within the inner source risk & trading ecosystem are commercially sensitive and contain specific proprietary IP that needs to be carefully protected. In this case these specific models have reduced access restrictions applied to them, but they are just a small part of the wider ecosystem that is shared to the normal extent.

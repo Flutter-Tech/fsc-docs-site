@@ -4,11 +4,13 @@ title: Guest Contributions
 article_navigation: true
 previous_title: Stage 1 - Readable Source
 previous_url: /how/readable-source/
+next_title: Stage 3 - Maintainers in Multiple Teams
+next_url: /how/multiple-teams/
 ---
 
 # Stage 2: Guest Contributions
 
-The host team retain full accountability for the service development and encourage and review 'guest' contributions from other teams who need to change it either for their own deployments or projects. If the host team deem the guest contribution to be of sufficient quality it will be accepted and the host team will take forward responsibility for it, otherwise it may be rejected or re-worked.
+The host team retain full accountability for the capability development and encourage and review 'guest' contributions from other teams who need to change it either for their own deployments or projects. If the host team deem the guest contribution to be of sufficient quality it will be accepted and the host team will take forward responsibility for it, otherwise it may be rejected or re-worked.
 
 ## What quality of contribution do you need?
 
@@ -25,7 +27,7 @@ The "quality" of a contribution is defined as:
 
 ### Agreeing a quality standard
 
-For an inner source application that is used by multiple divisions agreeing these contribution standards can be complex: security policies vary across divisions; a range of deployment topologies exist; and different divisional priorities on risk or short vs long-term investment.
+For an inner source capability that is used by multiple divisions agreeing these contribution standards can be complex: security policies vary across divisions; a range of deployment topologies exist; and different divisional priorities on risk or short vs long-term investment.
 
 For a host team just moving into this stage these standards will be the local standards of the hosting team's division. As other divisions start to use and contribute these standards will need to be adjusted to also meet their needs. This usually happens by:
 
@@ -58,9 +60,9 @@ The contents of this guide will depend on the purpose of the repository, commonl
 - the required contribution process (triage process, use of issues and pull requests, release and QA process)
 - what to expect as a contributor (SLAs for PR review time, change warranty periods after merge)
 - hot to get expert help (links to host team or community slack channel)
-- how to setup local development environment and build the application
+- how to setup local development environment and build the capability
 - how to verify changes with manual or automated tests
-- application software architecture and design ethos to follow
+- capability software architecture and design ethos to follow
 - how to write tests and what coverage is expected
 - CI and release setup, what to expect and how a contribution get released
 
@@ -78,7 +80,7 @@ Some ideas for an effective triage and early engagement process:
 - ask contributors to raise GitHub issues to get feedback before starting, and ensure a timely expert response
 - define a clear RFC process for significant change, and ensure these are reviewed
 - encourage new contributors to ask questions your team or a shared community slack channel
-- scheduled 'drop in' calendar slots with application experts, or an open-invite maintainers or host team meeting
+- scheduled 'drop in' calendar slots with capability experts, or an open-invite maintainers or host team meeting
 
 ### Using Automated PR Feedback
 

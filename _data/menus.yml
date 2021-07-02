@@ -31,6 +31,9 @@ main:
       - url: /how/guest-contributions/
         title: Guest Contributions
         identifier: guest-contributions
+      - url: /how/multiple-teams/
+        title: Maintainers in Multiple Teams
+        identifier: multiple-teams
   - url: /docs/
     title: Docs
     identifier: docs
