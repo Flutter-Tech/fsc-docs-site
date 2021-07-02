@@ -34,6 +34,15 @@ main:
       - url: /how/multiple-teams/
         title: Maintainers in Multiple Teams
         identifier: multiple-teams
+      - url: /how/independence/
+        title: Divisional Independence
+        identifier: independence
+      - url: /how/consensus/
+        title: Strategic Consensus
+        identifier: consensus
+      - url: /how/work-types/
+        title: Work Types Analysis
+        identifier: work-types
   - url: /docs/
     title: Docs
     identifier: docs

@@ -4,6 +4,8 @@ title: Guest Contributions
 article_navigation: true
 previous_title: Stage 2 - Guest Contributions
 previous_url: /how/guest-contributions/
+next_title: Divisional Independence
+next_url: /how/independence/
 ---
 
 # Stage 3: Maintainers in Multiple Teams
@@ -22,9 +24,9 @@ This stage is difficult to do well, and requires several process changes and ext
 
 There are 3 challenges that make this stage difficult:
 
-- How to maximise divisional independence
-- How to reach consensus for significant change
-- How to prioritise unpopular work
+- [How to maximise divisional independence](/how/independence/)
+- [How to reach consensus for significant change](/how/consensus/)
+- [How to prioritise unpopular work](/how/work-types/)
 
 The relative importance of tackling each of these problems depends on the reason you want to operate in this stage.
 
@@ -88,10 +90,10 @@ The "owner" role in a capability is simply the lead maintainer. Like any group, 
 
 Because the owner is accountable for these objectives, it requires more time commitment than the maintainer responsibility. For significant or critical capabilities it should be regarded as a full-time role rather than a part-time responsibility, although both approaches are possible.
 
-## Back to The 3 Challenges...
+## Back to the Challenges...
 
-Having an effective capability owner and maintainer team is required to tackle the 3 main challenges of operating your capability in stage 3, with commons solutions described in the the following pages:
+Having an effective capability owner and maintainer team is required to tackle the key challenges of operating your capability in stage 3, with common solutions described in the following pages:
 
-- TODO: How to maximise divisional independence
-- TODO: How to reach consensus for significant change
-- TODO: How to prioritise unpopular work
+- [How to maximise divisional independence](/how/independence/)
+- [How to reach consensus for significant change](/how/consensus/)
+- [How to prioritise unpopular work](/how/work-types/)
