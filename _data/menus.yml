@@ -41,7 +41,7 @@ main:
         title: Strategic Consensus
         identifier: consensus
       - url: /how/work-types/
-        title: Work Types Analysis
+        title: Work Type Analysis
         identifier: work-types
   - url: /docs/
     title: Docs
