@@ -49,14 +49,15 @@ Maintainer is the term given to a technical expert of the inner sourced capabili
 
 All maintainers share the same objectives:
 
+- Evangelise capability usage to solve the correct problems.
+- Encourage contributions, and facilitate getting them merged and released quickly.
 - New releases do not break any existing deployments.
 - Forward change and development is sustainable (i.e. not just accruing technical debt).
-- Evangelise capability usage to solve the correct problems.
 - Create new experts to replace maintainers who leave.
 
 Since all maintainers have different expertise they will contribute to these objectives in different ways. For example:
 
-![Maintainer example actions](../maintainer-objectives.jpg)
+![Maintainer example actions](../maintainer-objectives.svg)
 
 ### How Do You Become a Maintainer?
 
@@ -83,9 +84,10 @@ In practice the number of potential candidates with the time, level of expertise
 
 The "owner" role in a capability is simply the lead maintainer. Like any group, maintainers need a recognised leader to help the group co-ordinate itself and work together effectively. Therefore the owner role shares the same objectives as a maintainer but also **accepts accountability** for these within the capability.
 
+- Evangelise capability usage to solve the correct problems.
+- Encourage contributions, and facilitate getting them merged and released quickly.
 - New releases do not break any existing deployments.
 - Forward change and development is sustainable (i.e. not just accruing technical debt).
-- Evangelise capability usage to solve the correct problems.
 - Create new experts to replace maintainers who leave.
 
 Because the owner is accountable for these objectives, it requires more time commitment than the maintainer responsibility. For significant or critical capabilities it should be regarded as a full-time role rather than a part-time responsibility, although both approaches are possible.
