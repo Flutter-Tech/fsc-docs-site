@@ -57,7 +57,7 @@ All maintainers share the same objectives:
 
 Since all maintainers have different expertise they will contribute to these objectives in different ways. For example:
 
-![Maintainer example actions](../maintainer-objectives.svg)
+<img src="../maintainers.svg" width="100%">
 
 ### How Do You Become a Maintainer?
 
