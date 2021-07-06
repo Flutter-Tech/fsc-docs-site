@@ -13,9 +13,9 @@ Inner source is defined as:
 
 > The use of open source principles and practices for software development within the confines of an organisation.
 
-Inner source products within the Flutter group can be used by any team, and are open to contribution from any of our ~4000 engineers, in any division or location. We use inner source as a way to leverage the scale of our business by sharing complex technical ecosystems like our betting platform whilst allowing all teams the ability to action their own specific priorities within it themselves.
+Inner source products within the Flutter group can be used by any internal team, and are open to contribution from any of our ~4000 engineers, in any division or location. We use inner source to leverage the scale of our business by improving our products at a speed and quality that our competitors can't match. For example we inner source the same betting platform across many divisions & teams with each actioning their own priorities within it.
 
-Inner Source is a broad term and to clarify this within Flutter we define 4 stages of increasing maturity which our capabilities commonly progress through in their inner source journey.
+At Flutter we divide each inner source product into _capabilities_, with each capability encapsulating something meaningful to us and our customers. Example capabilities within our betting platform are the product catalogue, bet placement, cashout, content filtering, virtual sports and so on. Inner source is a broad term so within Flutter we define 4 stages of increasing maturity which each capability commonly progresses through on their inner source journey:
 
 ![Inner source pyramid](pyramid.jpg)
 
