@@ -1,16 +1,16 @@
 # Boxes include navigation
 
 - title: Getting Started
-  desc: Get started with a curated list of subjects
+  desc: Get started using and contributing to a repository.
   icon: lifesaver
-  doc: getting-started
+  doc: start
 
-- title: Tutorials<br>
-  desc: Learn about features and how to use them
+- title: How It Works
+  desc: Learn about the Flutter inner source way of working.
   icon: list
-  doc: tutorials
+  doc: how
 
 - title: Docs
-  desc: Find technical guidance for your specific requirements
+  desc: Technical reference for a specific detail.
   icon: code
   doc: docs

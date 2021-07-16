@@ -1,24 +1,21 @@
 main:
-  - url: /getting-started/
+  - url: /start/
     title: Getting Started
-    identifier: getting-started
-  - url: /tutorials/
-    title: Tutorials
-    identifier: tutorials
+    identifier: start
     children:
-      - url: /tutorials/using-a-repo/
+      - url: /start/using-a-repo/
         title: Using a Repo
         identifier: using-a-repo
-      - url: /tutorials/making-a-contribution/
+      - url: /start/making-a-contribution/
         title: Making a Contribution
         identifier: making-a-contribution
-      - url: /tutorials/setup-ci/
+      - url: /start/setup-ci/
         title: Setup CI on GitHub
         identifier: setup-ci
-      - url: /tutorials/create-repo/
+      - url: /start/create-repo/
         title: Creating a Repository
         identifier: create-repo
-      - url: /tutorials/as-a-maintainer/
+      - url: /start/as-a-maintainer/
         title: Maintaining a Repo
         identifier: as-a-maintainer
   - url: /how/
