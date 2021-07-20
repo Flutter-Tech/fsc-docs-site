@@ -42,13 +42,13 @@ Don't forget to [follow the repo naming conventions](/docs/repo-structure/). The
 Every user in `Flutter-Global` also has permission to create a new repository in the normal way on the GitHub site:
 
 1. Click the **+** drop-down menu on the top-right corner of a GitHub page and select **New repository**.<br/>
-   ![Creating a repository - New repository](/tutorials/create-repo/create-repository.png "Creating a repository - New repository")
+   ![Creating a repository - New repository](/start/create-repo/create-repository.png "Creating a repository - New repository")
 2. In the **Owner** drop-down, select the _Flutter-Global_ Organization, this is where our inner source code is shared.<br/>
-   ![Creating a repository - Owner](/tutorials/create-repo/owner.png "Creating a repository - Owner")
+   ![Creating a repository - Owner](/start/create-repo/owner.png "Creating a repository - Owner")
 3. Enter the name of your repo and a description. Please [follow the repo naming conventions](/docs/repo-structure/).<br/>
-   ![Creating a repository - Name and Description](/tutorials/create-repo/name.png "Creating a repository - Name and Description")
+   ![Creating a repository - Name and Description](/start/create-repo/name.png "Creating a repository - Name and Description")
 4. Within _Flutter-Global_, **all repositories have Internal visibility**. If you want something different, please contact the [inner source team](/community/).<br/>
-   ![Creating a repository - Visibility](/tutorials/create-repo/visibility.png "Creating a repository - Visibility")
+   ![Creating a repository - Visibility](/start/create-repo/visibility.png "Creating a repository - Visibility")
 5. Choose whether you want to initialise, with a README, then continue to create the repository.
 
 Creating the repo manually simply gives you an empty repo that you have full admin control over but has not been yet been appropriately configured. You will need to setup the necessary [access and branch protection control](/docs/branch-protection/) yourself depending on your needs, and assign it to a capability by adding an entry to `codebases.json` in the capability repository.
