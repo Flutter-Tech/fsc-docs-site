@@ -1,6 +1,11 @@
 ---
 layout: default
 title: Creating a Repository
+article_navigation: true
+previous_title: Setup CI on GitHub
+previous_url: /start/setup-ci/
+next_title: Maintaining a Repository
+next_url: /start/maintainer/
 ---
 
 # Creating a Repository

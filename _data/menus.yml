@@ -6,18 +6,18 @@ main:
       - url: /start/using-a-repo/
         title: Using a Repo
         identifier: using-a-repo
-      - url: /start/making-a-contribution/
+      - url: /start/contribute/
         title: Making a Contribution
-        identifier: making-a-contribution
+        identifier: contribute
       - url: /start/setup-ci/
         title: Setup CI on GitHub
         identifier: setup-ci
       - url: /start/create-repo/
         title: Creating a Repository
         identifier: create-repo
-      - url: /start/as-a-maintainer/
+      - url: /start/maintainer/
         title: Maintaining a Repo
-        identifier: as-a-maintainer
+        identifier: maintainer
   - url: /how/
     title: How it Works
     identifier: how
@@ -40,6 +40,9 @@ main:
       - url: /how/work-types/
         title: Work Type Analysis
         identifier: work-types
+  - url: /catalogue/
+    title: Product Catalogue
+    identifier: catalogue
   - url: /docs/
     title: Docs
     identifier: docs
