@@ -1,0 +1,71 @@
+name: Sync External docs site to Internal
+
+on:
+  workflow_dispatch:
+
+jobs:
+  internal-site-sync:
+    runs-on: ubuntu-20.04
+    environment: prod
+    # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
+    env:
+      FILES: _config.yml README.md CONTRIBUTING.md CNAME 
+      FOLDERS: .github catalogue _site
+    steps:
+      - name: Retrieve Flutter Global app token
+        id: flutter_global_app_token
+        uses: Flutter-Tech/github-app-token@v1
+        with:
+          APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
+          APP_ID: 115213
+          APP_INSTALLATION_ID: 16908128
+
+      - name: Clone Internal docs site
+        uses: actions/checkout@v2
+        with:
+          repository: Flutter-Global/fsc-docs-site-internal
+          ref: 'main'
+          token: ${{ steps.flutter_global_app_token.outputs.app_token }}
+
+      - name: Backup unique files
+        env:
+          BASE_REPO_NAME: fsc-docs-site
+        run: |
+          cd ../${{ env.BASE_REPO_NAME }}
+          for f in $FILES ; do mv $f $f- ; done
+          for f in $FOLDERS ; do mv $f $f- ; done
+
+      - name: Merge to Internal Site
+        id: pushToInternalSite
+        env:
+          BASE_REPO: https://x-access-token:${{ steps.flutter_global_app_token.outputs.app_token }}@github.com/Flutter-Global/fsc-docs-site.git
+        run: |
+          git config --global user.email "innersource-bot@flutter.com"
+          git config --global user.name "Inner source bot"
+          git remote add baserepo $BASE_REPO
+          git fetch baserepo
+          git merge --squash --allow-unrelated-histories -no-commit -s recursive -X theirs baserepo/main
+      
+      - name: Set the env variables for Slack message URLS
+        if: ${{ failure() }}
+        run: |
+          echo "action_run_url=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >> $GITHUB_ENV
+          echo "action_message_url=<$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/|$GITHUB_REPOSITORY>" >> $GITHUB_ENV
+
+      - name: Send Slack message to channel if merge fails
+        if: ${{ failure() }}
+        uses: Flutter-Tech/slack-actions-notifier@v1
+        env:
+          SLACK_MESSAGE: "A GitHub Actions workflow *failed* in ${{ env.action_message_url }}"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          ACTION_STATUS: ${{ job.status }}
+          ACTION_TEXT: Open workflow run
+          ACTION_URL: ${{ env.action_run_url }}
+
+      - name: Restore unique files and push to Internal site
+        run: |
+          for f in $FILES ; do file=${f-: : -1} ; mv $f- $file ; done
+          for f in $FOLDERS ; do folder=${f-: : -1} ; rm -rf $f ; mv $f- $folder ; done
+          git add .
+          git commit -m "Update from external docs site"
+          git push
