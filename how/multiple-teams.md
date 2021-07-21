@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Guest Contributions
+title: Maintainers in Multiple Teams
 article_navigation: true
 previous_title: Stage 2 - Guest Contributions
 previous_url: /how/guest-contributions/
