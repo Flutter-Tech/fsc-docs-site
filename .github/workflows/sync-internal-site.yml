@@ -1,9 +1,6 @@
 name: Sync External docs site to Internal
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
