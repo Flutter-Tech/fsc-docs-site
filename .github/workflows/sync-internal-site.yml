@@ -44,7 +44,7 @@ jobs:
           git config --global user.name "Inner source bot"
           git remote add baserepo $BASE_REPO
           git fetch baserepo
-          git merge --squash --allow-unrelated-histories -no-commit -s recursive -X theirs baserepo/main
+          git merge --squash --allow-unrelated-histories --no-commit -s recursive -X theirs baserepo/main
 
       - name: Set the env variables for Slack message URLS
         if: ${{ failure() }}
