@@ -32,8 +32,8 @@ jobs:
           BASE_REPO_NAME: fsc-docs-site
         run: |
           cd ../${{ env.BASE_REPO_NAME }}
-          for f in $FILES ; do mv $f $f- ; done
-          for f in $FOLDERS ; do mv $f $f- ; done
+          for f in $FILES ; do if [[ -f $f ]] ; then mv $f $f- ; fi ; done
+          for f in $FOLDERS ; do if [[ -d $f ]] ; then mv $f $f- ; fi ; done
 
       - name: Merge to Internal Site
         id: pushToInternalSite
@@ -56,7 +56,7 @@ jobs:
         if: ${{ failure() }}
         uses: Flutter-Tech/slack-actions-notifier@v1
         env:
-          SLACK_MESSAGE: "A GitHub Actions workflow *failed* in ${{ env.action_message_url }}"
+          SLACK_MESSAGE: "_*${{ github.workflow }}*_ failed in ${{ env.action_message_url }}"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           ACTION_STATUS: ${{ job.status }}
           ACTION_TEXT: Open workflow run
@@ -64,8 +64,8 @@ jobs:
 
       - name: Restore unique files and push to Internal site
         run: |
-          for f in $FILES ; do file=${f-: : -1} ; mv $f- $file ; done
-          for f in $FOLDERS ; do folder=${f-: : -1} ; rm -rf $f ; mv $f- $folder ; done
+          for f in $FILES ; do if [[ -f $f- ]] ; then file=${f-: : -1} ; mv $f- $file ; fi ; done
+          for f in $FOLDERS ; do if [[ -d $f- ]] ; then folder=${f-: : -1} ; rm -rf $f ; mv $f- $folder ; fi ; done
           git add .
           git commit -m "Update from external docs site"
           git push
