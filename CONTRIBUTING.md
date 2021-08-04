@@ -4,7 +4,7 @@ We welcome contributions! The Flutter Documentation site will be a better resour
 
 To contribute please follow this simple steps:
 
-- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#shared-codebase](https://betfair.slack.com/archives/C0115SW13V5) channel
+- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#inner-source](https://slack.com/archives/C0115SW13V5) channel
 - Follow the [style guidelines](#) for content tone and display
 - Raise a PR for review with a detailed list of changes made
 
@@ -153,7 +153,7 @@ title: How can I contribute
 We welcome contributions! The Flutter Documentation site will be a better resource if everyone joins in the effort to help each other.
 
 To contribute please follow this simple steps:
-- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#shared-codebase](https://betfair.slack.com/archives/C0115SW13V5) channel
+- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#inner-source](https://slack.com/archives/C0115SW13V5) channel
 - Follow the [style guidelines](#) for content tone and display
 - Raise a PR for review with a detailed list of changes made
 
@@ -166,4 +166,4 @@ With the file saved, you can now create the PR for review and when approved and 
 
 ---
 
-If you have questions send us a message in Slack, in the [#shared-codebase](https://betfair.slack.com/archives/C0115SW13V5) channel.
+If you have questions send us a message in Slack, in the [#inner-source](https://slack.com/archives/C0115SW13V5) channel.
