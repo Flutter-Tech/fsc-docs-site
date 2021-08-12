@@ -8,6 +8,8 @@ on:
 
 jobs:
   internal-site-sync:
+    # skip this job if running in the target Flutter-Tech repo...
+    if: ${{ github.repository_owner != 'Flutter-Tech' }}
     runs-on: ubuntu-20.04
     environment: prod
     # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
