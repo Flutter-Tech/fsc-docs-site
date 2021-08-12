@@ -41,7 +41,7 @@ main:
         title: Work Type Analysis
         identifier: work-types
   - url: /catalogue/
-    title: Product Catalogue
+    title: Service Catalogue
     identifier: catalogue
   - url: /docs/
     title: Docs
