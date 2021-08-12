@@ -1,8 +1,8 @@
 remote_theme: Flutter-Tech/fsc-docs-theme
 
 # Site title and description
-title: Flutter Docs
-description: Find, Learn, Love...
+title: Flutter Inner Source
+description: Guides and documentation from the Flutter inner source community. 
 lang: en
 
 # Applies internal css class to change theme
