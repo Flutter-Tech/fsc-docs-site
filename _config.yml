@@ -92,6 +92,8 @@ markdown: kramdown
 highlighter: rouge
 input: GFM
 
+kramdown:
+  auto_ids: true
 
 plugins:
   - jekyll-feed

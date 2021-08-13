@@ -22,7 +22,7 @@ This is used as the basis for the **Codebase Governor** automation and to automa
 
 At the root level you have the following keys available:
 
-**`version`**
+#### **`version`**
 
 The version of the file so that the Codebase Governor adopts the correct behaviour.
 
@@ -30,7 +30,7 @@ The version of the file so that the Codebase Governor adopts the correct behavio
 { "version": "1.2" }
 ```
 
-**`comment`**
+#### **`comment`**
 
 Add any comments to detail any need.
 
@@ -38,7 +38,7 @@ Add any comments to detail any need.
 { "version": "1.2", "comment": ["version 1.2 codebases.json example"] }
 ```
 
-**`description`**
+#### **`description`**
 
 The description of what the capability/product is.
 
@@ -50,7 +50,7 @@ The description of what the capability/product is.
 }
 ```
 
-**`capability-type`**
+#### **`capability-type`**
 
 The type of your capability/product.
 
@@ -69,7 +69,7 @@ The type of your capability/product.
 }
 ```
 
-**`name`**
+#### **`name`**
 
 Sets the name of your capability/product for presentation.
 
@@ -83,7 +83,7 @@ Sets the name of your capability/product for presentation.
 }
 ```
 
-**`nickname`**
+#### **`nickname`**
 
 The short name of your capability/product.
 
@@ -98,7 +98,7 @@ The short name of your capability/product.
 }
 ```
 
-**`owner`**
+#### **`owner`**
 
 The Github username of the capability/product owner.
 
@@ -114,7 +114,7 @@ The Github username of the capability/product owner.
 }
 ```
 
-**`maintainers`**
+#### **`maintainers`**
 
 The Github usernames of the capability/product maintainers.
 
@@ -131,7 +131,7 @@ The Github usernames of the capability/product maintainers.
 }
 ```
 
-**`contributors`**
+#### **`contributors`**
 
 The Github usernames and teams that are repository contributors These will be added with `write` permissions to all affected repositories.
 
@@ -177,7 +177,7 @@ The contributors node has 4 available keys, all of which are arrays:
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | If you remove the `contributors` node from the `codebases.json`, all previously defined users and teams in the affected repositories will not be **removed**. As of `v1.2` you will have to remove them by hand. |
 
-**`policy`**
+#### **`policy`**
 
 Defines the policy for the capability/product.
 
@@ -222,7 +222,7 @@ Defines the policy for the capability/product.
 }
 ```
 
-**`policy.comment`**
+#### **`policy.comment`**
 
 Add information about the policy.
 
@@ -235,7 +235,7 @@ Add information about the policy.
 }
 ```
 
-**`policy.branch-protections`**
+#### **`policy.branch-protections`**
 
 You can create several policies in **`policy.branch-protections`**, defining the branch protection settings needed for each, and reference them in **`repos.<repository>.policy.branch-protection`**. This allows you greater flexibility and reduces settings duplication.
 
@@ -249,7 +249,7 @@ You can create several policies in **`policy.branch-protections`**, defining the
 }
 ```
 
-**`policy.branch-protections.<branch_protection_id>`**
+#### **`policy.branch-protections.<branch_protection_id>`**
 
 To identify a determined set of definitions for a branch-protection you have to define an ID. You can create as many IDs/sets as you need.
 
@@ -269,7 +269,7 @@ To identify a determined set of definitions for a branch-protection you have to 
 }
 ```
 
-**`policy.branch-protections.<branch_protection_id>.comment`**
+#### **`policy.branch-protections.<branch_protection_id>.comment`**
 
 The text that adds information about the branch protection.
 
@@ -286,11 +286,11 @@ The text that adds information about the branch protection.
 }
 ```
 
-**`policy.branch-protections.<branch_protection_id>.parameters`**
+#### **`policy.branch-protections.<branch_protection_id>.parameters`**
 
 There are several keys you can use to tailor the Codebase Governor behaviour when you create branches. You can add them here.
 
-**`policy.branch-protections.<branch_protection_id>.parameters` keys**
+#### **`policy.branch-protections.<branch_protection_id>.parameters` keys**
 
 <table role="table">
 <thead><tr><th>key</th><th>Type</th><th>Default<br/>value</th><th>Description</th></tr></thead><tbody>
@@ -323,6 +323,7 @@ After applying this change you'll have to go to <strong>Settings -> Branches -> 
  <tr><td><code>allows-force-pushes</code></td><td>boolean</td><td>false</td><td>Permit force pushes for all users with push access.</td></tr>
  <tr><td><code>allows-deletions</code></td><td>boolean</td><td>false</td><td>Allow users with push access to delete matching branches.</td></tr>
 </tbody></table>
+
 #### Branch name pattern definition
 
 For example, to require any branch containing the word release to have at least two pull request reviews before merging, you can create a branch rule for release.
@@ -331,7 +332,7 @@ You can also set up automatic branch protection for all branches in your reposit
 
 To create an exception to an existing branch rule, you can create a new branch protection rule that is higher priority, such as a branch rule for a specific branch name.
 
-**Filter pattern cheat sheet**
+#### **Filter pattern cheat sheet**
 
 You can use special characters in path, branch, and tag filters.
 
@@ -341,7 +342,7 @@ You can use special characters in path, branch, and tag filters.
 - **`[]`** Matches one character listed in the brackets or included in ranges. Ranges can only include `a-z`, `A-Z`, and `0-9`. For example, the range`[0-9a-f]` matches any digits or lowercase letter. For example, `[CB]at` matches `Cat` or `Bat` and `[1-2]00` matches `100` and `200`.
 - **`!`**: At the start of a pattern makes it negate previous positive patterns. It has no special meaning if not the first character.
 
-**Patterns to match branches**
+#### **Patterns to match branches**
 
 | Pattern               | Description                                                    | Example matches                              |
 | :-------------------- | :------------------------------------------------------------- | :------------------------------------------- |
@@ -386,7 +387,7 @@ Protected branch rules that mention a special character, such as `*`, `?`, or `[
 }
 ```
 
-**`repos`**
+#### **`repos`**
 
 Defines the repositories that belong to the capability/product.
 
@@ -440,7 +441,7 @@ Defines the repositories that belong to the capability/product.
 }
 ```
 
-**`repos.<repository-complete-url>`**
+#### **`repos.<repository-complete-url>`**
 
 URL of the repository. This key works as an ID to the repoitory and includes all the related data. Can be repeated for the repositories that belong to the capability/product.
 
@@ -448,7 +449,7 @@ URL of the repository. This key works as an ID to the repoitory and includes all
 { "repos": { "https://github.com/Flutter-Global/sco-service": {} } }
 ```
 
-**`repos.<repository-complete-url>.nickname`**
+#### **`repos.<repository-complete-url>.nickname`**
 
 The nickname of the repository.
 
@@ -459,7 +460,7 @@ The nickname of the repository.
 }
 ```
 
-**`repos.<repository-complete-url>.repotype`**
+#### **`repos.<repository-complete-url>.repotype`**
 
 The repository type.
 
@@ -482,7 +483,7 @@ The repository type.
 }
 ```
 
-**`policy.<repository-complete-url>.policy`**
+#### **`policy.<repository-complete-url>.policy`**
 
 Allow the setting of a policy for the repository.
 
@@ -496,7 +497,7 @@ Allow the setting of a policy for the repository.
 }
 ```
 
-**`policy.<repository-complete-url>.policy.branch-protection`**
+#### **`policy.<repository-complete-url>.policy.branch-protection`**
 
 Set the policy for the repository. In this key you should use the identifier of the branch-protection setting defined in `policy.branch-protections.<branch_protection_id>`.
 
@@ -514,7 +515,7 @@ Set the policy for the repository. In this key you should use the identifier of 
 }
 ```
 
-**`policy.<repository-complete-url>.policy.config`**
+#### **`policy.<repository-complete-url>.policy.config`**
 
 Allows the definition of configuration repositories needed for the parent repository. The structure and allowed keys are the same as the supported on the key `policy.<repository-complete-url>.policy`: `nickname`, `repotype`, `comment` and `policy`.
 
