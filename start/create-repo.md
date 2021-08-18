@@ -18,7 +18,7 @@ This guide explains 3 different methods to create a new repository:
 
 ## Create a Pre-Configured Repo
 
-To create a new pre-configured repository for use within an existing capability, the [codebase governor](/docs/codebase-governor/) automation can be used. Simply raise a pull request in the relevant capability repository to add your new repository to the `codebases.json` file under the `repos` key.
+To create a new pre-configured repository for use within an existing capability, the [codebase governor](/docs/codebase-governor/) automation can be used. Simply raise a pull request in the relevant capability repository to add your new repository to the [codebases.json](/docs/codebases-json/) file under the `repos` key.
 
 ```
 ...
@@ -35,7 +35,7 @@ To create a new pre-configured repository for use within an existing capability,
 ...
 ```
 
-Don't forget to [follow the repo naming conventions](/docs/repo-structure/). The codebase governor will identify that it needs to create a new repository and comment on the PR to confirm that. Once the PR is approved and merged, the repository will be created, and configured with the correct access control and branch protections that you have declared for it.
+Don't forget to [follow the repository naming conventions](/docs/naming/). The codebase governor will identify that it needs to create a new repository and comment on the PR to confirm that. Once the PR is approved and merged, the repository will be created, and configured with the correct access control and branch protections that you have declared for it.
 
 ## Manually Create a Repo
 
@@ -45,17 +45,17 @@ Every user in `Flutter-Global` also has permission to create a new repository in
    ![Creating a repository - New repository](/start/create-repo/create-repository.png "Creating a repository - New repository")
 2. In the **Owner** drop-down, select the _Flutter-Global_ Organization, this is where our inner source code is shared.<br/>
    ![Creating a repository - Owner](/start/create-repo/owner.png "Creating a repository - Owner")
-3. Enter the name of your repo and a description. Please [follow the repo naming conventions](/docs/repo-structure/).<br/>
+3. Enter the name of your repository and a description. Please [follow the repository naming conventions](/docs/naming/).<br/>
    ![Creating a repository - Name and Description](/start/create-repo/name.png "Creating a repository - Name and Description")
 4. Within _Flutter-Global_, **all repositories have Internal visibility**. If you want something different, please contact the [inner source team](/community/).<br/>
    ![Creating a repository - Visibility](/start/create-repo/visibility.png "Creating a repository - Visibility")
 5. Choose whether you want to initialise, with a README, then continue to create the repository.
 
-Creating the repo manually simply gives you an empty repo that you have full admin control over but has not been yet been appropriately configured. You will need to setup the necessary [access and branch protection control](/docs/branch-protection/) yourself depending on your needs, and assign it to a capability by adding an entry to `codebases.json` in the capability repository.
+Creating the repository manually simply gives you an empty repository that you have full admin control over but has not been yet been appropriately configured. You will need to setup the necessary [access and branch protection control](/docs/branch-protection/) yourself depending on your needs, and assign it to a capability by adding an entry to [codebases.json](/docs/codebases-json/) in the capability repository.
 
 ## Creating a Capability Repository
 
-Creating a new capability repo is more complex so this task has some extra automation to help you.
+Creating a new capability repository is more complex so this task has some extra automation to help you.
 
 1.  Navigate to the [**Capability creation request**](https://github.com/Flutter-Global/flutter-global-automation/issues) and click the New issue button.
     ![Capability creation request - New issue](/docs/codebase-governor/codgov-capability-creation-new-issue.jpg "Capability creation request - New issue")
@@ -85,8 +85,8 @@ Creating a new capability repo is more complex so this task has some extra autom
 
 4.  Select **Submit new issue**. After the submission the automation process will start and will inform you of the progress by adding comments in the created issue.
 
-5.  When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar. You will see that the repo has a Pull Request.
+5.  When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar. You will see that the repository has a Pull Request.
 
 6.  Select the **Pull requests** tab and open it. Check if all the changes are correct and then select **Merge pull request**.
 
-7.  After merging the Capability repository is updated with your definitions and the **Codebase Governor** workflow will run every time you update the `codebases.json` file.
+7.  After merging the Capability repository is updated with your definitions and the **Codebase Governor** workflow will run every time you update the [codebases.json](/docs/codebases-json/) file.

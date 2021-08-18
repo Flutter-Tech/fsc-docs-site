@@ -1,164 +1,124 @@
 ---
 layout: default
-title: Codebase Governor
-article_navigation: true
-previous_title: Codebase Governor
-previous_url: /docs/codebase-governor/
-next_title: Codebase Governor Guides
-next_url: /docs/codebase-governor/guides/
+title: codebases.json
 ---
 
-# Codebase Governor reference
+# The codebases.json File
 
-Codebase Governor is a tool, developed by GitHub and the Inner source team, that gives you the ability to manage repository owner, maintainers and, collaborators as well as repository branch protections.
+`codebases.json` is a definition file, placed at the root of every **capability** or **product** repository to describe all of the repositories that make up that capability or product. This is used as the basis for various automation like the [codebase governor](/docs/codebase-governor/) or [service catalogue](/catalogue/) so is important that it is accurate.
 
-## Configuration file
+## `version`
 
-`codebases.json` is a file, placed at the root of every **capability** or **product** repository to describe all of the repositories that make up that capability or product.
+The version of the file format used - these docs describe the version `1.2` format.
 
-This is used as the basis for the **Codebase Governor** automation and to automatically generate artifacts describing the code structure by the rule-checks automation. This ensures that the codebase ownership is setup and compliant with the Inner source rules.
-
-### JSON syntax
-
-At the root level you have the following keys available:
-
-#### **`version`**
-
-The version of the file so that the Codebase Governor adopts the correct behaviour.
-
-```yaml
+```json
 { "version": "1.2" }
 ```
 
-#### **`comment`**
+## `comment`
 
-Add any comments to detail any need.
+Various `comment` fields are specified throughout the format definition. This are all optional but allow free-form file commentary. They are included in the spec so they will be maintained by file auto-formatting scripts.
 
-```yaml
+```json
 { "version": "1.2", "comment": ["version 1.2 codebases.json example"] }
 ```
 
-#### **`description`**
+## `description`
 
-The description of what the capability/product is.
+The description of the capability/product.
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
-  "description": "Services for pricing and transacting cashout offers",
+  "description": "Services for pricing and transacting cashout offers"
 }
 ```
 
-#### **`capability-type`**
+## `capability-type`
 
 The type of your capability/product.
 
-| `capability-type` value                                                                                                                                                                               | Description                                                                                                     |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
-| `product`                                                                                                                                                                                             | A deployable set of services providing business and technical value                                             |
-| `capability`                                                                                                                                                                                          | A capability contained within another product / capability (e.g. cashout is within the global betting platform) |
-| `framework`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | A collection of libraries and code artifacts and conventions used by / to create products and services          |
+| `capability-type` value | Description                                                                                                     |
+| :---------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| `product`               | A deployable set of services providing business and technical value                                             |
+| `capability`            | A capability contained within another product / capability (e.g. cashout is within the global betting platform) |
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
-  "capability-type": "capability",
+  "capability-type": "capability"
 }
 ```
 
-#### **`name`**
+## `name`
 
 Sets the name of your capability/product for presentation.
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
-  "name": "Cashout",
+  "name": "Cashout"
 }
 ```
 
-#### **`nickname`**
-
-The short name of your capability/product.
-
-```yaml
-{
-  "version": "1.2",
-  "comment": ["version 1.2 codebases.json example"],
-  "description": "Services for pricing and transacting cashout offers",
-  "capability-type": "capability",
-  "name": "Cashout",
-  "nickname": "cashout",
-}
-```
-
-#### **`owner`**
+## `owner`
 
 The Github username of the capability/product owner.
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
+  "owner": "robtuley"
 }
 ```
 
-#### **`maintainers`**
+## `maintainers`
 
 The Github usernames of the capability/product maintainers.
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
-  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
+  "owner": "robtuley",
+  "maintainers": ["crisostomon", "almeidat2"]
 }
 ```
 
-#### **`contributors`**
+## `contributors`
 
-The Github usernames and teams that are repository contributors These will be added with `write` permissions to all affected repositories.
+The Github usernames and teams that are repository contributors. These will be added with `write` permissions to all affected repositories.
 
 | ❗️ WARNING                                                                                                                                                                                                         |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | When using the `contributors` node, all previously defined users and teams with the `write` permission in the affected repositories will be **removed**. Only the ones defined in the `codebases.json` will remain. |
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
-  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
-  "contributors":
-    [
-      { "users": ["shanesweeney"] },
-      {
-        "users": ["oreilco", "crisostomon"],
-        "teams": ["inner-source"],
-        "include": ["repo1", "repo2"],
-      },
-      { "users": ["oreilco"], "exclude": ["repo1"] },
-    ],
+  "owner": "robtuley",
+  "maintainers": ["crisostomon", "almeidat2"],
+  "contributors": [
+    { "users": ["oreilco"] },
+    { "teams": ["all-flutter-global"], "include": ["fcq-service"] }
+  ]
 }
 ```
 
@@ -177,48 +137,37 @@ The contributors node has 4 available keys, all of which are arrays:
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | If you remove the `contributors` node from the `codebases.json`, all previously defined users and teams in the affected repositories will not be **removed**. As of `v1.2` you will have to remove them by hand. |
 
-#### **`policy`**
+## `policy`
 
 Defines the policy for the capability/product.
 
-```yaml
+```json
 {
   "version": "1.2",
   "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
-  "maintainers": ["oreilco", "shanesweeney", "tiago-guerra", "tiagobizzy"],
-  "contributors":
-    [
-      { "users": ["shanesweeney"] },
-      {
-        "users": ["oreilco", "crisostomon"],
-        "teams": ["inner-source"],
-        "include": ["repo1", "repo2"],
-      },
-      { "users": ["oreilco"], "exclude": ["repo1"] },
-    ],
-  "policy":
-    {
-      "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-      "branch-protections":
-        {
-          "bp1":
-            {
-              "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
-              "parameters":
-                {
-                  "branch-name-pattern": "dev*",
-                  "include-administrators": true,
-                  "require-review-from-codeowners": true,
-                  "required-reviews-count": 5,
-                },
-            },
-        },
-    },
+  "owner": "robtuley",
+  "maintainers": ["crisostomon", "almeidat2"],
+  "contributors": [
+    { "users": ["oreilco"] },
+    { "teams": ["all-flutter-global"], "include": ["fcq-service"] }
+  ],
+  "policy": {
+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+    "branch-protections": {
+      "bp1": {
+        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with release",
+        "parameters": {
+          "branch-name-pattern": "release*",
+          "include-administrators": true,
+          "require-review-from-codeowners": true,
+          "required-reviews-count": 3
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -226,12 +175,11 @@ Defines the policy for the capability/product.
 
 Add information about the policy.
 
-```yaml
+```json
 {
-  "policy":
-    {
-      "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-    },
+  "policy": {
+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
+  }
 }
 ```
 
@@ -239,13 +187,12 @@ Add information about the policy.
 
 You can create several policies in **`policy.branch-protections`**, defining the branch protection settings needed for each, and reference them in **`repos.<repository>.policy.branch-protection`**. This allows you greater flexibility and reduces settings duplication.
 
-```yaml
+```json
 {
-  "policy":
-    {
-      "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
-      "branch-protections": {},
-    },
+  "policy": {
+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
+    "branch-protections": {}
+  }
 }
 ```
 
@@ -253,17 +200,13 @@ You can create several policies in **`policy.branch-protections`**, defining the
 
 To identify a determined set of definitions for a branch-protection you have to define an ID. You can create as many IDs/sets as you need.
 
-```yaml
+```json
 {
   "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     "branch-protections": {
-      "bp_cap_standard": {
-
-      },
-     "bp_cap_special": {
-
-      }
+      "bp1": {},
+      "bp2": {}
     }
   }
 }
@@ -273,12 +216,12 @@ To identify a determined set of definitions for a branch-protection you have to 
 
 The text that adds information about the branch protection.
 
-```yaml
+```json
 {
   "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     "branch-protections": {
-      "bp_cap_standard": {
+      "bp1": {
         "comment": "Branch protection comment"
       }
     }
@@ -353,18 +296,17 @@ You can use special characters in path, branch, and tag filters.
 | `v2*`                 | Matches branch names that start with `v2`.                     | -`v2` -`v2.0` -`v2.9`                        |
 | `v[12].[0-9]+.[0-9]+` | Matches all semantic versioning tags with major version 1 or 2 | -`v1.10.1` -`v2.0.0`                         |
 
-#### Prioritization of branch rules
+**Prioritization of branch rules**
 
 If a repository has multiple protected branch rules that affect the same branches, the rules that include a specific branch name have the highest priority. If there is more than one protected branch rule that matches the same specific branch name, then the branch rule created first will have higher priority.
 
 Protected branch rules that mention a special character, such as `*`, `?`, or `[]`, are applied in the order they are listed, so rules that are listed first have a higher priority.
 
-```yaml
+```json
 {
   "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
     "branch-protections": {
-      "bp_cap_standard": {
+      "bp1": {
         "comment": "Branch protection comment",
         "parameters": {
           "branch-name-pattern": "dev*",
@@ -387,57 +329,36 @@ Protected branch rules that mention a special character, such as `*`, `?`, or `[
 }
 ```
 
-#### **`repos`**
+## `repos`
 
 Defines the repositories that belong to the capability/product.
 
-```yaml
+```json
 {
   "version": "1.2",
-  "comment": [
-    "version 1.2 codebases.json example"
-  ],
+  "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
-    "maintainers": [
-    "oreilco",
-    "shanesweeney",
-    "tiago-guerra",
-    "tiagobizzy"
-  ],
+  "owner": "robtuley",
+  "maintainers": ["crisostomon", "almeidat2"],
   "contributors": [
-   {
-     "users": ["shanesweeney"]
-   },
-   {
-     "users": ["oreilco", "crisostomon"],
-     "teams": ["inner-source"],
-     "include": ["repo1", "repo2"]
-   },
-   {
-     "users": ["oreilco"],
-     "exclude": ["repo1"]
-   }
+    { "users": ["oreilco"] },
+    { "teams": ["all-flutter-global"], "include": ["fcq-service"] }
   ],
   "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     "branch-protections": {
       "bp1": {
-        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
-         "parameters": {
-           "branch-name-pattern": "dev*",
-           "include-administrators": true,
-            "require-review-from-codeowners": true,
-            "required-reviews-count": 5
-          }
+        "parameters": {
+          "branch-name-pattern": "release*",
+          "include-administrators": true,
+          "require-review-from-codeowners": true,
+          "required-reviews-count": 3
+        }
       }
+    }
   },
-  "repos": {
-
-  }
+  "repos": {}
 }
 ```
 
@@ -445,41 +366,30 @@ Defines the repositories that belong to the capability/product.
 
 URL of the repository. This key works as an ID to the repoitory and includes all the related data. Can be repeated for the repositories that belong to the capability/product.
 
-```yaml
-{ "repos": { "https://github.com/Flutter-Global/sco-service": {} } }
-```
-
-#### **`repos.<repository-complete-url>.nickname`**
-
-The nickname of the repository.
-
-```yaml
-{
-  "repos":
-    { "https://github.com/Flutter-Global/sco-service": { "nickname": "SCO" } },
-}
+```json
+{ "repos": { "https://github.com/Flutter-Global/fcq-service": {} } }
 ```
 
 #### **`repos.<repository-complete-url>.repotype`**
 
 The repository type.
 
-| `repotype` value | Description                                                                           |
-| :--------------- | :------------------------------------------------------------------------------------ |
-| `service`        | A repo containing application code for running services                               |
-| `library`        | A repo containing application code for a library used by other services and libraries |
-| `tool`           | A repo containing application code for a tool used to manage a service or services    |
-| `infra-config`   | A repo containing infrastructure configuration ( e.g. I2 config for PPB )             |
-| `ansible-config` | A repo containing ansible configuration                                               |
-| `chef-config`    | A repo containing chef cookbooks / configuration                                      |
+| `repotype` value | Description                                                                                 |
+| :--------------- | :------------------------------------------------------------------------------------------ |
+| `service`        | A repository containing application code for running services                               |
+| `library`        | A repository containing application code for a library used by other services and libraries |
+| `tool`           | A repository containing application code for a tool used to manage a service or services    |
+| `infra-config`   | A repository containing infrastructure configuration ( e.g. I2 config for PPB )             |
+| `ansible-config` | A repository containing ansible configuration                                               |
+| `chef-config`    | A repository containing chef cookbooks / configuration                                      |
 
-```yaml
+```json
 {
-  "repos":
-    {
-      "https://github.com/Flutter-Global/sco-service":
-        { "nickname": "SCO", "repotype": "service" },
-    },
+  "repos": {
+    "https://github.com/Flutter-Global/fcq-service": {
+      "repotype": "service"
+    }
+  }
 }
 ```
 
@@ -487,13 +397,14 @@ The repository type.
 
 Allow the setting of a policy for the repository.
 
-```yaml
+```json
 {
-  "repos":
-    {
-      "https://github.com/Flutter-Global/sco-service":
-        { "nickname": "SCO", "repotype": "service", "policy": {} },
-    },
+  "repos": {
+    "https://github.com/Flutter-Global/fcq-service": {
+      "repotype": "service",
+      "policy": {}
+    }
+  }
 }
 ```
 
@@ -501,17 +412,14 @@ Allow the setting of a policy for the repository.
 
 Set the policy for the repository. In this key you should use the identifier of the branch-protection setting defined in `policy.branch-protections.<branch_protection_id>`.
 
-```yaml
+```json
 {
-  "repos":
-    {
-      "https://github.com/Flutter-Global/sco-service":
-        {
-          "nickname": "SCO",
-          "repotype": "service",
-          "policy": { "branch-protection": "bp1" },
-        },
-    },
+  "repos": {
+    "https://github.com/Flutter-Global/fcq-service": {
+      "repotype": "service",
+      "policy": { "branch-protection": "bp1" }
+    }
+  }
 }
 ```
 
@@ -519,21 +427,19 @@ Set the policy for the repository. In this key you should use the identifier of 
 
 Allows the definition of configuration repositories needed for the parent repository. The structure and allowed keys are the same as the supported on the key `policy.<repository-complete-url>.policy`: `nickname`, `repotype`, `comment` and `policy`.
 
-```yaml
+```json
 {
   "repos": {
-    "https://github.com/Flutter-Global/sco-service": {
-      "nickname": "SCO",
+    "https://github.com/Flutter-Global/fcq-service": {
       "repotype": "service",
       "policy": {
         "branch-protection": "bp1"
-      }
-      "config":{
-        "https://github.com/Flutter-Global/sco-configrepo-ppb": {
-          "repotype":"infra-config",
+      },
+      "config": {
+        "https://github.com/Flutter-Global/fcq-config-ppb": {
+          "repotype": "infra-config",
           "policy": {
-            "comment":"This policy is using a different type than the previous",
-            "branch-protection": "bp2"
+            "branch-protection": "bp1"
           }
         }
       }
@@ -542,128 +448,44 @@ Allows the definition of configuration repositories needed for the parent reposi
 }
 ```
 
-### Current file structure (**v1.2.0**)
+## Example
 
-```yaml
+```json
 {
   "version": "1.2",
-  "comment": [
-    "Version 1.2.0 codebases.json example"
-  ],
+  "comment": ["version 1.2 codebases.json example"],
   "description": "Services for pricing and transacting cashout offers",
   "capability-type": "capability",
   "name": "Cashout",
-  "nickname": "cashout",
-  "owner": "oreilco",
-  "maintainers": [
-    "oreilco",
-    "shanesweeney",
-    "tiago-guerra",
-    "crisostomon"
-  ],
+  "owner": "robtuley",
+  "maintainers": ["crisostomon", "almeidat2"],
   "contributors": [
-   {
-     "users": ["shanesweeney"]
-   },
-   {
-     "users": ["oreilco", "crisostomon"],
-     "teams": ["inner-source"],
-     "include": ["repo1", "repo2"]
-   },
-   {
-     "users": ["oreilco"],
-     "exclude": ["repo1"]
-   }
+    { "users": ["oreilco"] },
+    { "teams": ["all-flutter-global"], "include": ["fcq-service"] }
   ],
   "policy": {
-    "comment":"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level",
     "branch-protections": {
       "bp1": {
-        "comment": "Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with dev",
-         "parameters": {
-           "branch-name-pattern": "dev*",
-           "include-administrators": true,
-           "require-review-from-codeowners": true,
-           "required-reviews-count": 5
-          }
-      },
-      "bp2": {
-        "comment": "Capability policy",
         "parameters": {
-          "include-administrators": false,
+          "branch-name-pattern": "release*",
+          "include-administrators": true,
           "require-review-from-codeowners": true,
-          "required-reviews-count": 2
-        }
-      },
-      "bp3": {
-        "comment": "Capability policy",
-        "parameters": {
-          "include-administrators": true
+          "required-reviews-count": 3
         }
       }
     }
   },
   "repos": {
-    "https://github.com/Flutter-Global/sco-service": {
-      "nickname": "SCO",
+    "https://github.com/Flutter-Global/fcq-service": {
       "repotype": "service",
       "policy": {
-        "comment":"A policy can be applied by using <branch-protection> and the corresponding branch protection ID that was define at a the root level",
         "branch-protection": "bp1"
-      },
-      "config":{
-        "https://github.com/Flutter-Global/sco-configrepo-ppb": {
-          "repotype":"infra-config",
-          "policy": {
-            "comment":"This policy is using a different type than the previous",
-            "branch-protection": "bp2"
-          }
-        },
-        "https://github.com/Flutter-Global/sco-chef-fdnj": {
-          "repotype":"chef-config"
-        },
-        "https://github.com/Flutter-Global/sco-ansible-ppb": {
-          "repotype":"ansible-config"
-        }
       }
     },
-    "https://github.com/Flutter-Global/cashout-margin-lib": {
-      "repotype": "library"
-    },
-    "https://github.com/Flutter-Global/cashout-config-tool": {
-      "repotype": "tool"
-    },
-    "https://github.com/Flutter-Global/obrpt-ansible-pp": {
-      "nickname": "OBRPTPP",
-      "repotype": "ansible-config",
-      "config": {
-        "https://github.com/Flutter-Global/obrpt-configrepo-i2-pp": {
-          "repotype": "infra-config"
-        }
-      }
-    },
-    "https://github.com/Flutter-Global/obrpt-ansible-bf": {
-      "nickname": "OBRPTBF",
-      "repotype": "ansible-config",
-      "config": {
-        "https://github.com/Flutter-Global/obrpt-configrepo-i2-bf": {
-          "repotype": "infra-config"
-        }
-      }
-    },
-    "https://github.com/Flutter-Global/ifz-configrepo-ppb": {
-      "repotype": "infra-config"
-    }
-    "https://github.com/Flutter-Global/bab-chef-ppb": {
-      "nickname": "BAB",
-      "repotype": "chef-config",
-      "config": {
-        "https://github.com/Flutter-Global/bab-configrepo-bf": {
-          "repotype": "infra-config"
-        },
-        "https://github.com/Flutter-Global/bab-configrepo-pp": {
-          "repotype": "infra-config"
-        }
+    "https://github.com/Flutter-Global/fcq-config-ppb": {
+      "repotype": "infra-config",
+      "policy": {
+        "branch-protection": "bp1"
       }
     }
   }

@@ -9,8 +9,8 @@ title: Using Jenkins with GitHub
 
 A basic integration means the ability for a Jenkins Job to build code from Github, by manual trigger, without any automatic triggers or webhooks.
 
-- Add access to user **svc-jenkins-admin** to the repo with minimum `write` permissions, but keep in mind that for the triggering features described bellow svc-jenkins-admin will need `admin` permissions.
-- Github Repo → Settings → Manage Access → Invite Teams or People
+- Add access to user **svc-jenkins-admin** to the repository with minimum `write` permissions, but keep in mind that for the triggering features described bellow svc-jenkins-admin will need `admin` permissions.
+- Github Repository → Settings → Manage Access → Invite Teams or People
 - Configure the Jenkins Job
 
 1.  #### Manual Jenkins job push trigger configuration through Jenkins UI

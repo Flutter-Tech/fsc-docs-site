@@ -16,7 +16,7 @@ main:
         title: Creating a Repository
         identifier: create-repo
       - url: /start/maintainer/
-        title: Maintaining a Repo
+        title: Maintaining a Repository
         identifier: maintainer
   - url: /how/
     title: How it Works
@@ -44,22 +44,18 @@ main:
     title: Service Catalogue
     identifier: catalogue
   - url: /docs/
-    title: Docs
+    title: Technical Docs
     identifier: docs
     children:
-      - url: /docs/repo-structure/
-        title: GitHub Repository Structure
-        identifier: repo-structure
+      - url: /docs/naming/
+        title: Repository Naming
+        identifier: naming
+      - url: /docs/codebases-json/
+        title: The codebases.json File
+        identifier: codebases-json
       - url: /docs/codebase-governor/
         title: Codebase Governor
         identifier: codebase-governor
-        children:
-          - url: /docs/codebase-governor/reference/
-            title: Reference
-            identifier: codebase-governor-reference
-          - url: /docs/codebase-governor/guides/
-            title: Guides
-            identifier: codebase-governor-guides
       - url: /docs/pr-boards/
         title: Capability PR Boards
         identifier: pr-boards

@@ -51,8 +51,8 @@ The capability PR boards are populated by automation maintained by the [inner so
 
 Here are some simple checks if the board is not behaving as you expect:
 
-- Check on the status of the [automation scheduled process in the `fsc-cli-tool` repo Action tab](https://github.com/Flutter-Global/fsc-cli-tool/actions). You should be able to see the last run time and whether the process completed OK.
+- Check on the status of the [automation scheduled process in the `fsc-cli-tool` repository Action tab](https://github.com/Flutter-Global/fsc-cli-tool/actions). You should be able to see the last run time and whether the process completed OK.
 - Is the board an [organisation level board](https://github.com/orgs/Flutter-Global/projects)? Only organisation-level boards are automated this way.
-- The automation does not make any permissions changes to either PRs, or the board itself. If the board is not editable this needs to be resolved in the board settings by the board owner. If the card are not visible this needs the respective repo owner to grant you the correct view permissions.
+- The automation does not make any permissions changes to either PRs, or the board itself. If the board is not editable this needs to be resolved in the board settings by the board owner. If the card are not visible this needs the respective repository owner to grant you the correct view permissions.
 
 Feel free to reach out to the [inner source team](/community/) for any assistance.

@@ -1,23 +1,27 @@
 ---
 layout: default
-title: Guides
-article_navigation: true
-previous_title: Codebase Governor Reference
-previous_url: /docs/codebase-governor/reference/
+title: Codebase Governor
 ---
 
-# Guides
+# Codebase Governor
 
-## How to install Codebase Governor
+Codebase Governor is an automation tool that manages:
+
+- owner and maintainer GitHub teams and their access to capability repos
+- branch protection rules across all repos in a capability
+
+It acts on the [codebases.json](/docs/codebases-file/) declaration.
+
+## Installation
 
 The Codebase Governor tool depends on 3 factors to work correctly:
 
 - the action workflow is installed in the repo
 - a correctly structured `codebases.json` file present in the repo
-- 2 teams exist in the repo following this scheme: owner-\<name-of-the-repo\> and maintainers-\<name-of-the-repo\> with `admin` access
+- 2 teams exist in the repository following this scheme: owner-\<name-of-the-repo\> and maintainers-\<name-of-the-repo\> with `admin` access
 - `APP_ID` and `APP_PRIVATE_KEY` secrets added to the repository
 
-### When you're creating a new Capability
+### Creating a New Capability
 
 If you're creating a new Capability repository from scratch, you can use the [**Capability creation request**](https://github.com/Flutter-Global/flutter-global-automation/issues) issue template available in the [flutter-global-automation](https://github.com/Flutter-Global/flutter-global-automation/) repository.
 
@@ -40,26 +44,24 @@ If you're creating a new Capability repository from scratch, you can use the [**
     name: cap-my-new-capability
     description: Adds automation for ease of access
     owners:
-      - inner-source-admin
+      - your-github-username
     maintainers:
-      - inner-source-maintainer
-      - inner-source-maintainer2
-      - inner-source-maintainer3
-      - inner-source-maintainer4
+      - github-username-of-another
+      - github-username-of-one-more
     ```
 
 4.  Select **Submit new issue**. After the submission the automation process will start and will inform you of the progress by adding comments in the created issue.
 
 5.  When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar.
-    You can see that the repo has a Pull Request.
+    You can see that the repository has a Pull Request.
 
 6.  Select the **Pull requests** tab and open it. Check if all the changes are correct and then select **Merge pull request**.
 
 7.  After merging the Capability repository is updated with your definitions and the **Codebase Governor** workflow will run every time you update the `codebases.json` file.
 
-This is just the beginning. You can change the behaviour of the **Codebase Governor** by adding options to the `codebases.json` file. If you want to learn more read the [📖 Codebase Governor reference](/docs/codebase-governor/reference.md) guide.
+This is just the beginning. You can change the behaviour of the **Codebase Governor** by adding options to the [codebases.json file](/docs/codebases-json/).
 
-### When a Capability already exists
+### Installing on Existing Capability
 
 | ❗️ WARNING                                                                                                                                                                                                                                                          |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,53 +82,7 @@ You should also add the owner-\<name-of-the-repo\> and the maintainers-\<name-of
 
 5.  Delete all the text inside the **Edit new file** tab
 
-6.  Paste the following code in the **Edit new file** tab
-    {% raw %}
-
-    ```yaml
-    name: Codebase governor
-
-    on:
-      # Trigger on push
-      push:
-        # Trigger only on push to master
-        branches:
-          - master
-          - main
-        # Run workflow only if codebases.json has changed
-        paths:
-          - "codebases.json"
-      pull_request:
-
-    jobs:
-      run:
-        runs-on: ubuntu-latest
-
-        steps:
-          - uses: actions/checkout@v2
-
-          - name: Retrieve the admin token
-            id: github_app
-            uses: machine-learning-apps/actions-app-token@0.21
-            with:
-              APP_PEM: ${{ secrets.APP_PRIVATE_KEY }}
-              APP_ID: ${{ secrets.APP_ID }}
-
-          - name: Checkout the repository to run the automations
-            uses: actions/checkout@v2
-            with:
-              repository: Flutter-Global/flutter-actions
-              path: actions
-              token: ${{ steps.github_app.outputs.app_token }}
-
-          - name: Run codebases governor
-            uses: ./actions/codebases-governor
-            with:
-              admin_token: ${{ steps.github_app.outputs.app_token }}
-              dry_run: ${{ github.event_name == 'pull_request' }}
-    ```
-
-    {% endraw %}
+6.  Paste [the following code from an existing code governor workflow file](https://github.com/Flutter-Global/product-inner-source/blob/master/.github/workflows/codebases-governor.yml) in the **Edit new file** tab
 
 7.  Select **Start commit**
 
@@ -155,10 +111,8 @@ You should also add the owner-\<name-of-the-repo\> and the maintainers-\<name-of
     "INSERT_MAINTAINER_GITHUB_USERNAME"
   ],
   "policy": {
-    "comment": "Defined policies",
     "branch-protections": {
       "bp-standard": {
-        "comment": "Policy with standard definitions",
         "parameters": {
           "branch-name-pattern": "master",
           "include-administrators": true,
@@ -181,7 +135,7 @@ You should also add the owner-\<name-of-the-repo\> and the maintainers-\<name-of
 
 &nbsp;&nbsp;17. Open **Actions** tab and check if the Codebase Governor workflow is running.
 
-This is just the beginning. You can change the behaviour of the **Codebase Governor** by adding options to the `codebases.json` file. If you want to learn more read the [📖 Codebase Governor reference](/docs/codebase-governor/reference.md) guide.
+This is just the beginning. You can change the behaviour of the **Codebase Governor** by adding options to the [codebases.json file](/docs/codebases-json/).
 
 ---
 
@@ -193,34 +147,24 @@ With the Codebase Governor v1.x update came new functionalities and a new [codeb
 | :------------------------------------------------------------------------------------------------------------------------------------- |
 | For a complete reference of each option available in codebases.json, please consult this [📖 guide](/docs/codebase-governor/index.md). |
 
-We are going to use an example [codebases.json](/docs/codebase-governor/index.md) file that is based on a real capability and upgrade it to be compatible with the v1.x structure.
+We are going to use an example [codebases.json](/docs/codebases-json/) file that is based on a real capability and upgrade it to be compatible with the v1.x structure.
 
 The full unversioned file to update is presented below:
 
 ```json
 {
-  "description": "Capability description",
-  "owner": "oreilco",
-  "name": "product-shared-codebase",
-  "nickname": "product-shared-codebase",
-  "maintainers": [
-    "oreilco",
-    "arine-malheiro",
-    "tiago-guerra",
-    "oneill-jp",
-    "crisostomon"
-  ],
+  "owner": "robtuley",
+  "name": "product-inner-source",
+  "maintainers": ["crisostomon"],
   "policy": {
     "standard-protected-master-branch": true
   },
   "repos": {
     "https://github.com/Flutter-Global/cap-shared-codebase-documentation": {
-      "nickname": "shared-codebase-documentation",
-      "repotype": "Application"
+      "repotype": "capability"
     },
     "https://github.com/Flutter-Global/cap-shared-codebase-automation": {
-      "nickname": "shared-codebase-automation",
-      "repotype": "Application"
+      "repotype": "capability"
     }
   }
 }
@@ -230,15 +174,14 @@ The full unversioned file to update is presented below:
 
 #### 1. The inclusion of `version` key
 
-The **`version`** key allows the Codebase Governor identify the logic to use and apply the [codebases.json](/docs/codebase-governor/index.md) definitions to the repository. If it's not present the unversioned logic will be used.
+The **`version`** key allows the Codebase Governor identify the logic to use and apply the [codebases.json](/docs/codebases-json/) definitions to the repository. If it's not present the unversioned logic will be used.
 
 So we have to include it at the top of the file:
 
 ```json
 {
-+  "version": "1.1",
-  "description": "Capability description",
-  "owner": "oreilco",
++  "version": "1.2",
+  "owner": "robtuley",
 }
 ```
 
@@ -250,18 +193,16 @@ The `policy` node has a complete overhauled structure. The previous **`standard-
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The policy node is not mandatory but when included becomes the source of truth for the definitions set and allows you to control them from a single source that is versioned and has a change history. |
 
-For each branch protection set configuration you can use the **`parameters`** defined in the [📖 Codebase Governor guide](/docs/codebase-governor/index.md).
+For each branch protection set configuration you can use the **`parameters`** defined in the [📖 codebases.json guide](/docs/codebases-json/).
 
 Below you can see the branch protection rule set, **bp_cap_standard**, defined inside the **`policy.branch-protections`** node:
 
 ```json
 {
-  "version": "1.1",
+  "version": "1.2",
   "policy": {
-+    "comment": "The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"
 +    "branch-protections": {
 +      "bp_cap_standard": {
-+          "comment": "Branch protection comment",
 +          "parameters": {
 +            "branch-name-pattern": "master",
 +            "include-administrators": true,
@@ -277,9 +218,9 @@ Below you can see the branch protection rule set, **bp_cap_standard**, defined i
 
 The branch protection will be applied to a branch called **master**.
 
-| ℹ️ &nbsp;Information                                                                                                                           |
-| :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| For more details on how to use Regex patterns in `branch-name-pattern` read the [📖 Codebase Governor guide](/docs/codebase-governor/index.md) |
+| ℹ️ &nbsp;Information                                                                                                            |
+| :------------------------------------------------------------------------------------------------------------------------------ |
+| For more details on how to use Regex patterns in `branch-name-pattern` read the [📖 codebase.json guide](/docs/codebases-json/) |
 
 For this rule set to be used we still have to assign it to the repositories.
 
@@ -289,16 +230,15 @@ For each repository we now have to define which of the **`branch-protections`** 
 
 For that we have a new node **`policy`** inside of the **`repos`** node. In it we'll identify the **branch-protection name** to be used.
 
-| ℹ️ &nbsp;Information                                          |
-| :------------------------------------------------------------ |
-| You can only assign one branch-protection policy to each repo |
+| ℹ️ &nbsp;Information                                                |
+| :------------------------------------------------------------------ |
+| You can only assign one branch-protection policy to each repository |
 
 ```json
 {
   "policy": {
     "branch-protections": {
         "bp_cap_standard": {
-          "comment": "Branch protection comment",
           "parameters": {
             "branch-name-pattern": "master",
             "include-administrators": true,
@@ -309,15 +249,13 @@ For that we have a new node **`policy`** inside of the **`repos`** node. In it w
   },
   "repos": {
     "https://github.com/Flutter-Global/cap-shared-codebase-documentation" : {
-      "nickname": "shared-codebase-documentation",
-      "repotype": "Application",
+      "repotype": "capability",
 +      "policy": {
 +        "branch-protection": "bp_cap_standard"
 +      }
     },
     "https://github.com/Flutter-Global/cap-shared-codebase-automation": {
-      "nickname": "shared-codebase-automation",
-      "repotype": "Application"
+      "repotype": "capability"
 +      "policy": {
 +        "branch-protection": "bp_cap_standard"
 +      }
@@ -334,23 +272,16 @@ The final v1.x structured file is (with diff):
 
 ```json
 {
-+  "version": "1.1",
-  "description": "Capability description",
-  "owner": "oreilco",
-  "name":"product-shared-codebase",
-  "nickname":"product-shared-codebase",
++  "version": "1.2",
+  "owner": "robtuley",
+  "name":"product-inner-source",
   "maintainers": [
-    "oreilco",
-    "arine-malheiro",
-    "tiago-guerra",
-    "oneill-jp",
     "crisostomon"
   ],
   "policy": {
 -    "standard-protected-master-branch": true
 +    "branch-protections": {
 +        "bp_cap_standard": {
-+          "comment": "Branch protection comment",
 +          "parameters": {
 +            "branch-name-pattern": "master",
 +            "include-administrators": true,
@@ -361,15 +292,13 @@ The final v1.x structured file is (with diff):
   },
   "repos": {
     "https://github.com/Flutter-Global/cap-shared-codebase-documentation" : {
-      "nickname": "shared-codebase-documentation",
-      "repotype": "Application",
+      "repotype": "capability",
 +      "policy": {
 +        "branch-protection": "bp_cap_standard"
 +      }
     },
     "https://github.com/Flutter-Global/cap-shared-codebase-automation": {
-      "nickname": "shared-codebase-automation",
-      "repotype": "Application"
+      "repotype": "capability"
 +      "policy": {
 +        "branch-protection": "bp_cap_standard"
 +      }
@@ -403,21 +332,14 @@ The full file to update is presented below:
 ```json
 {
   "version": "1.2",
-  "description": "Capability description",
-  "owner": "oreilco",
-  "name":"product-shared-codebase",
-  "nickname":"product-shared-codebase",
+  "owner": "robtuley",
+  "name":"product-inner-source",
   "maintainers": [
-    "oreilco",
-    "arine-malheiro",
-    "tiago-guerra",
-    "oneill-jp",
     "crisostomon"
   ],
   "policy": {
     "branch-protections": {
         "bp_cap_standard": {
-          "comment": "Branch protection comment",
           "parameters": {
             "branch-name-pattern": "master",
             "include-administrators": true,
@@ -428,8 +350,7 @@ The full file to update is presented below:
   },
   "repos": {
     "https://github.com/Flutter-Global/cap-shared-codebase-documentation" : {
-      "nickname": "shared-codebase-documentation",
-      "repotype": "Application",
+      "repotype": "capability",
       "policy": {
         "branch-protection": "bp_cap_standard"
       }
@@ -456,11 +377,11 @@ The contributors node has 4 available keys, all of which are arrays:
 ```json
 "contributors": [
   {
-    "users": ["oreilco", "tiago-guerra"],
+    "users": ["github-username1", "github-username2"],
     "teams": ["test-team1"]
   },
   {
-    "users": ["oreilco", "tiago-guerra"],
+    "users": ["github-username1", "github-username2"],
     "exclude": ["repo1"]
   }
 ]
@@ -481,7 +402,7 @@ To add a user you have to include its Github username inside the **`users`** key
 {
   "contributors": [
     {
-+     "users": ["oreilco", "crisostomon"]
++     "users": ["robtuley", "crisostomon"]
     }
   ]
 }
@@ -494,8 +415,8 @@ To add a team you have to include its Github team name inside the **`teams`** ke
 ```json
 "contributors": [
   {
-    "users": ["oreilco", "crisostomon"],
-+   "teams": ["shared-codebase"]
+    "users": ["robtuley", "crisostomon"],
++   "teams": ["all-flutter-global"]
   }
 ]
 ```
@@ -508,93 +429,40 @@ You have the ability to **`include`** or **`exclude`** users and/or teams from c
 | :-------------------------------------------------------------------------------------------------------------- |
 | The two keys are mutually exclusive (**`include`** / **`exclude`**) so you can only use one in each definition. |
 
-If you want to **`include`** users **oreilco** and **crisostomn** and team **shared-codebase** specifically to repositories **repo1** and **repo2** you should assign him as shown below:
+If you want to **`include`** users **robtuley** and **crisostomon** and team **all-flutter-global** specifically to repositories **repo1** and **repo2** you should assign him as shown below:
 
 ```json
 "contributors": [
   {
-    "users": ["oreilco", "crisostomon"],
-    "teams": ["shared-codebase"],
+    "users": ["robtuley", "crisostomon"],
+    "teams": ["all-flutter-global"]
 +   "include": ["repo1", "repo2"]
   }
 ]
 ```
 
-If you want to **`exclude`** user **oreilco** specifically from repositories **repo1** you should assign them as shown below:
+If you want to **`exclude`** user **robtuley** specifically from repositories **repo1** you should assign them as shown below:
 
 ```json
 "contributors": [
   {
-    "users": ["oreilco", "crisostomon"],
-    "teams": ["shared-codebase"],
+    "users": ["robtuley", "crisostomon"],
+    "teams": ["all-flutter-global"]
     "include": ["repo1", "repo2"]
   },
 + {
-+    "users": ["oreilco"],
++    "users": ["robtuley"],
 +    "exclude": ["repo1"]
 + }
 ]
 ```
 
-You might have noticed that in the example above the user **oreilco** is being included in **repo1** in the first definition and excluded in the second.
+You might have noticed that in the example above the user **robtuley** is being included in **repo1** in the first definition and excluded in the second.
 
 In case of a conflicting setting between two entries, the latest entry takes precedence. This means that effectively the user would not be included as a contributor in **repo1**.
 
-The user **crisostomn** and team **shared-codebase** defined in the first entry would keep their permissions
+The user **crisostomon** and team **all-flutter-global** defined in the first entry would keep their permissions
 
 | ℹ️ &nbsp;Information                                                                      |
 | :---------------------------------------------------------------------------------------- |
 | In case of a conflicting settings between two entries, the latest entry takes precedence. |
-
-#### 4. Conclusion
-
-The final [codebases.json](https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md) file would be:
-
-```json
-{
-  "version": "1.2",
-  "description": "Capability description",
-  "owner": "oreilco",
-  "name":"product-shared-codebase",
-  "nickname":"product-shared-codebase",
-  "maintainers": [
-    "oreilco",
-    "arine-malheiro",
-    "tiago-guerra",
-    "oneill-jp",
-    "crisostomon"
-  ],
-+  "contributors": [
-+  {
-+    "users": ["oreilco", "crisostomon"],
-+    "teams": ["shared-codebase"],
-+    "include": ["repo1", "repo2"]
-+  },
-+  {
-+    "users": ["oreilco"],
-+    "exclude": ["repo1"]
-+  }
-+ ],
-  "policy": {
-    "branch-protections": {
-        "bp_cap_standard": {
-          "comment": "Branch protection comment",
-          "parameters": {
-            "branch-name-pattern": "master",
-            "include-administrators": true,
-            "require-review-from-codeowners": true,
-           "required-reviews-count": 1
-       },
-    }
-  },
-  "repos": {
-    "https://github.com/Flutter-Global/cap-shared-codebase-documentation" : {
-      "nickname": "shared-codebase-documentation",
-      "repotype": "Application",
-      "policy": {
-        "branch-protection": "bp_cap_standard"
-      }
-    }
-  }
-}
-```

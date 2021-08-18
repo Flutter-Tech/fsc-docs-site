@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Maintaining a Repo
+title: Maintaining a Repository
 article_navigation: true
 previous_title: Creating a Repo
 previous_url: /start/create-repo/
