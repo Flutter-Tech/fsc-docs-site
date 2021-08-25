@@ -60,7 +60,7 @@ main:
         title: Capability PR Boards
         identifier: pr-boards
       - url: /docs/branch-protection/
-        title: Branch Protection and Access Control
+        title: Branch Protection
         identifier: branch-protection
       - url: /docs/automated-access/
         title: Automated GitHub Access
