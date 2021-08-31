@@ -1,169 +1,71 @@
-# How to contribute to the Flutter Documentation site
+# Contributing to the Inner Source Docs
 
-We welcome contributions! The Flutter Documentation site will be a better resource if everyone joins in the effort to help each other.
+We welcome contributions! The inner source docs site will be a better resource if you help us make it better. To contribute please follow this simple steps:
 
-To contribute please follow this simple steps:
+- If your contribution will change the site structure and/or organization, discuss it first with us on Slack in [#inner-source](https://slack.com/app_redirect?channel=C0115SW13V5).
+- Raise a PR for review.
 
-- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#inner-source](https://slack.com/archives/C0115SW13V5) channel
-- Follow the [style guidelines](#) for content tone and display
-- Raise a PR for review with a detailed list of changes made
+## Setup
 
-## Overview
+The site is built using [Jekyll](https://jekyllrb.com/) and hosted using [GitHub Pages](https://pages.github.com/). Follow the instructions in the `README.md` to render the site locally.
 
-The Flutter Documentation Site provides a centralized source for onboarding tutorials, training, ways of working, technical documentation and more. It's built using [Jekyll](https://jekyllrb.com/) and hosted using [GitHub Pages](https://pages.github.com/).
+## Minor Edits
 
-## How can I contribute?
+Minor edits should be straight-forward as the bulk of the site is written in plain markdown. Clone the repo, find the file, make the edit and commit the change in a new branch. You should use [Prettier](https://prettier.io/) to auto-format your markdown to maintain style consistency (this is enforced by a PR linting rule to help remind you). You should have permission to push the branch and raise a PR for review.
 
-### Pre-requisites
-
-Before you begin contributing you'll need to clone the site GitHub repository into your machine.
-
-To do this, open a terminal and:
-
-1. Navigate to the folder you want to clone the repository to
-2. Execute one of the following commands:
-   HTTPS: `git clone https://github.com/Flutter-Global/fsc-docs-site.git`
-   SSH: `git clone git@github.com:Flutter-Global/fsc-docs-site.git`
-3. Create a new branch for the changes with:
-   `git checkout -b <name-of-the-branch>`
-4. Now you have the files ready to use in your machine
-
-### Creating and adding content
-
-This section guides you through creating and adding new content to the already existing documentation.
+## Major Edits: Adding Content
 
 There are two main concerns when adding new content:
 
 1. Where the content will be in the site navigation
 2. The content itself
 
-#### The content and the site navigation
+The site navigation is defined in the file `_data/menus.yml`: its format should be self-explanatory.
 
-When creating new content you'll usually create a page to contain it. In the site the sidebar navigation is defined in the file `_data/menus.yml`.
-
-First you'll have to decide where the new page menu option is going to appear. As an example we're going to add the page **How can I contribute** as a child of the menu **Tutorials**.
-
-When opening the file `_data/menus.yml` you'll encounter a structure similar to what's below:
-
-```yaml
-main:
-  - url: /getting-started/
-    title: Getting Started
-    identifier: getting-started
-  - url: /tutorials/
-    title: Tutorials
-    identifier: tutorials
-    children:
-      - url: /tutorials/creating-your-first-repo/
-        title: Creating your first repo
-        identifier: creating-your-first-repo
-      - url: /tutorials/making-your-first-commit/
-        title: Making your first commit
-        identifier: making-your-first-commit
-      - url: /tutorials/running-your-first-tests-on-github/
-        title: Running your first tests on GitHub
-        identifier: running-your-first-tests-on-github
-```
-
-Each menu as 3 attributes:
-
-- **_url_**: Defines the link to where the menu option is pointing (this is a relative link and will be appended with the site URL)
-- **_title_**: The title that will be used in the menu option
-- **_identifier_**: Unique name of this menu
-- **_children_**: Set of menu options that belong to this menu
-
-So if we want to add a new option called **How can I contribute** to the menu **Tutorials**, we'll use this menu structure:
-
-```
-- url: /tutorials/how-can-i-contribute
-  title: How can I contribute
-  identifier: how-can-i-caontribute
-```
-
-The resulting file will be:
-
-```yaml
-main:
-  - url: /getting-started/
-    title: Getting Started
-    identifier: getting-started
-  - url: /tutorials/
-    title: Tutorials
-    identifier: tutorials
-    children:
-      - url: /tutorials/creating-your-first-repo/
-        title: Creating your first repo
-        identifier: creating-your-first-repo
-      - url: /tutorials/making-your-first-commit/
-        title: Making your first commit
-        identifier: making-your-first-commit
-      - url: /tutorials/running-your-first-tests-on-github/
-        title: Running your first tests on GitHub
-        identifier: running-your-first-tests-on-github
-      - url: /tutorials/how-can-i-contribute
-        title: How can I contribute
-        identifier: how-can-i-caontribute
-```
-
-This will create the option that will appear in the last position of the menu. To change the order just move the new entry to another position before the **- url:** statement within the list.
-
-#### The content
-
-Has previously stated the content will reside inside a page. Continuing to use the previous example, **How can I contribute**, we'll create the page file in the correct folder and add the content to it.
-
-As defined the page will be a child of the Tutorials menu and we have to create the file in the folder that belongs to the parent menu.
-
-The site folder structure is (shortened):
-
-```
-|-- fsc-docs-site
-    |-- _data
-    |-- (...)
-    |-- _layouts
-    |-- docs
-    |-- tutorials
-    |   |-- creating-your-first-repo.md
-    |   |-- making-your-first-commit.md
-    |   |-- (...)
-    |   |-- how-can-i-contribute.md
-```
-
-So the file for our page will have to be created inside the **tutorials** folder with the **identifier** value defined previously and the .md extension (how-can-i-contribute.md). Inside we'll add the content in [Markdown](https://daringfireball.net/projects/markdown/syntax) format. You can use Markdown or/and HTML as it supports both at the same time.
-
-Every page file needs to have an header that defines the basic properties and the content to show to the user:
+The new content file itself should be written in [Markdown](https://daringfireball.net/projects/markdown/syntax) and requires the minimum frontmatter:
 
 ```yaml
 ---
 layout: default
-title: <title-of-the-page>
+title: My Page Title
 ---
-<CONTENT>
+This is my new markdown page...
 ```
 
-For our example the file could contain:
+### Table of Contents
+
+If you want to add a Table of contents to your documentation page, you've to add the key **toc** with the value `true` in the front matter section at the top of the file.
 
 ```
 ---
 layout: default
-title: How can I contribute
+title: My Page Title
+toc: true
 ---
-
-# How to contribute to the Flutter Documentation site
-
-We welcome contributions! The Flutter Documentation site will be a better resource if everyone joins in the effort to help each other.
-
-To contribute please follow this simple steps:
-- If your contribution will change the site structure and/or organization, discuss it first with us on Slack at the [#inner-source](https://slack.com/archives/C0115SW13V5) channel
-- Follow the [style guidelines](#) for content tone and display
-- Raise a PR for review with a detailed list of changes made
-
-## Overview
-
-The Flutter Documentation Site provides a centralized source for onboarding tutorials, training, ways of working, technical documentation and more. It's built using [Jekyll](https://jekyllrb.com/) and hosted using [GitHub Pages](https://pages.github.com/).
 ```
 
-With the file saved, you can now create the PR for review and when approved and merged it will appear in the site.
+### Removing logical meaning when using chars from HTML
 
----
+If you want to write something like this, `<ADD_THIS_VALUE>`, you have to remove the logical meaning of **`<`** and **`>`** by adding a **`\`** before the symbol.
 
-If you have questions send us a message in Slack, in the [#inner-source](https://slack.com/archives/C0115SW13V5) channel.
+Example: `\<ADD_THIS_VALUE\>`
+
+### Removing logical meaning when using chars from Liquid
+
+When using code snippets, commonly GitHub actions workflows yaml, in the Docs you might see that the content isn't rendered correctly. This is because the code inside is has `${{ <SOME_VALUE> }}` in the snippet.
+
+To correct this you've to surround the code snippet like the example below:
+
+````
+{% raw %}
+    ```yaml
+
+    APP_PEM: ${{ secrets.APP_PRIVATE_KEY }}
+    APP_ID: ${{ secrets.APP_ID }}
+
+    ```
+{% endraw %}
+
+````
+
+If you have questions send us a message in Slack, in the [#inner-source](https://slack.com/app_redirect?channel=C0115SW13V5) channel.
