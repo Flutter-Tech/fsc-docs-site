@@ -14,7 +14,7 @@ Our entire inner source portfolio is contained in the [Flutter-Global GitHub org
 
 This section documents each of these areas in more detail.
 
-## Product & Capability
+## Capability
 
 A **capability** is the core building block of our repository structure.
 
