@@ -14,7 +14,11 @@ Welcome to Flutter inner source! Inner source products within the Flutter group 
 
 ## Getting Access
 
-We use GitHub to support our inner source ambitions, with all inner sourced products located in the [`Flutter-Global`](https://github.com/Flutter-Global) organisation to simplify access. If you are a Flutter employee and wish to participate please request access via your divisional service desk (e.g. search JIRA service desk for "GitHub"). If you're not already a member of the Flutter team, [we're likely hiring somewhere near you](https://www.flutter.com/careers).
+We use GitHub to support our inner source ambitions, with all inner sourced products located in the [Flutter-Global GitHub organisation](https://github.com/Flutter-Global) to simplify access.
+
+- If you are already a member of `Flutter-Global`, please use the internal docs site at [developers.flutter.com](https://developers.flutter.com/start/) as it has extra content.
+- If you are a Flutter employee without GitHub access and wish to participate please request access via your divisional service desk (e.g. search JIRA service desk for "GitHub").
+- If you're not yet part of the Flutter team, [we're likely hiring somewhere near you](https://www.flutter.com/careers)!
 
 {% endunless %}
 
