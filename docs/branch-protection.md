@@ -24,6 +24,7 @@ Your choice of branching strategy will depend on your context and desired [inner
 - While most GitHub opensource projects use a [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow), this is **not appropriate** for inner source. Inner source repository contents are not public, making unsecured forks in personal accounts unacceptable. It is for this reason that normal GitHub forking shortcuts are disabled.
 - Contributors therefore need write access to your repository, so they can push a new branch containing their changes and create a pull request for review. If possible you should grant repository write access to the `all-flutter-global` team which contains all organisation members.
 - This is why branch protection configuration is a critical part of inner source repository setup: it allows you to enable contributions from all members by granting repository write access, while remaining confident that your important branches are robustly protected.
+- A typical inner source service has multiple deployments from the same shared codebase repository. These deployments are released separately meaning multiple versions are deployed at any time. It is therefore necessary to use a branching model that supports operational hotfix and release for all versions in production.
 
 ## Configuring Branch Protection
 
