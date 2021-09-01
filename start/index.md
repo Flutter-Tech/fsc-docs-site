@@ -43,4 +43,4 @@ Once you've got access and orientated it's time for you to make your impact with
 
 ## Community
 
-Good luck! Remember when you get stuck, or just want to discuss or share something -- there is a [inner source community within Flutter to help you](/community/). Come and join in!
+Good luck! Remember when you get stuck, or just want to discuss or share something -- there is an [inner source community within Flutter to help you](/community/). Come and join in!
