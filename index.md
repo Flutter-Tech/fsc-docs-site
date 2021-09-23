@@ -8,6 +8,8 @@ toc: false
 
 ## Winning Together with Inner Source
 
+<div style="position: relative; display: block; max-width: 1280px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/rJgmHWotkf_default/index.html?videoId=6272958400001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>
+
 Inner source products within the [Flutter group](https://www.flutter.com/) can be used by any internal team, and are open to contribution from any of our ~4000 engineers in any division or location. We use inner source to leverage the scale of our business by improving our products at a speed and quality that our competitors can't match. For example we inner source the same betting platform across many divisions & teams with each actioning their own priorities within it. [Read more about how this works by exploring our stages of inner source maturity...](/how/)
 
 Our inner source portfolio is contained in the [Flutter-Global GitHub organisation](https://github.com/Flutter-Global). GitHub recommends a flat single-org repository structure like this for inner source to simplify access control and consistent team management. At our scale with thousands of inner source repositories extra structure and conventions are required so we group repositories by "capability" and provide automated tooling to work on these repository groups. [Read more about our GitHub conventions and automation...](/docs/)
