@@ -17,7 +17,7 @@ A wide variety of repository branching strategy options are documented elsewhere
 - [GitHub Flow](https://guides.github.com/introduction/flow/)
 - [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 - [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)
-- [Trunk Based Development](https://trunkbaseddevelopment.com/)
+- [Trunk Based Development](https://trunkbaseddevelopment.com/) ([DORA](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development))
 
 Your choice of branching strategy will depend on your context and desired [inner source stage](/how/). Note that for inner source:
 
