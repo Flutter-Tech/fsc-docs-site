@@ -4,8 +4,8 @@ title: Maintainers in Multiple Teams
 article_navigation: true
 previous_title: Stage 2 - Guest Contributions
 previous_url: /how/guest-contributions/
-next_title: Divisional Independence
-next_url: /how/independence/
+next_title: Capability Owners
+next_url: /how/owner/
 ---
 
 # Stage 3: Maintainers in Multiple Teams
@@ -34,7 +34,7 @@ The relative importance of tackling each of these problems depends on the reason
 - If the reason is control, the priority is ensuring a robust and clear consensus mechanism between divisions for any significant change so each is confident they have a strong enough influence over it's future.
 - If the reason is maturity the most acute challenge is usually ownership of unpopular work like security maintenance.
 
-This document outlines the usual solutions to these challenges. You should start by recognising the inner source maintainer and owner responsibilities.
+This document outlines the usual solutions to these challenges. You should start by recognising the inner source maintainer and [owner](/how/owner/) responsibilities.
 
 ## Who are "Maintainers"?
 
@@ -78,19 +78,15 @@ How many maintainers you need will depend on your own context and circumstances,
 
 In practice the number of potential candidates with the time, level of expertise and motivation required to act as a maintainer is usually the limiting factor.
 
-## The Owner Role
+## Capability Owner
 
-> Coming together is a beginning. Keeping together is progress. Working together is success.
+Our experience is that almost all successful capabilities in stage 3 have clear ownership with a named individual as a [capability owner](/how/owner/). An owner will:
 
-The "owner" role in a capability is simply the lead maintainer. Like any group, maintainers need a recognised leader to help the group co-ordinate itself and work together effectively. Therefore the owner role shares the same objectives as a maintainer but also **accepts accountability** for these within the capability.
+1. Use community leadership, process design and automation to improve the quality & efficiency of maintainer collaboration.
+2. Define, agree, communicate and action the capability's technical and functional strategic path.
+3. Promote and action the tasks and projects required to optimise the capability sustainability and success in the longer-term.
 
-- Evangelise capability usage to solve the correct problems.
-- Encourage contributions, and facilitate getting them merged and released quickly.
-- New releases do not break any existing deployments.
-- Forward change and development is sustainable (i.e. not just accruing technical debt).
-- Create new experts to replace maintainers who leave.
-
-Because the owner is accountable for these objectives, it requires more time commitment than the maintainer responsibility. For significant or critical capabilities it should be regarded as a full-time role rather than a part-time responsibility, although both approaches are possible.
+In other words they are responsible for ensuring maintainers work effectively together (1), with an aligned vision of capability forward strategy (2), while protecting the capability long-term sustainability (3). [Identifying the optimum owner](/how/owner/) is an important consideration as the maintainer team starts to span more than one team.
 
 ## Back to the Challenges...
 

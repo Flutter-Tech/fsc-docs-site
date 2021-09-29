@@ -2,8 +2,8 @@
 layout: default
 title: Divisional Independence
 article_navigation: true
-previous_title: Maintainers in Multiple Teams
-previous_url: /how/multiple-teams/
+previous_title: Capability Owners
+previous_url: /how/owner/
 next_title: Strategic Consensus
 next_url: /how/consensus/
 ---
