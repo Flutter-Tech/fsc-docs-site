@@ -7,15 +7,7 @@ title: Capability Pull Request Boards
 
 A capability is a collection of repositories that together do something meaningful. Each capability is governed by a group of maintainers. Maintainers therefore require a view of all the changes ("pull requests" in GitHub) across all repositories in a capability. This view is supported by **capability pull request boards** which can be created for your capability in a few minutes.
 
-<div class="uk-child-width-1-1@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid data-uk-lightbox>
-  <div>
-    <div class="uk-margin-xlarge-left uk-margin-xlarge-right uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
-        <a class="uk-position-cover" href="https://youtu.be/yhizefNFLUs" data-caption="Pull Requests GitHub Project Board Automation"></a>
-        <span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
-        <h5 class="uk-card-title uk-margin">Pull Requests GitHub Project Board Automation</h5>
-    </div>
-  </div>
-</div>
+<div style="position: relative; display: block; max-width: 1280px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/rJgmHWotkf_default/index.html?videoId=6273844037001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>
 
 ### Creating a Capability PR Board
 
@@ -23,9 +15,10 @@ To create a board:
 
 1. Navigate to the existing project list via the ['Projects' tab in Flutter-Global](https://github.com/orgs/Flutter-Global/projects).
 2. Use the 'New Project' button to launch the create project wizard: choose an appropriate name and make sure the repository is private. There is no need to link any repositories.
-3. In the board description field include the repository name of your capability preceeded by a `$`. You may include more than one capability. For example a description of "This board tracks $cap-shared-codebase-documentation $cap-shared-codebase-automation" will track PRs from all repos in both those capabilities. The board description can be changed at any time.
-4. Once the project is created, use the 'Add Column' button to create the columns that you would like to use. For the automation to recognise the columns you need to include one of a set of standard snippets in the column name as in the table below.
-5. Wait for the board to be populated. All boards are updated by a scheduled job, so it may take up to 30 mins for the board to become fully populated will all your capability PRs.
+3. In the board description field include the repository name of your capability preceeded by a `$`. You may include more than one capability or use specific repository names instead. For example a description of "This board tracks $cap-inner-source-documentation $cap-inner-source-automation" will track PRs from all repos in both those capabilities. The board description can be changed at any time.
+4. You can use a `-$` prefix to exclude specific repositories from a capability. For example a board description of "Track $cap-inner-source-documentation -$key-technologies" will track PRs from all repositories in `cap-inner-source-documentation` apart from those from the `key-technologies` repository.
+5. Once the project is created, use the 'Add Column' button to create the columns that you would like to use. For the automation to recognise the columns you need to include one of a set of standard snippets in the column name as in the table below.
+6. Wait for the board to be populated. All boards are updated by a scheduled job, so it may take up to 30 mins for the board to become fully populated will all your capability PRs.
 
 | Semantic Meaning                          | Column Name Contains         |
 | ----------------------------------------- | ---------------------------- |
