@@ -1,0 +1,16 @@
+{
+  "name": "Jekyll External Docs",
+  "dockerFile": "Dockerfile",
+  "settings": {},
+  "extensions": ["esbenp.prettier-vscode"],
+  "forwardPorts": [
+    // Jekyll server
+    4000,
+    // Live reload server
+    35729
+  ],
+  "postCreateCommand": "sudo gem install jekyll-remote-theme jekyll-octicons",
+
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}
