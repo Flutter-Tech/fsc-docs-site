@@ -68,6 +68,9 @@ main:
       - url: /docs/automated-access/
         title: Automated GitHub Access
         identifier: automated-access
+      - url: /docs/secrets/
+        title: GitHub Secrets
+        identifier: automated-access
       - url: /docs/using-jenkins/
         title: Using Jenkins with GitHub
         identifier: using-jenkins

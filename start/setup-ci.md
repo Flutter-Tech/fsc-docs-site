@@ -36,7 +36,7 @@ Typically a service will follow these steps to production:
 The tools available to all Flutter divisions are currently limited to the [GitHub](https://docs.github.com/en/github) platform:
 
 - **Git** repository code versioning control and access control for step 1.
-- [**GitHub Actions**](https://docs.github.com/en/actions) to validate a pull request in step 2, and automate further steps 3-8 as necessary. Self-hosted runners are available within specific internal networks where such access is required.
+- [**GitHub Actions**](https://docs.github.com/en/actions) to validate a pull request in step 2, and automate further steps 3-8 as necessary. [Secrets storage](/docs/secrets/) and self-hosted runners are available within specific internal networks where such access is required.
 - [**GitHub Packages**](https://docs.github.com/en/packages) to store private build dependencies in step 3, and to publish build artefacts [to a registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry) in step 5.
 - [**GitHub Issues**](https://docs.github.com/en/issues) to plan and track your work.
 
