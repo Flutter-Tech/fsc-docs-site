@@ -22,6 +22,9 @@ main:
     title: How it Works
     identifier: how
     children:
+      - url: /how/choose/
+        title: Choosing Inner Source
+        identifier: choose
       - url: /how/readable-source/
         title: Readable Source
         identifier: readable-source
