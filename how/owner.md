@@ -46,8 +46,10 @@ The measures in each row can be matched between capability, role and individual 
 
 Capability complexity, individual expertise and divisional role competencies can be expressed by what it relates to:
 
-- **Technical**: the technology of the capability and the specific technical services, deployments and APIs.
-- **Product**: the features, customer flows and business logic of a capability.
+- **Engineering**: how the capability technical services and tools are built, changed and tested.
+- **Architecture**: capability technical design, APIs, external interactions and data flows.
+- **Operational**: capability deployment requirements, capacity, performance, resilience, redundancy and service management.
+- **Product**: capability features, customer flows and business logic.
 
 A good foundation of people skills (leadership, facilitating collaboration and consensus) is required in all cases.
 
@@ -71,24 +73,26 @@ Capability evolution, individual impact and divisional role levels can be expres
 
 To match divisional roles against the needs of a capability we need to know their competency, affinity and level:
 
-| Division          | Role                         | Affinity  | Competency | Level              |
-| ----------------- | ---------------------------- | --------- | ---------- | ------------------ |
-| PPB, FT, FDG, ISP | Senior Engineer              | full-time | technical  | optimise           |
-| FDG               | Lead Engineer                | part-time | technical  | change             |
-| PPB, ISP          | Principal Engineer           | full-time | technical  | change             |
-| PPB, FT, ISP      | Architect                    | part-time | technical  | transform          |
-| ISP               | Senior Principal Engineer    | part-time | technical  | transform          |
-| ISP               | (Senior) Engineering Manager | reactive  | technical  | (transform) change |
-| FDG               | Senior Devops Engineer       | full-time | technical  | optimise           |
-| ISP               | Senior Devops Engineer       | part-time | technical  | optimise           |
-| ISP               | Principal DevOps Engineer    | full-time | technical  | change             |
-| PPB, FT, ISP      | Product Owner                | part-time | product    | optimise           |
-| FT                | Inner Source Manager         | part-time | -          | change             |
-| ISP               | Distinguished Engineer       | full-time | -          | transform          |
-| FDG               | Technical Programme Manager  | full-time | -          | change             |
+| Division     | Role                         | Affinity  | Competency   | Level              |
+| ------------ | ---------------------------- | --------- | ------------ | ------------------ |
+| FDG, ISP     | Senior Engineer              | full-time | engineering  | optimise           |
+| PPB          | Senior Engineer              | part-time | engineering  | change             |
+| FDG          | Lead Engineer                | part-time | engineering  | change             |
+| PPB, ISP     | Principal Engineer           | full-time | engineering  | change             |
+| PPB, FT, ISP | Architect                    | part-time | architecture | transform          |
+| ISP          | Senior Principal Engineer    | part-time | architecture | transform          |
+| ISP          | (Senior) Engineering Manager | reactive  | engineering  | (transform) change |
+| FDG          | Senior Devops Engineer       | full-time | operational  | optimise           |
+| ISP          | Senior Devops Engineer       | part-time | operational  | optimise           |
+| ISP          | Principal DevOps Engineer    | full-time | operational  | change             |
+| PPB, FT, ISP | Product Owner                | part-time | product      | optimise           |
+| FT           | Inner Source Manager         | part-time | -            | change             |
+| ISP          | Distinguished Engineer       | full-time | -            | transform          |
+| FDG          | Tech Programme Manager       | full-time | -            | change             |
 
 **Notes**:
 
+- The PPB Senior Engineer role is defined differently to FDG/ISP, and is more closely aligned with a FDG/ISP Lead Engineer.
 - No FDG Architect role exists, and FDG Principal or Senior Principal roles are too demand-constrained to be able to support capability ownership.
 - Lead Engineer has low affinity because the role also involves leading a divisional team.
 - Architect/Senior Principal Engineer has medium affinity because both roles require significant technical community engagement outside the capability to maintain required architectural system knowledge.
@@ -107,18 +111,18 @@ Due to the high value to an owner of knowledge and existing experience within a 
 
 A capability has no owner and its parent product maintainers want to recruit one. A group who know the capability well are gathered to agree the needs of the capability:
 
-- It is technically complex but simpler from a product perspective.
+- The way it is built (the engineering) is more complex than the architecture, product and operational concerns.
 - Reviewing PR data shows it is large capability with a high rate of change.
 - There are several significant changes to capability technology over the next 1-2 years that the product strategy requires.
 
-This group classifies the capability with **technical** complexity, **full-time** demand and its evolution requires significant **change**.
+This group classifies the capability with **engineering** complexity, **full-time** demand and its evolution requires significant **change**.
 
 The product maintainers review this against divisional roles:
 
-- Senior Engineers can be expected to navigate the technical complexity and demand, but might struggle to lead the significant change required due to the role level.
+- Senior Engineers can be expected to navigate the engineering complexity and demand, but might struggle to lead the significant change required due to the role level.
 - Principal Engineer is a good fit, but none have experience with this capability.
-- Architects can be expected to navigate the technical complexity and significant change, but might struggle to meet the full-time demand due to their part-time affinity.
-- Technical Programme Managers could meet the full-time demand to lead the significant change, but might struggle with the technical complexity due to their competencies.
+- Architects might be able to navigate the engineering complexity but this is not their primary skillset, but might also struggle to meet the full-time demand due to their part-time affinity.
+- Technical Programme Managers could meet the full-time demand to lead the significant change, but might struggle with the engineering complexity due to their competencies.
 
 The product maintainers document the need for a capability owner including suggested divisional roles. They use this document to justify and request candidate proposals from divisional leaders. They use the document to discuss with their teams and any interested candidates. The product maintainers use the expected divisional role costs to secure budget in advance for divisional backfill or direct recruitment (in the case of no divisional proposals).
 
