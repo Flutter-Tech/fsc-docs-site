@@ -1,5 +1,7 @@
 # Inner Source Docs Site (External)
 
+<a href=https://developers.flutter.com/catalogue/fsc-docs-site target=_blank><img src="https://github.com/Flutter-Global/fsc-docs-site-internal/blob/gh-pages/assets/svg/fsc-docs-site.svg" title="Learn more about fsc-docs-site in the Service Catalogue"></a>
+
 This is the external inner source documentation site that is published to [innersource.flutter.com](https://innersource.flutter.com).
 
 ## To Render Locally
