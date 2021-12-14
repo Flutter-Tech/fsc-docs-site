@@ -141,11 +141,11 @@ This is just the beginning. You can change the behaviour of the **Codebase Gover
 
 ## How to update codebases.json to use Codebase Governor v1.x
 
-With the Codebase Governor v1.x update came new functionalities and a new [codebases.json](/docs/codebase-governor/index.md) structure. This guide aims to help those that want to update their capability [codebases.json](/docs/codebase-governor/index.md) file to take advantage of this and improve their repositories management.
+With the Codebase Governor v1.x update came new functionalities and a new [codebases.json](/docs/codebase-governor/) structure. This guide aims to help those that want to update their capability [codebases.json](/docs/codebase-governor/) file to take advantage of this and improve their repositories management.
 
-| ℹ️ &nbsp;Information                                                                                                                   |
-| :------------------------------------------------------------------------------------------------------------------------------------- |
-| For a complete reference of each option available in codebases.json, please consult this [📖 guide](/docs/codebase-governor/index.md). |
+| ℹ️ &nbsp;Information                                                                                                           |
+| :----------------------------------------------------------------------------------------------------------------------------- |
+| For a complete reference of each option available in codebases.json, please consult this [📖 guide](/docs/codebase-governor/). |
 
 We are going to use an example [codebases.json](/docs/codebases-json/) file that is based on a real capability and upgrade it to be compatible with the v1.x structure.
 
@@ -313,9 +313,9 @@ The final v1.x structured file is (with diff):
 
 The Contributors node was introduced in v1.2 of Codebase Governor. It allows your to easily add, update and remove contributors (users and teams) to your repositories
 
-| ℹ️ &nbsp;Information                                                                                                                   |
-| :------------------------------------------------------------------------------------------------------------------------------------- |
-| For a complete reference of each option available in codebases.json, please consult this [📖 guide](/docs/codebase-governor/index.md). |
+| ℹ️ &nbsp;Information                                                                                                           |
+| :----------------------------------------------------------------------------------------------------------------------------- |
+| For a complete reference of each option available in codebases.json, please consult this [📖 guide](/docs/codebase-governor/). |
 
 ---
 
