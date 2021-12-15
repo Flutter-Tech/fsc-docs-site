@@ -10,7 +10,9 @@ next_url: /how/guest-contributions/
 
 # Stage 1: Readable Source
 
-The first step towards the transparency required for inner source to work. The host team are responsible for developing the capability and run their own deployment, with all changes to the capability implemented by the host. However, other teams may also be deploying and using the capability or including parts of it in their own capabilities -- possible because the host team granted read access to user stories, source code, test suites, CI pipeline and build artifacts to all Flutter engineers.
+This page explains the first stage of the [inner source pyramid](/how/).
+
+> The first step towards the transparency required for inner source to work. The host team are responsible for developing the capability and run their own deployment, with all changes to the capability implemented by the host. However, other teams may also be deploying and using the capability or including parts of it in their own capabilities -- possible because the host team granted read access to user stories, source code, test suites, CI pipeline and build artifacts to all Flutter engineers.
 
 ## What should I share, and to whom?
 

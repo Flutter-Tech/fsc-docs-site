@@ -10,7 +10,9 @@ next_url: /how/multiple-teams/
 
 # Stage 2: Guest Contributions
 
-The host team retain full accountability for the capability development and encourage and review 'guest' contributions from other teams who need to change it either for their own deployments or projects. If the host team deem the guest contribution to be of sufficient quality it will be accepted and the host team will take forward responsibility for it, otherwise it may be rejected or re-worked.
+This page explains the second stage of the [inner source pyramid](/how/).
+
+> The host team retain full accountability for the capability development and encourage and review 'guest' contributions from other teams who need to change it either for their own deployments or projects. If the host team deem the guest contribution to be of sufficient quality it will be accepted and the host team will take forward responsibility for it, otherwise it may be rejected or re-worked.
 
 ## What quality of contribution do you need?
 

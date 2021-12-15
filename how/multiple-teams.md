@@ -10,7 +10,9 @@ next_url: /how/owner/
 
 # Stage 3: Maintainers in Multiple Teams
 
-Multiple teams need to make regular changes to the capability via a consensus mechanism. For consensus to be fast at least one person in every regularly contributing team must be an expert "maintainer": taking the time to build relationships and trust with the experts in the other teams.
+This page explains the third stage of the [inner source pyramid](/how/).
+
+> Multiple teams need to make regular changes to the capability via a consensus mechanism. For consensus to be fast at least one person in every regularly contributing team must be an expert "maintainer": taking the time to build relationships and trust with the experts in the other teams.
 
 ## Why do you need to be at this stage?
 
