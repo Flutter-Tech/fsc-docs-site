@@ -14,8 +14,8 @@ jobs:
     environment: prod
     # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
     env:
-      FILES: _config.yml README.md CONTRIBUTING.md CNAME community.md
-      FOLDERS: .github catalogue _site
+      FILES: _config.yml README.md CONTRIBUTING.md CNAME community.md catalogue/index.md
+      FOLDERS: .github .git
     steps:
       - name: Retrieve Flutter Global app token
         id: flutter_global_app_token
@@ -24,32 +24,28 @@ jobs:
           APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
           APP_ID: 115213
           APP_INSTALLATION_ID: 16908128
+      
+      - name: Checkout External docs site
+        uses: actions/checkout@v2
+        with:
+          path: fsc-docs-site
 
-      - name: Clone Internal docs site
+      - name: Checkout Internal docs site
         uses: actions/checkout@v2
         with:
           repository: Flutter-Global/fsc-docs-site-internal
           ref: "main"
           token: ${{ steps.flutter_global_app_token.outputs.app_token }}
+          path: fsc-docs-site-internal
 
-      - name: Backup unique files
-        env:
-          BASE_REPO_NAME: fsc-docs-site
+      - name: Remove files not meant to sync
         run: |
-          cd ../${{ env.BASE_REPO_NAME }}
-          for f in $FILES ; do if [[ -f $f ]] ; then mv $f $f- ; fi ; done
-          for f in $FOLDERS ; do if [[ -d $f ]] ; then mv $f $f- ; fi ; done
+          for f in $FILES ; do rm -f ./fsc-docs-site/$f ; done
+          for f in $FOLDERS ; do rm -rf ./fsc-docs-site/$f ; done
 
-      - name: Merge to Internal Site
-        id: pushToInternalSite
-        env:
-          BASE_REPO: https://x-access-token:${{ steps.flutter_global_app_token.outputs.app_token }}@github.com/Flutter-Global/fsc-docs-site.git
+      - name: Sync external site to internal site
         run: |
-          git config --global user.email "innersource-bot@flutter.com"
-          git config --global user.name "Inner source bot"
-          git remote add baserepo $BASE_REPO
-          git fetch baserepo
-          git merge --squash --allow-unrelated-histories --no-commit -s recursive -X theirs baserepo/main
+          cp -Rf fsc-docs-site/* fsc-docs-site-internal
 
       - name: Set the env variables for Slack message URLS
         if: ${{ failure() }}
@@ -67,10 +63,9 @@ jobs:
           ACTION_TEXT: Open workflow run
           ACTION_URL: ${{ env.action_run_url }}
 
-      - name: Restore unique files and push to Internal site
+      - name: Push changes to internal site
         run: |
-          for f in $FILES ; do if [[ -f $f- ]] ; then file=${f-: : -1} ; mv $f- $file ; fi ; done
-          for f in $FOLDERS ; do if [[ -d $f- ]] ; then folder=${f-: : -1} ; rm -rf $f ; mv $f- $folder ; fi ; done
+          cd ./fsc-docs-site-internal
           git add .
           git commit -m "Update from external docs site"
           git push
