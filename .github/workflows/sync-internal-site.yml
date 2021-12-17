@@ -66,6 +66,8 @@ jobs:
       - name: Push changes to internal site
         run: |
           cd ./fsc-docs-site-internal
+          git config --global user.email "innersource-bot@flutter.com"
+          git config --global user.name "Inner source bot"
           git add .
           git commit -m "Update from external docs site"
           git push
