@@ -49,6 +49,10 @@ main:
   - url: /catalogue/
     title: Service Catalogue
     identifier: catalogue
+    children:
+      - url: /catalogue/community
+        title: Community
+        identifier: community
   - url: /docs/
     title: Technical Docs
     identifier: docs
