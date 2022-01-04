@@ -53,6 +53,9 @@ main:
       - url: /catalogue/community
         title: Community
         identifier: community
+      - url: /catalogue/activity-level
+        title: Activity Level
+        identifier: activity-level
   - url: /docs/
     title: Technical Docs
     identifier: docs

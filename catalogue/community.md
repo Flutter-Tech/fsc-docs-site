@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Product Catalogue
+title: Community
 toc: false
 ---
 
