@@ -13,11 +13,13 @@ It is an important feature because these protections ensure your contributors fo
 
 A wide variety of repository branching strategy options are documented elsewhere:
 
+- [Martin Fowler: Patterns for Managing Source Code Branches](https://martinfowler.com/articles/branching-patterns.html)
 - [Atlassian: Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 - [GitHub Flow](https://guides.github.com/introduction/flow/)
 - [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 - [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)
 - [Trunk Based Development](https://trunkbaseddevelopment.com/) ([DORA](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development))
+- [Ship/Show/Ask](https://martinfowler.com/articles/ship-show-ask.html)
 
 Your choice of branching strategy will depend on your context and desired [inner source stage](/how/). Note that for inner source:
 
