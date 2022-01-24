@@ -20,7 +20,7 @@ Comparing these approaches **from the perspective of a division**:
 
 <table style="table-layout: fixed">
   <tr>
-    <th style="width: 100px"></th>
+    <th style="width: 140px"></th>
     <th>Independent</th>
     <th>Delegated</th>
     <th>Inner Source</th>
