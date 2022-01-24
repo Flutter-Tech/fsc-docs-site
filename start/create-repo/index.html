@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Creating a Repository | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+</head>
+  <body class="relative">
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 px-4 py-5 bg-theme-header-bg">
+        
+          <img class="w-auto h-8 " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+              
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full">
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto max-h-10  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/"  title="Home">Home</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="Docs">Docs</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/releases/"  title="Releases">Releases</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+        
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-base pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="creating-a-repository">Creating a Repository</h1>
+
+<p>This guide explains 3 different methods to create a new repository:</p>
+
+<ul>
+  <li><strong>RECOMMENDED</strong>: Create a pre-configured repository within an existing capability</li>
+  <li>Create an ad-hoc repository manually using the GitHub UI</li>
+  <li>Create a new capability repository</li>
+</ul>
+
+<h2 id="create-a-pre-configured-repo">Create a Pre-Configured Repo</h2>
+
+<p>To create a new pre-configured repository for use within an existing capability, the <a href="/docs/codebase-governor/">codebase governor</a> automation can be used. Simply raise a pull request in the relevant capability repository to add your new repository to the <a href="/docs/codebases-json/">codebases.json</a> file under the <code class="language-plaintext highlighter-rouge">repos</code> key.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+    "https://github.com/Flutter-Global/existing-repo": {
+      "policy": {
+        "branch-protection": "bp-standard"
+      }
+    },
++    "https://github.com/Flutter-Global/my-new-repo": {
++      "policy": {
++        "branch-protection": "bp-standard"
++      }
++    },
+...
+</code></pre></div></div>
+
+<p>Don’t forget to <a href="/docs/naming/">follow the repository naming conventions</a>. The codebase governor will identify that it needs to create a new repository and comment on the PR to confirm that. Once the PR is approved and merged, the repository will be created, and configured with the correct access control and branch protections that you have declared for it.</p>
+
+<h2 id="manually-create-a-repo">Manually Create a Repo</h2>
+
+<p>Every user in <code class="language-plaintext highlighter-rouge">Flutter-Global</code> also has permission to create a new repository in the normal way on the GitHub site:</p>
+
+<ol>
+  <li>Click the <strong>+</strong> drop-down menu on the top-right corner of a GitHub page and select <strong>New repository</strong>.<br />
+<img src="/start/create-repo/create-repository.png" alt="Creating a repository - New repository" title="Creating a repository - New repository" /></li>
+  <li>In the <strong>Owner</strong> drop-down, select the <em>Flutter-Global</em> Organization, this is where our inner source code is shared.<br />
+<img src="/start/create-repo/owner.png" alt="Creating a repository - Owner" title="Creating a repository - Owner" /></li>
+  <li>Enter the name of your repository and a description. Please <a href="/docs/naming/">follow the repository naming conventions</a>.<br />
+<img src="/start/create-repo/name.png" alt="Creating a repository - Name and Description" title="Creating a repository - Name and Description" /></li>
+  <li>Within <em>Flutter-Global</em>, <strong>all repositories have Internal visibility</strong>. If you want something different, please contact the <a href="/community/">inner source team</a>.<br />
+<img src="/start/create-repo/visibility.png" alt="Creating a repository - Visibility" title="Creating a repository - Visibility" /></li>
+  <li>Choose whether you want to initialise, with a README, then continue to create the repository.</li>
+</ol>
+
+<p>Creating the repository manually simply gives you an empty repository that you have full admin control over but has not been yet been appropriately configured. You will need to setup the necessary <a href="/docs/branch-protection/">access and branch protection control</a> yourself depending on your needs, and assign it to a capability by adding an entry to <a href="/docs/codebases-json/">codebases.json</a> in the capability repository.</p>
+
+<h2 id="creating-a-capability-repository">Creating a Capability Repository</h2>
+
+<p>Creating a new capability repository is more complex so this task has some extra automation to help you.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the <a href="https://github.com/Flutter-Global/flutter-global-automation/issues"><strong>Capability creation request</strong></a> and click the New issue button.
+<img src="/docs/codebase-governor/codgov-capability-creation-new-issue.jpg" alt="Capability creation request - New issue" title="Capability creation request - New issue" /></p>
+  </li>
+  <li>
+    <p>Select <strong>Get Started</strong> in the <strong>Capability creation request</strong> box
+<img src="/docs/codebase-governor/codgov-capability-creation-select-template.jpg" alt="&quot;Capability creation request - Get started&quot;" title="Capability creation request - Get started" /></p>
+  </li>
+  <li>
+    <p>Fill the text fields with the appropriate information.
+<img src="/docs/codebase-governor/codgov-capability-creation-fill-template.jpg" alt="&quot;Capability creation request - Fill text fields&quot;" title="Capability creation request - Fill text fields" />
+1 - Add the Capability name between []<br />
+2 - Add the Capability name<br />
+3 - Add a small description about the Capability<br />
+4 - Define the owner of the Capability (GitHub usernames only)<br />
+5 - Define the maintainers of the Capability (GitHub usernames only)</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">action</span><span class="pi">:</span> <span class="s">create-capability</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">cap-your-capability-name</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Your description goes here</span>
+<span class="na">owners</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">the-owner-github-username</span>
+<span class="na">maintainers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">a-maintainer-github-username</span>
+  <span class="pi">-</span> <span class="s">another-github-username</span>
+  <span class="pi">-</span> <span class="s">and-another</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Select <strong>Submit new issue</strong>. After the submission the automation process will start and will inform you of the progress by adding comments in the created issue.</p>
+  </li>
+  <li>
+    <p>When the process finishes, open the new Capability repository by searching for it in the Flutter-Global organization or by inputting the URL in the browser address bar. You will see that the repository has a Pull Request.</p>
+  </li>
+  <li>
+    <p>Select the <strong>Pull requests</strong> tab and open it. Check if all the changes are correct and then select <strong>Merge pull request</strong>.</p>
+  </li>
+  <li>
+    <p>After merging the Capability repository is updated with your definitions and the <strong>Codebase Governor</strong> workflow will run every time you update the <a href="/docs/codebases-json/">codebases.json</a> file.</p>
+  </li>
+</ol>
+
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Setup CI on GitHub</h5>
+    <div>
+      <a href="/start/setup-ci/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5 class="text-right">Maintaining a Repository</h5>
+    <div class="text-right">
+      <a href="/start/maintainer/"
+        >Next
+        &rarr;</a
+      >
+    </div>
+    
+  </div>
+</div>
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#create-a-pre-configured-repo" class="hover:text-theme-color">Create a Pre-Configured Repo</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#manually-create-a-repo" class="hover:text-theme-color">Manually Create a Repo</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#creating-a-capability-repository" class="hover:text-theme-color">Creating a Capability Repository</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+  </body>
+</html>

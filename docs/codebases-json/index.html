@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>codebases.json | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+</head>
+  <body class="relative">
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 px-4 py-5 bg-theme-header-bg">
+        
+          <img class="w-auto h-8 " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+              
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full">
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto max-h-10  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/"  title="Home">Home</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="Docs">Docs</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/releases/"  title="Releases">Releases</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+        
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-base pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="the-codebasesjson-file">The codebases.json File</h1>
+
+<p><code class="language-plaintext highlighter-rouge">codebases.json</code> is a definition file, placed at the root of every <strong>capability</strong> or <strong>product</strong> repository to describe all of the repositories that make up that capability or product. This is used as the basis for various automation like the <a href="/docs/codebase-governor/">codebase governor</a> or <a href="/catalogue/">service catalogue</a> so is important that it is accurate.</p>
+
+<h2 id="version"><code class="language-plaintext highlighter-rouge">version</code></h2>
+
+<p>The version of the file format used - these docs describe the version <code class="language-plaintext highlighter-rouge">1.2</code> format.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="comment"><code class="language-plaintext highlighter-rouge">comment</code></h2>
+
+<p>Various <code class="language-plaintext highlighter-rouge">comment</code> fields are specified throughout the format definition. This are all optional but allow free-form file commentary. They are included in the spec so they will be maintained by file auto-formatting scripts.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="description"><code class="language-plaintext highlighter-rouge">description</code></h2>
+
+<p>The description of the capability/product.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="capability-type"><code class="language-plaintext highlighter-rouge">capability-type</code></h2>
+
+<p>The type of your capability/product.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><code class="language-plaintext highlighter-rouge">capability-type</code> value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">product</code></td>
+      <td style="text-align: left">A deployable set of services providing business and technical value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">capability</code></td>
+      <td style="text-align: left">A capability contained within another product / capability (e.g. cashout is within the global betting platform)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="name"><code class="language-plaintext highlighter-rouge">name</code></h2>
+
+<p>Sets the name of your capability/product for presentation.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="owner"><code class="language-plaintext highlighter-rouge">owner</code></h2>
+
+<p>The Github username of the capability/product owner.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="maintainers"><code class="language-plaintext highlighter-rouge">maintainers</code></h2>
+
+<p>The Github usernames of the capability/product maintainers.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"crisostomon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"almeidat2"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="contributors"><code class="language-plaintext highlighter-rouge">contributors</code></h2>
+
+<p>The Github usernames and teams that are repository contributors. These will be added with <code class="language-plaintext highlighter-rouge">write</code> permissions to all affected repositories.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">❗️ WARNING</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">When using the <code class="language-plaintext highlighter-rouge">contributors</code> node, all previously defined users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission in the affected repositories will be <strong>removed</strong>. Only the ones defined in the <code class="language-plaintext highlighter-rouge">codebases.json</code> will remain.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"crisostomon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"almeidat2"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"oreilco"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">],</span><span class="w"> </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fcq-service"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The contributors node has 4 available keys, all of which are arrays:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">users</code></strong></td>
+      <td>Which user(s) the current entry applies to.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">teams</code></strong></td>
+      <td>Which team(s) the current entry applies to.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">include</code></strong></td>
+      <td>Limited list of repositories the team(s)/user(s) should be granted permission.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">exclude</code></strong></td>
+      <td>Limited list of repositories where the team(s)/user(s) should NOT be granted access, i.e. exceptions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">ℹ️  Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">If you remove the <code class="language-plaintext highlighter-rouge">contributors</code> node from the <code class="language-plaintext highlighter-rouge">codebases.json</code>, all previously defined users and teams in the affected repositories will not be <strong>removed</strong>. As of <code class="language-plaintext highlighter-rouge">v1.2</code> you will have to remove them by hand.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="policy"><code class="language-plaintext highlighter-rouge">policy</code></h2>
+
+<p>Defines the policy for the capability/product.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"crisostomon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"almeidat2"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"oreilco"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">],</span><span class="w"> </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fcq-service"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Capability policy - with pattern matching - it will be applied to any branches that have a name that starts with release"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"release*"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policycomment"><strong><code class="language-plaintext highlighter-rouge">policy.comment</code></strong></h4>
+
+<p>Add information about the policy.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policybranch-protections"><strong><code class="language-plaintext highlighter-rouge">policy.branch-protections</code></strong></h4>
+
+<p>You can create several policies in <strong><code class="language-plaintext highlighter-rouge">policy.branch-protections</code></strong>, defining the branch protection settings needed for each, and reference them in <strong><code class="language-plaintext highlighter-rouge">repos.&lt;repository&gt;.policy.branch-protection</code></strong>. This allows you greater flexibility and reduces settings duplication.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policybranch-protectionsbranch_protection_id"><strong><code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch_protection_id&gt;</code></strong></h4>
+
+<p>To identify a determined set of definitions for a branch-protection you have to define an ID. You can create as many IDs/sets as you need.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"bp2"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policybranch-protectionsbranch_protection_idcomment"><strong><code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch_protection_id&gt;.comment</code></strong></h4>
+
+<p>The text that adds information about the branch protection.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The policy is defined at the capability level and inside it you can define all the branch-protection types you need to apply at the repos level"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Branch protection comment"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policybranch-protectionsbranch_protection_idparameters"><strong><code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch_protection_id&gt;.parameters</code></strong></h4>
+
+<p>There are several keys you can use to tailor the Codebase Governor behaviour when you create branches. You can add them here.</p>
+
+<h4 id="policybranch-protectionsbranch_protection_idparameters-keys"><strong><code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch_protection_id&gt;.parameters</code> keys</strong></h4>
+
+<table role="table">
+<thead><tr><th>key</th><th>Type</th><th>Default<br />value</th><th>Description</th></tr></thead><tbody>
+ <tr><td><code>branch-name-pattern</code></td><td>string</td><td>false</td><td>You can define a pattern (<a href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch" target="_blank">fnmatch</a>) to match all branches, or any branch that matches a naming pattern specified with the fnmatch syntax.<br /><br />
+ <a href="#branch-name-pattern-definition">Learn more...</a></td></tr>
+ <tr><td><code>required-reviews</code></td><td>integer</td><td>1</td><td>The number of required approving reviews for the pull request to be accepted.</td></tr>
+ <tr><td><code>dismisses-stale-reviews</code></td><td>boolean</td><td>true</td><td>New reviewable commits pushed to a matching branch will dismiss pull request review approvals.</td></tr>
+ <tr><td><code>require-review-from-code-owners</code></td><td>boolean</td><td>true</td><td>Require an approved review in pull requests including files with a designated code owner.</td></tr>
+ <tr><td><code>restricts-review-dismissals</code></td><td>boolean</td><td>false</td>
+ <td>
+ Specify users or teams allowed to dismiss pull request reviews.<br /><br /> 
+<sup>ℹ️ Information<br />
+ After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and define the list of users and/or teams.</sup>
+ </td></tr>
+ <tr><td><code>requires-status-checks</code></td><td>boolean</td><td>true</td>
+ <td>Activate which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and select the status checks that apply.</sup>
+ </td></tr>
+ <tr><td><code>requires-strict-status-checks</code></td><td>boolean</td><td>false</td><td>This ensures pull requests targeting a matching branch have been tested with the latest code. This setting will not take effect unless at least one status check is enabled.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and select the status checks that apply.</sup>
+ </td></tr>
+ <tr><td><code>requires-commit-signatures</code></td><td>boolean</td><td>false</td><td>Commits pushed to matching branches must have verified signatures.</td></tr>
+ <tr><td><code>requires-linear-history</code></td><td>boolean</td><td>false</td><td>Prevent merge commits from being pushed to matching branches.</td></tr>
+ <tr><td><code>include-administrators</code></td><td>boolean</td><td>true</td><td>Enforce all configured restrictions above for administrators.</td></tr>
+ <tr><td><code>restrict-pushes</code></td><td>boolean</td><td>false</td><td>Specify people, teams or apps allowed to push to matching branches. Required status checks will still prevent these people, teams and apps from merging if the checks fail.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and users/teams/apps that are allowed.</sup></td></tr>
+ <tr><td><code>allows-force-pushes</code></td><td>boolean</td><td>false</td><td>Permit force pushes for all users with push access.</td></tr>
+ <tr><td><code>allows-deletions</code></td><td>boolean</td><td>false</td><td>Allow users with push access to delete matching branches.</td></tr>
+</tbody></table>
+
+<h4 id="branch-name-pattern-definition">Branch name pattern definition</h4>
+
+<p>For example, to require any branch containing the word release to have at least two pull request reviews before merging, you can create a branch rule for release.</p>
+
+<p>You can also set up automatic branch protection for all branches in your repository with the wildcard syntax *. Because GitHub uses the File::FNMPATHNAME flag for the File.fnmatch syntax, the wildcard does not match directory separators (/). For example, qa/* will match all branches beginning with qa/ and containing a single slash. You can include multiple slashes with qa/**/_, and you can extend the qa string with qa<strong>/</strong>/* to make it more inclusive. For more information about syntax options for branch rules, see the <a href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch documentation</a>.</p>
+
+<p>To create an exception to an existing branch rule, you can create a new branch protection rule that is higher priority, such as a branch rule for a specific branch name.</p>
+
+<h4 id="filter-pattern-cheat-sheet"><strong>Filter pattern cheat sheet</strong></h4>
+
+<p>You can use special characters in path, branch, and tag filters.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">*</code></strong>: Matches zero or more characters, but does not match the <code class="language-plaintext highlighter-rouge">/</code> character. For example, <code class="language-plaintext highlighter-rouge">dev*</code> matches <code class="language-plaintext highlighter-rouge">development</code>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">?</code></strong>: Matches zero or one single character. For example, <code class="language-plaintext highlighter-rouge">produ?tion</code> matches <code class="language-plaintext highlighter-rouge">production</code>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">+</code></strong>: Matches one or more of the preceding character.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">[]</code></strong> Matches one character listed in the brackets or included in ranges. Ranges can only include <code class="language-plaintext highlighter-rouge">a-z</code>, <code class="language-plaintext highlighter-rouge">A-Z</code>, and <code class="language-plaintext highlighter-rouge">0-9</code>. For example, the range<code class="language-plaintext highlighter-rouge">[0-9a-f]</code> matches any digits or lowercase letter. For example, <code class="language-plaintext highlighter-rouge">[CB]at</code> matches <code class="language-plaintext highlighter-rouge">Cat</code> or <code class="language-plaintext highlighter-rouge">Bat</code> and <code class="language-plaintext highlighter-rouge">[1-2]00</code> matches <code class="language-plaintext highlighter-rouge">100</code> and <code class="language-plaintext highlighter-rouge">200</code>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">!</code></strong>: At the start of a pattern makes it negate previous positive patterns. It has no special meaning if not the first character.</li>
+</ul>
+
+<h4 id="patterns-to-match-branches"><strong>Patterns to match branches</strong></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Pattern</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Example matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">dev-*</code></td>
+      <td style="text-align: left">The <code class="language-plaintext highlighter-rouge">*</code> wildcard matches any character.</td>
+      <td style="text-align: left">-<code class="language-plaintext highlighter-rouge">dev-branch</code> -<code class="language-plaintext highlighter-rouge">dev-20201201</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">master</code></td>
+      <td style="text-align: left">Matches the exact name of a branch.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">master</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'*'</code></td>
+      <td style="text-align: left">Matches all branches name.</td>
+      <td style="text-align: left">-<code class="language-plaintext highlighter-rouge">main</code> -<code class="language-plaintext highlighter-rouge">releases</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'*feature'</code></td>
+      <td style="text-align: left">Matches branch names that end with feature.</td>
+      <td style="text-align: left">-<code class="language-plaintext highlighter-rouge">mona-feature</code> -<code class="language-plaintext highlighter-rouge">feature</code> -<code class="language-plaintext highlighter-rouge">ver-10-feature</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">v2*</code></td>
+      <td style="text-align: left">Matches branch names that start with <code class="language-plaintext highlighter-rouge">v2</code>.</td>
+      <td style="text-align: left">-<code class="language-plaintext highlighter-rouge">v2</code> -<code class="language-plaintext highlighter-rouge">v2.0</code> -<code class="language-plaintext highlighter-rouge">v2.9</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">v[12].[0-9]+.[0-9]+</code></td>
+      <td style="text-align: left">Matches all semantic versioning tags with major version 1 or 2</td>
+      <td style="text-align: left">-<code class="language-plaintext highlighter-rouge">v1.10.1</code> -<code class="language-plaintext highlighter-rouge">v2.0.0</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Prioritization of branch rules</strong></p>
+
+<p>If a repository has multiple protected branch rules that affect the same branches, the rules that include a specific branch name have the highest priority. If there is more than one protected branch rule that matches the same specific branch name, then the branch rule created first will have higher priority.</p>
+
+<p>Protected branch rules that mention a special character, such as <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">?</code>, or <code class="language-plaintext highlighter-rouge">[]</code>, are applied in the order they are listed, so rules that are listed first have a higher priority.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Branch protection comment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev*"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dismisses-stale-reviews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"restricts-review-dismissals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requires-status-checks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requires-strict-status-checks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requires-commit-signatures"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requires-linear-history"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"restrict-pushes"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allows-force-pushes"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allows-deletions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="repos"><code class="language-plaintext highlighter-rouge">repos</code></h2>
+
+<p>Defines the repositories that belong to the capability/product.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"crisostomon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"almeidat2"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"oreilco"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">],</span><span class="w"> </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fcq-service"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"release*"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="reposrepository-complete-url"><strong><code class="language-plaintext highlighter-rouge">repos.&lt;repository-complete-url&gt;</code></strong></h4>
+
+<p>URL of the repository. This key works as an ID to the repoitory and includes all the related data. Can be repeated for the repositories that belong to the capability/product.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="reposrepository-complete-urlrepotype"><strong><code class="language-plaintext highlighter-rouge">repos.&lt;repository-complete-url&gt;.repotype</code></strong></h4>
+
+<p>The repository type.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><code class="language-plaintext highlighter-rouge">repotype</code> value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">service</code></td>
+      <td style="text-align: left">A repository containing application code for running services</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">library</code></td>
+      <td style="text-align: left">A repository containing application code for a library used by other services and libraries</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">tool</code></td>
+      <td style="text-align: left">A repository containing application code for a tool used to manage a service or services</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">infra-config</code></td>
+      <td style="text-align: left">A repository containing infrastructure configuration ( e.g. I2 config for PPB )</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ansible-config</code></td>
+      <td style="text-align: left">A repository containing ansible configuration</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">chef-config</code></td>
+      <td style="text-align: left">A repository containing chef cookbooks / configuration</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policyrepository-complete-urlpolicy"><strong><code class="language-plaintext highlighter-rouge">policy.&lt;repository-complete-url&gt;.policy</code></strong></h4>
+
+<p>Allow the setting of a policy for the repository.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policyrepository-complete-urlpolicybranch-protection"><strong><code class="language-plaintext highlighter-rouge">policy.&lt;repository-complete-url&gt;.policy.branch-protection</code></strong></h4>
+
+<p>Set the policy for the repository. In this key you should use the identifier of the branch-protection setting defined in <code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch_protection_id&gt;</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp1"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="policyrepository-complete-urlpolicyconfig"><strong><code class="language-plaintext highlighter-rouge">policy.&lt;repository-complete-url&gt;.policy.config</code></strong></h4>
+
+<p>Allows the definition of configuration repositories needed for the parent repository. The structure and allowed keys are the same as the supported on the key <code class="language-plaintext highlighter-rouge">policy.&lt;repository-complete-url&gt;.policy</code>: <code class="language-plaintext highlighter-rouge">nickname</code>, <code class="language-plaintext highlighter-rouge">repotype</code>, <code class="language-plaintext highlighter-rouge">comment</code> and <code class="language-plaintext highlighter-rouge">policy</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"https://github.com/Flutter-Global/fcq-config-ppb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"infra-config"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp1"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="example">Example</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"version 1.2 codebases.json example"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services for pricing and transacting cashout offers"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"capability-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cashout"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robtuley"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"crisostomon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"almeidat2"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"oreilco"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">],</span><span class="w"> </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fcq-service"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"release*"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/fcq-config-ppb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"infra-config"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#version" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">version</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#comment" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">comment</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#capability-type" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">capability-type</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#name" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">name</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#owner" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">owner</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">maintainers</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contributors" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">contributors</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#policy" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">policy</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repos" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">repos</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example" class="hover:text-theme-color">Example</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Branch Protection | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+</head>
+  <body class="relative">
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 px-4 py-5 bg-theme-header-bg">
+        
+          <img class="w-auto h-8 " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+              
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full">
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto max-h-10  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/"  title="Home">Home</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="Docs">Docs</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/releases/"  title="Releases">Releases</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+        
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-base pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="branch-protection">Branch Protection</h1>
+
+<p>Branch protection is a feature <a href="https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches">provided by GitHub</a> to add constraints to specific repository branches. For example limiting those able to push commits to the branch, or enforcing changes are reviewed before they can be merged into it.</p>
+
+<p>It is an important feature because these protections ensure your contributors follow your desired workflow to produce secure and quality contributions.</p>
+
+<h2 id="branching-strategy">Branching Strategy</h2>
+
+<p>A wide variety of repository branching strategy options are documented elsewhere:</p>
+
+<ul>
+  <li><a href="https://martinfowler.com/articles/branching-patterns.html">Martin Fowler: Patterns for Managing Source Code Branches</a></li>
+  <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Atlassian: Comparing Workflows</a></li>
+  <li><a href="https://guides.github.com/introduction/flow/">GitHub Flow</a></li>
+  <li><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab Flow</a></li>
+  <li><a href="https://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a></li>
+  <li><a href="https://trunkbaseddevelopment.com/">Trunk Based Development</a> (<a href="https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development">DORA</a>)</li>
+  <li><a href="https://martinfowler.com/articles/ship-show-ask.html">Ship/Show/Ask</a></li>
+</ul>
+
+<p>Your choice of branching strategy will depend on your context and desired <a href="/how/">inner source stage</a>. Note that for inner source:</p>
+
+<ul>
+  <li>While most GitHub opensource projects use a <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow">forking workflow</a>, this is <strong>not appropriate</strong> for inner source. Inner source repository contents are not public, making unsecured forks in personal accounts unacceptable. It is for this reason that normal GitHub forking shortcuts are disabled.</li>
+  <li>Contributors therefore need write access to your repository, so they can push a new branch containing their changes and create a pull request for review. If possible you should grant repository write access to the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team which contains all organisation members.</li>
+  <li>This is why branch protection configuration is a critical part of inner source repository setup: it allows you to enable contributions from all members by granting repository write access, while remaining confident that your important branches are robustly protected.</li>
+  <li>A typical inner source service has multiple deployments from the same shared codebase repository. These deployments are released separately meaning multiple versions are deployed at any time. It is therefore necessary to use a branching model that supports operational hotfix and release for all versions in production.</li>
+</ul>
+
+<h2 id="configuring-branch-protection">Configuring Branch Protection</h2>
+
+<p>There are 3 possible ways to configure branch protection rules:</p>
+
+<ol>
+  <li>Manually configure per-repository in the GitHub repository settings interface.</li>
+  <li><strong>RECOMMENDED</strong>: Declare in the capability <a href="/docs/codebases-json/#policy">codebases.json</a> file and the <a href="/docs/codebase-governor/">code governor automation</a> will set via GitHub API.</li>
+  <li>Automate yourself via GitHub API.</li>
+</ol>
+
+<p>Option (2) is recommended as it is easier to do than (3), yet can be declared across all repositories in a capability under version control unlike (1). This recommended option requires:</p>
+
+<ol>
+  <li>Configuring a <a href="/docs/codebases-json/">codebases.json</a> file in the capability repository.</li>
+  <li>Ensuring <a href="/docs/codebase-governor/">code governor</a> is installed on your capability.</li>
+</ol>
+
+<p>The following branch protection options can be <a href="/docs/codebases-json/#policy">configured in a codebases.json policy</a>:</p>
+
+<table role="table">
+<thead><tr><th>key</th><th>Type</th><th>Default<br />value</th><th>Description</th></tr></thead><tbody>
+ <tr><td><code>branch-name-pattern</code></td><td>string</td><td>false</td><td>You can define a pattern (<a href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch" target="_blank">fnmatch</a>) to match all branches, or any branch that matches a naming pattern specified with the fnmatch syntax.<br /><br />
+ <a href="#branch-name-pattern-definition">Learn more...</a></td></tr>
+ <tr><td><code>required-reviews</code></td><td>integer</td><td>1</td><td>The number of required approving reviews for the pull request to be accepted.</td></tr>
+ <tr><td><code>dismisses-stale-reviews</code></td><td>boolean</td><td>true</td><td>New reviewable commits pushed to a matching branch will dismiss pull request review approvals.</td></tr>
+ <tr><td><code>require-review-from-code-owners</code></td><td>boolean</td><td>true</td><td>Require an approved review in pull requests including files with a designated code owner.</td></tr>
+ <tr><td><code>restricts-review-dismissals</code></td><td>boolean</td><td>false</td>
+ <td>
+ Specify users or teams allowed to dismiss pull request reviews.<br /><br /> 
+<sup>ℹ️ Information<br />
+ After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and define the list of users and/or teams.</sup>
+ </td></tr>
+ <tr><td><code>requires-status-checks</code></td><td>boolean</td><td>true</td>
+ <td>Activate which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and select the status checks that apply.</sup>
+ </td></tr>
+ <tr><td><code>requires-strict-status-checks</code></td><td>boolean</td><td>false</td><td>This ensures pull requests targeting a matching branch have been tested with the latest code. This setting will not take effect unless at least one status check is enabled.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and select the status checks that apply.</sup>
+ </td></tr>
+ <tr><td><code>requires-commit-signatures</code></td><td>boolean</td><td>false</td><td>Commits pushed to matching branches must have verified signatures.</td></tr>
+ <tr><td><code>requires-linear-history</code></td><td>boolean</td><td>false</td><td>Prevent merge commits from being pushed to matching branches.</td></tr>
+ <tr><td><code>include-administrators</code></td><td>boolean</td><td>true</td><td>Enforce all configured restrictions above for administrators.</td></tr>
+ <tr><td><code>restrict-pushes</code></td><td>boolean</td><td>false</td><td>Specify people, teams or apps allowed to push to matching branches. Required status checks will still prevent these people, teams and apps from merging if the checks fail.<br /><br /> 
+<sup>ℹ️ Information<br />
+After applying this change you'll have to go to <strong>Settings -&gt; Branches -&gt; &#60;branch_protection_rule&#62;</strong> in each repository and users/teams/apps that are allowed.</sup></td></tr>
+ <tr><td><code>allows-force-pushes</code></td><td>boolean</td><td>false</td><td>Permit force pushes for all users with push access.</td></tr>
+ <tr><td><code>allows-deletions</code></td><td>boolean</td><td>false</td><td>Allow users with push access to delete matching branches.</td></tr>
+</tbody></table>
+
+<h2 id="example-github-flow-service">Example: GitHub Flow Service</h2>
+
+<p>Our first example is a service repository using a simple workflow (e.g. GitHub Flow).</p>
+
+<ul>
+  <li>The repository holds critical code as the service will handle sensitive data and/or directly process customer transactions.</li>
+  <li>To meet our security commitments all changes <em>must</em> be reviewed by at least 1 other user.</li>
+  <li>To reduce mistakes, all changes <em>should</em> be reviewed by 2 service maintainers.</li>
+  <li>The GitHub Flow branching strategy means that all production deployments run the code from the <code class="language-plaintext highlighter-rouge">main</code> branch.</li>
+</ul>
+
+<p>In this case branch protection is required on the <code class="language-plaintext highlighter-rouge">main</code> branch:</p>
+
+<ul>
+  <li>To ensure the code must be reviewed via a pull request before merging, <code class="language-plaintext highlighter-rouge">required-reviews</code> is set to <code class="language-plaintext highlighter-rouge">2</code>.</li>
+  <li>To ensure all changes “must” be reviewed, <code class="language-plaintext highlighter-rouge">dismisses-stale-reviews</code> &amp; <code class="language-plaintext highlighter-rouge">include-administrators</code> is set <code class="language-plaintext highlighter-rouge">true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">allows-force-pushes</code> and <code class="language-plaintext highlighter-rouge">allows-deletions</code> are set to <code class="language-plaintext highlighter-rouge">false</code> to ensure the <code class="language-plaintext highlighter-rouge">main</code> branch can be treated as an audit log with immutable history.</li>
+  <li>A useful optimisation to encourage maintainer review is to maintain a <code class="language-plaintext highlighter-rouge">CODEOWNERS</code> file (see <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-code-owners">GitHub Docs</a>) specifying the maintainer team (<code class="language-plaintext highlighter-rouge">maintainers-cap-...</code>) and set <code class="language-plaintext highlighter-rouge">require-review-from-code-owners</code> to <code class="language-plaintext highlighter-rouge">true</code>.</li>
+  <li>These rules protect the <code class="language-plaintext highlighter-rouge">main</code> branch so write access can be granted to <code class="language-plaintext highlighter-rouge">all-flutter-global</code> for contribution.</li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"github-flow-service-code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dismisses-stale-reviews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allows-force-pushes"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allows-deletions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/an-example-service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github-flow-service-code"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="example-gitflow-service">Example: GitFlow Service</h2>
+
+<p>In this example critical service code is contained in the repository, and the workflow is complex (e.g. GitFlow). The protection required is similar to the previous service code example, but instead of applying protection to a single <code class="language-plaintext highlighter-rouge">main</code> branch, multiple branches need protection.</p>
+
+<ul>
+  <li>GitHub supports branch name patterns using <a href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch syntax</a>, although unfortunately the union pattern extension (<code class="language-plaintext highlighter-rouge">{a,b}</code>) is not included.</li>
+  <li>A pattern can therefore be specified in <code class="language-plaintext highlighter-rouge">branch-name-pattern</code> to match multiple branches e.g. <code class="language-plaintext highlighter-rouge">release-*</code> to match all release branches.</li>
+  <li>Despite pattern support, a complex workflow may require multiple branch protection rules for different patterns: e.g. <code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">develop</code>, <code class="language-plaintext highlighter-rouge">release-*</code>. While such manual configuration is possible using the GitHub settings interface, the <a href="https://innersource.flutter.com/docs/codebases-json/#repos">codebases.json <code class="language-plaintext highlighter-rouge">repos</code> format</a> only supports specifying a single branch protection rule per-repository (v1.2). Supporting multiple rules per repo is planned but not yet scheduled.</li>
+  <li>Current workarounds are either to prefix all branches to be protected with a common pattern, or to configure additional rules manually with only the most critical rule (e.g. release branches) declared in <code class="language-plaintext highlighter-rouge">codebases.json</code>.</li>
+</ul>
+
+<h2 id="example-docs-repository">Example: Docs Repository</h2>
+
+<p>Not all repositories contain critical production service code, and for many repositories more flexible protection is appropriate. For example for a documentation repository using GitHub Flow there are several common options:</p>
+
+<ol>
+  <li>No branch protection at all.</li>
+  <li>Restrict pushes to <code class="language-plaintext highlighter-rouge">main</code> to a group of editors, allowing them to push directly, while requiring others to submit pull requests.</li>
+  <li>Relaxed review requirements, allowing stale reviews and administrator override.</li>
+</ol>
+
+<h3 id="no-protection">No Protection</h3>
+
+<p>No branch protection is similar to a default confluence page (editable by all) although the version history can be re-written with a force push and/or the branch deleted unless this is protected against.</p>
+
+<p>This can be achieved by simply not declaring any branch protection rule for the repository in <code class="language-plaintext highlighter-rouge">codebases.json</code>. Note that the <a href="/docs/codebase-governor/">code governor automation</a> will restore or re-configure any manually deleted or edited branch protection rules unless the <code class="language-plaintext highlighter-rouge">codebases.json</code> is updated. However it <em>will not delete rules</em>. This means if relaxing existing protections manual cleanup is required.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/example-docs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no branch protection required"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="restricted-push">Restricted Push</h3>
+
+<p>A branch protection rule can be configured to limit who can push to a branch. This can be used to create a group of “editors” who can push direct un-reviewed edits to <code class="language-plaintext highlighter-rouge">main</code> to quickly update docs. Non-editors cannot push to <code class="language-plaintext highlighter-rouge">main</code> so will create a new branch and raise a pull request for an editor to review &amp; merge.</p>
+
+<p>The current code governor release (<a href="/releases/">v1.2.1</a>) does not support automated creation or declaration of this type of branch protection. Therefore you should declare the repo with no protection in your <code class="language-plaintext highlighter-rouge">codebases.json</code> and manually configure the branch protection in the GitHub repository settings:</p>
+
+<ol>
+  <li>Navigate to create/edit a branch protection rule (<code class="language-plaintext highlighter-rouge">Settings</code> &gt; <code class="language-plaintext highlighter-rouge">Branches</code> &gt; <code class="language-plaintext highlighter-rouge">Add Rule</code>).</li>
+  <li>Enter the branch name pattern (e.g. <code class="language-plaintext highlighter-rouge">main</code>).</li>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">Require pull request reviews before merging</code> is <strong>NOT</strong> checked.</li>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">Restrict who can push to matching branches</code> is checked, and specify those who require this access.</li>
+  <li>Save the rule.</li>
+</ol>
+
+<h3 id="relaxed-review">Relaxed Review</h3>
+
+<p>For a docs repository where changes should be reviewed similar rules can be used as for production service code. However additional shortcuts and exceptions can be allowed for contributor convenience as they present no security risk:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dismisses-stale-reviews</code> set to <code class="language-plaintext highlighter-rouge">false</code> means allows approvals to remain valid when the contributor pushes further final changes after the review was completed.</li>
+  <li><code class="language-plaintext highlighter-rouge">require-review-from-codeowners</code> set to <code class="language-plaintext highlighter-rouge">false</code> means any <code class="language-plaintext highlighter-rouge">CODEOWNERS.md</code> specifications are optional optimisations to help direct the review assignees rather than an enforced reviewer group.</li>
+  <li><code class="language-plaintext highlighter-rouge">include-administrators</code> set to <code class="language-plaintext highlighter-rouge">false</code> allows those with admin access to the repository (the maintainers) to override the protection and merge anyway.</li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"github-flow-relaxed-review"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dismisses-stale-reviews"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/example-docs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github-flow-relaxed-review"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="example-automated-commits">Example: Automated Commits</h2>
+
+<p>Some repositories require automated commits: for example a commit to update a release version from a build script. Using <a href="/docs/automated-access/">a Github app for authentication</a> is recommended but many users also use a service account. These approaches can be complicated by branch protection.</p>
+
+<ul>
+  <li>When using a service account, the recommended approach is to allow repository admins to override the protection by setting <code class="language-plaintext highlighter-rouge">include-administrators</code> to <code class="language-plaintext highlighter-rouge">false</code>. By configuring the service account as a maintainer (or manually granting it admin rights) it can make automated commits directly by overriding the branch protection with its elevated privileges. This is not possible using a GitHub App.</li>
+  <li>If the branch protection can be configured as <a href="#restricted-push">restricted push</a> then either GitHub App or the service account can be included in the group with limited access to push directly to the protected branch.</li>
+</ul>
+
+<h2 id="example-capability-protection">Example: Capability Protection</h2>
+
+<p>Product and capability repositories themselves also require branch protection: the code governor will action any <a href="/docs/codebases-json/">codebases.json</a> changes merged into the default branch (e.g. <code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>). Since this file configures the access control and branch protection of the other capability repositories, the default branch requires protection.</p>
+
+<p>The recommended setup:</p>
+
+<ul>
+  <li>To ensure the code must be reviewed <code class="language-plaintext highlighter-rouge">required-reviews</code> is set to <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">dismisses-stale-reviews</code> &amp; <code class="language-plaintext highlighter-rouge">include-administrators</code> is set <code class="language-plaintext highlighter-rouge">true</code></li>
+  <li>A <code class="language-plaintext highlighter-rouge">CODEOWNERS</code> file (see <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-code-owners">GitHub Docs</a>) is created referencing the maintainer team (<code class="language-plaintext highlighter-rouge">maintainers-cap-...</code>) as owner of <code class="language-plaintext highlighter-rouge">codebases.json</code>. With <code class="language-plaintext highlighter-rouge">require-review-from-code-owners</code> set to <code class="language-plaintext highlighter-rouge">true</code> this enforces a <em>maintainer</em> review for any <code class="language-plaintext highlighter-rouge">codebases.json</code> changes.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">CODEOWNERS</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># require maintainer review for capability configuration
+codebases.json    @Flutter-Global/maintainers-cap-example
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">codebases.json</code> (snippet):</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all-flutter-global"</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"branch-protections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"codeowner-review"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"branch-name-pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required-reviews-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dismisses-stale-reviews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require-review-from-codeowners"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"include-administrators"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"https://github.com/Flutter-Global/cap-example"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"repotype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capability"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"branch-protection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"codeowner-review"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that the capability <code class="language-plaintext highlighter-rouge">codebases.json</code> specifies the branch protections of its child repositories, and not of itself. A capability is owned by a product, and the capability branch protection will be defined by the owning product. As a root repository, a product’s branch protections must be set manually unless it includes itself in its <code class="language-plaintext highlighter-rouge">codebases.json</code> <code class="language-plaintext highlighter-rouge">repo</code> list.</p>
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#branching-strategy" class="hover:text-theme-color">Branching Strategy</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#configuring-branch-protection" class="hover:text-theme-color">Configuring Branch Protection</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-github-flow-service" class="hover:text-theme-color">Example: GitHub Flow Service</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-gitflow-service" class="hover:text-theme-color">Example: GitFlow Service</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-docs-repository" class="hover:text-theme-color">Example: Docs Repository</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-protection" class="hover:text-theme-color">No Protection</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#restricted-push" class="hover:text-theme-color">Restricted Push</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#relaxed-review" class="hover:text-theme-color">Relaxed Review</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-automated-commits" class="hover:text-theme-color">Example: Automated Commits</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-capability-protection" class="hover:text-theme-color">Example: Capability Protection</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+  </body>
+</html>

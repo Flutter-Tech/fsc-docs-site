@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Releases | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+</head>
+  <body class="relative">
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 px-4 py-5 bg-theme-header-bg">
+        
+          <img class="w-auto h-8 " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+              
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full">
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto max-h-10  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/"  title="Home">Home</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="Docs">Docs</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link-sel bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel hover:bg-theme-header-nav-link-bg-sel" href="/releases/"  title="Releases">Releases</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+        
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+    <a href="/start/" title="Go to Getting Started" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Getting Started</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/start/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/start/contribute/" title="Go to Making a Contribution" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Making a Contribution</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Setup CI on GitHub</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/start/create-repo/" title="Go to Creating a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Creating a Repository</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/start/maintainer/" title="Go to Maintaining a Repository" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintaining a Repository</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/how/" title="Go to How it Works" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">How it Works</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/community" title="Go to Community" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/catalogue/activity-level" title="Go to Activity Level" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Technical Docs" class="text-gray-500 pr-4 text-base no-underline menu-link hover:text-theme-color">Technical Docs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+      
+
+<ul class="sidebar-nav nav-parent-icon text-sm xl:text-lg font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    
+    <a href="/docs/naming/" title="Go to Repository Naming" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Repository Naming</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebases-json/" title="Go to The codebases.json File" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > The codebases.json File</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    
+    <a href="/docs/codebase-governor/" title="Go to Codebase Governor" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    
+    <a href="/docs/automated-access/" title="Go to Automated GitHub Access" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Automated GitHub Access</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>
+   
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 text-sm pr-4 no-underline menu-link hover:text-theme-color"
+      > Using Jenkins with GitHub</a
+    >
+  </li>
+   
+</ul>
+
+
+  </li>
+   
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    
+    <a href="/community/" title="Go to Community" class="text-gray-500 text-base pr-4 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>
+   
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="releases">Releases</h1>
+
+<h2 id="codebase-governor-">Codebase Governor 🎩</h2>
+
+<h3 id="version-121"><strong>Version</strong> 1.2.1</h3>
+
+<p><sup><strong>Released</strong> 22 Apr 2021</sup>    <sup><strong>Pull request</strong> <a href="https://github.com/Flutter-Global/flutter-actions/pull/75">view</a></sup></p>
+
+<p>This version 1.2.1 gives you the ability to manage Collaborators (contributors) and adds more Branch Protections options to fine-tune.</p>
+
+<h4 id="new">NEW</h4>
+
+<ul>
+  <li>Ability to add Collaborators (users with <code class="language-plaintext highlighter-rouge">write</code> permissions) in <code class="language-plaintext highlighter-rouge">codebases.json</code> <sup><sub><strong><a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/codebasegovernor-v1-2-docs-update/CodeBasesJson.md#contributors">learn more</a></strong></sub></sup></li>
+  <li>Ability to specify additional parameters for each branch protection type: <sup><sub><strong><a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/codebasegovernor-v1-2-docs-update/CodeBasesJson.md#policybranch-protectionsbranch_protection_idparameters-keys">learn more</a></strong></sub></sup>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dismisses-stale-reviews</code></li>
+      <li><code class="language-plaintext highlighter-rouge">restricts-review-dismissals</code></li>
+      <li><code class="language-plaintext highlighter-rouge">requires-strict-status-checks</code></li>
+      <li><code class="language-plaintext highlighter-rouge">requires-commit-signatures</code></li>
+      <li><code class="language-plaintext highlighter-rouge">requires-linear-history</code></li>
+      <li><code class="language-plaintext highlighter-rouge">restrict-pushes</code></li>
+      <li><code class="language-plaintext highlighter-rouge">allows-force-pushes</code></li>
+      <li><code class="language-plaintext highlighter-rouge">allows-deletions</code>
+<br /><br /><br /></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="version-112"><strong>Version</strong> 1.1.2</h3>
+
+<p><sup><strong>Released</strong> 25 Feb 2021</sup>    <sup><strong>Pull request</strong> <a href="https://github.com/Flutter-Global/flutter-actions/pull/54">view</a></sup></p>
+
+<p>Version 1.1.2 is a minor patch release to fix a problem where branch protection rules in unversioned <code class="language-plaintext highlighter-rouge">codebases.json</code> files would not be cascaded to capability child repositories.</p>
+
+<h4 id="fixed">FIXED</h4>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">standard-protected-master-branch</code> key is now correctly recognized and the branch protection policy will be cascaded to the child repositories when using the unversioned <code class="language-plaintext highlighter-rouge">codebases.json</code> file structure.</li>
+  <li>The new default branch <code class="language-plaintext highlighter-rouge">main</code> is used by all scripts when creating new Capabilities.
+<br /><br /><br /></li>
+</ul>
+
+<hr />
+
+<h3 id="version-111"><strong>Version</strong> 1.1.1</h3>
+
+<p><sup><strong>Released</strong> 14 Dec 2020</sup>    <sup><strong>Pull request</strong> <a href="https://github.com/Flutter-Global/flutter-actions/pull/32">view</a></sup></p>
+
+<p>The version 1.1.1 patch applies the new <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> file structure when creating a new Capability using the <a href="https://github.com/Flutter-Global/flutter-global-automation/issues/new/choose">Capability Creator template</a>.</p>
+
+<h5 id="prerequisites">Prerequisites</h5>
+
+<ul>
+  <li>The release is backwards compatible, so there will be no change in behaviour until you update to the new format of <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a></li>
+  <li>To utilise the new features of v1.1.1 the <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> of your capability has to be updated to the new format, so please review the examples: <a href="https://github.com/Flutter-Global/cap-shared-codebase/blob/master/codebases.json">live example here</a> and <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md">codebase definition here</a></li>
+</ul>
+
+<h4 id="fixed-1">FIXED</h4>
+
+<ul>
+  <li>When creating a new Capability using the <strong><a href="https://github.com/Flutter-Global/flutter-global-automation/issues/new/choose">Capability Creator template</a></strong>, the v1.1 <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> structure will be used.
+<br /><br /><br /></li>
+</ul>
+
+<hr />
+
+<h3 id="version-110"><strong>Version</strong> 1.1.0</h3>
+
+<p><sup><strong>Released</strong> 04 Dec 2020</sup>    <sup><strong>Pull request</strong> <a href="#">view</a></sup></p>
+
+<p>This version 1.1.0 aims to give you better control and flexibility over branch protection settings, backward compatibility and improved dry-run messaging in Codebases Governor.</p>
+
+<h5 id="prerequisites-1">Prerequisites</h5>
+
+<ul>
+  <li>The release is backwards compatible, so there will be no change in behaviour until you update to the new format of <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a></li>
+  <li>To utilise the new features of v1.1.0 the <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> of your capability has to be updated to the new format, so please review the examples: <a href="https://github.com/Flutter-Global/cap-shared-codebase/blob/master/codebases.json">live example here</a> and <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md">definition here</a></li>
+</ul>
+
+<h4 id="new-1">NEW</h4>
+
+<ul>
+  <li>Ability to use multiple branch protection types within the same capability allowing for different rules to be applied at a repo level, leveraging GitHub-standard patterns</li>
+  <li>Ability to specify additional parameters for each branch protection type:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">policy.branch-protections</code> on root level, where we can specify one or more branch protection settings which can be referenced by repositories listed under <code class="language-plaintext highlighter-rouge">repos</code> <sup><sub><strong><a href="#additional-parameters">learn more</a></strong></sub></sup></li>
+      <li><code class="language-plaintext highlighter-rouge">repos.&lt;repository&gt;.policy.branch-protection</code> that allows us to reference one of the root level policies defined on <code class="language-plaintext highlighter-rouge">policy.branch-protections</code> <sup><sub><strong><a href="#additional-parameters">learn more</a></strong></sub></sup></li>
+    </ul>
+  </li>
+  <li>Pattern matching using regex is supported in the branch protection settings in <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> <sup><sub><strong><a href="#regex-patterns">learn more</a></strong></sub></sup></li>
+  <li>Added a new versioning strategy for <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> to ensure backward compatibility <sup><sub><strong><a href="#versioning">learn more</a></strong></sub></sup></li>
+  <li>No inheritance of policies between parent and child repositories</li>
+</ul>
+
+<h4 id="improved">IMPROVED</h4>
+
+<ul>
+  <li>The automation process no longer overrides the branch protection parameters with unhelpful defaults. Admins are free to apply changes directly in addition to using <code class="language-plaintext highlighter-rouge">codebases.json</code> to set values</li>
+  <li>Detailed messaging in the dry-run comments, prior to merging the changes:
+    <ul>
+      <li>Now it distinguishes between create vs update branch protections</li>
+      <li>In the update branch protection comment, it will now include the applicable branch protection setting ID
+<img src="https://user-images.githubusercontent.com/72739646/100639547-36bf8c80-332d-11eb-877e-d0d24c350a71.png" alt="Screenshot 2020-11-30 at 16 54 33" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="fixed-2">FIXED</h4>
+
+<ul>
+  <li>Added missing branch protection updates for the initial capability repo creation</li>
+  <li>Now only the <code class="language-plaintext highlighter-rouge">main</code> branch is pulled over from the template repository and copied to the capability</li>
+</ul>
+
+<h4 id="detailed-changes">DETAILED CHANGES</h4>
+
+<h5><a href="#" id="additional-parameters"></a>Additional parameters for each branch protection type</h5>
+
+<p>You can create several policies in <code class="language-plaintext highlighter-rouge">policy.branch-protections</code>, defining the branch protection settings needed for each, and reference them in <code class="language-plaintext highlighter-rouge">repos.&lt;repository&gt;.policy.branch-protection</code>. This allows you greater flexibility and reduces settings duplication.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "policy": {
+    "comment": "comment",
+    "branch-protections": {
+      "bp1": {
+        "comment": "This is a description...",
+        "parameters": {
+            "include-administrators": false
+        }
+      },
+      "bp2": {
+        "comment": "This is a description...",
+        "parameters": {
+          "include-administrators": true
+        }
+      }
+    }
+  },
+  "repos": {
+    "https://github.com/Flutter-Global/sco-service": {
+      "nickname": "SCO",
+      "repotype": "service",
+      "policy": {
+        "branch-protection": "bp1"
+      }
+    },
+    "https://github.com/Flutter-Global/sco-service2": {
+      "nickname": "SCO2",
+      "repotype": "service",
+      "policy": {
+        "branch-protection": "bp2"
+      }
+    }
+  }
+}
+</code></pre></div></div>
+
+<h5><a href="#" id="regex-patterns"></a>Branch protection settings using regex pattern matching</h5>
+
+<p>Now you can apply branch protection settings to any branch that match a regex pattern defined in the <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a>. Use the <code class="language-plaintext highlighter-rouge">branch-name-pattern</code> attribute in <code class="language-plaintext highlighter-rouge">policy.branch-protections.&lt;branch protection definition&gt;.parameters</code>.
+For more information about syntax options for branch rules, see <strong><a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md">here</a></strong>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "policy": {
+    "comment": "Capability policy",
+    "branch-protections": {
+      "bp1": {
+        "comment": "Capability policy - branch protection comment",
+        "parameters": {
+            "branch-name-pattern": "dev*",
+            "include-administrators": true,
+            "require-review-from-codeowners": true,
+            "required-reviews-count": 5
+        }
+      }
+    }
+  }
+}
+</code></pre></div></div>
+
+<h5><a href="#" id="versioning"></a> Versioning strategy</h5>
+
+<p>There is a new attribute <code class="language-plaintext highlighter-rouge">version</code> that can be defined. When added to <a href="https://github.com/Flutter-Global/RulesOfTheRoad/blob/master/CodeBasesJson.md"><code class="language-plaintext highlighter-rouge">codebases.json</code></a> it will change the behaviour of the Codebase Governor to the new version.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "version": "1.1",
+  "comment": ["comments"],
+  "description": "Capability description",
+  "capability-type": "Capability",
+  "name": "Capability name",
+  "nickname": "Capability nickname",
+  "owner": "flutter",
+  "maintainers": ["flutter"]
+}
+</code></pre></div></div>
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#codebase-governor-" class="hover:text-theme-color">Codebase Governor 🎩</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#version-121" class="hover:text-theme-color"><strong>Version</strong> 1.2.1</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#version-112" class="hover:text-theme-color"><strong>Version</strong> 1.1.2</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#version-111" class="hover:text-theme-color"><strong>Version</strong> 1.1.1</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#version-110" class="hover:text-theme-color"><strong>Version</strong> 1.1.0</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+  </body>
+</html>
