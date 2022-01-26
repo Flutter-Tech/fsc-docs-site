@@ -14,7 +14,7 @@ jobs:
     environment: prod
     # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
     env:
-      FILES: _config.yml README.md CONTRIBUTING.md CNAME community.md catalogue/index.md
+      FILES: _config.yml README.md CONTRIBUTING.md CNAME community.md catalogue/index.md tailwind.config.js
       FOLDERS: .github .git
     steps:
       - name: Retrieve Flutter Global app token
@@ -24,7 +24,7 @@ jobs:
           APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
           APP_ID: 115213
           APP_INSTALLATION_ID: 16908128
-      
+
       - name: Checkout External docs site
         uses: actions/checkout@v2
         with:
