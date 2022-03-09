@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -728,7 +728,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #f3f4f6;
 }
 
-.prose pre code {
+.prose :where(pre code):not(:where([class~="not-prose"] *)) {
   background-color: transparent;
   border-width: 0;
   border-radius: 0;
@@ -739,14 +739,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: inherit;
   line-height: inherit;
   background-color: #f3f4f6;
-}
-
-.prose pre code font-size {
-  0: 1.125rem;
-}
-
-.prose pre code font-size :where(1):not(:where([class~="not-prose"] *)) {
-  line-height: 1.75rem;
+  font-size: 1.125rem;
+  font-size: [object Object];
 }
 
 .prose :where(pre code):not(:where([class~="not-prose"] *))::before {
@@ -1171,10 +1165,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0px;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -1187,12 +1177,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3rem;
 }
 
-.max-h-10 {
-  max-height: 2.5rem;
-}
-
 .max-h-\[40rem\] {
   max-height: 40rem;
+}
+
+.min-h-\[100px\] {
+  min-height: 100px;
 }
 
 .min-h-full {
@@ -1410,6 +1400,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-repeat: no-repeat;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-0 {
   padding: 0px;
 }
@@ -1421,11 +1415,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .py-4 {
@@ -1456,6 +1445,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .py-8 {
@@ -1494,8 +1488,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0px;
 }
 
-.pr-4 {
-  padding-right: 1rem;
+.pr-5 {
+  padding-right: 1.25rem;
 }
 
 .pb-1 {
@@ -1512,10 +1506,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pl-2 {
   padding-left: 0.5rem;
-}
-
-.pr-5 {
-  padding-right: 1.25rem;
 }
 
 .pt-4 {
@@ -2406,15 +2396,15 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1280px) {
   .xl\:top-\[0\.72rem\] {
     top: 0.72rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 }
