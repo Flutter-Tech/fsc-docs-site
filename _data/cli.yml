@@ -1,0 +1,16 @@
+version: v1.3.0
+usage: |
+    Usage:
+      git-flutter [command]
+
+    Available Commands:
+      completion     Generate the autocompletion script for the specified shell
+      feature        Create a feature branch for your work.
+      help           Help about any command
+      hotfix         Create a hotfix branch based on the config file
+      init           init commands
+      release        release command
+      status         Displays the status of the current repo
+      tag            tag command
+
+    Use "git-flutter [command] --help" for more information about a command.

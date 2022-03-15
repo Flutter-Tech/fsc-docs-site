@@ -46,6 +46,20 @@ main:
       - url: /how/work-types/
         title: Work Type Analysis
         identifier: work-types
+  - url: /git-flutter/
+    title: Git Flutter CLI
+    identifier: git-flutter
+    children:
+      - url: /git-flutter/status
+        title: status Command
+        identifier: git-flutter-status
+  - url: /sdlc/
+    title: Development Lifecycles
+    identifier: sdlc
+    children:
+      - url: /sdlc/parallel-teams
+        title: Parallel Teams
+        identifier: parallel-teams
   - url: /catalogue/
     title: Service Catalogue
     identifier: catalogue
@@ -57,7 +71,7 @@ main:
         title: Activity Level
         identifier: activity-level
   - url: /docs/
-    title: Technical Docs
+    title: Reference Docs
     identifier: docs
     children:
       - url: /docs/naming/
