@@ -31,12 +31,12 @@ jobs:
       # use fetch to download the latest release assets and export data from command
       - name: Download release assets
         env:
-          GITHUB_OAUTH_TOKEN: ${{ steps.flutter_tech_app.outputs.app_token }}
+          GITHUB_OAUTH_TOKEN: ${{ steps.flutter_global_app_token.outputs.app_token }}
         run: |
-          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="git-flutter_*" ./releases/
-          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="checksums.txt" ./releases/
-          chmod u+x ./releases/git-flutter_*
-          ./releases/git-flutter_Linux_amd64 docs -o ./_data/cli.yml
+          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="git-flutter_*" ./git-flutter/
+          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="checksums.txt" ./git-flutter/
+          chmod u+x ./git-flutter/git-flutter_*
+          ./git-flutter/git-flutter_Linux_amd64 docs -o ./_data/cli.yml
 
       - name: Commit changes to site
         run: |
