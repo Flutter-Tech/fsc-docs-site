@@ -4,23 +4,14 @@ usage: |
       git flutter [command]
 
     Available Commands:
-      apply          Parse and optionally apply a set of changes
-      catalogue      Export service catalogue data in yaml
-      csv            Export a data csv
-      debug          Debugging command to help development
-      docs           Exports YAML data for docs
       feature        Create a feature branch for your work.
       help           Help about any command
       hotfix         Create a hotfix branch based on the config file
       init           init commands
-      lint           Lint codebases.json file
-      mock           Displays output of <command> in several gitflow setups
       release        release command
       status         Displays the status of the current repo
       sync           Syncs the current branch (if needed)
       tag            tag command
-      update         Update local snapshot of GitHub data
-      user-directory Downloads and prints the latest user-directory.json
 
     Flags:
           --cache string       application cache file (default "./.cache.v8")
