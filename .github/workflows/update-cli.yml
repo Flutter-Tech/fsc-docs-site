@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     steps:
+
       - name: Retrieve Flutter Global app token
         id: flutter_global_app_token
         uses: Flutter-Tech/github-app-token@v1
@@ -20,6 +21,8 @@ jobs:
 
       - name: Checkout docs site
         uses: actions/checkout@v2
+        with:
+          token: ${{ steps.flutter_global_app_token.outputs.app_token }}
 
       # Install the latest version of the fetch helper
       # https://github.com/gruntwork-io/fetch
