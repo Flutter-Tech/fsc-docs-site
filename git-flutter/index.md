@@ -11,21 +11,51 @@ The Git Flutter CLI is a tool for using standard inner source development workfl
 {{ site.data.cli.usage }}
 ```
 
-## Install
+## macOS Install
 
-To install the CLI:
-
-1. Download the latest release from the [fsc-cli-tool release page](https://github.com/Flutter-Global/fsc-cli-tool/releases). Builds are available for MacOS, Linux and Windows.
-2. Rename the binary to `git-flutter` and place it on your `PATH`. For example on Mac:
+Download the latest {{ site.data.cli.version }} macOS binary. For Intel macOS:
 
 ```
-$ cp ~/Downloads/mac_git-flutter /usr/local/bin/git-flutter
+curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_arm64
 ```
 
-3. Check your install by using via `git`:
+And for macOS on Apple Silicon:
 
 ```
-$ git flutter
+curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_amd64
+```
+
+(Optional) Validate the binary using the provided checksums:
+
+```
+curl -LO "https://innersource.flutter.com/git-flutter/checksums.txt"
+
+Intel macOS:
+grep macOS_amd64 checksums.txt | shasum -a 256 --check
+mv git-flutter_macOS_amd64 git-flutter
+
+Apple Silicon macOS:
+grep macOS_arm64 checksums.txt | shasum -a 256 --check
+mv git-flutter_macOS_arm64 git-flutter
+```
+
+Make the binary executable:
+
+```
+chmod +x ./git-flutter
+```
+
+Move to a location on your `PATH`:
+
+```
+sudo mv ./git-flutter /usr/local/bin/
+sudo chown root: /usr/local/bin/git-flutter
+```
+
+Test the command via `git`:
+
+```
+git flutter --version
 ```
 
 ## Getting Started
