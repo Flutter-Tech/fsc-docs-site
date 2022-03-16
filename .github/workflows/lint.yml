@@ -1,4 +1,4 @@
-name: Format (Prettier)
+name: Lint Format
 
 on:
   pull_request:

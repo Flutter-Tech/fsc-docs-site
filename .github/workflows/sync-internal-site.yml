@@ -1,4 +1,4 @@
-name: Sync External docs site to Internal
+name: Update Internal Site
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
   internal-site-sync:
     # skip this job if running in the target Flutter-Tech repo...
     if: ${{ github.repository_owner != 'Flutter-Tech' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     environment: prod
     # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
     env:

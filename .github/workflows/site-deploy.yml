@@ -1,4 +1,4 @@
-name: Generate and Deploy Website
+name: Deploy GH Pages
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 
 jobs:
   build:
+    # skip this job unless in Flutter-Tech repo
+    if: ${{ github.repository_owner == 'Flutter-Tech' }}
     runs-on: ubuntu-latest
     environment: github-pages
     concurrency: deploy

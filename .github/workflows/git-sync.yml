@@ -1,3 +1,5 @@
+name: Publish to Flutter-Tech
+
 # This workflow ensures the published (public) docs site
 # at Flutter-Tech/fsc-docs-site:main is always up to date
 # without exposing under-review branches from an internal repo
