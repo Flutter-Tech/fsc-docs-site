@@ -975,23 +975,45 @@ Use "git flutter [command] --help" for more information about a command.
 
 </code></pre></div></div>
 
-<h2 id="install">Install</h2>
+<h2 id="macos-install">macOS Install</h2>
 
-<p>To install the CLI:</p>
+<p>Download the latest v1.5.0 macOS binary. For Intel macOS:</p>
 
-<ol>
-  <li>Download the latest release from the <a href="https://github.com/Flutter-Global/fsc-cli-tool/releases">fsc-cli-tool release page</a>. Builds are available for MacOS, Linux and Windows.</li>
-  <li>Rename the binary to <code class="language-plaintext highlighter-rouge">git-flutter</code> and place it on your <code class="language-plaintext highlighter-rouge">PATH</code>. For example on Mac:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp ~/Downloads/mac_git-flutter /usr/local/bin/git-flutter
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_arm64
 </code></pre></div></div>
 
-<ol>
-  <li>Check your install by using via <code class="language-plaintext highlighter-rouge">git</code>:</li>
-</ol>
+<p>And for macOS on Apple Silicon:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flutter
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_amd64
+</code></pre></div></div>
+
+<p>(Optional) Validate the binary using the provided checksums:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -LO "https://innersource.flutter.com/git-flutter/checksums.txt"
+
+Intel macOS:
+grep macOS_amd64 checksums.txt | shasum -a 256 --check
+mv git-flutter_macOS_amd64 git-flutter
+
+Apple Silicon macOS:
+grep macOS_arm64 checksums.txt | shasum -a 256 --check
+mv git-flutter_macOS_arm64 git-flutter
+</code></pre></div></div>
+
+<p>Make the binary executable:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x ./git-flutter
+</code></pre></div></div>
+
+<p>Move to a location on your <code class="language-plaintext highlighter-rouge">PATH</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv ./git-flutter /usr/local/bin/
+sudo chown root: /usr/local/bin/git-flutter
+</code></pre></div></div>
+
+<p>Test the command via <code class="language-plaintext highlighter-rouge">git</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter --version
 </code></pre></div></div>
 
 <h2 id="getting-started">Getting Started</h2>
@@ -1016,7 +1038,7 @@ Use "git flutter [command] --help" for more information about a command.
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#install" class="hover:text-theme-color">Install</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#getting-started" class="hover:text-theme-color">Getting Started</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#support" class="hover:text-theme-color">Support</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#macos-install" class="hover:text-theme-color">macOS Install</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#getting-started" class="hover:text-theme-color">Getting Started</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#support" class="hover:text-theme-color">Support</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
