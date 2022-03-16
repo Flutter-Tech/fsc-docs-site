@@ -2,6 +2,9 @@ name: Update CLI Release
 
 on:
   workflow_dispatch:
+  # run daily to catch releases
+  schedule:
+    - cron: "30 3 * * *"
 
 jobs:
   update-cli:
