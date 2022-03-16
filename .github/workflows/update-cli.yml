@@ -1,0 +1,50 @@
+name: Update CLI Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-cli:
+    # skip this job if running in the target Flutter-Tech repo
+    if: ${{ github.repository_owner != 'Flutter-Tech' }}
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Retrieve Flutter Global app token
+        id: flutter_global_app_token
+        uses: Flutter-Tech/github-app-token@v1
+        with:
+          APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
+          APP_ID: 115213
+          APP_INSTALLATION_ID: 16908128
+
+      - name: Checkout docs site
+        uses: actions/checkout@v2
+        with:
+          path: fsc-docs-site
+
+      # Install the latest version of the fetch helper
+      # https://github.com/gruntwork-io/fetch
+      - name: Install Fetch helper
+        run: brew install fetch
+
+      # use fetch to download the latest release assets and export data from command
+      - name: Download release assets
+        env:
+          GITHUB_OAUTH_TOKEN: ${{ steps.flutter_tech_app.outputs.app_token }}
+        run: |
+          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="git-flutter_*" ./releases/
+          fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="checksums.txt" ./releases/
+          chmod u+x ./releases/git-flutter_*
+          ./releases/git-flutter_Linux_amd64 docs -o ./_data/cli.yml
+
+      - name: Commit changes to site
+        run: |
+          if [ ! -z "$(git status --porcelain=v1 2>/dev/null)" ]
+          then
+            git config --global user.email "innersource-bot@flutter.com"
+            git config --global user.name "Inner source bot"
+            git add .
+            git commit -m "Update CLI version"
+            git push
+          fi

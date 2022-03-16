@@ -1,14 +1,16 @@
 # Navbar left menu navigation links
 
 left:
-  - title: Home
-    url: /
-
+  - title: Start
+    url: /start/
+  - title: How
+    url: /how/
+  - title: CLI
+    url: /git-flutter/
+  - title: SDLC
+    url: /sdlc/
   - title: Docs
     url: /docs/
-
-  - title: Releases
-    url: /releases/
 
 # Navbar right menu navigation links
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: preview
 title: Git Flutter CLI
 ---
 

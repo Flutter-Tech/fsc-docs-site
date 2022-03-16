@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: preview
 title: Parallel Teams SDLC
 ---
 

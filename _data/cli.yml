@@ -1,16 +1,30 @@
-version: v1.3.0
+version: v1.5.0
 usage: |
     Usage:
-      git-flutter [command]
+      git flutter [command]
 
     Available Commands:
-      completion     Generate the autocompletion script for the specified shell
+      apply          Parse and optionally apply a set of changes
+      catalogue      Export service catalogue data in yaml
+      csv            Export a data csv
+      debug          Debugging command to help development
+      docs           Exports YAML data for docs
       feature        Create a feature branch for your work.
       help           Help about any command
       hotfix         Create a hotfix branch based on the config file
       init           init commands
+      lint           Lint codebases.json file
+      mock           Displays output of <command> in several gitflow setups
       release        release command
       status         Displays the status of the current repo
+      sync           Syncs the current branch (if needed)
       tag            tag command
+      update         Update local snapshot of GitHub data
+      user-directory Downloads and prints the latest user-directory.json
 
-    Use "git-flutter [command] --help" for more information about a command.
+    Flags:
+          --cache string       application cache file (default "./.cache.v8")
+          --no-check-version   Doesn't check for updated version
+      -v, --verbose            verbose log output
+
+    Use "git flutter [command] --help" for more information about a command.

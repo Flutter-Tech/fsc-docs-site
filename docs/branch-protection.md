@@ -159,7 +159,7 @@ This can be achieved by simply not declaring any branch protection rule for the 
 
 A branch protection rule can be configured to limit who can push to a branch. This can be used to create a group of "editors" who can push direct un-reviewed edits to `main` to quickly update docs. Non-editors cannot push to `main` so will create a new branch and raise a pull request for an editor to review & merge.
 
-The current code governor release ([v1.2.1](/releases/)) does not support automated creation or declaration of this type of branch protection. Therefore you should declare the repo with no protection in your `codebases.json` and manually configure the branch protection in the GitHub repository settings:
+The current code governor release does not support automated creation or declaration of this type of branch protection. Therefore you should declare the repo with no protection in your `codebases.json` and manually configure the branch protection in the GitHub repository settings:
 
 1. Navigate to create/edit a branch protection rule (`Settings` > `Branches` > `Add Rule`).
 2. Enter the branch name pattern (e.g. `main`).
