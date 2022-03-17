@@ -1,4 +1,4 @@
-version: v1.5.0
+version: v1.5.1
 usage: |
     Usage:
       git flutter [command]
@@ -19,3 +19,123 @@ usage: |
       -v, --verbose            verbose log output
 
     Use "git flutter [command] --help" for more information about a command.
+commands:
+    feature:
+        usage: |
+            Usage:
+              git flutter feature name [flags]
+
+            Examples:
+            $ git flutter feature my-feat-name
+            $ git flutter feature my-feat-name --team ppb
+
+            Flags:
+              -s, --source string   working directory (default ".")
+                  --team string     team name
+              -y, --yes             confirm yes to any interactive prompts
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    help:
+        usage: |
+            Usage:
+              git flutter help [command] [flags]
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    hotfix:
+        usage: |
+            Usage:
+              git flutter hotfix name [flags]
+
+            Flags:
+              -s, --source string   working directory (default ".")
+              -y, --yes             confirm yes to any interactive prompts
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    init:
+        usage: |
+            Usage:
+              git flutter init [command]
+
+            Available Commands:
+              gitflow     gitflow command
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+
+            Use "git flutter init [command] --help" for more information about a command.
+    release:
+        usage: |
+            Usage:
+              git flutter release {name | --cancel} [flags]
+
+            Examples:
+            $ git flutter release v1.0.0
+            $ git flutter release --cancel
+
+            Flags:
+                  --cancel          cancel the release
+              -s, --source string   working directory (default ".")
+                  --team string     team name
+              -y, --yes             confirm yes to any interactive prompts
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    status:
+        usage: |
+            Usage:
+              git flutter status [flags]
+
+            Flags:
+              -s, --source string   working directory (default ".")
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    sync:
+        usage: |
+            Usage:
+              git flutter sync [flags]
+
+            Flags:
+                  --force           override any warnings to continue if possible
+              -s, --source string   working directory (default ".")
+              -y, --yes             confirm yes to any interactive prompts
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
+    tag:
+        usage: |
+            Usage:
+              git flutter tag {major | minor | patch | integration | <newversion>} [flags]
+
+            Examples:
+            $ git flutter tag patch
+            $ git flutter tag 1.0.0
+
+            Flags:
+              -m, --message string   custom annotated tag commit message
+                  --push             push to the remote
+              -s, --source string    working directory (default ".")
+                  --team string      team name
+              -y, --yes              confirm yes to any interactive prompts
+
+            Global Flags:
+                  --cache string       application cache file (default "./.cache.v8")
+                  --no-check-version   Doesn't check for updated version
+              -v, --verbose            verbose log output
