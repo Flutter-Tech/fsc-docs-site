@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Community | Flutter Inner Source</title>
+  <title>Git Flutter Install | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -240,7 +240,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/git-flutter/install/" title="Go to Install" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/git-flutter/install/" title="Go to Install" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Install</a
     >
   </li>  
@@ -320,7 +320,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/catalogue/community/" title="Go to Community" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Community</a
     >
   </li>  
@@ -745,7 +745,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/git-flutter/install/" title="Go to Install" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/git-flutter/install/" title="Go to Install" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Install</a
     >
   </li>  
@@ -825,7 +825,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/catalogue/community/" title="Go to Community" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Community</a
     >
   </li>  
@@ -964,55 +964,160 @@
     </div>
   </div>
   
-  <div class="col-span-12 px-4 py-8 prose lg:col-span-9 xs:prose-sm md:prose-base lg:prose-base max-w-none content">
-  
-  <h1 id="community">Community</h1>
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <div
+  class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
+>
+  <span class="mr-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      />
+    </svg>
+  </span>
+  This is PREVIEW content. That means it is not complete, and may be incorrect.
+  It is published for review and beta programme purposes.
+</div>
 
-<p>The community of a repository represents the members that contributed the most to the respective repository according to a set of rules developed by the Flutter Inner Source team.</p>
+<h1 id="install">Install</h1>
 
-<p>The community was not designed to be a measure of performance since there are other ways that members can contribute to the repositories that are not represented, and simple rules are used so the mechanism is understandable. It has been designed to help inform users about the most likely members who can help them with future changes, especially in a cross-divisional “inner source” context, and how that relates to the formally recognised capability maintainers team.</p>
+<p>The <code class="language-plaintext highlighter-rouge">git flutter</code> extension can be installed on <a href="#macos">macOS</a>, <a href="#linux">Linux</a> or <a href="#windows">Windows</a>.</p>
 
-<h2 id="data-source">Data source</h2>
+<h2 id="macos">macOS</h2>
 
-<p>The data used to infer the community is retrieved from the <a href="https://docs.github.com/en/graphql">GitHub GraphQL API</a>. Currently, we retrieve six months of data from the default branch of a repository and we refresh the data every Sunday.</p>
+<p>To install on your MacBook:</p>
 
-<p>The relevant pieces of information for the community inference are:</p>
+<ol>
+  <li>Download the latest v1.5.2 macOS binary:</li>
+</ol>
 
-<ul>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#organization">Organization</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#organization">Members</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#repositoryconnection">Repositories</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#commithistoryconnection">Commits</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#pullrequestconnection">Pull Requests</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#pullrequestreviewconnection">Reviews</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#issuecommentconnection">Comments</a></li>
-</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_amd64
+</code></pre></div></div>
 
-<h2 id="how-it-is-calculated">How it is calculated</h2>
+<ol>
+  <li>(Optional) Validate the binary using the provided checksums:</li>
+</ol>
 
-<p>We designed an algorithm to infer the community based on a set of simple rules. These rules vary depending on the repository’s number of reviews. If the repository has more than ten reviews, the rules used by the algorithm are:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://innersource.flutter.com/git-flutter/checksums.txt"
+grep macOS_amd64 checksums.txt | shasum -a 256 --check
+</code></pre></div></div>
 
-<ul>
-  <li><strong>Number of successful contributions</strong>: the number of pull requests that have been <strong>approved</strong> and <strong>merged</strong>.</li>
-  <li><strong>Number of contributions without changes</strong>: the number of pull requests that have been <strong>merged</strong> only with reviews of the <strong>approved</strong> type.</li>
-  <li><strong>Number of reviews for a different division</strong>: the number of reviews in a pull request raised by a member of a different division.</li>
-  <li><strong>Number of comment/changes requested reviews</strong>: the number of reviews of the <strong>comment</strong> and <strong>request for changes</strong> type.</li>
-  <li><strong>Number of approved reviews</strong>: the number of reviews of the <strong>approval</strong> type.</li>
-  <li><strong>Percentage of pull requests the member has interacted with</strong>: the percentage of pull requests the member has interacted with over the total amount of the repository’s pull requests.</li>
-</ul>
+<ol>
+  <li>Make the binary executable:</li>
+</ol>
 
-<p>However, if there are less than ten reviews, then the set of rules is reduced to:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x ./git-flutter_macOS_amd64
+</code></pre></div></div>
 
-<ul>
-  <li><strong>Number of pull requests</strong>: the total amount of pull requests the member has raised.</li>
-  <li><strong>Number of commits not associated with a pull request</strong>: the total amount of commits the member has directly pushed to the default branch.</li>
-</ul>
+<ol>
+  <li>Move to a location on your <code class="language-plaintext highlighter-rouge">PATH</code>:</li>
+</ol>
 
-<p>Each rule is applied to the data and a maximum of five members is retrieved for each rule, ordered by number of contributions. When the members have the same amount of contributions, they are ordered by alphabetical order.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv ./git-flutter_macOS_amd64 /usr/local/bin/git-flutter
+sudo chown root: /usr/local/bin/git-flutter
+</code></pre></div></div>
 
-<p>When all rules are applied, the results of each rule are merged into one list that preserves all members. Thus, it is important to consider that the maximum number of members inferred for a community is <strong>5 * number of rules</strong>. The final result is a list with all the members inferred by the different rules, ordered by the number of rules they appeared in.</p>
+<ol>
+  <li>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</li>
+</ol>
 
-  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
+</code></pre></div></div>
+
+<h2 id="linux">Linux</h2>
+
+<p>To install on a Linux dev or CI machine:</p>
+
+<ol>
+  <li>Download the latest v1.5.2 Linux binary:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_Linux_amd64
+</code></pre></div></div>
+
+<ol>
+  <li>(Optional) Validate the binary using the provided checksums:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://innersource.flutter.com/git-flutter/checksums.txt"
+grep Linux_amd64 checksums.txt | shasum -a 256 --check
+</code></pre></div></div>
+
+<ol>
+  <li>Install the executable:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo install -o root -g root -m 0755 git-flutter_Linux_amd64 /usr/local/bin/git-flutter
+</code></pre></div></div>
+
+<p>If you do not have root access on the target system, you can still install git-flutter to the <code class="language-plaintext highlighter-rouge">~/.local/bin</code> directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x git-flutter_Linux_amd64
+mkdir -p ~/.local/bin/
+mv ./git-flutter_Linux_amd64 ~/.local/bin/git-flutter
+# and then append (or prepend) ~/.local/bin to $PATH
+</code></pre></div></div>
+
+<ol>
+  <li>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
+</code></pre></div></div>
+
+<h2 id="windows">Windows</h2>
+
+<p>To install on a Windows machine:</p>
+
+<ol>
+  <li>Download the <a href="https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe">latest release v1.5.2</a>.</li>
+</ol>
+
+<p>Or if you have <code class="language-plaintext highlighter-rouge">curl</code> installed, use this command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe
+</code></pre></div></div>
+
+<ol>
+  <li>(Optional) Validate the binary by comparing <a href="https://innersource.flutter.com/git-flutter/checksums.txt">the provided checksum</a> with that of the download which you can calculate at the command prompt:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CertUtil -hashfile git-flutter_Windows_amd64.exe SHA256
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Rename the binary to <code class="language-plaintext highlighter-rouge">git-flutter.exe</code>.</p>
+  </li>
+  <li>
+    <p>Append or prepend the <code class="language-plaintext highlighter-rouge">git-flutter.exe</code> binary folder to your <code class="language-plaintext highlighter-rouge">PATH</code> environment variable.</p>
+  </li>
+  <li>
+    <p>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
+</code></pre></div></div>
+
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#macos" class="hover:text-theme-color">macOS</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#linux" class="hover:text-theme-color">Linux</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#windows" class="hover:text-theme-color">Windows</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
   </div>
   
 </div>

@@ -695,8 +695,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--tw-prose-code);
   font-weight: 600;
   font-size: 0.875em;
-  background-color: #f3f4f6;
-  padding: 0.2rem 0.4rem;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
@@ -725,7 +723,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.1428571em;
   padding-bottom: 0.8571429em;
   padding-left: 1.1428571em;
-  background-color: #f3f4f6;
 }
 
 .prose :where(pre code):not(:where([class~="not-prose"] *)) {
@@ -734,13 +731,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0;
   padding: 0;
   font-weight: inherit;
-  color: #1f2937;
+  color: inherit;
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
-  background-color: #f3f4f6;
-  font-size: 1.125rem;
-  font-size: [object Object];
 }
 
 .prose :where(pre code):not(:where([class~="not-prose"] *))::before {

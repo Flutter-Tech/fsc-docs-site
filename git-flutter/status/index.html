@@ -240,8 +240,28 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
+    <a href="/git-flutter/install/" title="Go to Install" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Install</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
     <a href="/git-flutter/status/" title="Go to status Command" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > status Command</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/git-flutter/init/" title="Go to init Command" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > init Command</a
     >
   </li>  
   
@@ -725,8 +745,28 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
+    <a href="/git-flutter/install/" title="Go to Install" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Install</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
     <a href="/git-flutter/status/" title="Go to status Command" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > status Command</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/git-flutter/init/" title="Go to init Command" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > init Command</a
     >
   </li>  
   
@@ -949,11 +989,73 @@
   It is published for review and beta programme purposes.
 </div>
 
-<h1 id="git-flutter-status-command"><code class="language-plaintext highlighter-rouge">git flutter status</code> Command</h1>
+<h1 id="status-command"><code class="language-plaintext highlighter-rouge">status</code> Command</h1>
 
-<p>The <code class="language-plaintext highlighter-rouge">status</code> command is used to understand the current state of a repository and your checkout.</p>
+<p>The <code class="language-plaintext highlighter-rouge">git flutter status</code> command is used to understand the current state of a repository and your checkout. It is designed as a <a href="/sdlc/">standard SDLC</a> aware replacement for the <code class="language-plaintext highlighter-rouge">git status</code> command and shows you:</p>
 
-<p><strong>WIP: these docs are currently a work in progress.</strong></p>
+<ul>
+  <li>your current branch and its relationship to the GitHub origin</li>
+  <li>local modifications and their state (e.g. staged, untracked, etc)</li>
+  <li>status of other important repository branches (e.g. release or develop branches)</li>
+  <li>semver tag status of current and important branches</li>
+  <li>sync status of current and important branches</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage:
+  git flutter status [flags]
+
+Flags:
+  -s, --source string   working directory (default ".")
+
+Global Flags:
+      --cache string       application cache file (default "./.cache.v8")
+      --no-check-version   Doesn't check for updated version
+  -v, --verbose            verbose log output
+</code></pre></div></div>
+
+<p>The command adds progressively greater value the more complex <a href="/sdlc/">your configured SDLC</a>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<!-- CLI example Develop Branches Ahead for topic status -->
+<h3>Develop Branches Ahead</h3>
+
+<p>Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. The status command shows the state and tags of the key repository branches alongside my current feature branch.</p>
+
+<pre><code>$ git flutter status --no-check-version
+main v1.3.2
+ppb/develop v1.4.0-ppb.alpha.3
+  3 ahead of main
+fd/develop v1.4.0-fd.alpha.5
+  5 ahead of main
+(current) fd/feature/my-new-thing</code></pre>
+
+<!-- CLI example Release In QA for topic status -->
+<h3>Release In QA</h3>
+
+<p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team started a release which is currently being tested. The status command shows the active release.</p>
+
+<pre><code>$ git flutter status --no-check-version
+(current) main v1.3.2
+ppb/develop v1.4.0-ppb.alpha.3
+  3 ahead of main
+fd/develop v1.4.0-fd.alpha.5
+  5 ahead of main
+fd/release/1.4 v1.4.0-fd.beta.0
+  5 ahead of main</code></pre>
+
+<!-- CLI example Release Merged for topic status -->
+<h3>Release Merged</h3>
+
+<p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. The status command shows how the develop branches now lag behind main and require a sync.</p>
+
+<pre><code>$ git flutter status --no-check-version
+(current) main v1.4.0
+ppb/develop v1.4.0-ppb.alpha.3
+  !! 6 behind and 3 ahead of main
+fd/develop v1.4.0-fd.alpha.5
+  !! 1 behind main</code></pre>
+
 
 
     
@@ -961,7 +1063,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-theme-color">Examples</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none ">Develop Branches Ahead</li><li class="mb-2 ml-0 text-sm list-none ">Release In QA</li><li class="mb-2 ml-0 text-sm list-none ">Release Merged</li></ul class="pt-1 pl-4 pr-1 list-none"></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
