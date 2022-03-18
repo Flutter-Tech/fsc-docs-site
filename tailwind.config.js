@@ -43,26 +43,11 @@ module.exports = {
               color: theme('colors.theme-color'),
               'text-decoration': 'underline',
             },
-            code: {
-              color: theme('colors.theme-color'),
-            },
             'code::before': {
               content: ''
             },
             'code::after': {
               content: ''
-            },
-            pre: {
-              'background-color': theme('colors.gray.100'),
-            },
-            code: {
-              'background-color': theme('colors.gray.100'),
-              padding: '0.2rem 0.4rem',
-            },
-            'pre code': {
-              'background-color': theme('colors.gray.100'),
-              'font-size': theme('fontSize.lg'),
-              'color': theme('colors.gray.800'),
             },
             table: {
               'border-top': '1px solid ' + theme('colors.gray.200'),

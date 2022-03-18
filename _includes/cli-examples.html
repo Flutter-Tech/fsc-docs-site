@@ -1,0 +1,17 @@
+
+{% for ex in site.data.cli.examples %}
+    {% for topic in ex.topics %}
+        {% if include.topic == topic %}
+
+<!-- CLI example {{ ex.title }} for topic {{ topic }} -->
+<h3>{{ ex.title }}</h3>
+
+<p>{{ ex.description }}</p>
+
+<pre><code>{{ ex.output | strip }}</code></pre>
+
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+

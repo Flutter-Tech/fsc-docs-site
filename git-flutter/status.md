@@ -3,8 +3,22 @@ layout: preview
 title: status Command
 ---
 
-# `git flutter status` Command
+# `status` Command
 
-The `status` command is used to understand the current state of a repository and your checkout.
+The `git flutter status` command is used to understand the current state of a repository and your checkout. It is designed as a [standard SDLC](/sdlc/) aware replacement for the `git status` command and shows you:
 
-**WIP: these docs are currently a work in progress.**
+- your current branch and its relationship to the GitHub origin
+- local modifications and their state (e.g. staged, untracked, etc)
+- status of other important repository branches (e.g. release or develop branches)
+- semver tag status of current and important branches
+- sync status of current and important branches
+
+```
+{{ site.data.cli.commands.status.usage | strip }}
+```
+
+The command adds progressively greater value the more complex [your configured SDLC](/sdlc/).
+
+## Examples
+
+{% include cli-examples.html topic="status" %}

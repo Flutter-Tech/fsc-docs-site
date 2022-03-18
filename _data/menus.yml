@@ -50,9 +50,15 @@ main:
     title: Git Flutter CLI
     identifier: git-flutter
     children:
+      - url: /git-flutter/install/
+        title: Install
+        identifier: git-flutter-install
       - url: /git-flutter/status/
         title: status Command
         identifier: git-flutter-status
+      - url: /git-flutter/init/
+        title: init Command
+        identifier: git-flutter-init
   - url: /sdlc/
     title: Standard SDLCs
     identifier: sdlc
