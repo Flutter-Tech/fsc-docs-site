@@ -1,4 +1,4 @@
-version: v1.6.0
+version: v1.7.0
 usage: |
     Usage:
       git flutter [command]
@@ -14,7 +14,7 @@ usage: |
       tag            tag command
 
     Flags:
-          --cache string       application cache file (default "./.cache.v9")
+          --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
           --no-check-version   Doesn't check for updated version
       -v, --verbose            verbose log output
 
@@ -35,7 +35,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     help:
@@ -44,7 +44,7 @@ commands:
               git flutter help [command] [flags]
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     hotfix:
@@ -57,7 +57,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     init:
@@ -69,7 +69,7 @@ commands:
               gitflow     gitflow command
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
 
@@ -90,7 +90,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     status:
@@ -102,7 +102,7 @@ commands:
               -s, --source string   working directory (default ".")
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     sync:
@@ -116,7 +116,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     tag:
@@ -136,7 +136,7 @@ commands:
               -y, --yes              confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v9")
+                  --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
 examples:
@@ -144,6 +144,12 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC. As a FanDuel (fd) engineer I want to start a new feature. I use the feature command to create a feature branch, with my team automatically detected from my current branch of fd/develop.
       output: |-
         $ git flutter feature my-new-thing --yes --no-check-version
+        Creates a feature branch named 'fd/feature/my-new-thing' from the source branch 'fd/develop' and pushes it to origin.
+
+
+        i Updating from origin
+        i Creating branch 'fd/feature/my-new-thing'
+
         ✔ The feature branch 'fd/feature/my-new-thing' was successfully created
       topics:
         - feature
@@ -152,12 +158,18 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. The status command shows the state and tags of the key repository branches alongside my current feature branch.
       output: |-
         $ git flutter status --no-check-version
-        main v1.3.2
-        ppb/develop v1.4.0-ppb.alpha.3
-          3 ahead of main
-        fd/develop v1.4.0-fd.alpha.5
-          5 ahead of main
-        (current) fd/feature/my-new-thing
+        fd/feature/my-new-thing (current)
+
+        main
+          i v1.3.2
+
+        ppb/develop
+          i v1.4.0-ppb.alpha.3
+          ✔ 3 ahead of main
+
+        fd/develop
+          i v1.4.0-fd.alpha.5
+          ✔ 5 ahead of main
       topics:
         - status
         - gitflow
@@ -165,7 +177,15 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. As a FanDuel (fd) engineer I can use the release command to start a release.
       output: |-
         $ git flutter release 1.4 --yes --no-check-version
+        Creates a release branch named 'fd/release/1.4' from the current team develop branch 'fd/develop', and pushes it to origin.
+
+
+        i Updating from origin
+        i Creating branch 'fd/release/1.4'
+
         ✔ The release branch 'fd/release/1.4' was created
+
+        You can now raise a PR to merge the release into main, or use 'git flutter tag' to create a beta build.
       topics:
         - release
         - gitflow
@@ -173,8 +193,12 @@ examples:
       description: I want to tag a release branch and specify the full semver tag required.
       output: |-
         $ git flutter tag 1.4.0-fd.beta.0 --push --yes --no-check-version
+        Tags the branch 'fd/release/1.4' with the tag 'v1.4.0-fd.beta.0', and pushes it to remote.
+
+
         ✔ The 'v1.4.0-fd.beta.0' version tag was created
-        ✔ The 'v1.4.0-fd.beta.0' version pushed to remote
+
+        ✔ The 'v1.4.0-fd.beta.0' version was pushed to remote
       topics:
         - tag
         - gitflow
@@ -195,13 +219,20 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team started a release which is currently being tested. The status command shows the active release.
       output: |-
         $ git flutter status --no-check-version
-        (current) main v1.3.2
-        ppb/develop v1.4.0-ppb.alpha.3
-          3 ahead of main
-        fd/develop v1.4.0-fd.alpha.5
-          5 ahead of main
-        fd/release/1.4 v1.4.0-fd.beta.0
-          5 ahead of main
+        main (current)
+          i v1.3.2
+
+        ppb/develop
+          i v1.4.0-ppb.alpha.3
+          ✔ 3 ahead of main
+
+        fd/develop
+          i v1.4.0-fd.alpha.5
+          ✔ 5 ahead of main
+
+        fd/release/1.4
+          i v1.4.0-fd.beta.0
+          ✔ 5 ahead of main
       topics:
         - status
         - gitflow
@@ -209,11 +240,16 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. The status command shows how the develop branches now lag behind main and require a sync.
       output: |-
         $ git flutter status --no-check-version
-        (current) main v1.4.0
-        ppb/develop v1.4.0-ppb.alpha.3
-          !! 6 behind and 3 ahead of main
-        fd/develop v1.4.0-fd.alpha.5
-          !! 1 behind main
+        main (current)
+          i v1.4.0
+
+        ppb/develop
+          i v1.4.0-ppb.alpha.3
+          ! 6 behind and 3 ahead of main
+
+        fd/develop
+          i v1.4.0-fd.alpha.5
+          ! 1 behind main
       topics:
         - status
         - gitflow
@@ -221,8 +257,12 @@ examples:
       description: After merging a release branch into main, I use the tag command to create a new minor release tag by incrementing the previous semver tag.
       output: |-
         $ git flutter tag minor --push --yes --no-check-version
+        Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
+
+
         ✔ The 'v1.5.0' version tag was created
-        ✔ The 'v1.5.0' version pushed to remote
+
+        ✔ The 'v1.5.0' version was pushed to remote
       topics:
         - tag
         - gitflow
@@ -230,8 +270,13 @@ examples:
       description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. As a PPB engineer I need to sync the release back into my develop branch.
       output: |-
         $ git flutter sync --force --yes --no-check-version
-        This will merge main into ppb/develop and push to origin.
-        ✔ Merged and pushed, all now up to date.
+        Merges the branch 'main' into branch 'ppb/develop', and pushes it to origin.
+
+
+        i Merging branches
+        i Pushing branch to origin
+
+        ✔ Merged and pushed, all now up to date
       topics:
         - sync
         - gitflow
