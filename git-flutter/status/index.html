@@ -1008,7 +1008,7 @@ Flags:
   -s, --source string   working directory (default ".")
 
 Global Flags:
-      --cache string       application cache file (default "./.cache.v9")
+      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
       --no-check-version   Doesn't check for updated version
   -v, --verbose            verbose log output
 </code></pre></div></div>
@@ -1023,12 +1023,18 @@ Global Flags:
 <p>Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. The status command shows the state and tags of the key repository branches alongside my current feature branch.</p>
 
 <pre><code>$ git flutter status --no-check-version
-main v1.3.2
-ppb/develop v1.4.0-ppb.alpha.3
-  3 ahead of main
-fd/develop v1.4.0-fd.alpha.5
-  5 ahead of main
-(current) fd/feature/my-new-thing</code></pre>
+fd/feature/my-new-thing (current)
+
+main
+  i v1.3.2
+
+ppb/develop
+  i v1.4.0-ppb.alpha.3
+  ✔ 3 ahead of main
+
+fd/develop
+  i v1.4.0-fd.alpha.5
+  ✔ 5 ahead of main</code></pre>
 
 <!-- CLI example Release In QA for topic status -->
 <h3>Release In QA</h3>
@@ -1036,13 +1042,20 @@ fd/develop v1.4.0-fd.alpha.5
 <p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team started a release which is currently being tested. The status command shows the active release.</p>
 
 <pre><code>$ git flutter status --no-check-version
-(current) main v1.3.2
-ppb/develop v1.4.0-ppb.alpha.3
-  3 ahead of main
-fd/develop v1.4.0-fd.alpha.5
-  5 ahead of main
-fd/release/1.4 v1.4.0-fd.beta.0
-  5 ahead of main</code></pre>
+main (current)
+  i v1.3.2
+
+ppb/develop
+  i v1.4.0-ppb.alpha.3
+  ✔ 3 ahead of main
+
+fd/develop
+  i v1.4.0-fd.alpha.5
+  ✔ 5 ahead of main
+
+fd/release/1.4
+  i v1.4.0-fd.beta.0
+  ✔ 5 ahead of main</code></pre>
 
 <!-- CLI example Release Merged for topic status -->
 <h3>Release Merged</h3>
@@ -1050,11 +1063,16 @@ fd/release/1.4 v1.4.0-fd.beta.0
 <p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. The status command shows how the develop branches now lag behind main and require a sync.</p>
 
 <pre><code>$ git flutter status --no-check-version
-(current) main v1.4.0
-ppb/develop v1.4.0-ppb.alpha.3
-  !! 6 behind and 3 ahead of main
-fd/develop v1.4.0-fd.alpha.5
-  !! 1 behind main</code></pre>
+main (current)
+  i v1.4.0
+
+ppb/develop
+  i v1.4.0-ppb.alpha.3
+  ! 6 behind and 3 ahead of main
+
+fd/develop
+  i v1.4.0-fd.alpha.5
+  ! 1 behind main</code></pre>
 
 
 
