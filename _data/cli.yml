@@ -1,4 +1,4 @@
-version: v1.5.2
+version: v1.6.0
 usage: |
     Usage:
       git flutter [command]
@@ -14,7 +14,7 @@ usage: |
       tag            tag command
 
     Flags:
-          --cache string       application cache file (default "./.cache.v8")
+          --cache string       application cache file (default "./.cache.v9")
           --no-check-version   Doesn't check for updated version
       -v, --verbose            verbose log output
 
@@ -35,7 +35,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     help:
@@ -44,7 +44,7 @@ commands:
               git flutter help [command] [flags]
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     hotfix:
@@ -57,7 +57,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     init:
@@ -69,7 +69,7 @@ commands:
               gitflow     gitflow command
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
 
@@ -90,7 +90,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     status:
@@ -102,7 +102,7 @@ commands:
               -s, --source string   working directory (default ".")
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     sync:
@@ -116,7 +116,7 @@ commands:
               -y, --yes             confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
     tag:
@@ -136,7 +136,7 @@ commands:
               -y, --yes              confirm yes to any interactive prompts
 
             Global Flags:
-                  --cache string       application cache file (default "./.cache.v8")
+                  --cache string       application cache file (default "./.cache.v9")
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
 examples:
