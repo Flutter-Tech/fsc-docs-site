@@ -32,7 +32,7 @@ Alpha, beta or production-ready builds are signalled by git tags which conform t
 
 The key concept in this SDLC is that each team with its own deployment has its own `<team>/develop` branch. The team follows its own development process around their `<team>/develop` branch, typically using short-lived feature branches like `<team>/feature/xxx` for each change.
 
-<img src="../multiple-teams-dev.drawio.svg" class="w-full max-w-screen-md mx-auto">
+<img src="../multiple-teams-dev.drawio.svg" class="w-full max-w-3xl mx-auto">
 
 - Changes are triaged by each team's local [maintainer(s)](/how/multiple-teams/#who-are-maintainers)). A **minor** change typically would not require cross-team review. A **major** change into a develop branch will require cross-team review to ensure all-team consensus.
 - Each team can tag and build their own `alpha` releases from their `<team>/develop` branch for their local QA environment(s). In this way they can treat their `<team>/develop` branch like an environment branch.
@@ -43,7 +43,7 @@ The key concept in this SDLC is that each team with its own deployment has its o
 
 Work from all the `<team>/develop` branches is integrated into a single production branch (`main` or `master`) through team major/minor **releases**. Only one major/minor release can occur at any time. The release changes are synchronised back into all `<team>/develop` branches before the next release.
 
-<img src="../multiple-teams-release.drawio.svg" class="w-full max-w-screen-md mx-auto">
+<img src="../multiple-teams-release.drawio.svg" class="w-full max-w-3xl mx-auto">
 
 The diagram shows an example release:
 
@@ -58,7 +58,7 @@ The diagram shows an example release:
 
 A hotfix is a change correcting a fault that needs to be released as quickly as possible (often under incident conditions). Hotfixes can be applied at any time as patch releases via a `/hotfix/<name>` branch which is merged directly into the production branch.
 
-<img src="../multiple-teams-hotfix.drawio.svg" class="w-full max-w-screen-sm mx-auto">
+<img src="../multiple-teams-hotfix.drawio.svg" class="w-full max-w-xl mx-auto">
 
 This diagram shows an example hotfix. A performance regression is detected on Friday by the Porto team in the latest `v1.4.0` release which is expected to cause capacity problems on Saturday. They take the operational decision to fix forward:
 
@@ -76,7 +76,7 @@ This SDLC expects each team to own and manage their own deployment(s). The deplo
 
 Not all teams will have the same version deployed. Older versions should not be the target of new features, but must be supported until a team has migrated to the latest release. To support older versions hotfixes can be applied to any previous version on a `/support/<version>` branch.
 
-<img src="../multiple-teams-support.drawio.svg" class="w-full max-w-screen-sm mx-auto">
+<img src="../multiple-teams-support.drawio.svg" class="w-full max-w-xl mx-auto">
 
 This diagram shows an example support hotfix. The Leeds team realises that the performance regression detected by the Porto team is also present in their currently deployed `v1.2.2` service. As a precaution they decide to also apply the fix but are not yet ready to upgrade to the latest `v1.4.1` version that includes it. So they apply a support hotfix:
 
