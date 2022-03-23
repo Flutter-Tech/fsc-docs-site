@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Parallel Teams SDLC | Flutter Inner Source</title>
+  <title>Semantic Versioning | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -290,8 +290,18 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/parallel-teams/" title="Go to Parallel Teams" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Parallel Teams</a
+    <a href="/sdlc/semver/" title="Go to SemVer" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
     >
   </li>  
   
@@ -795,8 +805,18 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/parallel-teams/" title="Go to Parallel Teams" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Parallel Teams</a
+    <a href="/sdlc/semver/" title="Go to SemVer" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
     >
   </li>  
   
@@ -989,17 +1009,67 @@
   It is published for review and beta programme purposes.
 </div>
 
-<h1 id="parallel-teams-sdlc">Parallel Teams SDLC</h1>
+<h1 id="semantic-versioning">Semantic Versioning</h1>
 
-<p><strong>WIP: this documentation is a work in progress.</strong></p>
+<p>The <a href="/sdlc/">standard SDLCs</a> use semantic versioning in git tags to label and trigger alpha, beta and production builds. This document defines our SemVer conventions which are a subset of the <a href="https://semver.org/">SemVer v2.0.0 spec</a>.</p>
+
+<h2 id="anatomy">Anatomy</h2>
+
+<p>A semantic version consists of:</p>
+
+<p><code class="language-plaintext highlighter-rouge">major.minor.patch-team.phase.integration+build</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">major</code> is the major version number (integer). A major change for inner source projects is not necessarily a breaking change but rather one that is significant or complex enough to always require cross-team consensus and review.</li>
+  <li><code class="language-plaintext highlighter-rouge">minor</code> is the minor version number (integer). A minor change for inner source projects is one that simple or routine enough that is can be released by the local in-team maintainer without cross-team consensus.</li>
+  <li><code class="language-plaintext highlighter-rouge">patch</code> is the patch version number (integer). A patch change is a hotfix usually executed under incident conditions.</li>
+  <li><code class="language-plaintext highlighter-rouge">team</code> is the team code (string). This can be omitted when there is only a single owning team.</li>
+  <li><code class="language-plaintext highlighter-rouge">phase</code> is the release phase (<code class="language-plaintext highlighter-rouge">alpha</code>, <code class="language-plaintext highlighter-rouge">beta</code> or not present for production).</li>
+  <li><code class="language-plaintext highlighter-rouge">integration</code> is an integer that indicates pre-release progression e.g. cumulative number of features, commits or similar.</li>
+  <li><code class="language-plaintext highlighter-rouge">build</code> is an integer that indicates build number (omitted if un-used).</li>
+</ul>
+
+<p>By convention the version number is prefixed by a <code class="language-plaintext highlighter-rouge">v</code>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p><code class="language-plaintext highlighter-rouge">v2.8.1</code> is the production <code class="language-plaintext highlighter-rouge">2.8</code> build after 1 hotfix.</p>
+
+<p><code class="language-plaintext highlighter-rouge">v1.3.0-lds.beta.3</code> is a beta build for the intended <code class="language-plaintext highlighter-rouge">v1.3.0</code> release. It has been created by the <code class="language-plaintext highlighter-rouge">lds</code> team, and has had several bugfixes applied which can be inferred from the <code class="language-plaintext highlighter-rouge">.3</code> integration number suffix.</p>
+
+<p><code class="language-plaintext highlighter-rouge">v3.0.0-alpha.1</code> is an alpha build for the intended major <code class="language-plaintext highlighter-rouge">v3.0.0</code> release. It has no team element since all tags are created by a single team in this repository. The <code class="language-plaintext highlighter-rouge">.1</code> integration number suffix suggests this is an early build without many features yet.</p>
 
 
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Standard SDLCs</h5>
+    <div>
+      <a href="/sdlc/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5 class="text-right">Multiple Teams</h5>
+    <div class="text-right">
+      <a href="/sdlc/multiple-teams/"
+        >Next
+        &rarr;</a
+      >
+    </div>
+    
+  </div>
+</div>
     
   </div>
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#anatomy" class="hover:text-theme-color">Anatomy</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-theme-color">Examples</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
