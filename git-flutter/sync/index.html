@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Product Catalogue | Flutter Inner Source</title>
+  <title>sync Command | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -310,7 +310,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/git-flutter/sync/" title="Go to Sync" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/git-flutter/sync/" title="Go to Sync" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Sync</a
     >
   </li>  
@@ -364,7 +364,7 @@
   
   
   <li class="nav-parent menu-item-5 ml-3 relative pt-2">
-    <a href="/catalogue/" title="Go to Service Catalogue" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -875,7 +875,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/git-flutter/sync/" title="Go to Sync" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/git-flutter/sync/" title="Go to Sync" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Sync</a
     >
   </li>  
@@ -929,7 +929,7 @@
   
   
   <li class="nav-parent menu-item-5 ml-3 relative pt-2">
-    <a href="/catalogue/" title="Go to Service Catalogue" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -1084,15 +1084,91 @@
     </div>
   </div>
   
-  <div class="col-span-12 px-4 py-8 prose lg:col-span-9 xs:prose-sm md:prose-base lg:prose-base max-w-none content">
-  
-  <h1 id="service-catalogue">Service Catalogue</h1>
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <div
+  class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
+>
+  <span class="mr-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      />
+    </svg>
+  </span>
+  This is PREVIEW content. That means it is not complete, and may be incorrect.
+  It is published for review and beta programme purposes.
+</div>
 
-<p>For members of the Flutter inner source community this area is where they can browse and use the service catalogue. You are currently browsing the public inner source site so this information is not available to you.</p>
+<h1 id="sync-command"><code class="language-plaintext highlighter-rouge">sync</code> Command</h1>
 
-<p>If you are a member of the Flutter inner source community please use the <a href="https://developers.flutter.com/catalogue/">developers.flutter.com/catalogue/</a> internal site to use the service catalogue (this requires you to be a member of the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub org).</p>
+<p>The <code class="language-plaintext highlighter-rouge">git flutter sync</code> command keeps your branch up to date with repository activity by merging release and hotfix changes.</p>
 
-  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage:
+  git flutter sync [flags]
+
+Flags:
+      --force           override any warnings to continue if possible
+  -s, --source string   working directory (default ".")
+  -y, --yes             confirm yes to any interactive prompts
+
+Global Flags:
+      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
+      --no-check-version   Doesn't check for updated version
+  -v, --verbose            verbose log output
+
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<!-- CLI example Sync a Develop Branch for topic sync -->
+<h4>Sync a Develop Branch</h4>
+
+<p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. As a PPB engineer I need to sync the release back into my develop branch.</p>
+
+<pre><code>$ git flutter sync --force --yes --no-check-version
+Merges the branch 'main' into branch 'ppb/develop', and pushes it to origin.
+
+
+i Merging branches
+i Pushing branch to origin
+
+✔ Merged and pushed, all now up to date</code></pre>
+
+
+
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Git Flutter Install</h5>
+    <div>
+      <a href="/git-flutter/install/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div >
+    
+  </div>
+</div>
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-theme-color">Examples</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
   </div>
   
 </div>
