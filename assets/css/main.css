@@ -1229,12 +1229,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: max-content;
 }
 
-.max-w-screen-md {
-  max-width: 768px;
+.max-w-3xl {
+  max-width: 48rem;
 }
 
-.max-w-screen-sm {
-  max-width: 640px;
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-1 {
