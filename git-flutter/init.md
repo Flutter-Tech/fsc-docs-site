@@ -1,6 +1,9 @@
 ---
 layout: preview
 title: init Command
+article_navigation: true
+previous_title: Git Flutter Install
+previous_url: /git-flutter/install/
 ---
 
 # `init` Command

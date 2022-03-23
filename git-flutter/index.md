@@ -1,6 +1,9 @@
 ---
 layout: preview
 title: Git Flutter CLI
+article_navigation: true
+next_title: Install Git Flutter
+next_url: /git-flutter/install/
 ---
 
 # `git flutter` CLI

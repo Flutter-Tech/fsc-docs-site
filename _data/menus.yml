@@ -63,9 +63,12 @@ main:
     title: Standard SDLCs
     identifier: sdlc
     children:
-      - url: /sdlc/parallel-teams/
-        title: Parallel Teams
-        identifier: parallel-teams
+      - url: /sdlc/semver/
+        title: SemVer
+        identifier: semver
+      - url: /sdlc/multiple-teams/
+        title: Multiple Teams
+        identifier: multiple-teams
   - url: /catalogue/
     title: Service Catalogue
     identifier: catalogue

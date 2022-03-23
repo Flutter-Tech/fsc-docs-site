@@ -1,6 +1,11 @@
 ---
 layout: preview
 title: Git Flutter Install
+article_navigation: true
+previous_title: Git Flutter
+previous_url: /git-flutter/
+next_title: Status Command
+next_url: /git-flutter/status/
 ---
 
 # Install
