@@ -4,7 +4,7 @@ title: status Command
 article_navigation: true
 previous_title: Git Flutter Install
 previous_url: /git-flutter/install/
-next_title: Init Command
+next_title: init Command
 next_url: /git-flutter/init/
 ---
 

@@ -54,11 +54,26 @@ main:
         title: Install
         identifier: git-flutter-install
       - url: /git-flutter/status/
-        title: status Command
+        title: Status
         identifier: git-flutter-status
       - url: /git-flutter/init/
-        title: init Command
+        title: Init
         identifier: git-flutter-init
+      - url: /git-flutter/feature/
+        title: Feature
+        identifier: git-flutter-feature
+      - url: /git-flutter/release/
+        title: Release
+        identifier: git-flutter-release
+      - url: /git-flutter/tag/
+        title: Tag
+        identifier: git-flutter-tag
+      - url: /git-flutter/hotfix/
+        title: Hotfix
+        identifier: git-flutter-hotfix
+      - url: /git-flutter/sync/
+        title: Sync
+        identifier: git-flutter-sync
   - url: /sdlc/
     title: Standard SDLCs
     identifier: sdlc

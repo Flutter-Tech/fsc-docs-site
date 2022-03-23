@@ -22,11 +22,13 @@ The `git flutter` extension can be installed on [macOS](/git-flutter/install/#ma
 
 Your usage of this tool will depend on your choice of workflow and branching model. This section contains reference documentation for each command, and your [chosen SDLC](/sdlc/) will document its usage for that specific approach.
 
-- `status` ([docs & examples](/git-flutter/status/)) : showing you the current status of a repository checkout.
-- `feature` : get started on a new feature.
-- `hotfix` : get started on a hotfix for the current release.
-- `release` : start a new release.
-- `tag` : semver tag a branch to trigger further processes like deployment.
+- `status` ([docs & examples](/git-flutter/status/)): showing you the current status of a repository checkout.
+- `init` ([docs & examples](/git-flutter/init/)): setup and config the SDLC for your repository.
+- `feature` ([docs & examples](/git-flutter/feature/)): get started on a new feature.
+- `release` ([docs & examples](/git-flutter/release/)): start a new release.
+- `tag` ([docs & examples](/git-flutter/tag/)): semver tag a branch to trigger further processes like deployment.
+- `hotfix` ([docs & examples](/git-flutter/hotfix/)): get started on a hotfix for the current release.
+- `sync` ([docs & examples](/git-flutter/sync/)): keep your branch up to date with repository activity by merging release and hotfix changes.
 
 ## Support
 
