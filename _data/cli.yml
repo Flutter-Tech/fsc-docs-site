@@ -1,4 +1,4 @@
-version: v1.8.2
+version: v1.8.3
 usage: |
     Usage:
       git flutter [command]
@@ -140,123 +140,148 @@ commands:
                   --no-check-version   Doesn't check for updated version
               -v, --verbose            verbose log output
 examples:
-    - title: Start a Feature
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC. As a FanDuel (fd) engineer I want to start a new feature. I use the feature command to create a feature branch, with my team automatically detected from my current branch of fd/develop.
+    - title: Starting a Feature
+      description: Two teams (opo and lds) are working with the multiple teams SDLC. As an engineer in the Leeds (lds) team I want to start a new feature. I use the feature command to create a new branch for my work, with my team automatically detected from my current branch. Once I've finished my feature I'll raise a pull request to merge it into my team development branch (lds/develop).
       output: |-
-        $ git flutter feature my-new-thing --yes --no-check-version
-        Creates a feature branch named 'fd/feature/my-new-thing' from the source branch 'fd/develop' and pushes it to origin.
+        $ git flutter feature my-new-thing --yes
+        Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to origin.
 
 
         i Updating from origin
-        i Creating branch 'fd/feature/my-new-thing'
+        i Creating branch 'lds/feature/my-new-thing'
 
-        ✔ The feature branch 'fd/feature/my-new-thing' was successfully created
+        ✔ The feature branch 'lds/feature/my-new-thing' was successfully created
       topics:
+        - start-feature
         - feature
         - gitflow
     - title: Develop Branches Ahead
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. The status command shows the state and tags of the key repository branches alongside my current feature branch.
+      description: Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches which are not yet released. As a member of the Leeds team I want to release our work. I use the status command to see the latest release tag on main, the state of all team development branches and whether any team has an existing release in progress.
       output: |-
-        $ git flutter status --no-check-version
-        fd/feature/my-new-thing (current)
+        $ git flutter status
+        lds/feature/my-new-thing (current)
 
         main
           i v1.3.2
 
-        ppb/develop
-          i v1.4.0-ppb.alpha.3
+        opo/develop
+          i v1.4.0-opo.alpha.3
           ✔ 3 ahead of main
 
-        fd/develop
-          i v1.4.0-fd.alpha.5
+        lds/develop
+          i v1.4.0-lds.alpha.5
           ✔ 5 ahead of main
       topics:
+        - view-develop-ahead
         - status
         - gitflow
     - title: Start a Release
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. As a FanDuel (fd) engineer I can use the release command to start a release.
+      description: Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches. As a member of the Leeds team I want to release our work so use the release command to start a release.
       output: |-
-        $ git flutter release 1.4 --yes --no-check-version
-        Creates a release branch named 'fd/release/1.4' from the current team develop branch 'fd/develop', and pushes it to origin.
+        $ git flutter release 1.4 --yes
+        Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to origin.
 
 
         i Updating from origin
-        i Creating branch 'fd/release/1.4'
+        i Creating branch 'lds/release/1.4'
 
-        ✔ The release branch 'fd/release/1.4' was created
+        ✔ The release branch 'lds/release/1.4' was created
 
         You can now raise a PR to merge the release into main, or use 'git flutter tag' to create a beta build.
       topics:
+        - start-release
         - release
         - gitflow
-    - title: Specify Exact SemVer Tag
-      description: I want to tag a release branch and specify the full semver tag required.
+    - title: Tag a Beta Build
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have started a release and want to create a beta build to deploy to our staging environment. I use the tag command to specify a semver tag on the release branch to trigger a CI build.
       output: |-
-        $ git flutter tag 1.4.0-fd.beta.0 --push --yes --no-check-version
-        Tags the branch 'fd/release/1.4' with the tag 'v1.4.0-fd.beta.0', and pushes it to remote.
+        $ git flutter tag 1.4.0-lds.beta.0 --push --yes
+        Tags the branch 'lds/release/1.4' with the tag 'v1.4.0-lds.beta.0', and pushes it to remote.
 
 
-        ✔ The 'v1.4.0-fd.beta.0' version tag was created
+        ✔ The 'v1.4.0-lds.beta.0' version tag was created
 
-        ✔ The 'v1.4.0-fd.beta.0' version was pushed to remote
+        ✔ The 'v1.4.0-lds.beta.0' version was pushed to remote
       topics:
+        - tag-beta
         - tag
         - gitflow
     - title: Concurrent Releases Prevented
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC. FanDuel (fd) have a release in progress so as a PPB engineer I am prevented from starting another release until that release is completed or cancelled.
+      description: Two teams (opo and lds) are working with the multiple teams SDLC. The Leeds (lds) team have a release in progress so as a member of the Porto team I am prevented from starting another release until the Leeds release is completed or cancelled.
       output: |-
-        $ git flutter release a-named-release --yes --no-check-version
+        $ git flutter release a-named-release --yes
         An ERROR occurred:
 
-        ✘ there is 1 active release(s): 'fd/release/1.4'
+        ✘ there is 1 active release(s): 'lds/release/1.4'
 
         Command help is available using the --help flag.
         Support is available in Slack channel #inner-source.
       topics:
+        - start-release-concurrent
         - release
         - gitflow
-    - title: Release In QA
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team started a release which is currently being tested. The status command shows the active release.
+    - title: Check Release Status (in-progress)
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Porto team I want to release so I use the status command to check whether any other team has a release in progress. I see that the Leeds team are currently releasing so know to check with them when they will have completed as only one major/minor release can occur at any time.
       output: |-
-        $ git flutter status --no-check-version
+        $ git flutter status
         main (current)
           i v1.3.2
 
-        ppb/develop
-          i v1.4.0-ppb.alpha.3
+        opo/develop
+          i v1.4.0-opo.alpha.3
           ✔ 3 ahead of main
 
-        fd/develop
-          i v1.4.0-fd.alpha.5
+        lds/develop
+          i v1.4.0-lds.alpha.5
           ✔ 5 ahead of main
 
-        fd/release/1.4
-          i v1.4.0-fd.beta.0
+        lds/release/1.4
+          i v1.4.0-lds.beta.0
           ✔ 5 ahead of main
       topics:
+        - check-release-active
         - status
         - gitflow
-    - title: Release Merged
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. The status command shows how the develop branches now lag behind main and require a sync.
+    - title: Start Latest Version Hotfix
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team are testing a new minor release, but the Porto team need to publish an emergency fix for a production incident. As an engineer in the Porto team I use the hotfix command to start a hotfix.
       output: |-
-        $ git flutter status --no-check-version
+        $ git flutter hotfix perf-fix --yes
+        Creates a hotfix branch named 'hotfix/perf-fix' from the source branch 'main' and pushes it to origin.
+
+
+        i Updating from origin
+        i Creating branch 'hotfix/perf-fix'
+
+        ✔ The hotfix branch 'hotfix/perf-fix' was successfully created
+      topics:
+        - hotfix-start
+        - hotfix
+        - gitflow
+    - title: Check Release Status (merged)
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Porto team I want to release so I use the status command to check whether any other team has a release in progress. Now the Leeds release has been merged into main I can see no release is in progress so I can start the next one myself.
+      output: |-
+        $ git flutter status
         main (current)
           i v1.4.0
 
-        ppb/develop
-          i v1.4.0-ppb.alpha.3
+        opo/develop
+          i v1.4.0-opo.alpha.3
           ! 6 behind and 3 ahead of main
 
-        fd/develop
-          i v1.4.0-fd.alpha.5
+        lds/develop
+          i v1.4.0-lds.alpha.5
           ! 1 behind main
+
+        hotfix/perf-fix
+          ! 6 behind main
       topics:
+        - check-release-merged
         - status
         - gitflow
-    - title: Increment from Previous SemVer
-      description: After merging a release branch into main, I use the tag command to create a new minor release tag by incrementing the previous semver tag.
+    - title: Tag a Production Release
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have completed testing the beta builds and merged the release branch into main to complete the release. I now use the tag command to increment a minor version tag to trigger a production build.
       output: |-
-        $ git flutter tag minor --push --yes --no-check-version
+        $ git flutter tag minor --push --yes
         Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
 
 
@@ -264,13 +289,14 @@ examples:
 
         ✔ The 'v1.5.0' version was pushed to remote
       topics:
+        - tag-increment
         - tag
         - gitflow
     - title: Sync a Develop Branch
-      description: Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. As a PPB engineer I need to sync the release back into my develop branch.
+      description: Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team have just completed a release and merged it to main. As an engineer in the Porto team I need to sync the release back into my team develop branch to integrate the changes.
       output: |-
-        $ git flutter sync --force --yes --no-check-version
-        Merges the branch 'main' into branch 'ppb/develop', and pushes it to origin.
+        $ git flutter sync --force --yes
+        Merges the branch 'main' into branch 'opo/develop', and pushes it to origin.
 
 
         i Merging branches
@@ -278,5 +304,6 @@ examples:
 
         ✔ Merged and pushed, all now up to date
       topics:
+        - sync-develop
         - sync
         - gitflow
