@@ -1111,88 +1111,31 @@
 
 <h1 id="install">Install</h1>
 
-<p>The <code class="language-plaintext highlighter-rouge">git flutter</code> extension can be installed on <a href="#macos">macOS</a>, <a href="#linux">Linux</a> or <a href="#windows">Windows</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">git flutter</code> extension can be installed on <a href="#macos-and-linux">macOS</a>, <a href="#macos-and-linux">Linux</a> or <a href="#windows">Windows</a>.</p>
 
-<h2 id="macos">macOS</h2>
+<h2 id="macos-and-linux">macOS and Linux</h2>
 
-<p>To install on your MacBook:</p>
+<p>To install or update <code class="language-plaintext highlighter-rouge">git-flutter</code> on your MacBook or Linux machine:</p>
 
 <ol>
-  <li>Download the latest v1.8.2 macOS binary:</li>
+  <li>Run the installation script:</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_amd64
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl <span class="nt">-o-</span> https://innersource.flutter.com/git-flutter/install.sh | bash
 </code></pre></div></div>
 
 <ol>
-  <li>(Optional) Validate the binary using the provided checksums:</li>
+  <li>Close and reopen your terminal to start using <code class="language-plaintext highlighter-rouge">git flutter</code> or run the following command to use it immediately:</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://innersource.flutter.com/git-flutter/checksums.txt"
-grep macOS_amd64 checksums.txt | shasum -a 256 --check
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.git-flutter"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.git-flutter:</span><span class="nv">$PATH</span><span class="s2">"</span>
 </code></pre></div></div>
 
 <ol>
-  <li>Make the binary executable:</li>
+  <li>Verify the extension installation via <code class="language-plaintext highlighter-rouge">git</code>:</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x ./git-flutter_macOS_amd64
-</code></pre></div></div>
-
-<ol>
-  <li>Move to a location on your <code class="language-plaintext highlighter-rouge">PATH</code>:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv ./git-flutter_macOS_amd64 /usr/local/bin/git-flutter
-sudo chown root: /usr/local/bin/git-flutter
-</code></pre></div></div>
-
-<ol>
-  <li>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
-</code></pre></div></div>
-
-<h2 id="linux">Linux</h2>
-
-<p>To install on a Linux dev or CI machine:</p>
-
-<ol>
-  <li>Download the latest v1.8.2 Linux binary:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_Linux_amd64
-</code></pre></div></div>
-
-<ol>
-  <li>(Optional) Validate the binary using the provided checksums:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://innersource.flutter.com/git-flutter/checksums.txt"
-grep Linux_amd64 checksums.txt | shasum -a 256 --check
-</code></pre></div></div>
-
-<ol>
-  <li>Install the executable:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo install -o root -g root -m 0755 git-flutter_Linux_amd64 /usr/local/bin/git-flutter
-</code></pre></div></div>
-
-<p>If you do not have root access on the target system, you can still install git-flutter to the <code class="language-plaintext highlighter-rouge">~/.local/bin</code> directory:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x git-flutter_Linux_amd64
-mkdir -p ~/.local/bin/
-mv ./git-flutter_Linux_amd64 ~/.local/bin/git-flutter
-# and then append (or prepend) ~/.local/bin to $PATH
-</code></pre></div></div>
-
-<ol>
-  <li>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git flutter
 </code></pre></div></div>
 
 <h2 id="windows">Windows</h2>
@@ -1200,34 +1143,31 @@ mv ./git-flutter_Linux_amd64 ~/.local/bin/git-flutter
 <p>To install on a Windows machine:</p>
 
 <ol>
-  <li>Download the <a href="https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe">latest release v1.8.2</a>.</li>
+  <li>Download the <a href="https://innersource.flutter.com/git-flutter/git-flutter_v1.8.2_Windows_x86_64.zip">latest release v1.8.2</a>.</li>
 </ol>
 
 <p>Or if you have <code class="language-plaintext highlighter-rouge">curl</code> installed, use this command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://innersource.flutter.com/git-flutter/git-flutter_v1.8.2_Windows_x86_64.zip
 </code></pre></div></div>
 
 <ol>
   <li>(Optional) Validate the binary by comparing <a href="https://innersource.flutter.com/git-flutter/checksums.txt">the provided checksum</a> with that of the download which you can calculate at the command prompt:</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CertUtil -hashfile git-flutter_Windows_amd64.exe SHA256
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CertUtil <span class="nt">-hashfile</span> git-flutter_v1.8.2_Windows_x86_64.zip SHA256
 </code></pre></div></div>
 
 <ol>
   <li>
-    <p>Rename the binary to <code class="language-plaintext highlighter-rouge">git-flutter.exe</code>.</p>
+    <p>Extract the <code class="language-plaintext highlighter-rouge">git-flutter_v1.8.2_Windows_x86_64.zip</code> file and copy the <code class="language-plaintext highlighter-rouge">git-flutter.exe</code> into <code class="language-plaintext highlighter-rouge">C:\Program Files\Git\usr\bin</code>.</p>
   </li>
   <li>
-    <p>Append or prepend the <code class="language-plaintext highlighter-rouge">git-flutter.exe</code> binary folder to your <code class="language-plaintext highlighter-rouge">PATH</code> environment variable.</p>
-  </li>
-  <li>
-    <p>Verify the command installation via <code class="language-plaintext highlighter-rouge">git</code>:</p>
+    <p>Verify the extension installation via <code class="language-plaintext highlighter-rouge">git</code>:</p>
   </li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter
 </code></pre></div></div>
 
 
@@ -1260,7 +1200,7 @@ mv ./git-flutter_Linux_amd64 ~/.local/bin/git-flutter
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#macos" class="hover:text-theme-color">macOS</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#linux" class="hover:text-theme-color">Linux</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#windows" class="hover:text-theme-color">Windows</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#macos-and-linux" class="hover:text-theme-color">macOS and Linux</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#windows" class="hover:text-theme-color">Windows</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
