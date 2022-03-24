@@ -1138,28 +1138,28 @@ Global Flags:
 <!-- CLI example Start a Release for topic release -->
 <h4>Start a Release</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. As a FanDuel (fd) engineer I can use the release command to start a release.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches. As a member of the Leeds team I want to release our work so use the release command to start a release.</p>
 
-<pre><code>$ git flutter release 1.4 --yes --no-check-version
-Creates a release branch named 'fd/release/1.4' from the current team develop branch 'fd/develop', and pushes it to origin.
+<pre><code>$ git flutter release 1.4 --yes
+Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to origin.
 
 
 i Updating from origin
-i Creating branch 'fd/release/1.4'
+i Creating branch 'lds/release/1.4'
 
-✔ The release branch 'fd/release/1.4' was created
+✔ The release branch 'lds/release/1.4' was created
 
 You can now raise a PR to merge the release into main, or use 'git flutter tag' to create a beta build.</code></pre>
 
 <!-- CLI example Concurrent Releases Prevented for topic release -->
 <h4>Concurrent Releases Prevented</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC. FanDuel (fd) have a release in progress so as a PPB engineer I am prevented from starting another release until that release is completed or cancelled.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC. The Leeds (lds) team have a release in progress so as a member of the Porto team I am prevented from starting another release until the Leeds release is completed or cancelled.</p>
 
-<pre><code>$ git flutter release a-named-release --yes --no-check-version
+<pre><code>$ git flutter release a-named-release --yes
 An ERROR occurred:
 
-✘ there is 1 active release(s): 'fd/release/1.4'
+✘ there is 1 active release(s): 'lds/release/1.4'
 
 Command help is available using the --help flag.
 Support is available in Slack channel #inner-source.</code></pre>

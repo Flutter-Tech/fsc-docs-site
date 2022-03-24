@@ -1134,19 +1134,19 @@ Global Flags:
 
 <h2 id="examples">Examples</h2>
 
-<!-- CLI example Start a Feature for topic feature -->
-<h4>Start a Feature</h4>
+<!-- CLI example Starting a Feature for topic feature -->
+<h4>Starting a Feature</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC. As a FanDuel (fd) engineer I want to start a new feature. I use the feature command to create a feature branch, with my team automatically detected from my current branch of fd/develop.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC. As an engineer in the Leeds (lds) team I want to start a new feature. I use the feature command to create a new branch for my work, with my team automatically detected from my current branch. Once I've finished my feature I'll raise a pull request to merge it into my team development branch (lds/develop).</p>
 
-<pre><code>$ git flutter feature my-new-thing --yes --no-check-version
-Creates a feature branch named 'fd/feature/my-new-thing' from the source branch 'fd/develop' and pushes it to origin.
+<pre><code>$ git flutter feature my-new-thing --yes
+Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to origin.
 
 
 i Updating from origin
-i Creating branch 'fd/feature/my-new-thing'
+i Creating branch 'lds/feature/my-new-thing'
 
-✔ The feature branch 'fd/feature/my-new-thing' was successfully created</code></pre>
+✔ The feature branch 'lds/feature/my-new-thing' was successfully created</code></pre>
 
 
 

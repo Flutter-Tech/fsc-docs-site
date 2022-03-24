@@ -1140,59 +1140,62 @@ Global Flags:
 <!-- CLI example Develop Branches Ahead for topic status -->
 <h4>Develop Branches Ahead</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC with both teams having merged several features into their develop branches. The status command shows the state and tags of the key repository branches alongside my current feature branch.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches which are not yet released. As a member of the Leeds team I want to release our work. I use the status command to see the latest release tag on main, the state of all team development branches and whether any team has an existing release in progress.</p>
 
-<pre><code>$ git flutter status --no-check-version
-fd/feature/my-new-thing (current)
+<pre><code>$ git flutter status
+lds/feature/my-new-thing (current)
 
 main
   i v1.3.2
 
-ppb/develop
-  i v1.4.0-ppb.alpha.3
+opo/develop
+  i v1.4.0-opo.alpha.3
   ✔ 3 ahead of main
 
-fd/develop
-  i v1.4.0-fd.alpha.5
+lds/develop
+  i v1.4.0-lds.alpha.5
   ✔ 5 ahead of main</code></pre>
 
-<!-- CLI example Release In QA for topic status -->
-<h4>Release In QA</h4>
+<!-- CLI example Check Release Status (in-progress) for topic status -->
+<h4>Check Release Status (in-progress)</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team started a release which is currently being tested. The status command shows the active release.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Porto team I want to release so I use the status command to check whether any other team has a release in progress. I see that the Leeds team are currently releasing so know to check with them when they will have completed as only one major/minor release can occur at any time.</p>
 
-<pre><code>$ git flutter status --no-check-version
+<pre><code>$ git flutter status
 main (current)
   i v1.3.2
 
-ppb/develop
-  i v1.4.0-ppb.alpha.3
+opo/develop
+  i v1.4.0-opo.alpha.3
   ✔ 3 ahead of main
 
-fd/develop
-  i v1.4.0-fd.alpha.5
+lds/develop
+  i v1.4.0-lds.alpha.5
   ✔ 5 ahead of main
 
-fd/release/1.4
-  i v1.4.0-fd.beta.0
+lds/release/1.4
+  i v1.4.0-lds.beta.0
   ✔ 5 ahead of main</code></pre>
 
-<!-- CLI example Release Merged for topic status -->
-<h4>Release Merged</h4>
+<!-- CLI example Check Release Status (merged) for topic status -->
+<h4>Check Release Status (merged)</h4>
 
-<p>Two teams (ppb and fd) are working with the parallel teams SDLC. The FanDuel (fd) team have just completed a release by merging to main. The status command shows how the develop branches now lag behind main and require a sync.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Porto team I want to release so I use the status command to check whether any other team has a release in progress. Now the Leeds release has been merged into main I can see no release is in progress so I can start the next one myself.</p>
 
-<pre><code>$ git flutter status --no-check-version
+<pre><code>$ git flutter status
 main (current)
   i v1.4.0
 
-ppb/develop
-  i v1.4.0-ppb.alpha.3
+opo/develop
+  i v1.4.0-opo.alpha.3
   ! 6 behind and 3 ahead of main
 
-fd/develop
-  i v1.4.0-fd.alpha.5
-  ! 1 behind main</code></pre>
+lds/develop
+  i v1.4.0-lds.alpha.5
+  ! 1 behind main
+
+hotfix/perf-fix
+  ! 6 behind main</code></pre>
 
 
 

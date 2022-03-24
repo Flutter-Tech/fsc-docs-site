@@ -1136,25 +1136,25 @@ Global Flags:
 
 <h2 id="examples">Examples</h2>
 
-<!-- CLI example Specify Exact SemVer Tag for topic tag -->
-<h4>Specify Exact SemVer Tag</h4>
+<!-- CLI example Tag a Beta Build for topic tag -->
+<h4>Tag a Beta Build</h4>
 
-<p>I want to tag a release branch and specify the full semver tag required.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have started a release and want to create a beta build to deploy to our staging environment. I use the tag command to specify a semver tag on the release branch to trigger a CI build.</p>
 
-<pre><code>$ git flutter tag 1.4.0-fd.beta.0 --push --yes --no-check-version
-Tags the branch 'fd/release/1.4' with the tag 'v1.4.0-fd.beta.0', and pushes it to remote.
+<pre><code>$ git flutter tag 1.4.0-lds.beta.0 --push --yes
+Tags the branch 'lds/release/1.4' with the tag 'v1.4.0-lds.beta.0', and pushes it to remote.
 
 
-✔ The 'v1.4.0-fd.beta.0' version tag was created
+✔ The 'v1.4.0-lds.beta.0' version tag was created
 
-✔ The 'v1.4.0-fd.beta.0' version was pushed to remote</code></pre>
+✔ The 'v1.4.0-lds.beta.0' version was pushed to remote</code></pre>
 
-<!-- CLI example Increment from Previous SemVer for topic tag -->
-<h4>Increment from Previous SemVer</h4>
+<!-- CLI example Tag a Production Release for topic tag -->
+<h4>Tag a Production Release</h4>
 
-<p>After merging a release branch into main, I use the tag command to create a new minor release tag by incrementing the previous semver tag.</p>
+<p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have completed testing the beta builds and merged the release branch into main to complete the release. I now use the tag command to increment a minor version tag to trigger a production build.</p>
 
-<pre><code>$ git flutter tag minor --push --yes --no-check-version
+<pre><code>$ git flutter tag minor --push --yes
 Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
 
 
