@@ -183,14 +183,14 @@ gf_install() {
         fi
     fi
 
-    gf_reset
-
     gf_echo "=> 🎉 git-flutter was installed successfully 🎉"
 
     if ! command echo "$PATH" | grep -qc "$INSTALL_DIR"; then
         gf_echo "=> Close and reopen your terminal to start using git-flutter or run the following to use it now:"
         command printf "${SOURCE_STR}"
     fi
+
+    gf_reset
 }
 
 #

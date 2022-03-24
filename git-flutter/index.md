@@ -16,7 +16,7 @@ The Git Flutter CLI is a tool to save you time when using [standard SDLCs](/sdlc
 
 ## Install
 
-The `git flutter` extension can be installed on [macOS](/git-flutter/install/#macos), [Linux](/git-flutter/install/#linux) or [Windows](/git-flutter/install/#windows).
+The `git flutter` extension can be installed on [macOS](/git-flutter/install/#macos-and-linux), [Linux](/git-flutter/install/#macos-and-linux) or [Windows](/git-flutter/install/#windows).
 
 ## Getting Started
 

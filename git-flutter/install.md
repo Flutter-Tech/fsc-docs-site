@@ -10,106 +10,52 @@ next_url: /git-flutter/status/
 
 # Install
 
-The `git flutter` extension can be installed on [macOS](#macos), [Linux](#linux) or [Windows](#windows).
+The `git flutter` extension can be installed on [macOS](#macos-and-linux), [Linux](#macos-and-linux) or [Windows](#windows).
 
-## macOS
+## macOS and Linux
 
-To install on your MacBook:
+To install or update `git-flutter` on your MacBook or Linux machine:
 
-1. Download the latest {{ site.data.cli.version }} macOS binary:
+1. Run the installation script:
 
-```
-curl https://innersource.flutter.com/git-flutter/git-flutter_macOS_amd64
-```
-
-2. (Optional) Validate the binary using the provided checksums:
-
-```
-curl "https://innersource.flutter.com/git-flutter/checksums.txt"
-grep macOS_amd64 checksums.txt | shasum -a 256 --check
+```bash
+ curl -o- https://innersource.flutter.com/git-flutter/install.sh | bash
 ```
 
-3. Make the binary executable:
+2. Close and reopen your terminal to start using `git flutter` or run the following command to use it immediately:
 
-```
-chmod +x ./git-flutter_macOS_amd64
-```
-
-4. Move to a location on your `PATH`:
-
-```
-sudo mv ./git-flutter_macOS_amd64 /usr/local/bin/git-flutter
-sudo chown root: /usr/local/bin/git-flutter
+```bash
+ [ -d "$HOME/.git-flutter" ] && PATH="$HOME/.git-flutter:$PATH"
 ```
 
-5. Verify the command installation via `git`:
+3. Verify the extension installation via `git`:
 
-```
-git flutter
-```
-
-## Linux
-
-To install on a Linux dev or CI machine:
-
-1. Download the latest {{ site.data.cli.version }} Linux binary:
-
-```
-curl https://innersource.flutter.com/git-flutter/git-flutter_Linux_amd64
-```
-
-2. (Optional) Validate the binary using the provided checksums:
-
-```
-curl "https://innersource.flutter.com/git-flutter/checksums.txt"
-grep Linux_amd64 checksums.txt | shasum -a 256 --check
-```
-
-3. Install the executable:
-
-```
-sudo install -o root -g root -m 0755 git-flutter_Linux_amd64 /usr/local/bin/git-flutter
-```
-
-If you do not have root access on the target system, you can still install git-flutter to the `~/.local/bin` directory:
-
-```
-chmod +x git-flutter_Linux_amd64
-mkdir -p ~/.local/bin/
-mv ./git-flutter_Linux_amd64 ~/.local/bin/git-flutter
-# and then append (or prepend) ~/.local/bin to $PATH
-```
-
-5. Verify the command installation via `git`:
-
-```
-git flutter
+```bash
+ git flutter
 ```
 
 ## Windows
 
 To install on a Windows machine:
 
-1. Download the [latest release {{ site.data.cli.version }}](https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe).
+1. Download the [latest release {{ site.data.cli.version }}](https://innersource.flutter.com/git-flutter/git-flutter_{{ site.data.cli.version }}_Windows_x86_64.zip).
 
 Or if you have `curl` installed, use this command:
 
-```
-curl https://innersource.flutter.com/git-flutter/git-flutter_Windows_amd64.exe
+```bash
+curl https://innersource.flutter.com/git-flutter/git-flutter_{{ site.data.cli.version }}_Windows_x86_64.zip
 ```
 
 2. (Optional) Validate the binary by comparing [the provided checksum](https://innersource.flutter.com/git-flutter/checksums.txt) with that of the download which you can calculate at the command prompt:
 
+```bash
+CertUtil -hashfile git-flutter_{{ site.data.cli.version }}_Windows_x86_64.zip SHA256
 ```
-CertUtil -hashfile git-flutter_Windows_amd64.exe SHA256
-```
 
-3. Rename the binary to `git-flutter.exe`.
+3. Extract the `git-flutter_{{ site.data.cli.version }}_Windows_x86_64.zip` file and copy the `git-flutter.exe` into `C:\Program Files\Git\usr\bin`.
 
-4. Append or prepend the `git-flutter.exe` binary folder to your `PATH` environment variable.
+4. Verify the extension installation via `git`:
 
-5. Verify the command installation via `git`:
-
-```
+```bash
 git flutter
 ```
