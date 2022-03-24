@@ -37,10 +37,15 @@ jobs:
         env:
           GITHUB_OAUTH_TOKEN: ${{ steps.flutter_global_app_token.outputs.app_token }}
         run: |
+          # remove old files
+          rm -rf ./git-flutter/git-flutter_* || true
+          # Download files
           fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="git-flutter_*" ./git-flutter/
           fetch --repo="https://github.com/Flutter-Global/fsc-cli-tool" --tag=">1.0.0" --release-asset="checksums.txt" ./git-flutter/
-          chmod u+x ./git-flutter/git-flutter_*
-          FG_APP_TOKEN='' ./git-flutter/git-flutter_Linux_amd64 docs -o ./_data/cli.yml
+
+          tar xzvf ./git-flutter/git-flutter_*_Linux_x86_64.tar.gz -C "$HOME"
+          chmod u+x "$HOME/git-flutter"
+          FG_APP_TOKEN='' "$HOME/git-flutter" docs -o ./_data/cli.yml
 
       - name: Commit changes to site
         run: |
