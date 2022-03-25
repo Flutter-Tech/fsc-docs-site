@@ -1,5 +1,5 @@
 ---
-layout: preview
+layout: default
 title: Semantic Versioning
 article_navigation: true
 previous_title: Standard SDLCs

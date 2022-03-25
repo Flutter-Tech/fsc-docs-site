@@ -1,5 +1,5 @@
 ---
-layout: preview
+layout: default
 title: Git Flutter CLI
 article_navigation: true
 next_title: Install Git Flutter

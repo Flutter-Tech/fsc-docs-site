@@ -1,5 +1,5 @@
 ---
-layout: preview
+layout: default
 title: init Command
 article_navigation: true
 previous_title: Git Flutter Install

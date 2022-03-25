@@ -1,5 +1,5 @@
 ---
-layout: preview
+layout: default
 title: Multiple Teams SDLC
 article_navigation: true
 previous_title: Standard SDLCs

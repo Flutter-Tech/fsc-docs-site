@@ -1,5 +1,5 @@
 ---
-layout: preview
+layout: default
 title: SDLC
 article_navigation: true
 next_title: SemVer
