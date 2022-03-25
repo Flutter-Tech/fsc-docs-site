@@ -25,7 +25,7 @@ To install or update `git-flutter` on your MacBook or Linux machine:
 2. Close and reopen your terminal to start using `git flutter` or run the following command to use it immediately:
 
 ```bash
- [ -d "$HOME/.git-flutter" ] && PATH="$HOME/.git-flutter:$PATH"
+ [ -d "$HOME/.git-flutter/bin" ] && PATH="$HOME/.git-flutter/bin:$PATH"
 ```
 
 3. Verify the extension installation via `git`:
@@ -38,6 +38,7 @@ To install or update `git-flutter` on your MacBook or Linux machine:
 
 To install on a Windows machine:
 
+<!-- prettier-ignore -->
 1. Download the [latest release {{ site.data.cli.version }}](https://innersource.flutter.com/git-flutter/git-flutter_{{ site.data.cli.version }}_Windows_x86_64.zip).
 
 Or if you have `curl` installed, use this command:
