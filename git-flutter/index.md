@@ -8,6 +8,8 @@ next_url: /git-flutter/install/
 
 # `git flutter` CLI
 
+<div style="position: relative; display: block; max-width: 1280px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/rJgmHWotkf_default/index.html?videoId=6302203961001" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>
+
 The Git Flutter CLI is a tool to save you time when using [standard SDLCs](/sdlc/) from your computer's command line.
 
 ```
