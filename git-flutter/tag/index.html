@@ -1099,15 +1099,16 @@ $ git flutter tag 1.0.0
 
 Flags:
   -m, --message string   custom annotated tag commit message
-      --push             push to the remote
   -s, --source string    working directory (default ".")
       --team string      team name
   -y, --yes              confirm yes to any interactive prompts
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 
 </code></pre></div></div>
 
@@ -1119,12 +1120,12 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have started a release and want to create a beta build to deploy to our staging environment. I use the tag command to specify a semver tag on the release branch to trigger a CI build.</p>
 
 <pre><code>$ git flutter tag 1.4.0-lds.beta.0 --push --yes
-Tags the branch 'lds/release/1.4' with the tag 'v1.4.0-lds.beta.0', and pushes it to remote.
+An ERROR occurred:
 
+✘ unknown flag: --push
 
-✔ The 'v1.4.0-lds.beta.0' version tag was created
-
-✔ The 'v1.4.0-lds.beta.0' version was pushed to remote</code></pre>
+Command help is available using the --help flag.
+Support is available in Slack channel #inner-source.</code></pre>
 
 <!-- CLI example Tag a Production Release for topic tag -->
 <h4>Tag a Production Release</h4>
@@ -1132,12 +1133,12 @@ Tags the branch 'lds/release/1.4' with the tag 'v1.4.0-lds.beta.0', and pushes i
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have completed testing the beta builds and merged the release branch into main to complete the release. I now use the tag command to increment a minor version tag to trigger a production build.</p>
 
 <pre><code>$ git flutter tag minor --push --yes
-Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
+An ERROR occurred:
 
+✘ unknown flag: --push
 
-✔ The 'v1.5.0' version tag was created
-
-✔ The 'v1.5.0' version was pushed to remote</code></pre>
+Command help is available using the --help flag.
+Support is available in Slack channel #inner-source.</code></pre>
 
 
     

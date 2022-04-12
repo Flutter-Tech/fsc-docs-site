@@ -1099,9 +1099,11 @@ Flags:
   -y, --yes             confirm yes to any interactive prompts
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 
 </code></pre></div></div>
 
@@ -1113,7 +1115,7 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team have just completed a release and merged it to main. As an engineer in the Porto team I need to sync the release back into my team develop branch to integrate the changes.</p>
 
 <pre><code>$ git flutter sync --force --yes
-Merges the branch 'main' into branch 'opo/develop', and pushes it to origin.
+Merges the branch 'main' into branch 'opo/develop' and pushes it to remote
 
 
 i Merging branches

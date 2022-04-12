@@ -1104,9 +1104,11 @@ Flags:
   -y, --yes             confirm yes to any interactive prompts
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 
 </code></pre></div></div>
 
@@ -1118,13 +1120,13 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches. As a member of the Leeds team I want to release our work so use the release command to start a release.</p>
 
 <pre><code>$ git flutter release 1.4 --yes
-Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to origin.
+Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to remote
 
-
-i Updating from origin
 i Creating branch 'lds/release/1.4'
 
-✔ The release branch 'lds/release/1.4' was created
+✔ The 'lds/release/1.4' branch was pushed to remote
+
+✔ The release branch 'lds/release/1.4' was successfully created
 
 You can now raise a PR to merge the release into main, or use 'git flutter tag' to create a beta build.</code></pre>
 

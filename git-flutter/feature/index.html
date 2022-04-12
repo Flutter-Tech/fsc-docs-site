@@ -1103,9 +1103,11 @@ Flags:
   -y, --yes             confirm yes to any interactive prompts
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 
 </code></pre></div></div>
 
@@ -1117,11 +1119,11 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. As an engineer in the Leeds (lds) team I want to start a new feature. I use the feature command to create a new branch for my work, with my team automatically detected from my current branch. Once I've finished my feature I'll raise a pull request to merge it into my team development branch (lds/develop).</p>
 
 <pre><code>$ git flutter feature my-new-thing --yes
-Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to origin.
+Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to remote
 
-
-i Updating from origin
 i Creating branch 'lds/feature/my-new-thing'
+
+✔ The 'lds/feature/my-new-thing' branch was pushed to remote
 
 ✔ The feature branch 'lds/feature/my-new-thing' was successfully created</code></pre>
 

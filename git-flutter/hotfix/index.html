@@ -1095,12 +1095,15 @@
 
 Flags:
   -s, --source string   working directory (default ".")
+      --tag string      tag to apply hotfix (default "latest")
   -y, --yes             confirm yes to any interactive prompts
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 
 </code></pre></div></div>
 
@@ -1112,11 +1115,12 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team are testing a new minor release, but the Porto team need to publish an emergency fix for a production incident. As an engineer in the Porto team I use the hotfix command to start a hotfix.</p>
 
 <pre><code>$ git flutter hotfix perf-fix --yes
-Creates a hotfix branch named 'hotfix/perf-fix' from the source branch 'main' and pushes it to origin.
-
-
 i Updating from origin
+Creates a hotfix branch named 'hotfix/perf-fix' from the source branch 'main' and pushes it to remote
+
 i Creating branch 'hotfix/perf-fix'
+
+✔ The 'hotfix/perf-fix' branch was pushed to remote
 
 ✔ The hotfix branch 'hotfix/perf-fix' was successfully created</code></pre>
 

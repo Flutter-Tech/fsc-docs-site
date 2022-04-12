@@ -1188,11 +1188,11 @@
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. As an engineer in the Leeds (lds) team I want to start a new feature. I use the feature command to create a new branch for my work, with my team automatically detected from my current branch. Once I've finished my feature I'll raise a pull request to merge it into my team development branch (lds/develop).</p>
 
 <pre><code>$ git flutter feature my-new-thing --yes
-Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to origin.
+Creates a feature branch named 'lds/feature/my-new-thing' from the source branch 'lds/develop' and pushes it to remote
 
-
-i Updating from origin
 i Creating branch 'lds/feature/my-new-thing'
+
+✔ The 'lds/feature/my-new-thing' branch was pushed to remote
 
 ✔ The feature branch 'lds/feature/my-new-thing' was successfully created</code></pre>
 
@@ -1202,18 +1202,18 @@ i Creating branch 'lds/feature/my-new-thing'
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches which are not yet released. As a member of the Leeds team I want to release our work. I use the status command to see the latest release tag on main, the state of all team development branches and whether any team has an existing release in progress.</p>
 
 <pre><code>$ git flutter status
-lds/feature/my-new-thing (current)
+lds/feature/my-new-thing
 
 main
   i v1.3.2
 
 opo/develop
   i v1.4.0-opo.alpha.3
-  ✔ 3 ahead of main
+  i 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ✔ 5 ahead of main</code></pre>
+  i 5 ahead of main</code></pre>
 
 <!-- CLI example Start a Release for topic gitflow -->
 <h4>Start a Release</h4>
@@ -1221,13 +1221,13 @@ lds/develop
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches. As a member of the Leeds team I want to release our work so use the release command to start a release.</p>
 
 <pre><code>$ git flutter release 1.4 --yes
-Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to origin.
+Creates a release branch named 'lds/release/1.4' from the current team develop branch 'lds/develop', and pushes it to remote
 
-
-i Updating from origin
 i Creating branch 'lds/release/1.4'
 
-✔ The release branch 'lds/release/1.4' was created
+✔ The 'lds/release/1.4' branch was pushed to remote
+
+✔ The release branch 'lds/release/1.4' was successfully created
 
 You can now raise a PR to merge the release into main, or use 'git flutter tag' to create a beta build.</code></pre>
 
@@ -1237,12 +1237,12 @@ You can now raise a PR to merge the release into main, or use 'git flutter tag' 
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have started a release and want to create a beta build to deploy to our staging environment. I use the tag command to specify a semver tag on the release branch to trigger a CI build.</p>
 
 <pre><code>$ git flutter tag 1.4.0-lds.beta.0 --push --yes
-Tags the branch 'lds/release/1.4' with the tag 'v1.4.0-lds.beta.0', and pushes it to remote.
+An ERROR occurred:
 
+✘ unknown flag: --push
 
-✔ The 'v1.4.0-lds.beta.0' version tag was created
-
-✔ The 'v1.4.0-lds.beta.0' version was pushed to remote</code></pre>
+Command help is available using the --help flag.
+Support is available in Slack channel #inner-source.</code></pre>
 
 <!-- CLI example Concurrent Releases Prevented for topic gitflow -->
 <h4>Concurrent Releases Prevented</h4>
@@ -1266,17 +1266,19 @@ Support is available in Slack channel #inner-source.</code></pre>
 main (current)
   i v1.3.2
 
+
+
 opo/develop
   i v1.4.0-opo.alpha.3
-  ✔ 3 ahead of main
+  i 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ✔ 5 ahead of main
+  i 5 ahead of main
 
 lds/release/1.4
-  i v1.4.0-lds.beta.0
-  ✔ 5 ahead of main</code></pre>
+  i HEAD would be v1.4.0-lds.beta.5 (inferred)
+  i 5 ahead of main</code></pre>
 
 <!-- CLI example Start Latest Version Hotfix for topic gitflow -->
 <h4>Start Latest Version Hotfix</h4>
@@ -1284,11 +1286,12 @@ lds/release/1.4
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team are testing a new minor release, but the Porto team need to publish an emergency fix for a production incident. As an engineer in the Porto team I use the hotfix command to start a hotfix.</p>
 
 <pre><code>$ git flutter hotfix perf-fix --yes
-Creates a hotfix branch named 'hotfix/perf-fix' from the source branch 'main' and pushes it to origin.
-
-
 i Updating from origin
+Creates a hotfix branch named 'hotfix/perf-fix' from the source branch 'main' and pushes it to remote
+
 i Creating branch 'hotfix/perf-fix'
+
+✔ The 'hotfix/perf-fix' branch was pushed to remote
 
 ✔ The hotfix branch 'hotfix/perf-fix' was successfully created</code></pre>
 
@@ -1301,16 +1304,15 @@ i Creating branch 'hotfix/perf-fix'
 main (current)
   i v1.4.0
 
+
+
 opo/develop
   i v1.4.0-opo.alpha.3
   ! 6 behind and 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ! 1 behind main
-
-hotfix/perf-fix
-  ! 6 behind main</code></pre>
+  ! 1 behind main</code></pre>
 
 <!-- CLI example Tag a Production Release for topic gitflow -->
 <h4>Tag a Production Release</h4>
@@ -1318,12 +1320,12 @@ hotfix/perf-fix
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.As a member of the Leeds team I have completed testing the beta builds and merged the release branch into main to complete the release. I now use the tag command to increment a minor version tag to trigger a production build.</p>
 
 <pre><code>$ git flutter tag minor --push --yes
-Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
+An ERROR occurred:
 
+✘ unknown flag: --push
 
-✔ The 'v1.5.0' version tag was created
-
-✔ The 'v1.5.0' version was pushed to remote</code></pre>
+Command help is available using the --help flag.
+Support is available in Slack channel #inner-source.</code></pre>
 
 <!-- CLI example Sync a Develop Branch for topic gitflow -->
 <h4>Sync a Develop Branch</h4>
@@ -1331,7 +1333,7 @@ Tags the branch 'main' with the tag 'v1.5.0', and pushes it to remote.
 <p>Two teams (opo and lds) are working with the multiple teams SDLC.The Leeds team have just completed a release and merged it to main. As an engineer in the Porto team I need to sync the release back into my team develop branch to integrate the changes.</p>
 
 <pre><code>$ git flutter sync --force --yes
-Merges the branch 'main' into branch 'opo/develop', and pushes it to origin.
+Merges the branch 'main' into branch 'opo/develop' and pushes it to remote
 
 
 i Merging branches

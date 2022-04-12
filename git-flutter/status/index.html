@@ -1105,9 +1105,11 @@ Flags:
   -s, --source string   working directory (default ".")
 
 Global Flags:
-      --cache string       application cache file (default "/home/runner/.git-flutter.cache.v9")
-      --no-check-version   Doesn't check for updated version
-  -v, --verbose            verbose log output
+      --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+  -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+      --no-check-version            doesn't check for updated version
+      --no-network                  doesn't perform network operations
+  -v, --verbose                     verbose log output
 </code></pre></div></div>
 
 <p>The command adds progressively greater value the more complex <a href="/sdlc/">your configured SDLC</a>.</p>
@@ -1120,18 +1122,18 @@ Global Flags:
 <p>Two teams (opo and lds) are working with the multiple teams SDLC. Engineers from both teams have now merged several features into their develop branches which are not yet released. As a member of the Leeds team I want to release our work. I use the status command to see the latest release tag on main, the state of all team development branches and whether any team has an existing release in progress.</p>
 
 <pre><code>$ git flutter status
-lds/feature/my-new-thing (current)
+lds/feature/my-new-thing
 
 main
   i v1.3.2
 
 opo/develop
   i v1.4.0-opo.alpha.3
-  ✔ 3 ahead of main
+  i 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ✔ 5 ahead of main</code></pre>
+  i 5 ahead of main</code></pre>
 
 <!-- CLI example Check Release Status (in-progress) for topic status -->
 <h4>Check Release Status (in-progress)</h4>
@@ -1142,17 +1144,19 @@ lds/develop
 main (current)
   i v1.3.2
 
+
+
 opo/develop
   i v1.4.0-opo.alpha.3
-  ✔ 3 ahead of main
+  i 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ✔ 5 ahead of main
+  i 5 ahead of main
 
 lds/release/1.4
-  i v1.4.0-lds.beta.0
-  ✔ 5 ahead of main</code></pre>
+  i HEAD would be v1.4.0-lds.beta.5 (inferred)
+  i 5 ahead of main</code></pre>
 
 <!-- CLI example Check Release Status (merged) for topic status -->
 <h4>Check Release Status (merged)</h4>
@@ -1163,16 +1167,15 @@ lds/release/1.4
 main (current)
   i v1.4.0
 
+
+
 opo/develop
   i v1.4.0-opo.alpha.3
   ! 6 behind and 3 ahead of main
 
 lds/develop
   i v1.4.0-lds.alpha.5
-  ! 1 behind main
-
-hotfix/perf-fix
-  ! 6 behind main</code></pre>
+  ! 1 behind main</code></pre>
 
 
     
