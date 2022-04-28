@@ -229,4 +229,5 @@ flt.onReady(function () {
   initMobileNavigation();
   initDisplayToggler();
   initHierarchyTree();
+  
 })

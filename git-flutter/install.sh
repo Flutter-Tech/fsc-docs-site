@@ -122,7 +122,7 @@ gf_install() {
 
     URL="https://innersource.flutter.com/cli.json"
     gf_echo "=> Downloading git-flutter metadata"
-    LATEST_VERSION=$(gf_download -s "$URL" | tr '\n' ' ' | sed 's/.*v *\([^ ].[^ ].[^ ]\).*/\1/') || {
+    LATEST_VERSION=$(gf_download -s "$URL" | sed -n 's|.*"latest-version": \{0,1\}"v\([^"]*\)".*|\1|p') || {
         gf_echo >&2 "Failed to download '$URL'"
         return 1
     }
