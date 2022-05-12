@@ -20,13 +20,11 @@ This software development lifecycle is optimised for a service with [multiple te
 
 The branching model used in this SDLC is a derivative of [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) with each team having their own `<team>/develop` branch. The complexity of this model is only worthwhile when multiple teams are working on the same service concurrently. The [Service SDLC](/sdlc/service/) provides similar features with a simpler branching model if a single primary team exists that just needs to accept external contributions.
 
-Alpha, beta or production-ready builds are signalled by git tags which conform to [our semantic versioning conventions](/sdlc/semver/). For example:
+Alpha, beta or production-ready builds are signalled by git tags which conform to [our semantic versioning conventions](/sdlc/package/). For example:
 
 - `v1.3.3` is the latest production release. The last team feature release was `v1.3.0` since which there have been 3 hotfixes.
 - `v1.4.0-opo.beta.2` is the next release driven by the `opo` team. Since the initial release build there have probably been 2 minor bugfixes.
 - `v1.5.0-lds.alpha.3` is the alpha version in the `lds/develop` branch that is deployed to one of the Leeds team QA environments with 3 unreleased changes.
-
-[Read more about our SemVer conventions in this document](/sdlc/semver/).
 
 ## Development
 
@@ -72,7 +70,7 @@ Hotfixes can be applied during a major/minor release. In such cases the relevant
 
 ## Support
 
-This SDLC expects each team to own and manage their own deployment(s). The deployment process itself will vary by team based on their tools, infrastructure and desired topology. This SDLC simply promotes the use of [semver tags](/sdlc/semver/) to signal that a build should be created and made available for all teams for deployment if desired.
+This SDLC expects each team to own and manage their own deployment(s). The deployment process itself will vary by team based on their tools, infrastructure and desired topology. This SDLC simply promotes the use of [semver tags](/sdlc/package/) to signal that a build should be created and made available for all teams for deployment if desired.
 
 Not all teams will have the same version deployed. Older versions should not be the target of new features, but must be supported until a team has migrated to the latest release. To support older versions hotfixes can be applied to any previous version on a `/support/<version>` branch.
 

@@ -78,12 +78,21 @@ main:
     title: Standard SDLCs
     identifier: sdlc
     children:
-      - url: /sdlc/semver/
-        title: SemVer
-        identifier: semver
+      - url: /sdlc/source/
+        title: Source
+        identifier: source
       - url: /sdlc/multiple-teams/
         title: Multiple Teams
         identifier: multiple-teams
+      - url: /sdlc/validate/
+        title: Validate
+        identifier: validate
+      - url: /sdlc/package/
+        title: Package & Publish
+        identifier: package
+      - url: /sdlc/test/
+        title: Test
+        identifier: test
   - url: /catalogue/
     title: Service Catalogue
     identifier: catalogue
