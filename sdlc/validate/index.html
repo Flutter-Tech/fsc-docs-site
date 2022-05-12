@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Using Jenkins with GitHub | Flutter Inner Source</title>
+  <title>Validate | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -363,7 +363,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Validate</a
     >
   </li>  
@@ -523,7 +523,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Using Jenkins with GitHub</a
     >
   </li>  
@@ -958,7 +958,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Validate</a
     >
   </li>  
@@ -1118,7 +1118,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Using Jenkins with GitHub</a
     >
   </li>  
@@ -1149,118 +1149,113 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="using-jenkins-with-github">Using Jenkins with GitHub</h1>
+    <h1 id="validate">Validate</h1>
 
-<h2 id="basic-github-jenkins-integration">Basic Github Jenkins Integration</h2>
-
-<p>A basic integration means the ability for a Jenkins Job to build code from Github, by manual trigger, without any automatic triggers or webhooks.</p>
+<p>A proposed code change is validated by a series of automated checks to provide fast feedback to the contributor.</p>
 
 <ul>
-  <li>Add access to user <strong>svc-jenkins-admin</strong> to the repository with minimum <code class="language-plaintext highlighter-rouge">write</code> permissions, but keep in mind that for the triggering features described bellow svc-jenkins-admin will need <code class="language-plaintext highlighter-rouge">admin</code> permissions.</li>
-  <li>Github Repository → Settings → Manage Access → Invite Teams or People</li>
-  <li>Configure the Jenkins Job</li>
+  <li>These checks are triggered as status checks on any pull request. This provides clear UI feedback to both contributor and reviewer. Draft pull requests can be raised for feedback on pre-review work.</li>
+  <li>Most checks will be defined in the repository itself as <a href="https://docs.github.com/en/actions/using-workflows">GitHub Action workflows</a>. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.</li>
+  <li>Checks that require access to an internal service or environment can use our self-hosted workflow runners that are connected to the inter-divisional network (IDN).</li>
+  <li>In addition to custom workflows, 3rd party tools like <a href="https://sonarcloud.io/">sonarcloud</a> are integrated and available for all organisational members to use.</li>
 </ul>
 
-<ol>
-  <li>
-    <h4 id="manual-jenkins-job-push-trigger-configuration-through-jenkins-ui">Manual Jenkins job push trigger configuration through Jenkins UI</h4>
+<h2 id="github-action-workflows">GitHub Action Workflows</h2>
 
-    <ol>
-      <li>Navigate to your jenkins Job and in <strong>General</strong> section check <strong>GitHub Project</strong> and add the path to your project.<br />
-Be careful to <strong>not add .git</strong> at the end of path, you can take the path from browser<br />
-<img src="/docs/using-jenkins/ui-1.png" alt="Add project path" /></li>
-      <li>Go to <strong>Source Code Management</strong> section and configure it like following <img src="/docs/using-jenkins/ui-2.png" alt="Source Code Management" /></li>
-      <li>
-        <p>Go to <strong>Build Triggers</strong> section and check <strong>GitHub hook trigger for GITScm polling</strong><br />
-<img src="/docs/using-jenkins/ui-3.png" alt="Build triggers" /></p>
-      </li>
-      <li>Save the job.</li>
-      <li>A webhook should have been created in Github after saving the job with the endpoint https://jkm/github-webhook/, we don’t need to edit it.<br />
-<img src="/docs/using-jenkins/ui-4.png" alt="GitHub Webhook" /></li>
-    </ol>
-  </li>
-  <li>
-    <h4 id="jenkins-job-push-trigger-using-jenkins-job-builder">Jenkins job push trigger using Jenkins Job Builder</h4>
+<p><a href="https://docs.github.com/en/actions/using-workflows">Docs on how to use workflows are available from GitHub</a>. Training courses are also available – contact the <a href="/community/">Inner Source Team</a> for availability. They provide a flexible way to run linters, compile checks, unit tests and so on on <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">Linux, macOS or Windows job runners</a>.</p>
 
-    <ol>
-      <li>
-        <p>Go to your <strong>TLA_JOB.yml</strong> file and add the following lines inside your job or template definition, with the name of your Github project instead of &lt;PROJECT_NAME&gt; (i.e.: github_jenkins).</p>
+<p>Each validation workflow should trigger via the <code class="language-plaintext highlighter-rouge">pull_request</code> event. For example to run some unit tests:</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>properties:
-  - github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-scm:
-  - clone_github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-triggers:
-  - github
-</code></pre></div>        </div>
-      </li>
-      <li>Run https://jenkins-prd/job/util_jenkins_job_builder/ for your jenkins job</li>
-      <li>A webhook should have been created in Github.<br />
-<img src="/docs/using-jenkins/ui-4.png" alt="GitHub Webhook" /></li>
-    </ol>
-  </li>
-</ol>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /.github/workflows/unit-tests.yml
+name: Example Test Runner
+permissions:
+  contents: read
+on: [ pull_request ]
 
-<h2 id="trigger-jenkins-job-on-github-pull-request">Trigger Jenkins job on Github Pull Request</h2>
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
 
-<p>This enables Github to automatically trigger a Jenkins Job when a Pull Request (Merge Request) is created, using a webhook.</p>
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-<p>We don’t need to configure the webhook, Jenkins will configure it automatically using svc-jenkins-admin user.</p>
+      - name: Run unit tests
+        run: mvn test
+</code></pre></div></div>
+
+<p>There are a few security best practices to note:</p>
 
 <ul>
-  <li>Create the project in Github</li>
-  <li>Add access to user <strong>svc-jenkins-admin</strong> to the project with <code class="language-plaintext highlighter-rouge">admin</code> permissions
-    <ul>
-      <li>Github Project → Settings → Manage Access → Invite Teams or People</li>
-    </ul>
-  </li>
-  <li>Configure the Jenkins Job</li>
+  <li>if using a 3rd party action in your workflow, <a href="https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions">pin the version to a commit SHA</a> to ensure it is immutable.</li>
+  <li><a href="https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs">restrict the workflow job permissions</a> to only what is necessary (ideally read-only).</li>
+  <li>if secrets are required, <a href="/docs/secrets/">consider the use of environments to restrict access to selected protected branches</a>.</li>
+  <li>if authenticating to AWS (or any major cloud provider), use <a href="https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services">OpenID Connect to manage the workflow auth within AWS IAM directly</a>.</li>
 </ul>
 
-<ol>
-  <li>
-    <h4 id="jenkins-job-pull-request-trigger-using-jenkins-job-builder">Jenkins job Pull Request trigger using Jenkins Job Builder</h4>
+<h2 id="self-hosted-runners">Self-Hosted Runners</h2>
 
-    <ol>
-      <li>
-        <p>Go to your TLA_JOB.yml file and add the following lines inside your job or template definition, with the name of your Github project instead of &lt;PROJECT_NAME&gt;. (i.e.: github_jenkins)</p>
+<p>GitHub Action workflows run by default on GitHub managed <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">infrastructure and operating system images</a> which is suitable for most use-cases. If you have internal network access requirements or need more control over the runner infrastructure you can use the Flutter self-hosted runners. These run on AWS infrastructure and with some internal network routing available through the inter-divisional network (IDN).</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-properties:
-- github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-scm:
-- clone_github_pull_request:
-    project_path: "&lt;PROJECT_NAME&gt;"
-triggers:
-- github_trigger_on_pull_requests
-
-</code></pre></div>        </div>
-      </li>
-      <li>Run https://jenkins-prd/job/util_jenkins_job_builder/ for your jenkins job</li>
-      <li>A webhook should have been created in Github with the endpoint https://jkm/github-webhook/, we don’t need to edit it.<br />
-<img src="/docs/using-jenkins/ui-5.png" alt="GitHub Webhooks" /></li>
-    </ol>
-  </li>
-</ol>
+<p>Consider using self-hosted runners if:</p>
 
 <ul>
-  <li>Now, if we create a Pull Request in Github, the jenkins jobs corresponding to the Github project will be triggered and and you can see the status in Github<br />
-<img src="/docs/using-jenkins/ui-6.png" alt="GitHub Pull Request" /></li>
-  <li>The same job is triggered also if the Pull Request is updated with a new commit.</li>
-  <li>If we want, we can block the ability to merge, until the Jenkins job passes, by protecting master branch and adding a rule from Settings → Branches → Add Rule → Create → Save Changes like bellow:<br />
-<img src="/docs/using-jenkins/ui-7.png" alt="Block ability to merge" /><br />
-<img src="/docs/using-jenkins/ui-8.png" alt="Block ability to merge" /></li>
+  <li>you need to access internal services like test environments or an internal Artifactory instance.</li>
+  <li>your jobs are exceptionally demanding of compute, memory or other specific requirements.</li>
 </ul>
 
+<h3 id="enabling-self-hosted-runners">Enabling Self-Hosted Runners</h3>
+
+<p>Access to the self-hosted runners are not available to your repository by default. To request access contact the <a href="/community/">Inner Source Team</a> or <a href="https://github.com/Flutter-Global/product-inner-source/edit/master/runners.csv">raise a PR directly</a> on the <code class="language-plaintext highlighter-rouge">runners.csv</code> file in the root of the <code class="language-plaintext highlighter-rouge">product-inner-source</code> repository.</p>
+
+<h3 id="using-self-hosted-runners">Using Self-Hosted Runners</h3>
+
+<p>To use the self hosted runners simply adjust the <code class="language-plaintext highlighter-rouge">runs-on</code> key in your workflow to:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runs-on: self-hosted
+</code></pre></div></div>
+
+<p>Note that at present the base images used for self-hosted runners is different from that provided by GitHub for their managed runners so you will need to adjust your workflows e.g. to install tools like maven. These differences are due to be resolved by June 2022 when the self-hosted runners will use the same image as the Linux GitHub managed runners.</p>
+
+<h2 id="coming-soon-sonarcloud">(COMING SOON) SonarCloud</h2>
+
+<p>A shared instance of <a href="https://sonarcloud.io/">sonarcloud</a> is expected to be available to all users by June 2022, details will follow at that point. At present this tool is used via divisional licencing.</p>
+
+<h2 id="other-3rd-party-tools">Other 3rd Party Tools</h2>
+
+<p>One of the advantages of using a managed GitHub platform is the variety of quality 3rd-party tools that can be integrated. If you have a specific need to work with a 3rd party tool that wotks with GitHub please <a href="https://github.com/Flutter-Global/product-inner-source#proposals">raise a proposal</a> to discuss integrating it.</p>
+
+
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Source</h5>
+    <div>
+      <a href="/sdlc/source/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5 class="text-right">Package</h5>
+    <div class="text-right">
+      <a href="/sdlc/package/"
+        >Next
+        &rarr;</a
+      >
+    </div>
+    
+  </div>
+</div>
     
   </div>
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#basic-github-jenkins-integration" class="hover:text-theme-color">Basic Github Jenkins Integration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#trigger-jenkins-job-on-github-pull-request" class="hover:text-theme-color">Trigger Jenkins job on Github Pull Request</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-action-workflows" class="hover:text-theme-color">GitHub Action Workflows</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#self-hosted-runners" class="hover:text-theme-color">Self-Hosted Runners</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#enabling-self-hosted-runners" class="hover:text-theme-color">Enabling Self-Hosted Runners</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#using-self-hosted-runners" class="hover:text-theme-color">Using Self-Hosted Runners</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-sonarcloud" class="hover:text-theme-color">(COMING SOON) SonarCloud</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#other-3rd-party-tools" class="hover:text-theme-color">Other 3rd Party Tools</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

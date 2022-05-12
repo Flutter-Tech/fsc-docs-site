@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Using Jenkins with GitHub | Flutter Inner Source</title>
+  <title>Source Control | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -343,7 +343,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/sdlc/source/" title="Go to Source" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Source</a
     >
   </li>  
@@ -523,7 +523,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Using Jenkins with GitHub</a
     >
   </li>  
@@ -938,7 +938,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/sdlc/source/" title="Go to Source" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Source</a
     >
   </li>  
@@ -1118,7 +1118,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/docs/using-jenkins/" title="Go to Using Jenkins with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Using Jenkins with GitHub</a
     >
   </li>  
@@ -1149,118 +1149,93 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="using-jenkins-with-github">Using Jenkins with GitHub</h1>
+    <h1 id="source-control">Source Control</h1>
 
-<h2 id="basic-github-jenkins-integration">Basic Github Jenkins Integration</h2>
-
-<p>A basic integration means the ability for a Jenkins Job to build code from Github, by manual trigger, without any automatic triggers or webhooks.</p>
-
-<ul>
-  <li>Add access to user <strong>svc-jenkins-admin</strong> to the repository with minimum <code class="language-plaintext highlighter-rouge">write</code> permissions, but keep in mind that for the triggering features described bellow svc-jenkins-admin will need <code class="language-plaintext highlighter-rouge">admin</code> permissions.</li>
-  <li>Github Repository → Settings → Manage Access → Invite Teams or People</li>
-  <li>Configure the Jenkins Job</li>
-</ul>
+<p>Your source code is stored in a repository within the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation. This will have:</p>
 
 <ol>
-  <li>
-    <h4 id="manual-jenkins-job-push-trigger-configuration-through-jenkins-ui">Manual Jenkins job push trigger configuration through Jenkins UI</h4>
-
-    <ol>
-      <li>Navigate to your jenkins Job and in <strong>General</strong> section check <strong>GitHub Project</strong> and add the path to your project.<br />
-Be careful to <strong>not add .git</strong> at the end of path, you can take the path from browser<br />
-<img src="/docs/using-jenkins/ui-1.png" alt="Add project path" /></li>
-      <li>Go to <strong>Source Code Management</strong> section and configure it like following <img src="/docs/using-jenkins/ui-2.png" alt="Source Code Management" /></li>
-      <li>
-        <p>Go to <strong>Build Triggers</strong> section and check <strong>GitHub hook trigger for GITScm polling</strong><br />
-<img src="/docs/using-jenkins/ui-3.png" alt="Build triggers" /></p>
-      </li>
-      <li>Save the job.</li>
-      <li>A webhook should have been created in Github after saving the job with the endpoint https://jkm/github-webhook/, we don’t need to edit it.<br />
-<img src="/docs/using-jenkins/ui-4.png" alt="GitHub Webhook" /></li>
-    </ol>
-  </li>
-  <li>
-    <h4 id="jenkins-job-push-trigger-using-jenkins-job-builder">Jenkins job push trigger using Jenkins Job Builder</h4>
-
-    <ol>
-      <li>
-        <p>Go to your <strong>TLA_JOB.yml</strong> file and add the following lines inside your job or template definition, with the name of your Github project instead of &lt;PROJECT_NAME&gt; (i.e.: github_jenkins).</p>
-
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>properties:
-  - github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-scm:
-  - clone_github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-triggers:
-  - github
-</code></pre></div>        </div>
-      </li>
-      <li>Run https://jenkins-prd/job/util_jenkins_job_builder/ for your jenkins job</li>
-      <li>A webhook should have been created in Github.<br />
-<img src="/docs/using-jenkins/ui-4.png" alt="GitHub Webhook" /></li>
-    </ol>
-  </li>
+  <li>a branching strategy: where is the code initially contributed to and then merged into?</li>
+  <li>an access control strategy: who can access the repository, and with what permissions?</li>
+  <li>branch protections to ensure the combination of (1) and (2) is secure.</li>
 </ol>
 
-<h2 id="trigger-jenkins-job-on-github-pull-request">Trigger Jenkins job on Github Pull Request</h2>
+<h2 id="branching-strategy">Branching Strategy</h2>
 
-<p>This enables Github to automatically trigger a Jenkins Job when a Pull Request (Merge Request) is created, using a webhook.</p>
-
-<p>We don’t need to configure the webhook, Jenkins will configure it automatically using svc-jenkins-admin user.</p>
-
-<ul>
-  <li>Create the project in Github</li>
-  <li>Add access to user <strong>svc-jenkins-admin</strong> to the project with <code class="language-plaintext highlighter-rouge">admin</code> permissions
-    <ul>
-      <li>Github Project → Settings → Manage Access → Invite Teams or People</li>
-    </ul>
-  </li>
-  <li>Configure the Jenkins Job</li>
-</ul>
+<p>A choice of three branching strategies are available:</p>
 
 <ol>
-  <li>
-    <h4 id="jenkins-job-pull-request-trigger-using-jenkins-job-builder">Jenkins job Pull Request trigger using Jenkins Job Builder</h4>
-
-    <ol>
-      <li>
-        <p>Go to your TLA_JOB.yml file and add the following lines inside your job or template definition, with the name of your Github project instead of &lt;PROJECT_NAME&gt;. (i.e.: github_jenkins)</p>
-
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-properties:
-- github_project:
-    project_path: "&lt;PROJECT_NAME&gt;"
-scm:
-- clone_github_pull_request:
-    project_path: "&lt;PROJECT_NAME&gt;"
-triggers:
-- github_trigger_on_pull_requests
-
-</code></pre></div>        </div>
-      </li>
-      <li>Run https://jenkins-prd/job/util_jenkins_job_builder/ for your jenkins job</li>
-      <li>A webhook should have been created in Github with the endpoint https://jkm/github-webhook/, we don’t need to edit it.<br />
-<img src="/docs/using-jenkins/ui-5.png" alt="GitHub Webhooks" /></li>
-    </ol>
-  </li>
+  <li><a href="/sdlc/multiple-teams/">Multiple Teams</a></li>
+  <li>Service (COMING SOON)</li>
+  <li>Audited (COMING SOON)</li>
 </ol>
 
-<ul>
-  <li>Now, if we create a Pull Request in Github, the jenkins jobs corresponding to the Github project will be triggered and and you can see the status in Github<br />
-<img src="/docs/using-jenkins/ui-6.png" alt="GitHub Pull Request" /></li>
-  <li>The same job is triggered also if the Pull Request is updated with a new commit.</li>
-  <li>If we want, we can block the ability to merge, until the Jenkins job passes, by protecting master branch and adding a rule from Settings → Branches → Add Rule → Create → Save Changes like bellow:<br />
-<img src="/docs/using-jenkins/ui-7.png" alt="Block ability to merge" /><br />
-<img src="/docs/using-jenkins/ui-8.png" alt="Block ability to merge" /></li>
-</ul>
+<p>If none of these meet your specific requirements <a href="/docs/branch-protection/">you can also define your own custom setup</a>.</p>
 
+<h3 id="multiple-teams"><a href="/sdlc/multiple-teams/">Multiple Teams</a></h3>
+
+<p>This branching strategy is suitable for production deployed service code repositories where changes MUST be reviewed. Multiple Teams branching is optimised for <a href="/how/multiple-teams/">Maintainers in Multiple Teams</a> services where there are multiple teams working concurrently on the code. It uses a modified GitFlow branching model and SemVer release tagging to support concurrent team development and several different supported versions in production.</p>
+
+<h3 id="coming-soon-service-branching">COMING SOON: Service Branching</h3>
+
+<p>This branching strategy is suitable for production deployed service code repositories where changes MUST be reviewed. Service branching is optimised for <a href="/how/guest-contributions/">Guest Contribution</a> services where there is a clear owning team. It is based on a simple GitHub Flow branching model which is easy to understand and SemVer release tagging to signal production-ready builds.</p>
+
+<h3 id="coming-soon-audit-branching">COMING SOON: Audit Branching</h3>
+
+<p>This branching strategy is suitable for documentation, integration test or other non-production deployed supporting repositories where changes CAN be reviewed. Audit branching ensures previous changes are visible and can be audited at any time, but does not require changes to be reviewed before they are made. It uses a simple GitHub Flow or trunk-based development branching model with more relaxed branch protection rules.</p>
+
+<h2 id="repository-owner-and-maintainers">Repository Owner and Maintainers</h2>
+
+<p>Each repository has a named owner and a team of maintainers. It is this group that are permitted elevated admin permissions on their repositories to allow them to manage them effectively. You should ensure your repositories are grouped together into a <a href="/docs/#capability">capability</a> which uses <a href="/docs/codebases-json/">codebases.json</a> to define owner and maintainers groups. The <a href="/docs/codebase-governor/">codebase governor</a> will then ensure they have the appropriate permissions on all repositories within a capability.</p>
+
+<h2 id="contributor-access-control">Contributor Access Control</h2>
+
+<p>A choice of three access control models are available for contributors:</p>
+
+<ol>
+  <li>Inner Source: all org members are treated as contributors.</li>
+  <li>Requested Access: contributors need to request write access.</li>
+  <li>Closed Source: only a limited group have any access at all.</li>
+</ol>
+
+<p>The default repository visibility is <code class="language-plaintext highlighter-rouge">Internal</code>. This means all Flutter staff have read access by joining one of the GitHub organisations within the enterprise agreement. This repository visibility is suitable for (1) and (2), but Closed Source repositories need to have <code class="language-plaintext highlighter-rouge">Private</code> visibility to prevent any default read access. To switch a repository to <code class="language-plaintext highlighter-rouge">Private</code> you will need to contact the <a href="/community/">Inner Source Team</a>.</p>
+
+<p>In an <strong>Inner Source</strong> model, all members of <code class="language-plaintext highlighter-rouge">Flutter-Global</code> are treated as contributors. Therefore all members of the organisation are given write access to the repository by granting the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team write permissions. You can use your capability <a href="/docs/codebases-json/">codebases.json</a> to do this. Note how robust branch protection is required to maintain a secure workflow – any of the standard branching strategies are suitable and optimised for this setup.</p>
+
+<p>The <strong>Requested Access</strong> model is not recommended as it provided limited security benefit at the expense of contribution friction (no default access), and requires you to maintain your own access request process. However it can be effective when coupled with an automated team maintenance process – for example if you are syncing teams from Okta or similar. It simply requires you to add a custom contributor team that you maintain to your repositories with write access rather than the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team. You can use your capability <a href="/docs/codebases-json/">codebases.json</a> to do this.</p>
+
+<p>The <strong>Closed Source</strong> model requires a similar custom contributor team as the “Requested Access” model, but the repository visibility is also set to <code class="language-plaintext highlighter-rouge">Private</code> to restrict read visibility of this repository to contributors. This is for sensitive content only, and to achieve this outcome you will need to contact the <a href="/community/">Inner Source Team</a>.</p>
+
+
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Standard SDLCs</h5>
+    <div>
+      <a href="/sdlc/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5 class="text-right">Validate</h5>
+    <div class="text-right">
+      <a href="/sdlc/validate/"
+        >Next
+        &rarr;</a
+      >
+    </div>
+    
+  </div>
+</div>
     
   </div>
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#basic-github-jenkins-integration" class="hover:text-theme-color">Basic Github Jenkins Integration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#trigger-jenkins-job-on-github-pull-request" class="hover:text-theme-color">Trigger Jenkins job on Github Pull Request</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#branching-strategy" class="hover:text-theme-color">Branching Strategy</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams" class="hover:text-theme-color"><a href="/sdlc/multiple-teams/">Multiple Teams</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-service-branching" class="hover:text-theme-color">COMING SOON: Service Branching</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-audit-branching" class="hover:text-theme-color">COMING SOON: Audit Branching</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository-owner-and-maintainers" class="hover:text-theme-color">Repository Owner and Maintainers</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contributor-access-control" class="hover:text-theme-color">Contributor Access Control</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

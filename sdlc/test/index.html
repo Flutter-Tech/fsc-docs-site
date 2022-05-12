@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Semantic Versioning | Flutter Inner Source</title>
+  <title>Integration Tests | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -24,8 +24,10 @@
 </script>
 
   
+  
 </head>
   <body class="relative">
+    
     <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
   <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
     <div class="absolute top-0 right-0 pt-2 -mr-12">
@@ -341,8 +343,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -353,6 +355,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -906,8 +938,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -918,6 +950,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -1087,43 +1149,72 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="semantic-versioning">Semantic Versioning</h1>
+    <h1 id="component-tests">Component Tests</h1>
 
-<p>The <a href="/sdlc/">standard SDLCs</a> use semantic versioning in git tags to label and trigger alpha, beta and production builds. This document defines our SemVer conventions which are a subset of the <a href="https://semver.org/">SemVer v2.0.0 spec</a>.</p>
+<p>Different types of testing are often drawn as a pyramid:</p>
 
-<h2 id="anatomy">Anatomy</h2>
-
-<p>A semantic version consists of:</p>
-
-<p><code class="language-plaintext highlighter-rouge">major.minor.patch-team.phase.integration+build</code></p>
+<p><img src="../test-pyramid.png" class="mx-auto" /></p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">major</code> is the major version number (integer). A major change for inner source projects is not necessarily a breaking change but rather one that is significant or complex enough to always require cross-team consensus and review.</li>
-  <li><code class="language-plaintext highlighter-rouge">minor</code> is the minor version number (integer). A minor change for inner source projects is one that simple or routine enough that is can be released by the local in-team maintainer without cross-team consensus.</li>
-  <li><code class="language-plaintext highlighter-rouge">patch</code> is the patch version number (integer). A patch change is a hotfix usually executed under incident conditions.</li>
-  <li><code class="language-plaintext highlighter-rouge">team</code> is the team code (string). This can be omitted when there is only a single owning team.</li>
-  <li><code class="language-plaintext highlighter-rouge">phase</code> is the release phase (<code class="language-plaintext highlighter-rouge">alpha</code>, <code class="language-plaintext highlighter-rouge">beta</code> or not present for production).</li>
-  <li><code class="language-plaintext highlighter-rouge">integration</code> is an integer that indicates pre-release progression e.g. cumulative number of features, commits or similar.</li>
-  <li><code class="language-plaintext highlighter-rouge">build</code> is an integer that indicates build number (omitted if un-used).</li>
+  <li><strong>Unit Tests</strong> provide engineers with confidence their “units” of code (i.e. functions) behave as expected, and help them find the precise cause of defects. They will run as part of <a href="/sdlc/validate/">validating any code change</a>.</li>
+  <li><strong>Component Tests</strong> check that the application components work as expected when built and configured with mocked dependencies (e.g. a message queue, a database, a mocked API dependency, etc).</li>
+  <li><strong>Non-Functional Benchmarks</strong> benchmark areas such as performance, capacity or security against a reference infrastructure. Their primary aim is to signal when any of these characteristics change significantly so further checks can be performed.</li>
+  <li><strong>Integration Tests</strong> check the application works as expected with infrastructure in a particular environment. For example for an application deployed within AWS and on-premise, an integration test would check its functionality in one of these environments.</li>
+  <li><strong>End-to-End Tests</strong> check a subset of critical business flows work as expected in an environment as close to production as possible (e.g. mock as little as possible).</li>
+  <li><strong>Non-Functional Tests</strong> check areas such as performance, capacity, resilience and security concerns to reduce the risk of operational failures. These are often executed in a variety of environments and not necessarily all on each release.</li>
+  <li><strong>Manual Tests</strong> are performed to investigate new functionality, learn more about the system under test and improve our automated test coverage. They can also be used to cover areas that are hard to automate test coverage of.</li>
+  <li><strong>Healthchecks</strong> are commonly provided by applications themselves as a way of asserting whether they perceive themselves to be operating correctly. These can be checked on all environments including in production.</li>
+  <li><strong>Monitoring &amp; Sanity Checks</strong> are the subset of tests and metrics that are used to ensure your production deployment is working as expected.</li>
 </ul>
 
-<p>By convention the version number is prefixed by a <code class="language-plaintext highlighter-rouge">v</code>.</p>
+<h2 id="who-runs-what">Who Runs What?</h2>
 
-<h2 id="examples">Examples</h2>
+<p>If a single team make all the code changes and are operationally responsible for any deployments, that team are responsible for all types of testing.</p>
 
-<p><code class="language-plaintext highlighter-rouge">v2.8.1</code> is the production <code class="language-plaintext highlighter-rouge">2.8</code> build after 1 hotfix.</p>
+<p>However, in an <a href="/how/">inner source model</a> multiple teams make code changes, and each team can be operationally responsible for separate deployments in different environments. This situation is more complex and it is useful to separate test types into two categories:</p>
 
-<p><code class="language-plaintext highlighter-rouge">v1.3.0-lds.beta.3</code> is a beta build for the intended <code class="language-plaintext highlighter-rouge">v1.3.0</code> release. It has been created by the <code class="language-plaintext highlighter-rouge">lds</code> team, and has had several bugfixes applied which can be inferred from the <code class="language-plaintext highlighter-rouge">.3</code> integration number suffix.</p>
+<ol>
+  <li>Reference Tests</li>
+  <li>Deployment Tests</li>
+</ol>
 
-<p><code class="language-plaintext highlighter-rouge">v3.0.0-alpha.1</code> is an alpha build for the intended major <code class="language-plaintext highlighter-rouge">v3.0.0</code> release. It has no team element since all tags are created by a single team in this repository. The <code class="language-plaintext highlighter-rouge">.1</code> integration number suffix suggests this is an early build without many features yet.</p>
+<p>A single set of <strong>Reference Tests</strong> are maintained between all teams and these tests must run and pass before a code change is accepted. These tests must run in an environment where the results and logs are visible to all teams (usually GitHub Action workflows). These tests include:</p>
+
+<ul>
+  <li>Unit Tests</li>
+  <li>Component Tests</li>
+  <li>Non-Functional Benchmarks</li>
+</ul>
+
+<p>In contrast <strong>Deployment Tests</strong> are specific to the requirements of an individual deployment. While some collaboration and shared test scripts may occur between teams for such tests this may not always be desireable. These tests are usually run on team-specific infrastructure and the results are not usually immediately visible to other teams. These tests include:</p>
+
+<ul>
+  <li>Integration Tests</li>
+  <li>End-to-End Tests</li>
+  <li>Non-Functional Tests</li>
+  <li>Manual Tests</li>
+  <li>Monitoring &amp; Sanity Checks</li>
+</ul>
+
+<h2 id="unit-tests">Unit Tests</h2>
+
+<p>Unit Tests should run as part of <a href="/sdlc/validate/">validating any code change</a>. You can also add a minimum code coverage threshold at this point if desired.</p>
+
+<h2 id="component-tests-1">Component Tests</h2>
+
+<p><strong>COMING SOON</strong> Examples of how teams write and run these tests for their own services.</p>
+
+<h2 id="non-functional-benchmarks">Non-Functional Benchmarks</h2>
+
+<p><strong>COMING SOON</strong> Examples of how teams write and run these tests for their own services.</p>
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
   <div class="pt-4 border-t border-gray-500 border-solid">
     
-    <h5>Standard SDLCs</h5>
+    <h5>Package</h5>
     <div>
-      <a href="/sdlc/"
+      <a href="/sdlc/package/"
         >&larr; Previous</a
       >
     </div>
@@ -1131,9 +1222,9 @@
   </div>
   <div class="pt-4 border-t border-gray-500 border-solid">
     
-    <h5 class="text-right">Multiple Teams</h5>
+    <h5 class="text-right">Standard SDLCS</h5>
     <div class="text-right">
-      <a href="/sdlc/multiple-teams/"
+      <a href="/sdlc/"
         >Next
         &rarr;</a
       >
@@ -1146,7 +1237,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#anatomy" class="hover:text-theme-color">Anatomy</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-theme-color">Examples</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#who-runs-what" class="hover:text-theme-color">Who Runs What?</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#unit-tests" class="hover:text-theme-color">Unit Tests</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#component-tests-1" class="hover:text-theme-color">Component Tests</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#non-functional-benchmarks" class="hover:text-theme-color">Non-Functional Benchmarks</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

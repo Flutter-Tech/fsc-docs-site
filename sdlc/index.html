@@ -24,8 +24,10 @@
 </script>
 
   
+  
 </head>
   <body class="relative">
+    
     <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
   <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
     <div class="absolute top-0 right-0 pt-2 -mr-12">
@@ -341,8 +343,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -353,6 +355,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -906,8 +938,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -918,6 +950,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -1089,19 +1151,63 @@
     
     <h1 id="development-lifecycle">Development Lifecycle</h1>
 
-<p>The process by which you change the code in your repository is your <strong>Software Development Lifecycle</strong> or SDLC. Within <code class="language-plaintext highlighter-rouge">Flutter-Global</code> several common SDLCs are directly supported by the <code class="language-plaintext highlighter-rouge">git flutter</code> CLI tool to save you time. Using one of these standard SDLCs is recommended unless you have unusual requirements.</p>
+<p>The process by which you make and release a change to your application is your <strong>Software Development Lifecycle</strong> or SDLC. Within <code class="language-plaintext highlighter-rouge">Flutter-Global</code> several SDLC patterns are directly supported by tools such as the <a href="/git-flutter/"><code class="language-plaintext highlighter-rouge">git flutter</code> CLI</a>. Using these standard SDLC patterns is recommended unless you have unusual requirements.</p>
 
-<h2 id="multiple-teams-sdlc"><a href="/sdlc/multiple-teams/">Multiple Teams SDLC</a></h2>
+<p><img src="./overview.drawio.svg" class="w-full max-w-3xl mx-auto" /></p>
 
-<p>This SDLC is suitable for production deployed service code repositories where changes MUST be reviewed. The Multiple Teams SDLC is optimised for <a href="/how/multiple-teams/">Maintainers in Multiple Teams</a> services where there are multiple teams working concurrently on the service. It uses a modified GitFlow branching model and SemVer release tagging to support concurrent team development and several different supported versions in production.</p>
+<p>Typically a change will follow these steps to production:</p>
 
-<h2 id="coming-soon-service-sdlc">COMING SOON: Service SDLC</h2>
+<ol>
+  <li><strong><a href="/sdlc/source/">Source</a></strong>: A code edit is applied to a <code class="language-plaintext highlighter-rouge">Flutter-Global</code> repository with access controls and a branching strategy.</li>
+  <li><strong><a href="/sdlc/validate/">Validate</a></strong>: Check proposed code changes by running a series of tests that must pass.</li>
+  <li><strong><a href="/sdlc/package/">Package</a></strong>: Resolve any external dependencies to build a new version of the desired deployment package(s) e.g. binaries, docker, rpm, jar.</li>
+  <li><strong><a href="/sdlc/test/">Component Tests</a></strong>: Run available tests against the candidate deployment package with other dependent mocked packages.</li>
+  <li><strong><a href="/sdlc/package/">Publish</a></strong>: Publish the tested deployment package to a registry so it is available to all who deploy it.</li>
+  <li><strong>Deploy</strong>: Configure the package and deploy it to a specific topology (e.g. AWS, on-prem VM, k8s).</li>
+  <li><strong>Integration Tests</strong>: Run available integration and non-functional checks.</li>
+  <li><strong>Release</strong>: Promote the deployment through the required environments to rollout to production traffic.</li>
+  <li><strong>Observe</strong>: Observe the release with heightened operational awareness to confirm success, with rollback invoked on suspicion of failure.</li>
+</ol>
 
-<p>This SDLC is suitable for production deployed service code repositories where changes MUST be reviewed. The Service SDLC is optimised for <a href="/how/guest-contributions/">Guest Contribution</a> services where there is a clear owning team. It uses a simple GitHub Flow branching model which is easy to understand and SemVer release tagging to signal production-ready builds.</p>
+<p>The standard SDLCs patterns cover steps (1)-(5), step (6) onwards is regarded as team/division specific and dependent on local requirements.</p>
 
-<h2 id="coming-soon-audit-sdlc">COMING SOON: Audit SDLC</h2>
+<h2 id="source"><a href="/sdlc/source/">Source</a></h2>
 
-<p>This SDLC is suitable for documentation, integration test or other non-production deployed supporting repositories where changes CAN be reviewed. The Audit SDLC ensures previous changes are visible and can be audited at any time, but does not require changes to be reviewed before they are made. It uses a simple GitHub Flow or trunk-based development branching model with more relaxed branch protection rules.</p>
+<p>Your source code is stored in a repository within the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation. This will have:</p>
+
+<ol>
+  <li>a branching strategy (where code is contributed to and merged into)</li>
+  <li>an access control strategy (who can access the repository with what permissions)</li>
+  <li>branch protections to ensure the combination of (1) and (2) is secure.</li>
+</ol>
+
+<p>There is a choice of three source control models (multiple teams, service or audited), and three access control strategies (inner source, requested access or closed source).</p>
+
+<p><a href="/sdlc/source/">Read more about source control ➜</a></p>
+
+<h2 id="validate"><a href="/sdlc/validate/">Validate</a></h2>
+
+<p>A proposed code change is validated by a series of checks. Common examples are linters, compile checks, unit tests, and security scans.</p>
+
+<ul>
+  <li>Validation is configured as pull request status checks and defined by GitHub workflow files.</li>
+  <li>Self-hosted GitHub runners are available if internal services/dependencies are required.</li>
+  <li>3rd party tools like SonarCloud are integrated with <code class="language-plaintext highlighter-rouge">Flutter-Global</code> to help.</li>
+</ul>
+
+<p><a href="/sdlc/validate/">Read more about validation ➜</a></p>
+
+<h2 id="package--publish"><a href="/sdlc/package/">Package &amp; Publish</a></h2>
+
+<p>A new version is <strong>packaged</strong> as a deployable artefact (e.g. a container image). This package must then be <strong>published</strong> to a location from which it can be deployed to relevant environments.</p>
+
+<ul>
+  <li>SemVer git tags and GitHub Releases are used to label builds.</li>
+  <li>Releases are published to registries like AWS ECR, GitHub Packages, Artifactory, and so on.</li>
+</ul>
+
+<p><a href="/sdlc/validate/">Read more about packaging and publishing ➜</a></p>
+
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
@@ -1110,9 +1216,9 @@
   </div>
   <div class="pt-4 border-t border-gray-500 border-solid">
     
-    <h5 class="text-right">SemVer</h5>
+    <h5 class="text-right">Source</h5>
     <div class="text-right">
-      <a href="/sdlc/semver/"
+      <a href="/sdlc/source/"
         >Next
         &rarr;</a
       >
@@ -1125,7 +1231,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams-sdlc" class="hover:text-theme-color"><a href="/sdlc/multiple-teams/">Multiple Teams SDLC</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-service-sdlc" class="hover:text-theme-color">COMING SOON: Service SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-audit-sdlc" class="hover:text-theme-color">COMING SOON: Audit SDLC</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#source" class="hover:text-theme-color"><a href="/sdlc/source/">Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#validate" class="hover:text-theme-color"><a href="/sdlc/validate/">Validate</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#package--publish" class="hover:text-theme-color"><a href="/sdlc/package/">Package &amp; Publish</a></a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

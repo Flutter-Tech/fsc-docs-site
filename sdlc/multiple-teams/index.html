@@ -24,8 +24,10 @@
 </script>
 
   
+  
 </head>
   <body class="relative">
+    
     <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
   <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
     <div class="absolute top-0 right-0 pt-2 -mr-12">
@@ -341,8 +343,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -353,6 +355,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -906,8 +938,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/semver/" title="Go to SemVer" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > SemVer</a
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
     >
   </li>  
   
@@ -918,6 +950,36 @@
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
     >
   </li>  
   
@@ -1101,15 +1163,13 @@
 
 <p>The branching model used in this SDLC is a derivative of <a href="https://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a> with each team having their own <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branch. The complexity of this model is only worthwhile when multiple teams are working on the same service concurrently. The <a href="/sdlc/service/">Service SDLC</a> provides similar features with a simpler branching model if a single primary team exists that just needs to accept external contributions.</p>
 
-<p>Alpha, beta or production-ready builds are signalled by git tags which conform to <a href="/sdlc/semver/">our semantic versioning conventions</a>. For example:</p>
+<p>Alpha, beta or production-ready builds are signalled by git tags which conform to <a href="/sdlc/package/">our semantic versioning conventions</a>. For example:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">v1.3.3</code> is the latest production release. The last team feature release was <code class="language-plaintext highlighter-rouge">v1.3.0</code> since which there have been 3 hotfixes.</li>
   <li><code class="language-plaintext highlighter-rouge">v1.4.0-opo.beta.2</code> is the next release driven by the <code class="language-plaintext highlighter-rouge">opo</code> team. Since the initial release build there have probably been 2 minor bugfixes.</li>
   <li><code class="language-plaintext highlighter-rouge">v1.5.0-lds.alpha.3</code> is the alpha version in the <code class="language-plaintext highlighter-rouge">lds/develop</code> branch that is deployed to one of the Leeds team QA environments with 3 unreleased changes.</li>
 </ul>
-
-<p><a href="/sdlc/semver/">Read more about our SemVer conventions in this document</a>.</p>
 
 <h2 id="development">Development</h2>
 
@@ -1161,7 +1221,7 @@
 
 <h2 id="support">Support</h2>
 
-<p>This SDLC expects each team to own and manage their own deployment(s). The deployment process itself will vary by team based on their tools, infrastructure and desired topology. This SDLC simply promotes the use of <a href="/sdlc/semver/">semver tags</a> to signal that a build should be created and made available for all teams for deployment if desired.</p>
+<p>This SDLC expects each team to own and manage their own deployment(s). The deployment process itself will vary by team based on their tools, infrastructure and desired topology. This SDLC simply promotes the use of <a href="/sdlc/package/">semver tags</a> to signal that a build should be created and made available for all teams for deployment if desired.</p>
 
 <p>Not all teams will have the same version deployed. Older versions should not be the target of new features, but must be supported until a team has migrated to the latest release. To support older versions hotfixes can be applied to any previous version on a <code class="language-plaintext highlighter-rouge">/support/&lt;version&gt;</code> branch.</p>
 
