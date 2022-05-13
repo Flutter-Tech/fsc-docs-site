@@ -1,0 +1,27 @@
+
+# Git files
+.git
+.github
+.gitignore
+
+# Jekyll
+CNAME
+_config.yml
+_plugins/tailwind.rb
+README.md
+CONTRIBUTING.md
+community.md
+catalogue/index.md
+404.md
+
+# npm and tailwind files
+package.json
+tailwind.config.js
+
+# git-flutter release files
+git-flutter/install.sh
+git-flutter/*.{zip,tar.gz}
+git-flutter/checksums.txt
+
+# Others
+.internalsyncignore

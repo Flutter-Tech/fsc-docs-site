@@ -12,10 +12,7 @@ jobs:
     if: ${{ github.repository_owner != 'Flutter-Tech' }}
     runs-on: ubuntu-latest
     environment: prod
-    # Env variables of the files and folders to preserve when the merge between the repos occurs. Used in Backup and Restore steps.
-    env:
-      FILES: _config.yml README.md CONTRIBUTING.md CNAME community.md catalogue/index.md tailwind.config.js
-      FOLDERS: .github .git
+
     steps:
       - name: Retrieve Flutter Global app token
         id: flutter_global_app_token
@@ -40,8 +37,12 @@ jobs:
 
       - name: Remove files not meant to sync
         run: |
-          for f in $FILES ; do rm -f ./fsc-docs-site/$f ; done
-          for f in $FOLDERS ; do rm -rf ./fsc-docs-site/$f ; done
+          set -ex
+
+          while read -r line; do
+              [[ -z "$line" || "$line" =~ ^#.*$ ]] && continue
+              rm -rf "./fsc-docs-site/$line"
+          done <<< "$(cat .gitignore .internalsyncignore)"
 
       - name: Sync external site to internal site
         run: |
