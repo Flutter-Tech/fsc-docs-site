@@ -1,4 +1,4 @@
-version: v1.10.5
+version: v1.11.0
 usage: |
     Usage:
       git flutter [command]
@@ -8,6 +8,7 @@ usage: |
       help           Help about any command
       hotfix         Create a hotfix branch based on the config file
       init           init commands
+      list           Generates lists for portfolio view
       release        release command
       status         Displays the status of the current repo
       sync           Syncs the current branch (if needed)
@@ -85,6 +86,20 @@ commands:
               -v, --verbose                     verbose log output
 
             Use "git flutter init [command] --help" for more information about a command.
+    list:
+        usage: |
+            Usage:
+              git flutter list [capabilities|...] [flags]
+
+            Flags:
+              -d, --dest string   destination directory (default ".")
+
+            Global Flags:
+                  --cache string                application cache file (default "/home/runner/.git-flutter.cache.v9")
+              -f, --fetch-expiration duration   time till fetch remote again (default 1h0m0s)
+                  --no-check-version            doesn't check for updated version
+                  --no-network                  doesn't perform network operations
+              -v, --verbose                     verbose log output
     release:
         usage: |
             Usage:
