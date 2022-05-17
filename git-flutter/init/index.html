@@ -1170,14 +1170,34 @@ Use "git flutter init [command] --help" for more information about a command.
 
 </code></pre></div></div>
 
-<p>Once you have used this command you are responsible for commiting and merging the change to the <code class="language-plaintext highlighter-rouge">this-codebase.json</code> file into the default branch (e.g. <code class="language-plaintext highlighter-rouge">main</code>) for your intended change to come into effect.</p>
+<p>Once you have used this command you are responsible for:</p>
+
+<ul>
+  <li>Commiting and merging the change to the <code class="language-plaintext highlighter-rouge">this-codebase.json</code> file into the default branch (<code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>). This will require you to use your existing review mechanism (e.g. a pull request with approvals)</li>
+  <li>You need to create and push the relevant develop branches before you can start working with them.</li>
+</ul>
 
 <h2 id="example">Example</h2>
 
-<p>To initialise the Parallel Teams SDLC workflow in your repository with two teams <code class="language-plaintext highlighter-rouge">opo</code> and <code class="language-plaintext highlighter-rouge">lds</code>:</p>
+<p>To initialise the multiple teams SDLC workflow in your repository with two teams <code class="language-plaintext highlighter-rouge">opo</code> and <code class="language-plaintext highlighter-rouge">lds</code> first create the <code class="language-plaintext highlighter-rouge">this-codebase.json</code> file:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flutter init gitflow --team opo --team lds
 </code></pre></div></div>
+
+<p>Commit and push it to <code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code> (you may need to use a pull request depending on your existing workflow):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -a -m "Switch to multiple teams branching model"
+</code></pre></div></div>
+
+<p>Then create the required develop branches:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch opo/develop main
+git push -u origin opo/develop
+git branch lds/develop main
+git push -u origin lds/develop
+</code></pre></div></div>
+
+<p>It is recommended to create the develop branches <strong>after</strong> merging the <code class="language-plaintext highlighter-rouge">this-codebase.json</code> file.</p>
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
