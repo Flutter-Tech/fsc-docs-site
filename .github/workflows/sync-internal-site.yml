@@ -41,7 +41,7 @@ jobs:
 
           while read -r line; do
               [[ -z "$line" || "$line" =~ ^#.*$ ]] && continue
-              rm -rf "./fsc-docs-site/$line"
+              find ./fsc-docs-site -path "*$line" -exec rm -rf {} +
           done <<< "$(cat fsc-docs-site/.gitignore fsc-docs-site/.internalsyncignore)"
 
       - name: Sync external site to internal site

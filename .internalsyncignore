@@ -20,7 +20,8 @@ tailwind.config.js
 
 # git-flutter release files
 git-flutter/install.sh
-git-flutter/*.{zip,tar.gz}
+git-flutter/*.zip
+git-flutter/*.tar.gz
 git-flutter/checksums.txt
 
 # Others
