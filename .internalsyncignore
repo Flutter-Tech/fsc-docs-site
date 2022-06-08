@@ -13,6 +13,7 @@ CONTRIBUTING.md
 community.md
 catalogue/index.md
 404.md
+_sass
 
 # npm and tailwind files
 package.json
