@@ -103,6 +103,13 @@ main:
       - url: /catalogue/activity-level/
         title: Activity Level
         identifier: activity-level
+  - url: /security/
+    title: Security
+    identifier: security
+    children:
+      - url: /security/dependabot/
+        title: Dependabot
+        identifier: dependabot
   - url: /docs/
     title: Reference Docs
     identifier: docs
