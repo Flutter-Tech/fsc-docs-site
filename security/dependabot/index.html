@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Divisional Independence | Flutter Inner Source</title>
+  <title>Dependabot | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -192,7 +192,7 @@
   <li
     class="menu-item-6 ml-3 pt-2"
   >
-    <a href="/how/independence/" title="Go to Divisional Independence" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Divisional Independence</a
     >
   </li>  
@@ -452,7 +452,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Dependabot</a
     >
   </li>  
@@ -817,7 +817,7 @@
   <li
     class="menu-item-6 ml-3 pt-2"
   >
-    <a href="/how/independence/" title="Go to Divisional Independence" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Divisional Independence</a
     >
   </li>  
@@ -1077,7 +1077,7 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Dependabot</a
     >
   </li>  
@@ -1208,99 +1208,52 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="divisional-independence">Divisional Independence</h1>
+    <h1 id="code-dependency-vulnerabilities">Code Dependency Vulnerabilities</h1>
 
-<p>One of the challenges of operating a capability at <a href="/how/multiple-teams/">stage 3</a> of the <a href="/how/">inner source pyramid</a> is how to maximise the independence of each contributing team. This is especially important if your reason for operating at <a href="/how/multiple-teams/">stage 3</a> is the need for a high rate of change: even a small collaboration overhead between teams will add up.</p>
+<p>Most code repositories include external code library dependencies e.g. NPM modules or Java packages. The version of such dependencies are usually “pinned” to ensure repeatable builds and prevent the introduction of un-reviewed 3rd party additions via these dependencies. When a security vulnerability is discovered in one of your pinned dependencies you need to assess its impact on the security of your application and perhaps update the dependency to a more recent version to include a fix.</p>
 
-<p>To promote divisional independence:</p>
-
-<ul>
-  <li>ensure a maintainer exists in every regularly contributing team (the “local maintainer”)</li>
-  <li>the maintainers agree a triage process to classify risk &amp; complexity of change</li>
-  <li>trust low risk/simple change to progress independently under the guidance of the local maintainer</li>
-  <li>use an efficient consensus mechanism between maintainers to agree high risk/complex changes</li>
-  <li>use a branching and release strategy to allow divisions release autonomy without diverging.</li>
-</ul>
-
-<h2 id="maintainers-in-contributing-teams">Maintainers in Contributing Teams</h2>
-
-<p>Maintainers are the technical experts in how the capability is built and deployed: knowledge which allows the contributing team they are a member of to be more independent. In <a href="/how/multiple-teams/">stage 3</a>, the maintainers are distributed across many delivery teams and represent their team when the maintainers come together to work as a group themselves.</p>
-
-<p><img src="../team.jpg" alt="Maintainers from different teams" /></p>
-
-<h2 id="triage">Triage</h2>
-
-<p>The objective of triage is to:</p>
+<p><strong>Dependabot</strong> is a GitHub tool that helps you do this for opensource dependencies by:</p>
 
 <ul>
-  <li>minimise the overhead for low risk/simple changes so they progress quickly.</li>
-  <li>ensure high risk/complex change will have the required consensus.</li>
-  <li>prevent incorrect or mis-informed ideas or work from continuing.</li>
+  <li>scanning your repository to determine the dependencies you are using</li>
+  <li>checks those packages against a database vulnerabilities (the <a href="https://github.com/advisories">GitHub Advisory Database</a>)</li>
+  <li>alerts you of any it finds</li>
+  <li>attempts to fix by raising a PR to bump the pinned dependency version (if possible)</li>
 </ul>
 
-<p>This supports divisional independence through the critical task of clarifying which changes can progress independently, and which require up-front collaboration and agreement.</p>
+<h2 id="aggregated-reporting">Aggregated Reporting</h2>
 
-<p><img src="../triage.svg" alt="Triage process outcome flowchart" /></p>
+<p>Dependabot vulnerability alerts are aggregated and presented in the <a href="/catalogue/">service catalogue</a> for capabilities, products and lists of repositories. Our group security policy which sets target resolution times for different vulnerability severity is applied to help you understand whether you are currently breaching those targets for an individual or portfolio of repositories.</p>
 
-<p>An effective triage process is usually a simple one as it must be transparent, well known and consistently used (i.e. no short-cuts for ‘special’ maintainers!). For example a common process is:</p>
+<p><img src="/security/dependabot-aggregated.png" alt="Aggregated Alerts" /></p>
+
+<h2 id="detailed-reporting">Detailed Reporting</h2>
+
+<p>GitHub displays a detailed list of vulnerability alerts under the “Security” tab of your repository in the GitHub UI. These require elevated repository privileges so are only visible to the maintainers of that repository.</p>
+
+<h2 id="data-integration">Data Integration</h2>
+
+<p>Vulnerability data is extracted from GitHub APIs into the <a href="https://github.com/Flutter-Global/org-data/tree/main/vulns">Flutter-Global data repository</a>. This machine-readable format allows you to create your own automation, alerting or other local mechanisms to monitor the status of your vulnerability dependencies easily. For example, the PPB InfoSec team integrate this data into their local security scoring and prioritisation mechanisms for for the teams they work with.</p>
+
+<h2 id="configuring-dependabot">Configuring Dependabot</h2>
+
+<p>Dependabot is enabled by default on all repositories in <code class="language-plaintext highlighter-rouge">Flutter-Global</code>. It is configurable using <a href="https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates">the dependabot.yml file</a> where you can change the analysis schedule, target branches, how and if it raises pull requests automatically and so on. If dependabot is not currently doing what you want – this is a good place to start to fix that.</p>
+
+<h2 id="managing-alerts">Managing Alerts</h2>
+
+<p>The impact of any vulnerability alert should be assessed within the target timescale for the severity. Further details of the target timescale that applies is included in the service catalogue. To resolve the alert either:</p>
 
 <ol>
-  <li>Local maintainer will triage their team’s backlog and highlight items that they are unsure of, or definitely require collaboration.</li>
-  <li>GitHub issue raised for technical discussion wrt each highlighted item, advertised via community Slack channel and tracked in a GitHub project board.</li>
-  <li>GitHub issue gathers feedback/advice from maintainers and a decision on whether the change can immediately progress (i.e. ‘this discussion was enough’), or whether <a href="/how/consensus/">more rigorous consensus</a> is required (i.e. RFC).</li>
-  <li>Regular maintainer meetings run by the capability owner use the GitHub project board to sweep up any unresolved issues that are in danger of becoming stale.</li>
+  <li>Apply a fix (e.g. a dependency version bump) and the next dependabot scan will automatically resolve the alert.</li>
+  <li>Use the GitHub UI to “dismiss” the alert if for example the risk does not apply to the way you use this dependency. This must be performed by a repository maintainer as it requires elevated repository permissions.</li>
 </ol>
-
-<p>Such a process can be documented in a <code class="language-plaintext highlighter-rouge">CONTRIBUTING.md</code>; is both transparent and inclusive for all capability users; and is simple enough to be easily remembered and used consistently.</p>
-
-<h2 id="pull-request">Pull Request</h2>
-
-<p>Changes that are triaged as ‘simple’ can be progressed independently:</p>
-
-<ul>
-  <li>Use <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request">draft pull requests</a> to make work more visible. This helps catch any mistakes made in triage or simple changes that become complex.</li>
-  <li>Pull request review and approval is done by the local maintainer on behalf of the whole maintainer group (relying on the <a href="/how/guest-contributions/">quality standards agreed in stage 2</a>).</li>
-</ul>
-
-<p>Complex changes <a href="/how/consensus/">require up-front consensus (covered separately)</a>, but once that consensus is reached follow a similar pattern:</p>
-
-<ul>
-  <li>Use draft pull requests to encourage on-going discussion and collaboration during development as various aspects of the complex change become clearer (or change).</li>
-  <li>Pull request review and approval is usually required from a maintainer in each contributing team to confirm agreement.</li>
-</ul>
-
-<h2 id="merge--release">Merge &amp; Release</h2>
-
-<p>Usually a division will own and run it’s own capability deployment using it’s preferred local deployment topology which integrates with local service management, operational support and incident management tools and teams. This provides full independence of the release deployment and support process; but from a set of approved PRs collaboration is required to agree release milestones and any development author support. This remains unsolved at present within Flutter, with capabilities in stage 3 that have a high rate of change often suffering release contention between divisions and wasteful duplicated release QA. So the guidance that can be provided is limited to the following observations:</p>
-
-<ul>
-  <li>Operability concerns are generally driving contributing teams towards standardisation (e.g. of release artefacts, telemetry/log conventions).</li>
-  <li>Usage of the same 3rd party cloud provider (AWS) is driving increasing consistency in deployment topology.</li>
-  <li>To reduce manual/end-to-end testing repetition and meet the need to collaboratively test candidate releases there is a growing desire among teams for ‘reference deployments’ during CI.</li>
-  <li>Choice of branching strategy affects release contention: e.g. some teams are experimenting with GitFlow with divisional develop branches.</li>
-</ul>
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Capability Owners</h5>
-    <div>
-      <a href="/how/owner/"
-        >&larr; Previous</a
-      >
-    </div>
+  <div >
     
   </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Strategic Consensus</h5>
-    <div class="text-right">
-      <a href="/how/consensus/"
-        >Next
-        &rarr;</a
-      >
-    </div>
+  <div >
     
   </div>
 </div>
@@ -1309,7 +1262,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers-in-contributing-teams" class="hover:text-theme-color">Maintainers in Contributing Teams</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#triage" class="hover:text-theme-color">Triage</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#pull-request" class="hover:text-theme-color">Pull Request</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#merge--release" class="hover:text-theme-color">Merge &amp; Release</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#aggregated-reporting" class="hover:text-theme-color">Aggregated Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#detailed-reporting" class="hover:text-theme-color">Detailed Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#data-integration" class="hover:text-theme-color">Data Integration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#configuring-dependabot" class="hover:text-theme-color">Configuring Dependabot</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#managing-alerts" class="hover:text-theme-color">Managing Alerts</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
