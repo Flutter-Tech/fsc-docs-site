@@ -29,6 +29,16 @@ GitHub displays a detailed list of vulnerability alerts under the "Security" tab
 
 Vulnerability data is extracted from GitHub APIs into the [Flutter-Global data repository](https://github.com/Flutter-Global/org-data/tree/main/vulns). This machine-readable format allows you to create your own automation, alerting or other local mechanisms to monitor the status of your vulnerability dependencies easily. For example, the PPB InfoSec team integrate this data into their local security scoring and prioritisation mechanisms for for the teams they work with.
 
+## Talking to Dependabot
+
+Maintainers often do not use Dependabot optimally because by default it creates many pull requests that do not make sense or are too risky -- for example bumping the major version of Spring from 3 to 5.
+
+Browsing through our most active repositories it is common to see un-merged, stale looking PRs created by Dependabot because the change requires more careful prioritisation and scheduling due to the effort required. In these situations there are [a set of comment commands](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates#managing-dependabot-pull-requests-with-comment-commands) that can help improve the experience. For example, if we want to avoid Dependabot constantly updating the major version of some dependency you can comment:
+
+```
+@dependabot ignore this major version
+```
+
 ## Configuring Dependabot
 
 Dependabot is enabled by default on all repositories in `Flutter-Global`. It is configurable using [the dependabot.yml file](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates) where you can change the analysis schedule, target branches, how and if it raises pull requests automatically and so on. If dependabot is not currently doing what you want – this is a good place to start to fix that.

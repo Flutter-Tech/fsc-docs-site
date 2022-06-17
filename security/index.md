@@ -8,7 +8,7 @@ next_url: /security/dependabot/
 
 # Security
 
-For inner source application to be used by a new team, the security standards of the application and adherence to those standards must be clear and transparent. This section lists the security controls applied to repositories across the `Flutter-Global` org, and how they are measured and reported.
+For an application to be used by a new team, the security standards of the application and adherence to those standards must be clear and transparent. This section lists the security controls applied to repositories across the `Flutter-Global` org, and how they are measured and reported.
 
 <div
   class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
