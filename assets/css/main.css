@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -417,15 +417,11 @@ video {
   height: auto;
 }
 
-:not(pre) > code,
-  :not(pre) > kbd,
-  :not(pre) > samp {
-  content: "";
+:not(pre) > code, :not(pre) > kbd, :not(pre) > samp {
+  content: ''
 }
 
-:not(pre)::before > code, 
-  :not(pre) > kbd, 
-  :not(pre) > samp {
+:not(pre)::before > code,  :not(pre) > kbd,  :not(pre) > samp {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   padding-top: 0px;
@@ -434,7 +430,7 @@ video {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(17 136 214 / var(--tw-text-opacity));
-  content: "";
+  content: '';
 }
 
 .sidebar-nav .nav-parent > .parent-icon {
@@ -465,35 +461,6 @@ video {
   height: 4rem;
   width: 4rem;
   stroke: #1188D6;
-}
-
-.content {
-  -webkit-animation: fadeInAnimation ease 1s;
-          animation: fadeInAnimation ease 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 *, ::before, ::after {
@@ -1896,47 +1863,9 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clipboardBtn {
-  width: 17px;
-  height: 14px;
-  bottom: 8px;
-  left: -17px;
-  color: inherit;
-  border: none;
-  padding: 0 5px 0 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  background: transparent no-repeat url("/assets/img/link.png");
-  opacity: 0.7;
-}
-
-.clipboardBtn:hover {
-  opacity: 1;
-}
-
-.feedbackContainer.hidden {
-  opacity: 0;
-}
-
-.feedbackContainer {
-  opacity: 1;
-  font-size: 0.7rem;
-  bottom: 27px;
-  left: -17px;
-  border: 1px solid #696969;
-  color: #696969;
-  padding: 1px 3px;
-  font-weight: normal;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* Charts */
 
-#chart {
+#chart{
   max-width: 90%;
 }
 

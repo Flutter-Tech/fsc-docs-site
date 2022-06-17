@@ -1235,6 +1235,15 @@
 
 <p>Vulnerability data is extracted from GitHub APIs into the <a href="https://github.com/Flutter-Global/org-data/tree/main/vulns">Flutter-Global data repository</a>. This machine-readable format allows you to create your own automation, alerting or other local mechanisms to monitor the status of your vulnerability dependencies easily. For example, the PPB InfoSec team integrate this data into their local security scoring and prioritisation mechanisms for for the teams they work with.</p>
 
+<h2 id="talking-to-dependabot">Talking to Dependabot</h2>
+
+<p>Maintainers often do not use Dependabot optimally because by default it creates many pull requests that do not make sense or are too risky – for example bumping the major version of Spring from 3 to 5.</p>
+
+<p>Browsing through our most active repositories it is common to see un-merged, stale looking PRs created by Dependabot because the change requires more careful prioritisation and scheduling due to the effort required. In these situations there are <a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates#managing-dependabot-pull-requests-with-comment-commands">a set of comment commands</a> that can help improve the experience. For example, if we want to avoid Dependabot constantly updating the major version of some dependency you can comment:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@dependabot ignore this major version
+</code></pre></div></div>
+
 <h2 id="configuring-dependabot">Configuring Dependabot</h2>
 
 <p>Dependabot is enabled by default on all repositories in <code class="language-plaintext highlighter-rouge">Flutter-Global</code>. It is configurable using <a href="https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates">the dependabot.yml file</a> where you can change the analysis schedule, target branches, how and if it raises pull requests automatically and so on. If dependabot is not currently doing what you want – this is a good place to start to fix that.</p>
@@ -1262,7 +1271,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#aggregated-reporting" class="hover:text-theme-color">Aggregated Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#detailed-reporting" class="hover:text-theme-color">Detailed Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#data-integration" class="hover:text-theme-color">Data Integration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#configuring-dependabot" class="hover:text-theme-color">Configuring Dependabot</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#managing-alerts" class="hover:text-theme-color">Managing Alerts</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#aggregated-reporting" class="hover:text-theme-color">Aggregated Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#detailed-reporting" class="hover:text-theme-color">Detailed Reporting</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#data-integration" class="hover:text-theme-color">Data Integration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#talking-to-dependabot" class="hover:text-theme-color">Talking to Dependabot</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#configuring-dependabot" class="hover:text-theme-color">Configuring Dependabot</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#managing-alerts" class="hover:text-theme-color">Managing Alerts</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
