@@ -2,6 +2,10 @@
 layout: default
 title: Dependabot
 article_navigation: true
+next_title: Repository Admin
+next_url: /security/admin/
+previous_title: Security
+previous_url: /security/
 ---
 
 # Code Dependency Vulnerabilities

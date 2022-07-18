@@ -110,6 +110,12 @@ main:
       - url: /security/dependabot/
         title: Dependabot
         identifier: dependabot
+      - url: /security/admin/
+        title: Repo Admin
+        identifier: admin
+      - url: /security/default-branch/
+        title: Default Branch
+        identifier: default-branch
   - url: /docs/
     title: Reference Docs
     identifier: docs
