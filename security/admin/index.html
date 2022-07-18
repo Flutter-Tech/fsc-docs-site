@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Setup CI on GitHub | Flutter Inner Source</title>
+  <title>Repo Admin | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -92,7 +92,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Setup CI on GitHub</a
     >
   </li>  
@@ -462,7 +462,7 @@
   <li
     class="menu-item-2 ml-3 pt-2"
   >
-    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Repo Admin</a
     >
   </li>  
@@ -738,7 +738,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/start/setup-ci/" title="Go to Setup CI on GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Setup CI on GitHub</a
     >
   </li>  
@@ -1108,7 +1108,7 @@
   <li
     class="menu-item-2 ml-3 pt-2"
   >
-    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > Repo Admin</a
     >
   </li>  
@@ -1249,129 +1249,99 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="continuous-integration-on-github">Continuous Integration on GitHub</h1>
+    <h1 id="repository-administration">Repository Administration</h1>
 
-<p>A typical inner source service has:</p>
+<p>Users responsible for managing a repository require elevated permissions to manage its setup. Such permissions should be granted only to those who need them, and at the right level for the settings they need to change.</p>
 
-<ul>
-  <li>multiple teams contributing to a single shared codebase</li>
-  <li>several operational deployments (per-team or per-division)</li>
-</ul>
+<h2 id="github-roles">GitHub Roles</h2>
 
-<p>This allows the local team or division to deploy to their preferred topology with their local security, service management and operational response setup and still leverage the value of a shared codebase with contributions from other divisions. This document describes how you can use GitHub continuous integration tools to automate the link between your shared codebase with its many deployments.</p>
+<p>GitHub <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">define a number of roles</a> that can be assigned to users of a repository:</p>
 
-<h2 id="from-source-to-production">From Source to Production</h2>
+<blockquote>
+  <ul>
+    <li><strong>Read</strong>: Recommended for non-code contributors who want to view or discuss your project</li>
+    <li><strong>Triage</strong>: Recommended for contributors who need to proactively manage issues and pull requests without write access</li>
+    <li><strong>Write</strong>: Recommended for contributors who actively push to your project</li>
+    <li><strong>Maintain</strong>: Recommended for project managers who need to manage the repository without access to sensitive or destructive actions</li>
+    <li><strong>Admin</strong>: Recommended for people who need full access to the project, including sensitive and destructive actions like managing security or deleting a repository</li>
+  </ul>
+</blockquote>
 
-<p>Typically a service will follow these steps to production:</p>
+<p>Repository administration requires the <code class="language-plaintext highlighter-rouge">Admin</code> role.</p>
 
-<ol>
-  <li><strong>Source</strong>: A codebase in a <code class="language-plaintext highlighter-rouge">Flutter-Global</code> repository with <a href="/docs/branch-protection/">access controls and a branching strategy</a> that allows cross-divisional contribution.</li>
-  <li><strong>Validate</strong>: Check proposed code changes in a pull request by running a series of tests that must pass: compile and/or lint commands, unit test suites, static analysis and security tool tests.</li>
-  <li><strong>Package</strong>: Resolve any external dependencies to build a new version of the desired deployment package(s) e.g. docker, rpm.</li>
-  <li><strong>Integration Test</strong>: Run available integration tests against the candidate deployment package with other dependent mocked packages.</li>
-  <li><strong>Publish</strong>: Publish the tested deployment package to a registry so it is available to all divisions.</li>
-  <li><strong>Deploy</strong>: Configure the package and deploy it to a specific topology (e.g. AWS, on-prem VM, k8s).</li>
-  <li><strong>Deployment Test</strong>: Run available deployment tests including non-functional checks e.g. performance, failover or capacity tests.</li>
-  <li><strong>Release</strong>: Promote the test deployment through the various required environments to rollout to production traffic.</li>
-  <li><strong>Warranty</strong>: Observe the release with heightened operational awareness to confirm success, with rapid rollback invoked on suspicion of failure.</li>
-</ol>
+<h2 id="who-needs-admin">Who Needs Admin?</h2>
 
-<h2 id="tools-available">Tools Available</h2>
-
-<p>The tools available to all Flutter divisions are currently limited to the <a href="https://docs.github.com/en/github">GitHub</a> platform:</p>
+<p>The <code class="language-plaintext highlighter-rouge">Admin</code> role should only be granted to those who need it, usually a small team of maintainers who need to adjust the access, settings or tag/branch protection. The <code class="language-plaintext highlighter-rouge">Admin</code> role is required to:</p>
 
 <ul>
-  <li><strong>Git</strong> repository code versioning control and access control for step 1.</li>
-  <li><a href="https://docs.github.com/en/actions"><strong>GitHub Actions</strong></a> to validate a pull request in step 2, and automate further steps 3-8 as necessary. <a href="/docs/secrets/">Secrets storage</a> and self-hosted runners are available within specific internal networks where such access is required.</li>
-  <li><a href="https://docs.github.com/en/packages"><strong>GitHub Packages</strong></a> to store private build dependencies in step 3, and to publish build artefacts <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry">to a registry</a> in step 5.</li>
-  <li><a href="https://docs.github.com/en/issues"><strong>GitHub Issues</strong></a> to plan and track your work.</li>
+  <li>manage individual or team access to the repository</li>
+  <li>manage branch protection rules</li>
+  <li>merge pull requests on protected branches, even if there are no approving reviews</li>
+  <li>manage webhooks and deploy keys</li>
+  <li>create and delete tags that match a tag protection rule</li>
+  <li>define the CODEOWNERS</li>
+  <li>delete or archive the repository</li>
 </ul>
 
-<p>The following tools are <em>NOT</em> available across all divisions, but are used within individual divisions or teams:</p>
+<p>A full list of actions requiring the <code class="language-plaintext highlighter-rouge">Admin</code> role <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">is documented by GitHub</a>.</p>
 
-<ul>
-  <li><strong>Jenkins</strong> is used to orchestrate CI pipelines across steps 2-8. Several Jenkins deployments are <a href="/docs/using-jenkins/">integrated with GitHub</a> but do not provide cross-divisional access. To enable cross-divisional access it is recommended to migrate such workloads to GitHub Actions.</li>
-  <li><strong>Artifactory</strong> is used as a package registry for steps 3 and 5 but can’t provide cross-divisional access. It is recommended to either migrate to GitHub Packages for shared access, or simply push to multiple package registries so artefacts are available to all those who need them.</li>
-  <li><a href="https://www.sonarqube.org/"><strong>SonarQube</strong></a>, <a href="https://snyk.io/"><strong>Snyk</strong></a> and other static analysis quality or security tools for step 2 are licenced divisionally at present. This may change in future but the current recommendation is to depend on a divisional licence if required.</li>
-</ul>
+<h2 id="risk-severity">Risk Severity</h2>
 
-<h2 id="shared-vs-division-context">Shared vs Division Context</h2>
-
-<p>Each of the steps from source to production can be either:</p>
-
-<ul>
-  <li><strong>Shared</strong>: a single implementation that is accessible and changeable by all divisions.</li>
-  <li><strong>Divisional</strong>: implemented per-division or per-team using local tools accessible only by members of that division/team.</li>
-</ul>
-
-<p>It is recommended to use a <strong>shared</strong> context for steps 1-5, and a <strong>divisional</strong> context for steps 6-9. These choices will depend on the requirements and history of your specific capability with some common problems encountered with the recommended approach for each step included in the table below:</p>
+<p>The risk severity of granting administrative access to a repository is determined by the number of users it has been granted to:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Step</th>
-      <th>Context</th>
-      <th>Typical Problem</th>
+      <th>Number of Admins</th>
+      <th>Severity</th>
+      <th>Why</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Source</td>
-      <td>Shared</td>
-      <td>Branching strategy too simple for multi-division deployment.</td>
+      <td>&lt;10</td>
+      <td>None</td>
+      <td>A small group to allow prompt repository management when required is considered normal.</td>
     </tr>
     <tr>
-      <td>Validate</td>
-      <td>Shared</td>
-      <td>Group licenced/deployed static analysis tools or checks not available.</td>
+      <td>10-14</td>
+      <td>Low</td>
+      <td>10 to 14 admins is considered more than necessary but remains low risk due to the limited group size.</td>
     </tr>
     <tr>
-      <td>Package</td>
-      <td>Shared</td>
-      <td>Private build dependencies only available within a divisional Artifactory.</td>
+      <td>15-19</td>
+      <td>Medium</td>
+      <td>15-19 admins is considered significantly more than necessary to manage a repository and is classified as medium risk.</td>
     </tr>
     <tr>
-      <td>Integration Test</td>
-      <td>Shared</td>
-      <td>Tests require access to divisional mock services (e.g. account systems).</td>
+      <td>20-24</td>
+      <td>High</td>
+      <td>20-24 admins is considered excessive and classified as high risk.</td>
     </tr>
     <tr>
-      <td>Publish</td>
-      <td>Shared</td>
-      <td>Immature shared GitHub service account management.</td>
-    </tr>
-    <tr>
-      <td>Deploy</td>
-      <td>Divisional</td>
-      <td>Multiple packaging formats required to support divisional preferences.</td>
-    </tr>
-    <tr>
-      <td>Deployment Test</td>
-      <td>Divisional</td>
-      <td>Unclear responsibilities split with “integration test” step results in wasteful duplicated testing.</td>
-    </tr>
-    <tr>
-      <td>Release</td>
-      <td>Divisional</td>
-      <td>No cross-divisional health/ready endpoints.</td>
-    </tr>
-    <tr>
-      <td>Warranty</td>
-      <td>Divisional</td>
-      <td>No cross-divisional observability &amp; telemetry standards.</td>
+      <td>25+</td>
+      <td>Critical</td>
+      <td>25+ admins is considered likely to be a mistake and classified as a critical risk.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Such problems are topics of active experimentation within various of our inner source products.</p>
+<p>This risk is reported for your repository or capability in the <a href="/catalogue/">service catalogue</a>.</p>
+
+<h2 id="reducing-severity">Reducing Severity</h2>
+
+<p>To reduce the risk severity you should reduce the number of users with the <code class="language-plaintext highlighter-rouge">Admin</code> role. All divisional security policies require regular access reviews (e.g. every 6 months) so it is recommended to reduce the size of the group granted such privileges at your next review.</p>
+
+<p>If you use <a href="/docs/codebases-json/">a capability codebases.json</a> to manage your repository permissions then the configured maintainers will be granted <code class="language-plaintext highlighter-rouge">Admin</code> role on the repository. If you find the group of maintainers is becoming large you may want to prune inactive maintainers or divide a large capability into several smaller ones with reduced size maintainer teams.</p>
+
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
   <div class="pt-4 border-t border-gray-500 border-solid">
     
-    <h5>Make a Contribution</h5>
+    <h5>Dependabot</h5>
     <div>
-      <a href="/start/contribute/"
+      <a href="/security/dependabot/"
         >&larr; Previous</a
       >
     </div>
@@ -1379,9 +1349,9 @@
   </div>
   <div class="pt-4 border-t border-gray-500 border-solid">
     
-    <h5 class="text-right">Creating a Repository</h5>
+    <h5 class="text-right">Default Branch Write Access</h5>
     <div class="text-right">
-      <a href="/start/create-repo/"
+      <a href="/security/default-branch/"
         >Next
         &rarr;</a
       >
@@ -1394,7 +1364,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#from-source-to-production" class="hover:text-theme-color">From Source to Production</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#tools-available" class="hover:text-theme-color">Tools Available</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#shared-vs-division-context" class="hover:text-theme-color">Shared vs Division Context</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-roles" class="hover:text-theme-color">GitHub Roles</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#who-needs-admin" class="hover:text-theme-color">Who Needs Admin?</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#risk-severity" class="hover:text-theme-color">Risk Severity</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#reducing-severity" class="hover:text-theme-color">Reducing Severity</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

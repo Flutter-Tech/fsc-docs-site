@@ -458,6 +458,26 @@
   </li>  
   
   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
 </ul>
 
 
@@ -1084,6 +1104,26 @@
   </li>  
   
   
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
 </ul>
 
 
@@ -1213,28 +1253,27 @@
 
 <p>For an application to be used by a new team, the security standards of the application and adherence to those standards must be clear and transparent. This section lists the security controls applied to repositories across the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> org, and how they are measured and reported.</p>
 
-<div class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex">
-  <span class="mr-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-  </span>
-  This is PREVIEW content. These security controls and reporting framework is under construction.  
-</div>
-
 <h2 id="code-dependency-vulnerabilities"><a href="/security/dependabot/">Code Dependency Vulnerabilities</a></h2>
 
 <p>Most code repositories include external code library dependencies e.g. NPM modules or Java packages. The version of such dependencies are usually “pinned” to ensure repeatable builds and prevent the introduction of un-reviewed 3rd party additions via these dependencies. When a security vulnerability is discovered in one of your pinned dependencies you need to assess its impact on the security of your application and perhaps update the dependency to a more recent version to include a fix.</p>
 
 <p><a href="/security/dependabot/">Read more about dependency vulnerabilities ➜</a></p>
 
-<h2 id="repository-access-control">Repository Access Control</h2>
+<h2 id="repository-administration"><a href="/security/admin/">Repository Administration</a></h2>
 
-<p>Coming soon.</p>
+<p>Users responsible for managing a repository require elevated permissions to manage its setup. Such permissions should be granted only to those who need them, and at the right level for the settings they need to change.</p>
 
-<h2 id="secure-github-action-workflows">Secure GitHub Action Workflows</h2>
+<p><a href="/security/admin/">Read more about repository administration ➜</a></p>
 
-<p>Coming soon.</p>
+<h2 id="default-branch-write-access"><a href="/security/default-branch/">Default Branch Write Access</a></h2>
+
+<p>The default branch of a repository (<code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>) is typically more important than other temporary branches. It usually contains the code that will be used in production. Write access to the default branch should be protected to reduce the risk of mistakes or subversive contribution.</p>
+
+<p><a href="/security/default-branch/">Read more about default branch write access ➜</a></p>
+
+<h2 id="coming-soon">Coming Soon…</h2>
+
+<p>Further organisation security controls under development, please contact the <a href="/community/">Inner Source Team</a> if you have suggestions or wish to influence the roadmap priority. The next control will focus on the management of GitHub workflow secrets and is expected in Q3 2022.</p>
 
 
     
@@ -1259,7 +1298,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#code-dependency-vulnerabilities" class="hover:text-theme-color"><a href="/security/dependabot/">Code Dependency Vulnerabilities</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository-access-control" class="hover:text-theme-color">Repository Access Control</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#secure-github-action-workflows" class="hover:text-theme-color">Secure GitHub Action Workflows</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#code-dependency-vulnerabilities" class="hover:text-theme-color"><a href="/security/dependabot/">Code Dependency Vulnerabilities</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository-administration" class="hover:text-theme-color"><a href="/security/admin/">Repository Administration</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#default-branch-write-access" class="hover:text-theme-color"><a href="/security/default-branch/">Default Branch Write Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon" class="hover:text-theme-color">Coming Soon…</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
