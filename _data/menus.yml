@@ -103,6 +103,9 @@ main:
       - url: /catalogue/activity-level/
         title: Activity Level
         identifier: activity-level
+      - url: /catalogue/health/
+        title: PR Health
+        identifier: health
   - url: /security/
     title: Security
     identifier: security

@@ -12,8 +12,8 @@ next_url: /start/contribute/
 
 This guide helps you use a typical inner source code repository. It assumes you have already:
 
-- joined the `Flutter-Global` organisation to access our inner source portfolio (if not, see [getting access](/start/#getting-access))
-- know from your colleagues which repository you need to work with (if not, see the [service catalogue](/catalogue/))
+- joined the `Flutter-Global` organisation to access our inner source portfolio.
+- know which repository you need to work with (if not, see the [service catalogue](/catalogue/)).
 
 For this guide we will use the [fsc-docs-site](https://github.com/Flutter-Global/fsc-docs-site) repository as an example which contains these docs. For any readers not yet part of the Flutter inner source community a [public export of this repository is available](https://github.com/Flutter-Tech/fsc-docs-site).
 
