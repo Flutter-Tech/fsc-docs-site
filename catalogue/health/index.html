@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Community | Flutter Inner Source</title>
+  <title>Health | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -432,7 +432,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > PR Health</a
     >
   </li>  
@@ -598,7 +598,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/community/" title="Go to Community" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Community</a
     >
   </li>  
@@ -1088,7 +1088,7 @@
   <li
     class="menu-item-3 ml-3 pt-2"
   >
-    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
       > PR Health</a
     >
   </li>  
@@ -1254,7 +1254,7 @@
   <li
     class="menu-item-8 ml-3 pt-2"
   >
-    <a href="/community/" title="Go to Community" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Community</a
     >
   </li>  
@@ -1267,19 +1267,81 @@
     </div>
   </div>
   
-  <div class="col-span-12 px-4 py-8 prose lg:col-span-9 xs:prose-sm md:prose-base lg:prose-base max-w-none content">
-  
-  <h1 id="community">Community</h1>
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="pull-request-health">Pull Request Health</h1>
 
-<p>One of the many pleasures of inner source is access to expert help, knowledge and support from the entire Flutter community. For community members this area contains links to slack channels, support teams, working groups and communities of practices.</p>
+<h2 id="what-is-healthy">What is “Healthy”?</h2>
 
-<p>You are currently browsing the public inner source site so this information is not available to you. If you are already a member of this community please use the <a href="https://developers.flutter.com/community/">developers.flutter.com/community/</a> internal site to access this (requires you to be a member of the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub org).</p>
+<p>Signs of health include:</p>
 
-<h2 id="external-contact-details">External Contact Details</h2>
+<ul>
+  <li><strong>A low number of open pull requests.</strong> This is called “work in progress” (WIP). A high WIP causes problems for maintainers who don’t know which to prioritise. An increasing WIP indicates a lack of capacity to review and merge the pull requests resulting in a growing backlog.</li>
+  <li><strong>Pull requests are merged and closed in a short time.</strong> This is called pull request lead time. A long lead time can indicate pull requests that are too large or a lack of maintainer capacity to review them quickly.</li>
+  <li><strong>Pull requests are being merged regularly.</strong> This is called throughput. Few or no pull requests being merged indicates the repository content might be stale. In this case the WIP and lead time measures might be unreliable.</li>
+</ul>
 
-<p>For external contact on the topic of inner source at Flutter, please contact Rob Tuley (email is <code class="language-plaintext highlighter-rouge">rob.tuley</code> at <code class="language-plaintext highlighter-rouge">flutter.com</code>).</p>
+<h2 id="finding-your-data">Finding Your Data</h2>
 
-  
+<p>The pull request measures are graphed in the service catalogue and available in raw form in the data repository.</p>
+
+<p>To access graphed data:</p>
+
+<ul>
+  <li>Use the site search with a repository or list name to jump to your repository, capability or list page. Then scroll or use the table of contents to view the ‘Pull Request Health’ section.</li>
+  <li>Browse the <a href="/catalogue/">service catalogue</a> from the landing page to find your repository, capability or list.</li>
+  <li>If your repository includes a <a href="/catalogue/readme-banner/">README banner</a> this links directly to the service catalogue page with the ‘Pull Request Health’ section in.</li>
+</ul>
+
+<p>To plot your own visualisation or process this data in a different way, use the raw data in the <a href="https://github.com/Flutter-Global/org-data/tree/main/prs">data repository</a>.</p>
+
+<h2 id="wip-examples">WIP Examples</h2>
+
+<p><strong>Work in progress</strong> (WIP) is the total number of pull requests open or in draft state. This is captured at the start of each week. For example the repository containing <a href="/git-flutter">git-flutter</a> CLI has a WIP of:</p>
+
+<p><img src="/catalogue/health-cli-wip.png" alt="CLI WIP graph" /></p>
+
+<ul>
+  <li>There is a consistently low number of pending PRs which suggests healthy focus on a few changes at once.</li>
+  <li>The throughput tab is a useful check on how busy the repo is over this period: in this case these WIP levels were maintained despite merging ~20 PRs/week during the busiest period in March.</li>
+  <li>The draft counts show that the <a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/">GitHub “Draft” feature</a> is being used to get early automated feedback (e.g. lint/unit tests) and increase the visibility of upcoming review requests.</li>
+</ul>
+
+<p>This is the WIP for a different repository:</p>
+
+<p><img src="/catalogue/health-xxx-wip.png" alt="Another WIP graph" /></p>
+
+<ul>
+  <li>There are a larger number of pending PRs. This may indicate it can be hard for maintainers to know which PRs to prioritise reviewing first. Or this may be a result of a longer review time (e.g. multiple approvals required): the lead time shows this typical review time.</li>
+  <li>The WIP has been consistent over the last 6 months showing that PRs are being actively managed in a sustainable way and not simply queuing up.</li>
+  <li>Usage of draft PRs is limited in this repository, and their benefits may be worth exploring.</li>
+</ul>
+
+<h2 id="lead-time-example">Lead Time Example</h2>
+
+<p>Lead Time is the number of hours between a PR being ready to review and merged or closed. It excludes Sat and Sun as these are expected to be non-working days. This provides an indication of how long pull request merge times are for an individual repository or a group of repositories.</p>
+
+<p>For example the lead time across all repositories in the inner source automation capability is:</p>
+
+<p><img src="/catalogue/health-lead-time-1.png" alt="Lead Time Graph" /></p>
+
+<ul>
+  <li>The “usual” or median lead time is quick. The median of 1 hour means at least half of pull requests are approved and merged within 1 hour of being ready to review.</li>
+  <li>The 75th and 90th percentiles provide an indication of how a slower (usually more complicated) pull request performs. A 90th percentile of ~48 hours means that 9 out of 10 pull requests are merged or closed within 2 days of being set to review.</li>
+  <li>Changing patterns in lead time over time can be observed. A longer lead time in early January was due PRs waiting longer for approvers who were on holiday over christmas. Lower 75th/90th percentiles in March/April is due to a focused period working on CLI automation with a higher throughput and less variety of pull requests.</li>
+</ul>
+
+<p>The 75th and 90th percentile lines can obscure the variance in the median. The visibility of any line can be toggled on/off by clicking on the legend box so the percentile lines can be removed as needed:</p>
+
+<p><img src="/catalogue/health-lead-time-2.png" alt="Lead Time Graph Median Only" /></p>
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#what-is-healthy" class="hover:text-theme-color">What is “Healthy”?</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#finding-your-data" class="hover:text-theme-color">Finding Your Data</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#wip-examples" class="hover:text-theme-color">WIP Examples</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#lead-time-example" class="hover:text-theme-color">Lead Time Example</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
   </div>
   
 </div>

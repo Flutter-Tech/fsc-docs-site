@@ -428,6 +428,16 @@
   </li>  
   
   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
 </ul>
 
 
@@ -1074,6 +1084,16 @@
   </li>  
   
   
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
 </ul>
 
 
@@ -1251,29 +1271,17 @@
   
   <h1 id="community">Community</h1>
 
-<p>The community of a repository represents the members that contributed the most to the respective repository according to a set of rules developed by the Flutter Inner Source team.</p>
+<p>The <strong>community</strong> of a repository is an automated guess at the group of GitHub users who are most likely to be able to help you. It is based on the activity of users within the repository.</p>
 
-<p>The community was not designed to be a measure of performance since there are other ways that members can contribute to the repositories that are not represented, and simple rules are used so the mechanism is understandable. It has been designed to help inform users about the most likely members who can help them with future changes, especially in a cross-divisional “inner source” context, and how that relates to the formally recognised capability maintainers team.</p>
+<p>The community does <strong>not</strong> measure or rank expertise with a repository. It also is likely to be an incomplete list of significant users. This is because there are other ways that members can contribute that are not visible in GitHub, and simple rules are used so the mechanism is understandable.</p>
 
-<h2 id="data-source">Data source</h2>
-
-<p>The data used to infer the community is retrieved from the <a href="https://docs.github.com/en/graphql">GitHub GraphQL API</a>. Currently, we retrieve six months of data from the default branch of a repository and we refresh the data every Sunday.</p>
-
-<p>The relevant pieces of information for the community inference are:</p>
-
-<ul>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#organization">Organization</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#organization">Members</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#repositoryconnection">Repositories</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#commithistoryconnection">Commits</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#pullrequestconnection">Pull Requests</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#pullrequestreviewconnection">Reviews</a></li>
-  <li><a href="https://docs.github.com/en/graphql/reference/objects#issuecommentconnection">Comments</a></li>
-</ul>
+<p>It has been designed to help inform users about the most likely members who can help them with future changes, especially in a cross-divisional “inner source” context, and how that relates to the formally recognised capability maintainers team.</p>
 
 <h2 id="how-it-is-calculated">How it is calculated</h2>
 
-<p>We designed an algorithm to infer the community based on a set of simple rules. These rules vary depending on the repository’s number of reviews. If the repository has more than ten reviews, the rules used by the algorithm are:</p>
+<p>The community is inferred based on a set of simple rules from the last 6 month of GitHub activity data. These rules vary depending on the number of pull request review undertaken within the repository.</p>
+
+<p>If the repository has more than ten PR reviews in the last 6 months the following measurements are calculated per user:</p>
 
 <ul>
   <li><strong>Number of successful contributions</strong>: the number of pull requests that have been <strong>approved</strong> and <strong>merged</strong>.</li>
@@ -1284,16 +1292,16 @@
   <li><strong>Percentage of pull requests the member has interacted with</strong>: the percentage of pull requests the member has interacted with over the total amount of the repository’s pull requests.</li>
 </ul>
 
-<p>However, if there are less than ten reviews, then the set of rules is reduced to:</p>
+<p>If there are less than ten PR reviews, then the measurements are reduced to:</p>
 
 <ul>
   <li><strong>Number of pull requests</strong>: the total amount of pull requests the member has raised.</li>
   <li><strong>Number of commits not associated with a pull request</strong>: the total amount of commits the member has directly pushed to the default branch.</li>
 </ul>
 
-<p>Each rule is applied to the data and a maximum of five members is retrieved for each rule, ordered by number of contributions. When the members have the same amount of contributions, they are ordered by alphabetical order.</p>
+<p>For each measurement the top five members are included in the community. When two members have the same measurement, they are ordered alphabetically.</p>
 
-<p>When all rules are applied, the results of each rule are merged into one list that preserves all members. Thus, it is important to consider that the maximum number of members inferred for a community is <strong>5 * number of rules</strong>. The final result is a list with all the members inferred by the different rules, ordered by the number of rules they appeared in.</p>
+<p>When all measurements are calculated, the results of each are merged into one list that preserves all members. Thus, it is important to consider that the maximum number of members inferred for a community is <strong>5 * number of measurements</strong>. The final result is a list with all the members inferred by the different measurements, ordered by the number of measurements they appeared in.</p>
 
   
   </div>
