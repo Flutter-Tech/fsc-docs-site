@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -651,8 +661,22 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">main"</span><span class="pi">]</span>
 </code></pre></div></div>
-
-<p>Note if your repository is older and uses <code class="language-plaintext highlighter-rouge">master</code> as the default branch, specify that pattern rather than <code class="language-plaintext highlighter-rouge">main</code>.</p>
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>If your repository is older and uses <span class="font-mono font-bold text-blue-700">master</span> as the default branch, specify that pattern rather than <span class="font-mono font-bold text-blue-700">main</span>.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <p>This allows any user with write access to commit and change code directly without review. If the author would like a review they can of course choose one, but this isn’t required. In this case, branch protection for <code class="language-plaintext highlighter-rouge">main</code> is still valuable to protect it from force pushes or deletions that would modify its history. Since this protection preserves the history you can always inspect and revert any change which you retrospectively want to reject.</p>
 
@@ -864,6 +888,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

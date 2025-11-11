@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -592,6 +602,24 @@
   <span class="pi">-</span> <span class="s">example-username-2</span>
 </code></pre></div></div>
 
+<h2 id="remove-inactive-maintainers-experimental"><code class="language-plaintext highlighter-rouge">remove-inactive-maintainers</code> (Experimental)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">remove-inactive-maintainers</code> key, when activated, automates the process of removing inactive maintainers from the
+capability.</p>
+
+<p>If a maintainer is inactive for three months, they receive a notification of potential removal. If the inactivity
+persists for another month, they are automatically removed from the team, and all maintainers are informed.
+Communication is done via e-mail.</p>
+
+<p>Activity is determined by any interaction with the repositories within the capability, such as opening an issue,
+creating a pull request, or participating in commits, comments, and reviews.</p>
+
+<p>This feature is experimental, and the
+inactivity period may be subject to change.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remove-inactive-maintainers</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
 <h2 id="description"><code class="language-plaintext highlighter-rouge">description</code></h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">description</code> key contains a description of the capability. Ideally this is a single sentence but can be several short sentences if required. It can’t be more than 1 paragraph (i.e. can’t contain any line breaks).</p>
@@ -610,6 +638,8 @@
   <li><a href="#defaultsbranch-protections"><code class="language-plaintext highlighter-rouge">defaults.branch-protections</code></a> defines the default branch protections.</li>
   <li><a href="#defaultscontributors"><code class="language-plaintext highlighter-rouge">defaults.contributors</code></a> defines the default repository contributors.</li>
   <li><a href="#defaultsadmins"><code class="language-plaintext highlighter-rouge">defaults.admins</code></a> defines the default repository administrators.</li>
+  <li><a href="#defaultsunsafe-admins"><code class="language-plaintext highlighter-rouge">defaults.unsafe-admins</code></a> grants continuous <code class="language-plaintext highlighter-rouge">admin</code> permissions to specific users and/or teams.</li>
+  <li><a href="#defaultscustom-properties"><code class="language-plaintext highlighter-rouge">defaults.custom-properties</code></a> defines the default repository custom property values.</li>
 </ul>
 
 <p>These defaults can be overridden for individual repositories within the capability in the <a href="/docs/repo-config/">repository config file</a>.</p>
@@ -630,7 +660,27 @@
   <span class="na">rebase</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
-<p>You can learn more about merging strategies in the <a href="https://docs.github.com/en/github/administering-a-repository/about-merge-methods-on-github">GitHub documentation</a>.</p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">For more information on merging strategies, please refer to the GitHub Docs.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="https://docs.github.com/en/github/administering-a-repository/about-merge-methods-on-github" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 <h2 id="defaultssuggest-branch-update-in-pr"><code class="language-plaintext highlighter-rouge">defaults.suggest-branch-update-in-pr</code></h2>
 
@@ -787,7 +837,7 @@
 
 <h4 id="branch-protectionsparametersallow-stale-reviews"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-stale-reviews</code></h4>
 
-<p>By default additional changes to a pull request branch dismiss any existing approvals.</p>
+<p>By default, additional changes to a pull request branch dismiss any existing approvals.</p>
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-reviews</code> means a pull request approval remains valid even when you make more changes after the review. This is convenient for you as the pull request author as you act on review feedback to implement minor fixes to the pull request – you don’t need to get the pull request re-reviewed after you have pushed your fixes. However, note how it allows you to include additional <strong>un-reviewed code</strong> to an existing pull request so don’t enable this rule for critical branches where you require strict code review.</p>
 
@@ -796,7 +846,7 @@
 
 <h4 id="branch-protectionsparametersallow-admin-bypass"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-admin-bypass</code></h4>
 
-<p>By default the branch protection rule constraints apply to all users, including repository or organisation administrators.</p>
+<p>By default, the branch protection rule constraints apply to all users, including repository or organisation administrators.</p>
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code> allows repository and organisation admins to override the restrictions of a branch protection rule. For example this would allow maintainers to push directly to a protected branch that required reviews. This is convenient when repository administrators expect to perform maintenance work on the protected branch as they can bypass the constraints to do so.</p>
 
@@ -830,7 +880,22 @@
   <li><code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> to specify GitHub users, teams and apps allowed to override the default GitHub restriction, and enabling them to force push to protected branches.</li>
 </ul>
 
-<p><strong>NOTE:</strong> If you enable both <code class="language-plaintext highlighter-rouge">force-push-allowed</code> and <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code>, the <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> setting takes precedence.</p>
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>If you enable <span class="font-mono font-bold text-blue-700">force-push-allowed</span> and <span class="font-mono font-bold text-blue-700">force-push-restricted-to</span>, the <span class="font-mono font-bold text-blue-700">force-push-restricted-to</span> setting takes precedence.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
@@ -854,7 +919,27 @@
           <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
-<p>See the GitHub Docs for more information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#allow-force-pushes">force push</a>.</p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">For more information on allowing force pushes, please refer to the GitHub docs.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#allow-force-pushes" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 <h4 id="branch-protectionsparametersrequired-status-check-jobs"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.required-status-check-jobs[*]</code></h4>
 
@@ -900,7 +985,27 @@
   <li>Execute the status check at least once.</li>
 </ol>
 
-<p>The <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging">GitHub docs provide more information about requiring status checks in pull requests</a>.</p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">For more information about requiring status checks in pull requests, please refer to the GitHub docs.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 <h4 id="branch-protectionsparametersallow-stale-branch-merge"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-stale-branch-merge</code></h4>
 
@@ -913,7 +1018,7 @@
 
 <h4 id="branch-protectionsparametersrestrict-push-to"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-to</code></h4>
 
-<p>Restrict who can push to the matching protected branch with <code class="language-plaintext highlighter-rouge">restrict-push-to</code>. When enabled, only users, teams or apps that have been given permission can push to the protected branch. Also, you can only give push access to a protected branch, or give permission to create a matching branch, to users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission to the repository.</p>
+<p>Restrict who can push to the matching protected branch with <code class="language-plaintext highlighter-rouge">restrict-push-to</code>. When enabled, only users, teams, or apps with permission can push to or merge into the protected branch. Those with push permission will still need to create a pull request if the branch is protected. Also, you can only give push access to a protected branch, or give permission to create a matching branch, to users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission to the repository.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
@@ -927,8 +1032,6 @@
         <span class="na">apps</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
-
-<p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
 
 <h4 id="branch-protectionsparametersrestrict-push-exclude-create"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-exclude-create</code></h4>
 
@@ -948,7 +1051,27 @@
           <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
-<p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">For more information about restricting who can push to matching branches, please refer to the GitHub docs.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 <h4 id="advanced-settings">Advanced Settings</h4>
 
@@ -1018,7 +1141,27 @@
       <span class="na">restricts-review-dismissals</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
-<p>If you need any advice on using advanced settings, please use <a href="/community/">the available support channels</a>.</p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">For any advice on using advanced settings, please refer to the available support channels.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="/community/" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 <h2 id="defaultsreaders"><code class="language-plaintext highlighter-rouge">defaults.readers</code></h2>
 
@@ -1073,8 +1216,22 @@
   <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">all-flutter-global"</span><span class="pi">]</span>
 </code></pre></div></div>
 
-<p>Note how you require robust branch protection to maintain a secure workflow – any of the <a href="/docs/branching/">standard branching strategies</a> are suitable for this setup.</p>
-
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>Note how you require robust branch protection to maintain a secure workflow – any of the <a href="/docs/branching/" class="underline">standard branching strategies</a> are suitable for this setup.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
 <h3 id="requested-access-1">Requested Access</h3>
 
 <p><a href="/docs/requested-contribution/">Requested Contribution</a> or <a href="/docs/requested-access/">Requested Access</a> grants write permission to a more limited team:</p>
@@ -1125,6 +1282,35 @@
   <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">xyz-core-team-admins"</span><span class="pi">]</span>
 </code></pre></div></div>
 
+<h2 id="defaultsunsafe-admins"><code class="language-plaintext highlighter-rouge">defaults.unsafe-admins</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">defaults.unsafe-admins</code> key grants continuous <code class="language-plaintext highlighter-rouge">admin</code> permissions to specific users and/or teams.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">defaults.unsafe-admins.users</code> lists the GitHub usernames to grant permanent unsafe <code class="language-plaintext highlighter-rouge">admin</code> access. Only reference existing members of Flutter-Global.</li>
+  <li><code class="language-plaintext highlighter-rouge">defaults.unsafe-admins.teams</code> lists the teams to grant permanent unsafe <code class="language-plaintext highlighter-rouge">admin</code> access. Reference using the team “slug” which is the URL identifier for the team within Flutter-Global.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The example-username user needs to keep always on admin because ...</span>
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="na">unsafe-admins</span><span class="pi">:</span>
+    <span class="na">users</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">example-username</span>
+    <span class="na">teams</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">example-teamname</span>
+</code></pre></div></div>
+
+<h2 id="defaultsapps"><code class="language-plaintext highlighter-rouge">defaults.apps</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">defaults.apps</code> section lists the GitHub Apps that should have access to <strong>all</strong> repositories in the capability. If needed, you can override this list for individual repositories in their configuration files.</p>
+
+<ul>
+  <li>Each app listed here will be granted access to the repository with the permissions defined in its configuration file.</li>
+  <li>Specify each app using its GitHub App “slug” matching the filename (without extension) of the app’s configuration file in the <a href="https://github.com/Flutter-Global/org-config/tree/main/apps"><code class="language-plaintext highlighter-rouge">apps</code></a> directory of the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository.</li>
+</ul>
+
+<p>This ensures consistent app management across all repositories.</p>
+
 <h2 id="defaultslabels"><code class="language-plaintext highlighter-rouge">defaults.labels</code></h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">defaults.labels</code> section enables and specifies the automatic labelling behaviour for PRs and Issues.</p>
@@ -1142,6 +1328,31 @@
 <p>Warn the user whenever the labels <code class="language-plaintext highlighter-rouge">major</code>, <code class="language-plaintext highlighter-rouge">minor</code> and <code class="language-plaintext highlighter-rouge">documentation</code>, <code class="language-plaintext highlighter-rouge">enhancement</code>, <code class="language-plaintext highlighter-rouge">bug</code> have not been applied, via a comment in the pull request.</p>
 
 <p><img src="/docs/cbg/pr-size-reminder-example.png" alt="pr-size-reminder comment example" /></p>
+
+<h2 id="defaultscustom-properties"><code class="language-plaintext highlighter-rouge">defaults.custom-properties</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">defaults.custom-properties</code> section specifies default custom properties for the capability repositories. Custom properties allow you to add metadata to repositories for classification and filtering.</p>
+
+<p><strong>Important</strong>: Repository-level custom properties completely override defaults - there is no inheritance or merging. If a repository defines any custom properties, it must explicitly include all desired properties.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="na">custom-properties</span><span class="pi">:</span>
+    <span class="na">environment</span><span class="pi">:</span> <span class="s2">"</span><span class="s">development"</span>
+    <span class="na">team</span><span class="pi">:</span> <span class="s2">"</span><span class="s">backend"</span>
+    <span class="na">is-active</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">technologies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">golang"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">react"</span><span class="pi">]</span>
+    <span class="na">compliance-required</span><span class="pi">:</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p>Supported property types:</p>
+<ul>
+  <li><strong>Text/String</strong>: Simple text values (<code class="language-plaintext highlighter-rouge">"development"</code>)</li>
+  <li><strong>True/False</strong>: Boolean values (<code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>)</li>
+  <li><strong>Single Select</strong>: One value from org-defined options (<code class="language-plaintext highlighter-rouge">"production"</code>)</li>
+  <li><strong>Multi Select</strong>: Multiple values from org-defined options (<code class="language-plaintext highlighter-rouge">["golang", "react"]</code>)</li>
+</ul>
+
+<p>Custom properties must be created at the organization level before they can be assigned to repositories. Repository configurations can override these defaults by defining their own <code class="language-plaintext highlighter-rouge">custom-properties</code> section. See the <a href="/docs/repo-config/">repository config documentation</a> for override examples.</p>
 
 <h2 id="examples">Examples</h2>
 
@@ -1168,7 +1379,7 @@
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owner" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owner</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">maintainers</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaults" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsallow-pr-merge-options" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.allow-pr-merge-options[*]</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultssuggest-branch-update-in-pr" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.suggest-branch-update-in-pr</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsallow-auto-merge" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.allow-auto-merge</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsdelete-branch-on-merge" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.delete-branch-on-merge</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsbranch-protections" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.branch-protections</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#audited-source" class="hover:text-secondary"><a href="/sdlc/audited/">Audited Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#reviewed-source" class="hover:text-secondary"><a href="/sdlc/reviewed">Reviewed Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-team-source" class="hover:text-secondary"><a href="/sdlc/multiple-teams/">Multiple Team Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionspatterns" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionsparameters" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsreaders" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.readers</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-contribution-access" class="hover:text-secondary"><a href="/docs/requested-contribution/">Requested Contribution Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access" class="hover:text-secondary"><a href="/docs/requested-access/">Requested Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-read-access" class="hover:text-secondary">No Read Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultscontributors" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.contributors</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#open-contribution-access" class="hover:text-secondary"><a href="/docs/open-contribution/">Open Contribution Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access-1" class="hover:text-secondary">Requested Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-write-access" class="hover:text-secondary">No Write Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsadmins" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.admins</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-admin-access" class="hover:text-secondary">No Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#core-team-admins" class="hover:text-secondary">Core Team Admins</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabels" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-reviewer-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-reviewer-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelsissue-author-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.issue-author-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-size-reminder" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-size-reminder</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owner" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owner</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">maintainers</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#remove-inactive-maintainers-experimental" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">remove-inactive-maintainers</code> (Experimental)</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaults" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsallow-pr-merge-options" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.allow-pr-merge-options[*]</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultssuggest-branch-update-in-pr" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.suggest-branch-update-in-pr</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsallow-auto-merge" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.allow-auto-merge</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsdelete-branch-on-merge" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.delete-branch-on-merge</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsbranch-protections" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.branch-protections</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#audited-source" class="hover:text-secondary"><a href="/sdlc/audited/">Audited Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#reviewed-source" class="hover:text-secondary"><a href="/sdlc/reviewed">Reviewed Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-team-source" class="hover:text-secondary"><a href="/sdlc/multiple-teams/">Multiple Team Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionspatterns" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionsparameters" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsreaders" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.readers</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-contribution-access" class="hover:text-secondary"><a href="/docs/requested-contribution/">Requested Contribution Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access" class="hover:text-secondary"><a href="/docs/requested-access/">Requested Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-read-access" class="hover:text-secondary">No Read Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultscontributors" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.contributors</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#open-contribution-access" class="hover:text-secondary"><a href="/docs/open-contribution/">Open Contribution Access</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access-1" class="hover:text-secondary">Requested Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-write-access" class="hover:text-secondary">No Write Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsadmins" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.admins</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-admin-access" class="hover:text-secondary">No Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#core-team-admins" class="hover:text-secondary">Core Team Admins</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsunsafe-admins" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.unsafe-admins</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsapps" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.apps</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabels" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-reviewer-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-reviewer-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelsissue-author-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.issue-author-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-size-reminder" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-size-reminder</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultscustom-properties" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.custom-properties</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -1353,6 +1564,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

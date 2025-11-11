@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Unarchive a Repository | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" 
+        title="Flutter Inner Source Blog" 
+        href="https://innersource.flutter.com/feed.xml" />
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+
+<body class="theme-purple">
+
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+  <div>
+    <div class="grid min-h-screen grid-cols-12">
+      <!-- V MENU -->
+      <div class="relative hidden bg-gray-50 lg:block lg:col-span-2">
+        <div class="sticky top-24">
+          <div class="max-h-screen">
+            <div class="pt-8 pb-10 pl-6 pr-6 overflow-y-auto max-h-screen">
+              
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/start/" title="Go to Get Started" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Get Started</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Create a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintain a Repo</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Codebase Governor</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/capability-defaults/" title="Go to Capability Defaults" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Defaults</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Config</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams-cbg/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/git-flutter/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/access-control/" title="Go to Access Control" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Access Control</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-access/" title="Go to Service Accounts" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Service Accounts</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/open-contribution/" title="Go to Open Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Open Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-contribution/" title="Go to Requested Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-access/" title="Go to Requested Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Access</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/branching/" title="Go to Branching Strategy" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Branching Strategy</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Audited Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Reviewed Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Multiple Team Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/branching-examples/" title="Go to Examples" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Examples</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/setup/" title="Go to Setup" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Setup</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branching Model</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/cli/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/actions/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">GitHub Actions</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/secrets/" title="Go to Using Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using Secrets</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Slack with GitHub</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/releasing/" title="Go to Release Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Release Patterns</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/semver/" title="Go to Semantic Versioning" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Semantic Versioning</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Component Tests</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+</ul>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- V MENU -->
+      <!-- MAIN AREA -->
+      <main class="relative block col-span-12 overflow-auto lg:px-8 lg:pb-10 lg:col-span-8">
+        <div class="max-w-full px-8 pb-12 prose lg:px-8 md:prose-base lg:prose-base xs:prose-sm content">
+          <!-- TITLE -->
+          
+          
+<div class="mb-12 -ml-8 -mr-8 md:-ml-16 md:-mr-16 not-prose">
+  <div class="bg-gray-200 fit-content">
+    <div class="grid grid-cols-2">
+      <div class="flex p-0 py-6 lg:text-left md:py-11 md:px-16">
+        <div class="px-8 md:px-0">
+          <!-- BREADCRUMBS -->
+          
+          <!-- BREADCRUMBS -->
+          <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
+            Unarchive a Repository
+          </h1>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">How to unarchive a repository</p>
+        </div>
+      </div>
+      
+
+<div class="relative"
+  style="background-color: transparent; background-repeat: repeat; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%239063cd' fill-opacity='0.6  '%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);">
+</div>
+
+    </div>
+  </div>
+</div>
+
+          
+
+          <!-- PUBLIC DOCS NOTE -->
+          
+            <div class="mb-8 p-4 rounded-lg border border-purple-400 bg-purple-300 text-purple-900">
+              This public content is an excerpt from Flutter staff GitHub docs. It is published
+              as a reference to show how GitHub is used for inner source at Flutter.
+            </div>
+          
+
+          <!-- CONTENT -->
+          <p>Archiving a repository makes it <code class="language-plaintext highlighter-rouge">read-only</code> for all users and indicate that it’s no longer actively maintained. This guide will show you how you can unarchive it.</p>
+
+<h2 id="requesting-admin-access">Requesting Admin Access</h2>
+
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>You only need to request Admin Access if the repo in being managed by the Codebase Governor (org-config)</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>To request temporary admin access, raise a temporary admin <a href="https://github.com/Flutter-Global/org-config/issues/new?assignees=&amp;labels=request&amp;projects=&amp;template=req-repo-temp-admin-template.yml&amp;title=%5BRequest%5D%3A+Temporary+Admin+Access+to+a+Repository">access request</a> in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repo. This access is granted immediately if you’re permitted and does not require approval. Your admin permission will be removed after 3 hours or when you close the request.</p>
+
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>Only users or teams with the roles of owner, maintainer, trusted committer, or admin can request <code class="language-plaintext highlighter-rouge">admin</code> access.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><img src="/assets-private/blog/on-demand-admin/temp-admin-request.png" class="max-w-lg mx-auto my-4" alt="Temporary Admin Request Screenshot" /></p>
+
+<h2 id="steps-to-unarchive-a-repository">Steps to Unarchive a Repository</h2>
+
+<p>Once you have admin access, follow these steps to unarchive a repository:</p>
+
+<ol>
+  <li><strong>Navigate to the Repository:</strong> Navigate to the repository you want to unarchive.</li>
+  <li><strong>Open Settings:</strong> Click on the <code class="language-plaintext highlighter-rouge">Settings</code> tab, usually located on the right side of the top menu.</li>
+  <li><strong>Scroll to Danger Zone:</strong> In the Settings, scroll down to the <code class="language-plaintext highlighter-rouge">Danger Zone</code> section at the bottom of the page.</li>
+  <li><strong>Unarchive the Repository:</strong> Click on the option labelled <code class="language-plaintext highlighter-rouge">Unarchive this repository</code>.</li>
+  <li><strong>Confirm Unarchiving:</strong> A confirmation dialog will appear. Type in your repository name as requested.</li>
+  <li><strong>Complete the Process:</strong> Click “I understand the consequences, unarchive this repository” to complete the process.</li>
+</ol>
+
+<p><img src="/assets-private/unarchive-repository.png" class="max-w-lg mx-auto my-4" alt="Unarchive Repository Screenshot" /></p>
+
+<p>That’s it! Your repository is now unarchived and ready to use.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li><strong><a href="https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories">Archiving repositories</a></strong> in the GitHub Documentation page</li>
+</ul>
+
+
+
+          <!-- ARTICLE NAVIGATION -->
+          
+        </div>
+      </main>
+      <!-- MAIN AREA -->
+      <!-- SIDEBAR -->
+      <aside class="relative hidden border-l border-[#e5e7eb] lg:col-span-2 lg:block">
+        <!-- Start secondary column (hidden on smaller screens) -->
+        <div class="sticky px-4 py-8 sm:px-6 lg:px-8 top-24">
+          
+          
+          
+          <div class="pb-6 text-md h-screen">
+            <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
+            <div class="toc overflow-y-auto h-full pb-48">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#requesting-admin-access" class="hover:text-secondary">Requesting Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#steps-to-unarchive-a-repository" class="hover:text-secondary">Steps to Unarchive a Repository</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#further-reading" class="hover:text-secondary">Further Reading</a></li></ul class="pt-1 list-none">
+            </div>
+          </div>
+          
+          
+        </div>
+      </aside>
+      <!-- SIDEBAR -->
+    </div>
+  </div>
+  
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/start/" title="Go to Get Started" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Get Started</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Create a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintain a Repo</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Codebase Governor</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/capability-defaults/" title="Go to Capability Defaults" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Defaults</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Config</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams-cbg/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/git-flutter/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/access-control/" title="Go to Access Control" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Access Control</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-access/" title="Go to Service Accounts" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Service Accounts</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/open-contribution/" title="Go to Open Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Open Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-contribution/" title="Go to Requested Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-access/" title="Go to Requested Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Access</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/branching/" title="Go to Branching Strategy" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Branching Strategy</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Audited Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Reviewed Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Multiple Team Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/branching-examples/" title="Go to Examples" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Examples</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/setup/" title="Go to Setup" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Setup</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branching Model</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/cli/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/actions/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">GitHub Actions</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/secrets/" title="Go to Using Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using Secrets</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Slack with GitHub</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/releasing/" title="Go to Release Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Release Patterns</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/semver/" title="Go to Semantic Versioning" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Semantic Versioning</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Component Tests</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <footer class="bg-gray-200 drop-shadow-2xl z-50 bottom-0">
+  <div class="max-h-50 mx-auto max-w-7xl overflow-hidden py-0 sm:py-12 lg:px-8">
+    
+
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/how/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Inner source</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/docs/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docs</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/blog/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+            </div>
+          
+        
+      
+      <div class="pb-6">
+        <a href="/community/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Support</a>
+      </div>
+    </nav>
+    <p class="mt-6 text-center text-xs leading-5 text-gray-500">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Flutter Entertainment plc</p>
+  </div>
+</footer>
+
+  
+</body>
+
+</html>

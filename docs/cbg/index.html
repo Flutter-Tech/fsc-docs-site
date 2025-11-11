@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -638,6 +648,31 @@
   <li>Only one <a href="/docs/repo-config/">repository config file</a> can be specified for a repository, and a repository can only be a member of one capability. A repo can be transferred from one capability to another simply by moving the <a href="/docs/repo-config/">repository config file</a> from one capability directory to a different one.</li>
 </ul>
 
+<h2 id="roles">Roles</h2>
+
+<p>To manage who can access and modify your repositories, CBG uses several user roles. These roles help you configure access and permissions for your capability repositories:</p>
+
+<ul>
+  <li>
+    <p><strong>Owner:</strong> The Capability Owner is a hands-on technical leader who supports their capability by driving its technical strategy and being a role-model for the capability maintainer and contributor community. Learn more <a href="/how/roles/owner/">here</a>.</p>
+  </li>
+  <li>
+    <p><strong>Maintainers:</strong> The Maintainers is a technical expert of an inner sourced capability who maintains it and helps others. Learn more <a href="/how/roles/maintainer/">here</a>.</p>
+  </li>
+  <li>
+    <p><strong>Trusted Committers:</strong> A Trusted Committer is a user who is an expert on a specific subset of repositories within a larger capability. This role acknowledges that the contributor has significant knowledge and expertise in certain repositories, allowing them to be recognized as a maintainer for those specific repositories, even if they are not familiar with the entire capability.</p>
+  </li>
+  <li>
+    <p><strong>Admins:</strong> An Admin is a user or team that has <code class="language-plaintext highlighter-rouge">admin</code> rights to the capability repositories. This role typically includes the ability to manage repository settings, access controls, and other administrative tasks. Is usually used for service accounts. To be able to get <code class="language-plaintext highlighter-rouge">admin</code> access you need request it. Learn more in this <a href="/blog/on-demand-admin">blog post</a>.</p>
+  </li>
+  <li>
+    <p><strong>Contributors:</strong> Users and/or Teams who can push to branches (<code class="language-plaintext highlighter-rouge">write</code> access) and contribute to the repository.</p>
+  </li>
+  <li>
+    <p><strong>Readers:</strong> Users and/or Teams who have <code class="language-plaintext highlighter-rouge">read-only</code> access to the repository.</p>
+  </li>
+</ul>
+
 <h2 id="edit-your-config">Edit Your Config</h2>
 
 <p>As a member of the Flutter-Global org you will automatically be granted write access to the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository. The config from the <code class="language-plaintext highlighter-rouge">main</code> branch will be applied to your repository, so to edit your config you need to make changes to the files in the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
@@ -658,6 +693,13 @@
 </ul>
 
 <p>For example adding a repository to a capability will require the approval of the capability owner <em>and</em> an existing administrator of the repository to be added. If the capability owner is already an admin of the repository to be added, their approval will fulfill both requirements. If the capability owner has raised the pull request to add the repository to the capability their approval is assumed but the pull request will need to be approved by a colleague to fulfill the “2 people involved” requirement. If the capability had no owner or maintainers configured the approval would fallback to the inner source team for approval.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li><a href="/docs/guides/add-new-capability">How to add a new capability</a></li>
+  <li><a href="/docs/guides/migrate-repository-to-capability">How to migrate existing repositories to a capability</a></li>
+</ul>
 
 <h2 id="examples">Examples</h2>
 
@@ -691,7 +733,7 @@
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#quick-start" class="hover:text-secondary">Quick Start</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#capability" class="hover:text-secondary">Capability</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository" class="hover:text-secondary">Repository</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#edit-your-config" class="hover:text-secondary">Edit Your Config</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#approval-rules" class="hover:text-secondary">Approval Rules</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#quick-start" class="hover:text-secondary">Quick Start</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#capability" class="hover:text-secondary">Capability</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository" class="hover:text-secondary">Repository</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#roles" class="hover:text-secondary">Roles</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#edit-your-config" class="hover:text-secondary">Edit Your Config</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#approval-rules" class="hover:text-secondary">Approval Rules</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#further-reading" class="hover:text-secondary">Further Reading</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -876,6 +918,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

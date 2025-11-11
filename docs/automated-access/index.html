@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -684,7 +694,7 @@
   <li>In GitHub Action workflows, use <a href="https://github.com/actions/create-github-app-token">actions/create-github-app-token</a>:</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/create-github-app-token@v1</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/create-github-app-token@&lt;commit-sha&gt;</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s">app-token</span>
   <span class="na">with</span><span class="pi">:</span>
     <span class="na">app-id</span><span class="pi">:</span> <span class="s">${{ vars.APP_ID }}</span>
@@ -712,7 +722,21 @@
 
 <p>A personal fine-grained access token is less robust than a GitHub App, but for minor point-to-point automation often more convenient. The ability to limit the scope and permissions means you aren’t leaking your other account permissions. Yes, you need to change the ownership of the token if you leave or change role – but you need to rotate these tokens regularly anyway. We recommend a short token expiry (e.g. 3 months) so that you are regularly reminded of it exists and make you more likely to document it!</p>
 
-<p><strong>⚠️ Don’t confuse “FINE-GRAINED” access tokens with “CLASSIC” personal access tokens. Classic access tokens have no restrictions on scope (which repositories) and only crude permissions (i.e. the what it can do). If you need to use a classic access token, you must use a machine user (see below) to limit the scope and permissions via that user.</strong></p>
+<div class="rounded-md bg-yellow-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-yellow-800">Attention needed</div>
+            <div class="mt-2 text-sm text-yellow-700">
+                <p>Don't confuse <span class="font-bold text-yellow-700">FINE-GRAINED</span> access tokens with <span class="font-mono font-bold text-yellow-700">CLASSIC</span> personal access tokens. Classic access tokens have no restrictions on scope (which repositories) and only crude permissions (i.e. what it can do). If you need to use a classic access token, you must use a machine user (see below) to limit the scope and permissions via that user.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <h2 id="machine-user">Machine User</h2>
 
@@ -925,6 +949,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

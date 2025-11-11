@@ -162,6 +162,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const pageHeadings = document.querySelectorAll("h2, h3, h4, h5, h6");
 
   pageHeadings.forEach((heading) => {
+
+    // Ignore specific headings that should not have the copy button
+    if (heading.classList.contains("no-copy")) {
+      return;
+    }
     const headingId = heading.getAttribute("id");
     // Add relative class to heading for positioning of child button
     heading.classList.add("relative");

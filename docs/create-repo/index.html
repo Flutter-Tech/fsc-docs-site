@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -587,19 +597,29 @@
 
 <h2 id="creating">Creating</h2>
 
-<p>Every user in Flutter-Global has permission to create a new repository in the normal way in GitHub. Use the <strong>+</strong> drop-down menu on the top-right corner of a GitHub page and select <strong>New repository</strong>.</p>
+<p>To create a new repository, add a repository configuration file within the appropriate capability folder. If the repository does not already exist in <a href="https://github.com/Flutter-Global">Flutter-Global</a>, the Codebase Governor will automatically create it and apply all necessary configurations.</p>
 
-<p><img src="/docs/create-repo/create-repository.png" class="max-w-xl" /></p>
+<p>To create a new repository, follow these steps:</p>
 
-<p>In the <strong>Owner</strong> drop-down, select Flutter-Global.</p>
+<ol>
+  <li>Navigate to the [<code class="language-plaintext highlighter-rouge">org-config</code>] repository main page.</li>
+  <li>Open the <code class="language-plaintext highlighter-rouge">codebases</code> folder.</li>
+  <li>Open your <code class="language-plaintext highlighter-rouge">capability</code> folder or <a href="/docs/guides/add-new-capability/"><code class="language-plaintext highlighter-rouge">create a new one</code></a>.</li>
+  <li>Click the <code class="language-plaintext highlighter-rouge">Add file</code> &gt; <code class="language-plaintext highlighter-rouge">Create new file</code> button.</li>
+  <li>Enter your repository name in the <code class="language-plaintext highlighter-rouge">Name your file...</code> field. The file name must follow the <code class="language-plaintext highlighter-rouge">&lt;NAME_OF_REPOSITORY&gt;.yml</code> pattern. For example, for a repository named <code class="language-plaintext highlighter-rouge">video-broadcast</code>, the filename would be <code class="language-plaintext highlighter-rouge">video-broadcast.yml</code>.</li>
+  <li>Add the repository configuration properties in the file contents textarea.</li>
+  <li>Click on the <code class="language-plaintext highlighter-rouge">Commit changes...</code> button.</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">Commit message</code>.</li>
+  <li>Click on <code class="language-plaintext highlighter-rouge">Propose changes</code> to open a Pull Request.</li>
+</ol>
 
-<p><img src="/docs/create-repo/owner.png" class="max-w-xl" /></p>
+<p>After your pull request is open, CBG will run and display a comment similar to the image.</p>
 
-<p>Enter the name of your repository and a description.</p>
+<p><img src="/docs/cbg/cbg-create-repo-comment.png" class="w-full max-w-lg mx-auto" /></p>
 
-<p><img src="/docs/create-repo/name.png" class="max-w-xl" /></p>
+<p>Once the pull request is approved and merged, CBG will create the repository and apply any changes defined in the configuration.</p>
 
-<p>In Flutter-Global, all repositories are <code class="language-plaintext highlighter-rouge">Private</code>. If you want something different, contact the <a href="/community/">inner source team</a>. Choose how you want to initialise then continue to create the repository. Creating a repository gives you an empty sandbox repository that you have full control over, and only you have access to. To share the repo, you need to configure it.</p>
+<p>You can find the full guide on how to create, rename, and delete repositories <a href="/docs/guides/repository-create-rename-update">here</a>.</p>
 
 <h2 id="configure-your-repo">Configure Your Repo</h2>
 
@@ -611,7 +631,27 @@
   <li>Use <a href="/docs/cbg/">Codebase Governor</a> to quickly and easily setup (1) and (2) in an audit friendly way.</li>
 </ol>
 
-<p><a href="/docs/maintainer/">Read more about maintaining your repository</a>.</p>
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">Read more about maintaining your repository.</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="/docs/maintainer/" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 
           <!-- ARTICLE NAVIGATION -->
@@ -838,6 +878,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

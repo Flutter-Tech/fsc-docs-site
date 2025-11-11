@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-6347eac6.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -223,6 +223,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         
@@ -592,15 +602,7 @@
 
 <p>Fixed teams have static membership, i.e. the members specified in the configuration file will always be a part of the team until they have been removed from the configuration or excluded using the <a href="#exclusions">exclude</a> key.</p>
 
-<h2 id="elastic-teams">Elastic Teams</h2>
-
-<p>Elastic teams have dynamic membership, i.e. the members will remain in the team as long as they have any activity in the configured capabilities in the last 6 months.</p>
-
-<p>For new users who do not have any activity in the configured capabilities, but would like to be a member of an elastic team, they can request access by creating an <a href="https://github.com/Flutter-Global/org-config/issues/new?template=access-request-template.yml&amp;title=%5BAccess+Request%5D%3A+">issue</a> in <a href="https://github.com/Flutter-Global/org-config">org-config</a> using the <a href="https://github.com/Flutter-Global/org-config/issues/new/choose">issue template</a> provided. The requested access will be valid for 6 months. After that, the user will only remain in the team if they meet the conditions detailed above.</p>
-
-<p><strong>Note:</strong> The current version of elastic teams allow any member of the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team to be a memberm of the team as long as they requested access or have any type of activity in the last 6 months in the configured capabilities.</p>
-
-<h3 id="name">Name</h3>
+<h3 id="team-name">Team Name</h3>
 
 <p>The team slug comes from your filename: <code class="language-plaintext highlighter-rouge">teams/&lt;your-team-slug&gt;.yml</code>. The team name is the same as the slug to avoid a common area of confusion between these fields when they’re different.</p>
 
@@ -614,7 +616,9 @@
 
 <p>These 2 YAML files in the team directory define the <code class="language-plaintext highlighter-rouge">contributors-cap-git-flutter</code> and <code class="language-plaintext highlighter-rouge">service-accounts</code> teams respectively.</p>
 
-<h3 id="owners">Owners</h3>
+<h3 id="configuration-keys">Configuration Keys</h3>
+
+<h4 id="owners"><code class="language-plaintext highlighter-rouge">owners</code></h4>
 
 <p>The <code class="language-plaintext highlighter-rouge">owners</code> key specifies the owners of your team. The owners are responsible for approving any changes to the team’s config file through a PR in <a href="https://github.com/Flutter-Global/org-config">org-config</a>. You can specify owners by GitHub username or use the members of another team.</p>
 
@@ -640,7 +644,7 @@
     <span class="pi">-</span> <span class="s">username-2</span>
 </code></pre></div></div>
 
-<h3 id="members">Members</h3>
+<h4 id="members"><code class="language-plaintext highlighter-rouge">members</code></h4>
 
 <p>The <code class="language-plaintext highlighter-rouge">members</code> key specifies the members of your team.</p>
 
@@ -651,7 +655,21 @@
 
 <p>If you specify another team as a member, all changes in membership of that team propagate to your team. Cyclic dependencies aren’t permitted.</p>
 
-<p><strong>This key is currently not allowed in elastic teams. Use it only to configure fixed teams.</strong></p>
+<!-- This component displays a basic warning message. -->
+<div class="border-l-4 border-yellow-400 bg-yellow-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <p class="text-sm text-yellow-700">
+                The <span class="font-mono font-bold bg-yellow-50">members</span> key is currently not allowed in elastic teams. Use it only to configure fixed teams.
+            </p>
+        </div>
+    </div>
+</div>
 
 <p><strong>Examples:</strong></p>
 
@@ -673,67 +691,7 @@
     <span class="pi">-</span> <span class="s">maintainers-cap-git-flutter</span>
 </code></pre></div></div>
 
-<h3 id="request-access">Request Access</h3>
-
-<p>The <code class="language-plaintext highlighter-rouge">requested-access</code> key specifies the members who have requested access to an elastic team.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">requested-access.[].user</code> specifies the GitHub username to add to the team</li>
-  <li><code class="language-plaintext highlighter-rouge">requested-access.[].request-date</code> specifies the date the access request was made</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-
-<p>This team has 2 members who’ve requested access:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requested-access</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">user</span><span class="pi">:</span> <span class="s">username-3</span>
-    <span class="na">date</span><span class="pi">:</span> <span class="s">2024-05-17</span>
-  <span class="pi">-</span> <span class="na">user</span><span class="pi">:</span> <span class="s">username-4</span>
-    <span class="na">date</span><span class="pi">:</span> <span class="s">2023-05-17</span>
-</code></pre></div></div>
-
-<p>The access request for the user <code class="language-plaintext highlighter-rouge">username-4</code> is older than 6 months ago and thus, the user is only expected to be a member of the team if they have any activity in the configured capabilities.</p>
-
-<h3 id="activity">Activity</h3>
-
-<p>The <code class="language-plaintext highlighter-rouge">only-if-active</code> key specifies the the activity conditions for an elastic team. Currently, elastic teams only support capability and a fixed time window of 6 months.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">only-if-active.capabilities</code> specifies the capabilities the user needs to have activity on in the last 6 months to remain in the team</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">only-if-active</span><span class="pi">:</span>
-  <span class="na">capabilities</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">capability-1</span>
-    <span class="pi">-</span> <span class="s">capability-2</span>
-</code></pre></div></div>
-
-<p>Any member of the <strong>Flutter-Global</strong> GitHub org who has activity in <code class="language-plaintext highlighter-rouge">capability-1</code> or in <code class="language-plaintext highlighter-rouge">capability-2</code> will be a member of this example elastic team.</p>
-
-<h3 id="exclusions">Exclusions</h3>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">exclude</code> key to exclude any specific users or teams.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">exclude.users</code> specifies individual GitHub usernames to exclude.</li>
-  <li><code class="language-plaintext highlighter-rouge">exclude.teams</code> specifies team(s) to exclude.</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-
-<p>This example excludes any service accounts from the <code class="language-plaintext highlighter-rouge">service-accounts</code> team from being a member of the team:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">owners</span><span class="pi">:</span>
-  <span class="na">teams</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">service-accounts</span>
-</code></pre></div></div>
-
-<h2 id="examples">Examples</h2>
-
-<h3 id="fixed-team">Fixed team</h3>
+<h3 id="example">Example</h3>
 
 <p>Let’s consider a contributor team for the <code class="language-plaintext highlighter-rouge">codebases/git-flutter</code> capability supporting a requested contribution <a href="/docs/access-control/#access-models">access model</a>.</p>
 
@@ -769,7 +727,133 @@
   <li>You can use the description and comments to capture access review meta-data for audit.</li>
 </ul>
 
-<h3 id="elastic-team">Elastic team</h3>
+<h2 id="elastic-teams">Elastic Teams</h2>
+
+<p>Elastic teams have dynamic membership, i.e. the members will remain in the team as long as they have any activity in the configured capabilities in the last 6 months.</p>
+
+<p>For new users who do not have any activity in the configured capabilities, but would like to be a member of an elastic team, they can request access by creating an <a href="https://github.com/Flutter-Global/org-config/issues/new?template=access-request-template.yml&amp;title=%5BAccess+Request%5D%3A+">issue</a> in <a href="https://github.com/Flutter-Global/org-config">org-config</a> using the <a href="https://github.com/Flutter-Global/org-config/issues/new/choose">issue template</a> provided. The requested access will be valid for 6 months. After that, the user will only remain in the team if they meet the conditions detailed above.</p>
+
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>The current version of elastic teams allow any member of the <span class="font-mono font-bold text-blue-700">all-flutter-global</span> team to be a member of the team as long as they requested access or have any type of activity in the last 6 months in the configured capabilities.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 id="configuration-keys-1">Configuration Keys</h3>
+
+<h4 id="owners-1"><code class="language-plaintext highlighter-rouge">owners</code></h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">owners</code> key specifies the owners of your team. The owners are responsible for approving any changes to the team’s config file through a PR in <a href="https://github.com/Flutter-Global/org-config">org-config</a>. You can specify owners by GitHub username or use the members of another team.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">owners.users</code> specifies individual GitHub usernames to act as owners.</li>
+  <li><code class="language-plaintext highlighter-rouge">owners.teams</code> specifies team(s) to act as owners.</li>
+</ul>
+
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
+            <div class="mt-2 text-sm text-blue-700">
+                <p><p>Owners are not automatically added as members of the team. To include the owners as part of the team, you need to list them under the <code>members</code> key.</p>
+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><strong>Examples:</strong></p>
+
+<p>Typically, capability maintainers own a team:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">owners</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">maintainers-cap-git-flutter</span>
+</code></pre></div></div>
+
+<p>Or specific individuals own the team:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">owners</span><span class="pi">:</span>
+  <span class="na">users</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">username-1</span>
+    <span class="pi">-</span> <span class="s">username-2</span>
+</code></pre></div></div>
+
+<h4 id="requested-access"><code class="language-plaintext highlighter-rouge">requested-access</code></h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">requested-access</code> key specifies the members who have requested access to an elastic team.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">requested-access.[].user</code> specifies the GitHub username to add to the team</li>
+  <li><code class="language-plaintext highlighter-rouge">requested-access.[].request-date</code> specifies the date the access request was made</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<p>This team has 2 members who’ve requested access:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requested-access</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">user</span><span class="pi">:</span> <span class="s">username-3</span>
+    <span class="na">date</span><span class="pi">:</span> <span class="s">2024-05-17</span>
+  <span class="pi">-</span> <span class="na">user</span><span class="pi">:</span> <span class="s">username-4</span>
+    <span class="na">date</span><span class="pi">:</span> <span class="s">2023-05-17</span>
+</code></pre></div></div>
+
+<p>The access request for the user <code class="language-plaintext highlighter-rouge">username-4</code> is older than 6 months ago and thus, the user is only expected to be a member of the team if they have any activity in the configured capabilities.</p>
+
+<h4 id="only-if-active"><code class="language-plaintext highlighter-rouge">only-if-active</code></h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">only-if-active</code> key specifies the the activity conditions for an elastic team. Currently, elastic teams only support capability and a fixed time window of 6 months.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">only-if-active.capabilities</code> specifies the capabilities the user needs to have activity on in the last 6 months to remain in the team</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">only-if-active</span><span class="pi">:</span>
+  <span class="na">capabilities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">capability-1</span>
+    <span class="pi">-</span> <span class="s">capability-2</span>
+</code></pre></div></div>
+
+<p>Any member of the <strong>Flutter-Global</strong> GitHub org who has activity in <code class="language-plaintext highlighter-rouge">capability-1</code> or in <code class="language-plaintext highlighter-rouge">capability-2</code> will be a member of this example elastic team.</p>
+
+<h4 id="exclude"><code class="language-plaintext highlighter-rouge">exclude</code></h4>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">exclude</code> key to exclude any specific users or teams.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">exclude.users</code> specifies individual GitHub usernames to exclude.</li>
+  <li><code class="language-plaintext highlighter-rouge">exclude.teams</code> specifies team(s) to exclude.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<p>This example excludes any service accounts from the <code class="language-plaintext highlighter-rouge">service-accounts</code> team from being a member of the team:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">owners</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">service-accounts</span>
+</code></pre></div></div>
+
+<h3 id="example-1">Example</h3>
 
 <p>Let’s consider a contributor team for the <code class="language-plaintext highlighter-rouge">codebases/git-flutter</code> capability supporting a requested contribution <a href="/docs/access-control/#access-models">access model</a>, but any members who haven’t requested access and are inactive in the capability for the last 6 months should be removed from the team.</p>
 
@@ -807,6 +891,27 @@
   <li>You can use the description and comments to capture access review meta-data for audit.</li>
 </ul>
 
+<!-- This component displays an informational alert with an optional link. -->
+<div class="rounded-md bg-blue-50 p-4 not-prose">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="ml-3 flex-1 flex items-center justify-between">
+            <p class="text-sm text-blue-700">Follow the link for a step-by-step guide on managing teams</p>
+            
+            <p class="text-sm md:ml-6">
+                <a href="/docs/guides/managing-teams/" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                    Details
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 
           <!-- ARTICLE NAVIGATION -->
@@ -824,7 +929,7 @@
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#fixed-teams" class="hover:text-secondary">Fixed Teams</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#elastic-teams" class="hover:text-secondary">Elastic Teams</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#name" class="hover:text-secondary">Name</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#owners" class="hover:text-secondary">Owners</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#members" class="hover:text-secondary">Members</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#request-access" class="hover:text-secondary">Request Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#activity" class="hover:text-secondary">Activity</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#exclusions" class="hover:text-secondary">Exclusions</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#fixed-team" class="hover:text-secondary">Fixed team</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#elastic-team" class="hover:text-secondary">Elastic team</a></li></ul class="pt-1 list-none"></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#fixed-teams" class="hover:text-secondary">Fixed Teams</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#team-name" class="hover:text-secondary">Team Name</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#configuration-keys" class="hover:text-secondary">Configuration Keys</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example" class="hover:text-secondary">Example</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#elastic-teams" class="hover:text-secondary">Elastic Teams</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#configuration-keys-1" class="hover:text-secondary">Configuration Keys</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#example-1" class="hover:text-secondary">Example</a></li></ul class="pt-1 list-none"></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -1009,6 +1114,16 @@
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
           <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
           >
         </li>
         

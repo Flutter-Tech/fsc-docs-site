@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>GitHub Apps configuration | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" 
+        title="Flutter Inner Source Blog" 
+        href="https://innersource.flutter.com/feed.xml" />
+  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+
+<body class="theme-purple">
+
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+  <div>
+    <div class="grid min-h-screen grid-cols-12">
+      <!-- V MENU -->
+      <div class="relative hidden bg-gray-50 lg:block lg:col-span-2">
+        <div class="sticky top-24">
+          <div class="max-h-screen">
+            <div class="pt-8 pb-10 pl-6 pr-6 overflow-y-auto max-h-screen">
+              
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/start/" title="Go to Get Started" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Get Started</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Create a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintain a Repo</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Codebase Governor</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/capability-defaults/" title="Go to Capability Defaults" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Defaults</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Config</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams-cbg/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/git-flutter/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/access-control/" title="Go to Access Control" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Access Control</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-access/" title="Go to Service Accounts" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Service Accounts</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/open-contribution/" title="Go to Open Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Open Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-contribution/" title="Go to Requested Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-access/" title="Go to Requested Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Access</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/branching/" title="Go to Branching Strategy" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Branching Strategy</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Audited Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Reviewed Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Multiple Team Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/branching-examples/" title="Go to Examples" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Examples</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/setup/" title="Go to Setup" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Setup</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branching Model</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/cli/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/actions/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">GitHub Actions</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/secrets/" title="Go to Using Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using Secrets</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Slack with GitHub</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/releasing/" title="Go to Release Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Release Patterns</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/semver/" title="Go to Semantic Versioning" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Semantic Versioning</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Component Tests</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+</ul>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- V MENU -->
+      <!-- MAIN AREA -->
+      <main class="relative block col-span-12 overflow-auto lg:px-8 lg:pb-10 lg:col-span-8">
+        <div class="max-w-full px-8 pb-12 prose lg:px-8 md:prose-base lg:prose-base xs:prose-sm content">
+          <!-- TITLE -->
+          
+          
+<div class="mb-12 -ml-8 -mr-8 md:-ml-16 md:-mr-16 not-prose">
+  <div class="bg-gray-200 fit-content">
+    <div class="grid grid-cols-2">
+      <div class="flex p-0 py-6 lg:text-left md:py-11 md:px-16">
+        <div class="px-8 md:px-0">
+          <!-- BREADCRUMBS -->
+          
+          <!-- BREADCRUMBS -->
+          <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
+            GitHub Apps configuration
+          </h1>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">Codebase governor lets you define GitHub Apps configuration in a YAML file.</p>
+        </div>
+      </div>
+      
+
+<div class="relative"
+  style="background-color: transparent; background-repeat: repeat; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%239063cd' fill-opacity='0.6  '%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);">
+</div>
+
+    </div>
+  </div>
+</div>
+
+          
+
+          <!-- PUBLIC DOCS NOTE -->
+          
+            <div class="mb-8 p-4 rounded-lg border border-purple-400 bg-purple-300 text-purple-900">
+              This public content is an excerpt from Flutter staff GitHub docs. It is published
+              as a reference to show how GitHub is used for inner source at Flutter.
+            </div>
+          
+
+          <!-- CONTENT -->
+          <p>This page explains the format of the <a href="/docs/github-apps-guidelines.md">Codebase Governor GitHub App</a> configuration file. <strong>All fields are mandatory unless otherwise specified.</strong></p>
+
+<p>The file uses <em>YAML</em> syntax, and must have a <code class="language-plaintext highlighter-rouge">.yml</code> file extension. The filename must match the GitHub App name as a slug. i.e.: <code class="language-plaintext highlighter-rouge">My GitHub App</code> -&gt; <code class="language-plaintext highlighter-rouge">my-github-app.yml</code>.</p>
+
+<p>If you’re new to <em>YAML</em> and want to learn more, see “<a href="https://learnxinyminutes.com/docs/yaml/">Learn YAML in Y minutes</a>”.</p>
+
+<h2 id="owners"><code class="language-plaintext highlighter-rouge">owners</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">owners</code> key specifies the owner of a GitHub App. It supports two sub-keys:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">users</code>: An array of GitHub usernames who are the owners of the GitHub App.</li>
+  <li><code class="language-plaintext highlighter-rouge">teams</code>: An array of GitHub team names that own the GitHub App.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">owners</span><span class="pi">:</span>
+  <span class="na">users</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">crisostomon"</span><span class="pi">]</span> <span class="c1"># List of GitHub usernames of the GitHub App owners (string array)</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">maintainers-cap-codebase-governor"</span><span class="pi">]</span> <span class="c1"># List of GitHub team names that own the GitHub App (string array)</span>
+</code></pre></div></div>
+
+<h2 id="description"><code class="language-plaintext highlighter-rouge">description</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">description</code> key contains a brief description of the GitHub App. It should be a single sentence or a few short sentences, but not more than one paragraph (i.e., it shouldn’t contain line breaks).</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Allows</span><span class="nv"> </span><span class="s">read-only</span><span class="nv"> </span><span class="s">cross-repo</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">GitHub</span><span class="nv"> </span><span class="s">Action</span><span class="nv"> </span><span class="s">workflows"</span> <span class="c1"># Brief description of the GitHub App (string)</span>
+</code></pre></div></div>
+
+<h2 id="contacts"><code class="language-plaintext highlighter-rouge">contacts</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">contacts</code> key provides contact information for the GitHub App. It has two sub-keys:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">slack</code>: An array of Slack channel names where users can reach out for inquiries about the GitHub App.</li>
+  <li><code class="language-plaintext highlighter-rouge">email</code>: An array of email addresses for contacting the GitHub App owners team.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contacts</span><span class="pi">:</span>
+  <span class="na">slack</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">inner-source"</span><span class="pi">]</span> <span class="c1"># List of Slack channel names for contact (string array)</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">AlphaOpsTeam@flutter.com"</span><span class="pi">]</span> <span class="c1"># Email addresses for contact (string array)</span>
+</code></pre></div></div>
+
+<h2 id="url"><code class="language-plaintext highlighter-rouge">url</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">url</code> key specifies the URL of the pull request in the <code class="language-plaintext highlighter-rouge">org-config</code> repository where the GitHub App configuration file was submitted for review. This allows for easy reference to the original request and any related discussions or approvals.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/Flutter-Global/org-config/pull/123456"</span> <span class="c1"># URL of the GitHub App configuration file pull request (string)</span>
+</code></pre></div></div>
+
+<h2 id="source"><code class="language-plaintext highlighter-rouge">source</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">source</code> key indicates the origin of the GitHub App.</p>
+
+<p>Available values:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Flutter-Global</code>: The app is developed and maintained internally.</li>
+  <li><code class="language-plaintext highlighter-rouge">marketplace</code>: The app is sourced from the GitHub Marketplace.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">source</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Flutter-Global"</span> <span class="c1"># Source of the GitHub App, either Flutter-Global or marketplace (string)</span>
+</code></pre></div></div>
+
+<h2 id="permissions"><code class="language-plaintext highlighter-rouge">permissions</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">permissions</code> key defines the access levels the GitHub App requires for various resources. There are four main categories of permissions:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">repository</code>: The permissions the app requires for accessing repository content, including code, issues, pull requests, and more.</li>
+  <li><code class="language-plaintext highlighter-rouge">organization</code>: The permissions the app requires for accessing organization-level resources, such as teams and members.</li>
+  <li><code class="language-plaintext highlighter-rouge">user</code>: The permissions the app requires for accessing user-specific resources, such as profile information and repositories.</li>
+  <li><code class="language-plaintext highlighter-rouge">business</code>: The permissions the app requires for accessing business-specific resources, such as billing and usage data.</li>
+</ul>
+
+<h3 id="permissionsrepository"><code class="language-plaintext highlighter-rouge">permissions.repository</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">permissions.repository</code> key specifies the access levels the GitHub App requires for various repository resources.<br />
+Each resource can have only one of the following access levels: <code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>, or (where noted) <code class="language-plaintext highlighter-rouge">admin</code>.</p>
+
+<h4 id="available-repository-permissions">Available Repository Permissions</h4>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">actions</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read or write GitHub Actions workflows and related data.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">actions_variables</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and modify GitHub Actions variables in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">administration</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repository settings, including collaborators, teams, and webhooks.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">attestations</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write supply chain attestations for repositories.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">checks</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write check runs and check suites.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">codespaces</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to manage Codespaces and their settings.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">codespaces_lifecycle_admin</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to manage the lifecycle of Codespaces, including creation and deletion.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">codespaces_metadata</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write metadata for Codespaces.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">codespaces_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Codespaces secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">contents</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write repository code, including files, branches, and tags.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">dependabot_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Dependabot secrets for a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">deployments</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage deployment statuses and deployment environments.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">discussions</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage GitHub Discussions posts, comments, and categories.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">environments</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repository environments, including environment secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">issues</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage issues, including creating, editing, and closing issues.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">merge_queues</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage merge queues for pull requests.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">metadata</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to access repository metadata, such as repository name, description, and topics.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">packages</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage GitHub Packages published to a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">pages</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage GitHub Pages sites and settings.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">pull_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage pull requests, including creating, updating, and merging.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">repo_secret_scanning_dismissal_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage requests to dismiss secret scanning alerts in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">repository_advisories</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage security advisories for a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">repository_custom_properties</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom properties for a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">repository_hooks</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repository webhooks.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">repository_projects</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>, <code class="language-plaintext highlighter-rouge">admin</code>)<br />
+Allows the app to read, manage, and administer repository projects (classic).</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">secret_scanning_alerts</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage secret scanning alerts in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">secret_scanning_bypass_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage requests to bypass secret scanning in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repository secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">security_events</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage security events in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">single_file</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write a single file in a repository.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">statuses</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and write commit statuses.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">vulnerability_alerts</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Dependabot alerts for vulnerable dependencies.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">workflows</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage GitHub Actions workflows.</p>
+  </li>
+</ul>
+
+<h3 id="permissionsorganization"><code class="language-plaintext highlighter-rouge">permissions.organization</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">permissions.organization</code> key specifies the access levels the GitHub App requires for various organization resources.<br />
+Each resource can have only one of the following access levels: <code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>,or (where noted) <code class="language-plaintext highlighter-rouge">admin</code>.</p>
+
+<h4 id="available-organization-permissions">Available Organization Permissions</h4>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">issue_fields</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom fields for issues in the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">issue_types</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom issue types in the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">members</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization members.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_api_insights</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to access API insights for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_actions_variables</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization-level GitHub Actions variables.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_administration</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization settings.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_announcement_banners</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage announcement banners for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_campaigns</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization campaigns.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_code_scanning_dismissal_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage code scanning dismissal requests at the organization level.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_codespaces</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to manage Codespaces for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_codespaces_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization-level Codespaces secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_codespaces_settings</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Codespaces settings for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_copilot_seat_management</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to manage GitHub Copilot seat assignments for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_custom_org_roles</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom organization roles.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_custom_properties</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>, <code class="language-plaintext highlighter-rouge">admin</code>)<br />
+Allows the app to read, manage, and administer custom properties for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_custom_roles</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom roles for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_dependabot_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization-level Dependabot secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_events</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization events.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_hooks</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization webhooks.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_knowledge_bases</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage knowledge bases for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_models</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage models for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_network_configurations</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage network configurations for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_personal_access_token_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage personal access token requests for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_personal_access_tokens</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage personal access tokens for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_plan</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage the organization’s plan and billing information.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_private_registries</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage private registries for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_projects</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>, <code class="language-plaintext highlighter-rouge">admin</code>)<br />
+Allows the app to read, manage, and administer organization projects (classic).</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_secret_scanning_bypass_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage requests to bypass secret scanning at the organization level.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_self_hosted_runners</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage self-hosted runners for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">organization_user_blocking</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage user blocking for the organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">secret_scanning_dismissal_requests</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage secret scanning dismissal requests at the organization level.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">team_discussions</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage team discussions.</p>
+  </li>
+</ul>
+
+<h3 id="permissionsuser"><code class="language-plaintext highlighter-rouge">permissions.user</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">permissions.user</code> key specifies the access levels the GitHub App requires for various user resources.
+Each resource can have one of the following access levels: <code class="language-plaintext highlighter-rouge">read</code> or <code class="language-plaintext highlighter-rouge">write</code>.</p>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">blocking</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage users blocked by the authenticated user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">codespaces_user_secrets</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Codespaces user secrets.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">copilot_editor_context</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Copilot editor context for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">copilot_messages</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Copilot messages for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">emails</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage email addresses for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">followers</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage followers for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">gpg_keys</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage GPG keys for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">gists</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage gists for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">git_signing_ssh_public_keys</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage Git signing SSH public keys for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">interaction_limits</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage interaction limits for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">keys</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage SSH keys for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">knowledge_bases</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage knowledge bases for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">plan</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage the user’s plan and billing information.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">profile</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage the user’s profile.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">starring</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repositories starred by the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">user_events</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage user events.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">user_models</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage models for the user.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">watching</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repositories watched by the user.</p>
+  </li>
+</ul>
+
+<h3 id="permissionsbusiness"><code class="language-plaintext highlighter-rouge">permissions.business</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">permissions.business</code> key specifies the access levels the GitHub App requires for various business resources.<br />
+Each resource can have only one of the following access levels: <code class="language-plaintext highlighter-rouge">read</code> or <code class="language-plaintext highlighter-rouge">write</code>.</p>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_custom_properties</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage custom properties for the enterprise.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_organization_installation_repositories</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage repositories installed for the enterprise organization.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_organization_installations</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organization installations for the enterprise.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_organizations</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage organizations within the enterprise.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_people</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage people within the enterprise.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">enterprise_sso</code></strong> (<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>)<br />
+Allows the app to read and manage single sign-on (SSO) settings for the enterprise.</p>
+  </li>
+</ul>
+
+<h4 id="all-permission-types-example">All permission types example</h4>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permissions</span><span class="pi">:</span>
+  <span class="na">repository</span><span class="pi">:</span>
+    <span class="na">actions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">actions_variables</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">administration</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">attestations</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">checks</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">codespaces</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">codespaces_lifecycle_admin</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">codespaces_metadata</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">codespaces_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">contents</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">dependabot_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">deployments</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">discussions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">environments</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">issues</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">merge_queues</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">metadata</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">packages</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">pages</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">pull_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">repo_secret_scanning_dismissal_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">repository_advisories</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">repository_custom_properties</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">repository_hooks</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">repository_projects</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write|admin&gt;"</span>
+    <span class="na">secret_scanning_alerts</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">secret_scanning_bypass_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">security_events</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">single_file</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">statuses</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">vulnerability_alerts</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">workflows</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+  <span class="na">organization</span><span class="pi">:</span>
+    <span class="na">issue_fields</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">issue_types</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">members</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_api_insights</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_actions_variables</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_administration</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_announcement_banners</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_campaigns</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_code_scanning_dismissal_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_codespaces</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_codespaces_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_codespaces_settings</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_copilot_seat_management</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_custom_org_roles</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_custom_properties</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write|admin&gt;"</span>
+    <span class="na">organization_custom_roles</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_dependabot_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_events</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_hooks</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_knowledge_bases</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_models</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_network_configurations</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_personal_access_token_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_personal_access_tokens</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_plan</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_private_registries</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_projects</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write|admin&gt;"</span>
+    <span class="na">organization_secret_scanning_bypass_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_self_hosted_runners</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">organization_user_blocking</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">secret_scanning_dismissal_requests</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">team_discussions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+  <span class="na">user</span><span class="pi">:</span>
+    <span class="na">blocking</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">codespaces_user_secrets</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">copilot_editor_context</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">copilot_messages</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">emails</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">followers</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">gpg_keys</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">gists</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">git_signing_ssh_public_keys</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">interaction_limits</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">keys</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">knowledge_bases</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">plan</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">profile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">starring</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">user_events</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">user_models</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">watching</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+  <span class="na">business</span><span class="pi">:</span>
+    <span class="na">enterprise_custom_properties</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">enterprise_organization_installation_repositories</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">enterprise_organization_installations</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">enterprise_organizations</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">enterprise_people</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+    <span class="na">enterprise_sso</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;read|write&gt;"</span>
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<p>Real GitHub App configuration examples can be viewed in the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository inside the <a href="https://github.com/Flutter-Global/org-config/tree/main/apps"><code class="language-plaintext highlighter-rouge">/apps</code></a> directory.</p>
+
+
+
+          <!-- ARTICLE NAVIGATION -->
+          
+        </div>
+      </main>
+      <!-- MAIN AREA -->
+      <!-- SIDEBAR -->
+      <aside class="relative hidden border-l border-[#e5e7eb] lg:col-span-2 lg:block">
+        <!-- Start secondary column (hidden on smaller screens) -->
+        <div class="sticky px-4 py-8 sm:px-6 lg:px-8 top-24">
+          
+          
+          
+          <div class="pb-6 text-md h-screen">
+            <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
+            <div class="toc overflow-y-auto h-full pb-48">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owners" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owners</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contacts" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">contacts</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#url" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">url</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#source" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">source</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissions" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsrepository" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.repository</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsorganization" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.organization</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsuser" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.user</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsbusiness" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.business</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
+            </div>
+          </div>
+          
+          
+        </div>
+      </aside>
+      <!-- SIDEBAR -->
+    </div>
+  </div>
+  
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/start/" title="Go to Get Started" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Get Started</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Create a Repo</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintain a Repo</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Codebase Governor</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/capability-defaults/" title="Go to Capability Defaults" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Defaults</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Config</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams-cbg/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/patterns/" title="Go to How do I ...?" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > How do I ...?</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/git-flutter/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-6 border-t-[1px] border-secondary mt-6 nav-parent"><div class="relative">
+          <a href="/docs/access-control/" title="Go to Access Control" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Access Control</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/automated-access/" title="Go to Service Accounts" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Service Accounts</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/teams/" title="Go to Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Teams</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/open-contribution/" title="Go to Open Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Open Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-contribution/" title="Go to Requested Contribution" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Contribution</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/requested-access/" title="Go to Requested Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Requested Access</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/branching/" title="Go to Branching Strategy" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Branching Strategy</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Audited Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Reviewed Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Multiple Team Source</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/branching-examples/" title="Go to Examples" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Examples</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/setup/" title="Go to Setup" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Setup</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branching Model</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/multiple-teams/cli/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/actions/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">GitHub Actions</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/secrets/" title="Go to Using Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using Secrets</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Slack with GitHub</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
+          <a href="/docs/releasing/" title="Go to Release Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Release Patterns</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/semver/" title="Go to Semantic Versioning" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Semantic Versioning</a
+          >
+        </li>
+        
+  
+      
+      
+      
+        <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
+          <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Component Tests</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </div></li>
+        
+  
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <footer class="bg-gray-200 drop-shadow-2xl z-50 bottom-0">
+  <div class="max-h-50 mx-auto max-w-7xl overflow-hidden py-0 sm:py-12 lg:px-8">
+    
+
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/how/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Inner source</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/docs/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docs</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/blog/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+            </div>
+          
+        
+      
+      <div class="pb-6">
+        <a href="/community/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Support</a>
+      </div>
+    </nav>
+    <p class="mt-6 text-center text-xs leading-5 text-gray-500">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Flutter Entertainment plc</p>
+  </div>
+</footer>
+
+  
+  <button
+  id="back-to-top"
+  class="hidden fixed bottom-5 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-secondary text-white rounded cursor-pointer"
+>
+▲ Back to Top
+</button>
+
+  
+</body>
+
+</html>

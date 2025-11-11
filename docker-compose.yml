@@ -1,0 +1,15 @@
+services:
+  jekyll:
+    build: .
+    command: sh -c "bundle install && BUILD_TARGET=internal npm run dev"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/_site
+      - /app/.jekyll-cache
+    ports:
+      - 4000:4000
+      - 35729:35729  # LiveReload port
+    environment:
+      - JEKYLL_ENV=development
+      - POLLING=true
