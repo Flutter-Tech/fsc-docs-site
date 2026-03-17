@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Request repository admin access | Flutter Inner Source</title>
+  <title>GitHub Organisation Secret | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="alternate" type="application/rss+xml" 
@@ -556,9 +556,9 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Request repository admin access
+            GitHub Organisation Secret
           </h1>
-          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">Learn how to request repository admin access</p>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">Guidelines on how to request a GitHub Organisation Secret</p>
         </div>
       </div>
       
@@ -582,32 +582,38 @@
           
 
           <!-- CONTENT -->
-          <p><strong>On‑demand admin</strong> means you request and get repository admin privileges for a short period just when you need them, and you don’t have them all the time.</p>
+          
 
-<p>Repository admins are instead granted a new custom <code class="language-plaintext highlighter-rouge">admin-on-demand</code> role. This is the same privilege as <code class="language-plaintext highlighter-rouge">write</code> plus the permission to push through branch protections if you currently allow that (using the <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code> key). To perform any other repo admin actions you’ll request full admin access by raising a GitHub issue in <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a>. This request immediately grants full admin access for 3 hours, and then reverts your permission back to <code class="language-plaintext highlighter-rouge">admin-on-demand</code>.</p>
-
-<div class="rounded-md bg-blue-50 p-4 not-prose">
-    <div class="flex">
-        <div class="flex-shrink-0">
-            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
-            </svg>
-        </div>
-        <div class="ml-3">
-            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
-            <div class="mt-2 text-sm text-blue-700">
-                <p><p>Only users or teams with the roles of owner, maintainer, trusted committer, or admin can request <code class="language-plaintext highlighter-rouge">admin</code> access.</p>
-</p>
-            </div>
-        </div>
-    </div>
+<div
+  class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
+>
+  <span class="mr-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      />
+    </svg>
+  </span>
+  This content is restricted to members of the Flutter inner source community. You are currently browsing our public site so this
+  information is not available to you.
 </div>
 
-<h2 id="requesting-admin-access">Requesting Admin Access</h2>
-
-<p>To request temporary admin access, raise a temporary admin <a href="https://github.com/Flutter-Global/org-config/issues/new?template=temp-admin-request.yml">access request</a> in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repo. This doesn’t require approval and applies immediately if you’re permitted this access. Your admin permission is removed after 3 hours or when you close the request.</p>
-
-<p><img src="/assets-private/blog/on-demand-admin/temp-admin-request.png" class="max-w-lg mx-auto" /></p>
+<ul>
+  <li>If you are a Flutter staff member you can request access via your divisional service desk (e.g. search JIRA service desk 
+      or your local confluence for "GitHub").</li>
+  <li>If you are already part of the community you can switch to the internal site at
+      <a href=https://developers.flutter.com/docs/org-secret-guidelines/>developers.flutter.com</a>.</li>
+  <li>If you're not yet part of Flutter, <a href=https://www.flutter.com/careers>we're likely hiring somewhere near you</a>.</li>
+</ul>
 
 
 
@@ -626,7 +632,7 @@
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#requesting-admin-access" class="hover:text-secondary">Requesting Admin Access</a></li></ul class="pt-1 list-none">
+            
             </div>
           </div>
           

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Request repository admin access | Flutter Inner Source</title>
+  <title>Create a new GitHub Organisation Secret | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="alternate" type="application/rss+xml" 
@@ -556,9 +556,9 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Request repository admin access
+            Create a new GitHub Organisation Secret
           </h1>
-          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">Learn how to request repository admin access</p>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">Step-by-step guide to creating a new GitHub Organisation Secret</p>
         </div>
       </div>
       
@@ -582,33 +582,81 @@
           
 
           <!-- CONTENT -->
-          <p><strong>On‑demand admin</strong> means you request and get repository admin privileges for a short period just when you need them, and you don’t have them all the time.</p>
+          <p>This guide walks you through the process of requesting a new GitHub Organisation Secret for the Flutter-Global organisation. You will prepare and submit a configuration file via a Pull Request (PR) to the org-config repository.</p>
 
-<p>Repository admins are instead granted a new custom <code class="language-plaintext highlighter-rouge">admin-on-demand</code> role. This is the same privilege as <code class="language-plaintext highlighter-rouge">write</code> plus the permission to push through branch protections if you currently allow that (using the <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code> key). To perform any other repo admin actions you’ll request full admin access by raising a GitHub issue in <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a>. This request immediately grants full admin access for 3 hours, and then reverts your permission back to <code class="language-plaintext highlighter-rouge">admin-on-demand</code>.</p>
+<p><strong>Please note:</strong> Even though submitting a PR with your configuration creates your secret automatically, you will need to provide a member of the Inner Source team to populate the secret with the value you intend. This process must be done through a direct message on slack and using secure means of delivery (for example PrivateBin). This ensures that the secret will not be leaked and meet our security, compliance, and operational standards.</p>
 
-<div class="rounded-md bg-blue-50 p-4 not-prose">
-    <div class="flex">
-        <div class="flex-shrink-0">
-            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
-            </svg>
-        </div>
-        <div class="ml-3">
-            <div class="no-copy text-sm font-medium text-blue-800">Note</div>
-            <div class="mt-2 text-sm text-blue-700">
-                <p><p>Only users or teams with the roles of owner, maintainer, trusted committer, or admin can request <code class="language-plaintext highlighter-rouge">admin</code> access.</p>
-</p>
-            </div>
-        </div>
-    </div>
-</div>
+<p>Follow the steps below to prepare your request and understand what to expect during the review and creation process.</p>
 
-<h2 id="requesting-admin-access">Requesting Admin Access</h2>
+<h2 id="before-you-start">Before you start</h2>
 
-<p>To request temporary admin access, raise a temporary admin <a href="https://github.com/Flutter-Global/org-config/issues/new?template=temp-admin-request.yml">access request</a> in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repo. This doesn’t require approval and applies immediately if you’re permitted this access. Your admin permission is removed after 3 hours or when you close the request.</p>
+<p>Make sure you:</p>
 
-<p><img src="/assets-private/blog/on-demand-admin/temp-admin-request.png" class="max-w-lg mx-auto" /></p>
+<ul>
+  <li><strong>Understand the Codebase Governor Basics:</strong> Familiarize yourself with the <a href="/docs/cbg/">Basic Concepts and Rules</a> of Codebase Governor.</li>
+  <li><strong>Know the Guidelines:</strong> Review the <a href="/docs/org-secret-guidelines/">GitHub Organisation Secrets Guidelines</a> to understand the policies and requirements for creating and managing Organisation Secrets within the Flutter-Global organisation.</li>
+  <li><strong>Learn the Configuration Format:</strong> Understand the <a href="/docs/org-secret-configuration/">GitHub Organisation Secret Codebase Governor Configuration</a> format to correctly define your secret’s settings.</li>
+  <li><strong>Understand Organisation Secrets:</strong> Review the <a href="https://docs.github.com/en/actions/concepts/security/secrets#organization-level-secrets">GitHub Organisation Secrets documentation</a> to understand their features and capabilities.</li>
+  <li>Have <strong>Repository Access:</strong> Make sure you have access to the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repository.</li>
+  <li><strong>Know YAML:</strong> Have a basic understanding of YAML syntax. You can learn more from <a href="https://www.redhat.com/en/blog/yaml-beginners">this article</a>.</li>
+</ul>
 
+<h2 id="process-to-start">Process to Start</h2>
+
+<p>To start the process of creating a GitHub Organisation Secret, you need to submit a request through a Pull Request in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repository.</p>
+
+<p>Follow the steps below to complete your request.</p>
+
+<h3 id="1-create-the-github-organisation-secret-configuration-file">1. Create the GitHub Organisation Secret configuration file</h3>
+
+<p>Follow these steps to create the configuration file for your GitHub Organisation Secret in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repository:</p>
+
+<ol>
+  <li><strong>Create a New Branch</strong>: Start by creating a new branch in the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repository.</li>
+  <li><strong>Add a Configuration File</strong>: In the <code class="language-plaintext highlighter-rouge">/org-secrets</code> directory at the root of the repository and inside your wanted type’s subdirectory, add a new file named after your GitHub Organisation Secret. Use only uppercase letters, numbers, and underscores, and then end the filename with <code class="language-plaintext highlighter-rouge">.yml</code>.
+<em>Example</em>: For “Flutter UKI Access Management”, use <code class="language-plaintext highlighter-rouge">FLUTTER_UKI_ACCESS_MANAGEMENT.yml</code>.</li>
+  <li>
+    <p><strong>Use the Template</strong>: Copy the following template into your new file and fill in the required details. You can refer to the <a href="/docs/org-secret-configuration/">GitHub Organisation Secret Codebase Governor Configuration</a> documentation for more information on each field.</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">owners</span><span class="pi">:</span>
+   <span class="na">users</span><span class="pi">:</span> <span class="pi">[]</span> <span class="c1"># List of GitHub usernames of the GitHub Organisation Secret owners (string array)</span>
+   <span class="na">teams</span><span class="pi">:</span> <span class="pi">[]</span> <span class="c1"># List of GitHub team names that own the GitHub Organisation Secret (string array)</span>
+ <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># Brief description of the GitHub Organisation Secret (string)</span>
+ <span class="na">contacts</span><span class="pi">:</span>
+   <span class="na">slack</span><span class="pi">:</span> <span class="pi">[]</span> <span class="c1"># List of Slack channel names for contact (string array)</span>
+   <span class="na">email</span><span class="pi">:</span> <span class="pi">[]</span> <span class="c1"># Email addresses for contact (string array)</span>
+ <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># Repository access scope to this organisation secret (oneof "selected" or "private")</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Open a Pull Request</strong>: Submit a pull request with your new configuration file to the <a href="https://github.com/Flutter-Global/org-config"><code class="language-plaintext highlighter-rouge">org-config</code></a> repository for review. After creating the Pull Request, add its link to the <code class="language-plaintext highlighter-rouge">url</code> field in the configuration file.</li>
+</ol>
+
+<h3 id="2-review-and-approval">2. Review and Approval</h3>
+
+<p>We have an automation in place that notifies us when a new GitHub Organisation Secret is ready for review. Any changes needed will be communicated through the pull request comments. Once the GitHub Organisation Secret is approved, we will proceed with its creation.</p>
+
+<h2 id="guides">Guides</h2>
+
+<p>To help you manage GitHub Organisation Secrets effectively, we’ve prepared a set of guides and definitions covering key topics and common tasks:</p>
+
+<ul>
+  <li><a href="/docs/org-secret-configuration/">GitHub Organisation Secret Codebase Governor Configuration</a></li>
+  <li>GitHub Organisation Secret Codebase Governor Capability and Repository Configuration
+    <ul>
+      <li><a href="/docs/capability-defaults/#defaultsorg-secrets">Capability Defaults</a></li>
+      <li><a href="/docs/repo-config/#org-secrets">Repository Configuration</a></li>
+    </ul>
+  </li>
+  <li><a href="/docs/guides/add-repository-access-to-org-secret">Add a repository to a GitHub Organisation Secret</a></li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p><strong>Need help or support?</strong></p>
+
+  <p>Reach out in our Slack channel <strong><a href="https://flutter.enterprise.slack.com/archives/C0115SW13V5">#inner-source</a></strong> or email the <a href="mailto:InnerSourceTeam@flutter.com">Inner Source Team</a>.</p>
+</blockquote>
 
 
           <!-- ARTICLE NAVIGATION -->
@@ -626,7 +674,7 @@
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#requesting-admin-access" class="hover:text-secondary">Requesting Admin Access</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#before-you-start" class="hover:text-secondary">Before you start</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#process-to-start" class="hover:text-secondary">Process to Start</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#1-create-the-github-organisation-secret-configuration-file" class="hover:text-secondary">1. Create the GitHub Organisation Secret configuration file</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#2-review-and-approval" class="hover:text-secondary">2. Review and Approval</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#guides" class="hover:text-secondary">Guides</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
