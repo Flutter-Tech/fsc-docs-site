@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" 
         title="Flutter Inner Source Blog" 
         href="https://innersource.flutter.com/feed.xml" />
-  <link rel="stylesheet" href="/vite/assets/index-022ea577.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-3f9b6a56.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -644,6 +644,21 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">source</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Flutter-Global"</span> <span class="c1"># Source of the GitHub App, either Flutter-Global or marketplace (string)</span>
 </code></pre></div></div>
 
+<h2 id="skip_repo_usage_approval"><code class="language-plaintext highlighter-rouge">skip_repo_usage_approval</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">skip_repo_usage_approval</code> key indicates whether an approval is needed when adding an app to a repository configuration file, or to a defaults config in a capability.
+Even if set to true, an approval will still be needed if the app file is changed.</p>
+
+<p>Available values:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">true</code>: The app doesn’t request an approval from an owner when adding to a repository/defaults config.</li>
+  <li><code class="language-plaintext highlighter-rouge">false</code>: The app requests an approval from an owner when adding to a repository/defaults config.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">skip_repo_usage_approval</span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># (boolean)</span>
+</code></pre></div></div>
+
 <h2 id="permissions"><code class="language-plaintext highlighter-rouge">permissions</code></h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">permissions</code> key defines the access levels the GitHub App requires for various resources. There are four main categories of permissions:</p>
@@ -1171,7 +1186,7 @@ Allows the app to read and manage single sign-on (SSO) settings for the enterpri
           <div class="pb-6 text-md h-screen">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc overflow-y-auto h-full pb-48">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owners" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owners</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contacts" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">contacts</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#url" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">url</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#source" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">source</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissions" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsrepository" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.repository</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsorganization" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.organization</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsuser" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.user</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsbusiness" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.business</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owners" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owners</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contacts" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">contacts</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#url" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">url</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#source" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">source</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#skip_repo_usage_approval" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">skip_repo_usage_approval</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissions" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsrepository" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.repository</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsorganization" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.organization</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsuser" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.user</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#permissionsbusiness" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">permissions.business</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           

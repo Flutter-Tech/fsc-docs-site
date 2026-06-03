@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Runner Groups in Codebase Governor | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" 
+        title="Flutter Inner Source Blog" 
+        href="https://innersource.flutter.com/feed.xml" />
+  <link rel="stylesheet" href="/vite/assets/index-3f9b6a56.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-blue">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#changelog" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Changelog</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Runner Groups in Codebase Governor
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Francisco Pereira
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets-private/blog/2026-05-04-runner-groups-in-cbg.jpg) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>We’re pleased to announce that Runner Group configuration is now supported natively within the org-config repository via Codebase Governor (CBG). This change centralises runner group lifecycle management and enforces consistent, auditable access control across the Flutter-Global GitHub organisation.</p>
+
+<h2 id="why-is-this-happening">Why is This Happening?</h2>
+
+<p>Previously, runner group provisioning and repository access management required manual coordination, with no standardised process for tracking ownership. This introduced several operational and governance challenges:</p>
+
+<ul>
+  <li><strong>Repository access</strong> to runner groups was managed under a simple ‘runners.csv’ file, with no structured ownership model</li>
+  <li><strong>Traceability</strong> back to the originating request required significant manual effort, leading to ambiguous accountability</li>
+  <li><strong>Cross-repository</strong> runner group management lacked scalability as the organisation expanded</li>
+</ul>
+
+<p>Centralising runner group configuration within CBG provides a single source of truth, enabling structured ownership tracking, consistent access control enforcement, and improved operational visibility across the organisation.</p>
+
+<h2 id="whats-changing">What’s Changing?</h2>
+
+<ul>
+  <li>
+    <p><strong>Declarative YAML Configuration</strong>: All runner group definitions are expressed as version-controlled YAML manifests, enabling peer review, auditability, and change tracking via standard pull request workflows.</p>
+  </li>
+  <li>
+    <p><strong>Automated Migration</strong>: All existing runner group configurations will be programmatically migrated to the new format. No manual intervention is required from capability teams.</p>
+  </li>
+</ul>
+
+<p><strong>Note</strong>: The Operations team retains responsibility for provisioning and updating runner groups directly on GitHub following config approval, ensuring separation of concerns and maintaining security boundaries.</p>
+
+<h2 id="how-do-i-use-the-new-github-runner-groups-features">How Do I Use the New GitHub Runner Groups Features?</h2>
+
+<h3 id="provisioning-a-runner-group">Provisioning a Runner Group:</h3>
+<ol>
+  <li>Define a YAML manifest for your runner group under /runner-groups in the org-config repository.</li>
+  <li>Raise a Pull Request against the org-config repository. Upon approval, the Operations team will handle downstream provisioning on GitHub.</li>
+</ol>
+
+<p>Need help? Refer to the guide: <a href="/docs/runner-group-guidelines/">Runner Groups guidelines</a></p>
+
+<h3 id="configuring-repository-access">Configuring Repository Access:</h3>
+<ol>
+  <li>To expose a runner group to all repositories within a capability, declare it in the capability’s _defaults.yml.</li>
+  <li>To scope access to specific repositories, add the runner group reference directly to the relevant repository config files.</li>
+</ol>
+
+<p>This model provides fine-grained access control, allowing teams to scope runner group availability precisely to where it is required.</p>
+
+<h3 id="self-hosted-runners-in-repositories">Self-Hosted Runners in Repositories</h3>
+
+<p>As part of this migration, eight self-hosted runners were identified across six repositories, configured at the repository level rather than at the organisation level. These runners fall outside the scope of the automated migration to CBG, as they are not managed through organisation-level runner group</p>
+
+<p>If you’re a mantainer or an owner of these repositories, please use one of the existent runner groups in the organization or create a new one.</p>
+
+<h3 id="reference-documentation">Reference Documentation</h3>
+<ul>
+  <li><a href="/docs/runner-group-configuration/">Runner Groups configuration format</a></li>
+  <li><a href="/docs/runner-group-guidelines/">Runner Group guidelines</a></li>
+</ul>
+
+<p>For technical queries or assistance, reach out in #inner-source.</p>
+
+                  <hr/>
+                  <strong>by: </strong>Francisco Pereira<br/>
+                  <strong>in: </strong><time datetime="2026/05/04">04 May 2026</time><br/>
+                  
+                  
+                  <strong>category: </strong><a href="/blog/categories#changelog" class="hover:underline lowercase">Changelog</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-gray-200 drop-shadow-2xl z-50 bottom-0">
+  <div class="max-h-50 mx-auto max-w-7xl overflow-hidden py-0 sm:py-12 lg:px-8">
+    
+
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/how/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Inner source</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/docs/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docs</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/blog/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+            </div>
+          
+        
+      
+      <div class="pb-6">
+        <a href="/community/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Support</a>
+      </div>
+    </nav>
+    <p class="mt-6 text-center text-xs leading-5 text-gray-500">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Flutter Entertainment plc</p>
+  </div>
+</footer>
+
+</body>
+
+</html>
